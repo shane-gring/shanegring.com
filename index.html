@@ -1240,6 +1240,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   });
 
   Cal.ns["30min"]("ui", {"hideEventTypeDetails":true,"layout":"month_view","theme":"light"});
+
+  // Real completion, not the click that opens the calendar (see track.js's
+  // click handler for that intent-only signal on the other booking pages).
+  Cal.ns["30min"]("on", {
+    action: "bookingSuccessful",
+    callback: function () {
+      if (window.sgTrackLeadOnce) {
+        window.sgTrackLeadOnce('cal_30min', { form_name: 'booking', lead_source: 'cal_booking', booking_type: '30min' });
+      }
+    }
+  });
 </script>
 
 <!-- ════════════════════════════════════════════════════════════

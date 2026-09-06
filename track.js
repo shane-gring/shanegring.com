@@ -17,16 +17,43 @@
   // Let page-level scripts (the Scan) fire events without repeating this.
   window.sgTrack = push;
 
-  // FormSubmit sends people back to the page with a hash once the mail is away,
-  // so the hash on load is the only completion signal these forms have.
-  var confirmations = {
-    '#contact-sent': { form_name: 'contact', lead_source: 'contact_form' },
-    '#intake-sent': { form_name: 'read_intake', lead_source: 'read_intake_form' }
-  };
-  var confirmed = confirmations[window.location.hash];
-  if (confirmed) push('generate_lead', confirmed);
+  // One generate_lead per completion per pageview, no matter how many times
+  // the source (Tally postMessage, Cal callback) reports it.
+  var firedLeads = {};
+  function leadOnce(key, params) {
+    if (firedLeads[key]) return;
+    firedLeads[key] = true;
+    push('generate_lead', params);
+  }
+  window.sgTrackLeadOnce = leadOnce;
 
-  // Booking and checkout both leave the site, so the click is the only signal.
+  // All forms on the site are Tally embeds now (contact, read intake, the
+  // three "inquiry" pages share one Tally form). Tally posts a message to
+  // the parent window on real submission; this is what generate_lead should
+  // track, not the FormSubmit hash-redirect this site used before the Tally
+  // move — no page has set that hash since, so the old check never fired.
+  var tallyForms = {
+    'MepBpY': { form_name: 'contact', lead_source: 'contact_form' },
+    'XxPXPO': { form_name: 'read_intake', lead_source: 'read_intake_form' },
+    'yP5L50': { form_name: 'work_inquiry', lead_source: 'inquiry_form' }
+  };
+  window.addEventListener('message', function (e) {
+    var data;
+    try {
+      data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
+    } catch (err) {
+      return;
+    }
+    if (!data || data.event !== 'Tally.FormSubmitted') return;
+    var formId = data.payload && data.payload.formId;
+    var known = formId && tallyForms[formId];
+    if (known) leadOnce('tally_' + formId, known);
+  });
+
+  // Booking and checkout both leave the site, so the click is the only signal
+  // for the external cal.com booking pages (session, map, install). The
+  // index.html inline embed reports a real bookingSuccessful separately —
+  // see the Cal.com block on that page.
   document.addEventListener('click', function (e) {
     var el = e.target;
     if (!el || typeof el.closest !== 'function') return;
