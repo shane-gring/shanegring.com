@@ -65,7 +65,7 @@ The Institute has since transitioned. The movement wave crested and fell, the ne
 
 But the premise held up. I still think a business is one of the best tools there is for taking care of people. Most of what I do today runs on some version of that idea.
 
-2 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:ugcPost:7500968336650866689)
+2 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:ugcPost:7500968336650866689)
 
 Personal Story
 
