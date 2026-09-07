@@ -65,6 +65,15 @@ async function handle(request, next, env) {
         'Content-Type': 'text/markdown; charset=utf-8',
         'Vary': 'Accept-Encoding',
         'X-Content-Type-Options': 'nosniff',
+        // Every page has a .md twin at a real URL. Served bare, that is a 200
+        // text/markdown duplicate of the HTML page — the exact shape Google
+        // files under "Page indexed without content". Nothing links them today,
+        // so this is prevention, not repair. noindex does not block fetching,
+        // so agents and LLMs still get the Markdown; only the search index is
+        // told to skip it. The canonical HTML URL is unaffected: the
+        // 'markdown-page' branch below (a .md representation served AT the page
+        // URL) deliberately does not carry this header.
+        'X-Robots-Tag': 'noindex',
       });
     }
 
