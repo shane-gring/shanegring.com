@@ -140,6 +140,8 @@ Seeking Certainty. What I'm working on, what broke, and how I fixed it.
 [All issues](https://shanegring.com/blog/)
 The full archive
 
+[The Slingshot: No roof and no plan](https://shanegring.com/blog/the-slingshot-no-roof-and-no-plan)
+
 [Why does the biz only work when you're in the room?](https://shanegring.com/blog/why-does-the-biz-only-work-when-you-re-in-the-room)
 
 [Seeking Certainty is changing](https://shanegring.com/blog/seeking-certainty-is-changing)

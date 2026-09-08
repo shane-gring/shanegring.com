@@ -1,4 +1,4 @@
-Newsletter · 14 issues
+Newsletter · 15 issues
 
 # Seeking Certainty
 
@@ -9,6 +9,8 @@ What I pick up running a few companies and helping run a few more —
 Certification work is still most of what I do, so it keeps showing
 up here; there's just more around it now. Sent when there's
 something worth sending. Every issue is archived below, in full.
+
+[September 8, 2026 The Slingshot: No roof and no plan](https://shanegring.com/blog/the-slingshot-no-roof-and-no-plan)
 
 [August 20, 2026 Why does the biz only work when you're in the room?](https://shanegring.com/blog/why-does-the-biz-only-work-when-you-re-in-the-room)
 
