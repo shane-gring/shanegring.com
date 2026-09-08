@@ -21,3 +21,9 @@ https://:version.shanegring-com.pages.dev/*
 # max-age=14400. The desync between always-fresh HTML and a four-hour-old
 # stylesheet is handled instead by versioning the asset URLs, which
 # tools/version-assets.mjs does on every deploy.
+
+# Fleet-internal records under /fleet/* are never for search, on any host —
+# they are preview-deploy proof artifacts, not site pages. This is the header
+# half of the noindex proof; each page also carries a robots meta tag.
+/fleet/*
+  X-Robots-Tag: noindex
