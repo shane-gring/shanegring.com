@@ -43,7 +43,7 @@ Mostly, though, it was the feeling of being led for a change. Letting somebody e
 
 Still think about that room.
 
-6 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503093566563303425)
+7 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503093566563303425)
 
 Personal Story
 
