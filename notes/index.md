@@ -1,4 +1,4 @@
-Notes · 56 of them
+Notes · 58 of them
 
 # What I'm working through, most weekdays.
 
@@ -10,6 +10,42 @@ businesses, what broke, what I'd do differently.
 on the way there.** Also on
 [LinkedIn](https://www.linkedin.com/in/shanegring/),
 which is where they start.
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 8, 2026
+
+Referral businesses hide their website problems better than anyone.
+
+Work keeps arriving through relationships and reputation, so the quiet site reads as harmless. And the costs stay invisible by design. No report shows the strangers who checked the site and moved on. Nobody mentions the stale services page they read on the way to replying to your intro.
+
+That second one is the part worth sitting with. Even the warm intro looks you up before writing back. The best pipeline you have still crosses the surface you stopped maintaining.
+
+Worth an honest check this week: where did your last ten clients actually come from? If every answer is a referral, your site has been grading itself on an absence of complaints -- and absence of complaints is the one grade a quiet page always gets.
+
+Wrote up where these leaks usually hide, and five checks you can run yourself to find yours. Link's in the comments.
+
+2 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503116200646840321)
+
+Tips
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 8, 2026
+
+A tea ceremony sounds like the touristy thing you do in Japan. Went in half expecting that.
+
+What happened instead surprised me. A guide invited us into his home to follow his practice, a ritual older than the country I come from, and somewhere in the middle of it a calm settled over the whole room. I'm usually a little cynical about that stuff. It got me anyway.
+
+Being served like that was its own kind of beautiful. Someone with decades in a practice, walking the curious through it step by step, sharing a tradition because sharing it is the point.
+
+Mostly, though, it was the feeling of being led for a change. Letting somebody else set the pace. Following without needing to figure anything out, and finding how much quiet there is in that.
+
+Still think about that room.
+
+6 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503093566563303425)
+
+Personal Story
 
 Shane Gring
 Fractional COO · operations for expert-led businesses
