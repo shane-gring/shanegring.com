@@ -4,18 +4,17 @@ Fleet record
 
 Fleet-internal record: the page-preview gate was armed on 2026-09-07. This page is the first artifact the armed gate accepts.
 
-**Date:** 2026-09-07.
+A fleet-internal record. This page exists to be the first artifact the
+armed page-preview gate accepts. It is served from a preview deployment,
+it is marked noindex, and it is linked from nowhere on the site.
 
-**Armed roster:** preview_deploy, site_build, site_edit, page_edit.
+- **Date:** 2026-09-07.
 
-**Mode:** canary.
+- **Armed roster:** preview_deploy, site_build, site_edit, page_edit.
 
-This page exists to be the first artifact the armed gate accepts. It is a
-fleet-internal record, not a published page: it is served from a preview
-deployment, it is marked noindex, and it is linked from nowhere on the site.
+- **Mode:** canary.
 
-**WorkOrder:**
-[fleet WO #351](https://github.com/shane-gring/claude-agent-fleet/issues/351).
+- **WorkOrder:** [fleet WO #351](https://github.com/shane-gring/claude-agent-fleet/issues/351).
 
 ---
 
