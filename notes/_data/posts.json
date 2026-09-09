@@ -1,5 +1,27 @@
 [
   {
+    "id": "41ffa85f-c895-443d-a304-da66c48cbc3b",
+    "title": "Handled - The Two Roads",
+    "date": "2026-09-09",
+    "labels": [
+      "Website Offer",
+      "Tips"
+    ],
+    "images": [],
+    "copy": "There are two ways people usually get a website, and both leave them stuck.\n\nRoad one is the website builder. You pay for a plan and a domain, and then it hands you the tools and a weekend of homework. Weeks later you've got a half-finished page you're a little embarrassed by, and the subscription's still billing.\n\nRoad two is the freelancer. Good build, real money -- and then they vanish. The site's live, but the first time something needs to change or breaks, you're on your own, and fixing it means starting the hunt over.\n\nEach one fails exactly where the other wins. The builder never leaves but makes you do the work. The freelancer does the work but leaves.\n\nThe fix, from what I've seen, is one person doing both jobs. Build it well, then stay: watching it every week, fixing what breaks, changing what you ask them to change.\n\nI've set up a service that works exactly that way. Details in the comments."
+  },
+  {
+    "id": "a89dfedb-3fdd-47ea-a6fa-ef2742cc405a",
+    "title": "Install - The Reading-Doing Gap",
+    "date": "2026-09-09",
+    "labels": [
+      "Website Offer",
+      "Use Case"
+    ],
+    "images": [],
+    "copy": "There's a gap I keep running into: people who've read everything about AI and set up almost none of it.\n\nYou use Claude in a browser tab and suspect you're using 5% of its actual capability. You've nodded along to \"just put your site in GitHub.\" You've got three tasks a week that are obviously automatable, and they're still done by hand. \n\nYou've done the reading. The setup is still waiting.\n\nWhat closes the gap, from what I've seen, is one day where the thing gets set up and working with your hands on the keyboard. Install the tools, connect them to your real work, ship one real change, build one agent on a task you actually have. Small, concrete, done by dinner.\n\nThe unlock is doing it once. After you've shipped one change yourself, you believe you can do it again. Everything after that is repetition.\n\nI run these as full working days now, at your place, on your machine. Details in the comments."
+  },
+  {
     "id": "92217b82-482d-43eb-a6b8-6be359a05038",
     "title": "Guide - The Referral Mask",
     "date": "2026-09-08",

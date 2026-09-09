@@ -1,4 +1,4 @@
-Notes · 58 of them
+Notes · 60 of them
 
 # What I'm working through, most weekdays.
 
@@ -10,6 +10,46 @@ businesses, what broke, what I'd do differently.
 on the way there.** Also on
 [LinkedIn](https://www.linkedin.com/in/shanegring/),
 which is where they start.
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 9, 2026
+
+There are two ways people usually get a website, and both leave them stuck.
+
+Road one is the website builder. You pay for a plan and a domain, and then it hands you the tools and a weekend of homework. Weeks later you've got a half-finished page you're a little embarrassed by, and the subscription's still billing.
+
+Road two is the freelancer. Good build, real money -- and then they vanish. The site's live, but the first time something needs to change or breaks, you're on your own, and fixing it means starting the hunt over.
+
+Each one fails exactly where the other wins. The builder never leaves but makes you do the work. The freelancer does the work but leaves.
+
+The fix, from what I've seen, is one person doing both jobs. Build it well, then stay: watching it every week, fixing what breaks, changing what you ask them to change.
+
+I've set up a service that works exactly that way. Details in the comments.
+
+2 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503481141102788609)
+
+Website OfferTips
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 9, 2026
+
+There's a gap I keep running into: people who've read everything about AI and set up almost none of it.
+
+You use Claude in a browser tab and suspect you're using 5% of its actual capability. You've nodded along to "just put your site in GitHub." You've got three tasks a week that are obviously automatable, and they're still done by hand.
+
+You've done the reading. The setup is still waiting.
+
+What closes the gap, from what I've seen, is one day where the thing gets set up and working with your hands on the keyboard. Install the tools, connect them to your real work, ship one real change, build one agent on a task you actually have. Small, concrete, done by dinner.
+
+The unlock is doing it once. After you've shipped one change yourself, you believe you can do it again. Everything after that is repetition.
+
+I run these as full working days now, at your place, on your machine. Details in the comments.
+
+4 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503438318030860289)
+
+Website OfferUse Case
 
 Shane Gring
 Fractional COO · operations for expert-led businesses
@@ -43,7 +83,7 @@ Mostly, though, it was the feeling of being led for a change. Letting somebody e
 
 Still think about that room.
 
-7 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503093566563303425)
+11 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503093566563303425)
 
 Personal Story
 
@@ -101,7 +141,7 @@ The Institute has since transitioned. The movement wave crested and fell, the ne
 
 But the premise held up. I still think a business is one of the best tools there is for taking care of people. Most of what I do today runs on some version of that idea.
 
-2 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:ugcPost:7500968336650866689)
+2 reactions · 2 comments[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:ugcPost:7500968336650866689)
 
 Personal Story
 
@@ -229,7 +269,7 @@ We now have four girls. I'm building them a replica playhouse of our mid-century
 
 So if you're in the patient stretch, the part before the things you're working toward have shown up, just keep going. As it turns out, there aren't many finish lines in life -- just more adventures ahead.
 
-9 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7498392590682075137)
+11 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7498392590682075137)
 
 Personal Story
 
@@ -379,7 +419,7 @@ It isn't always tidy. Sometimes calls run late or clients reach out with an urge
 
 Moving outside of the standard corporate setting was a trade I made, and it was a good one. I still get to do the work I love, and enough room around it to be there for the people who matter most.
 
-65 reactions · 4 comments[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7495506105066774528)
+66 reactions · 4 comments[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7495506105066774528)
 
 Personal Story
 
