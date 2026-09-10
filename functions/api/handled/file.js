@@ -32,9 +32,12 @@ export async function onRequestGet(context) {
   obj.writeHttpMetadata(headers);
   headers.set('etag', obj.httpEtag);
   headers.set('Cache-Control', 'private, max-age=3600');
-  // The original filename lives in metadata; keys are opaque by design.
-  const name = obj.customMetadata?.name;
-  if (name) headers.set('Content-Disposition', `inline; filename="${name.replace(/"/g, '')}"`);
+  // Keys are opaque by design, so without this every file Shane opens saves as
+  // "logo-<uuid>.png". The name is unsigned, so strip anything that could break
+  // out of the header or the filename.
+  const raw = new URL(request.url).searchParams.get('name') || '';
+  const name = raw.replace(/[^\w .()\-]/g, '').slice(0, 120).trim();
+  if (name) headers.set('Content-Disposition', `inline; filename="${name}"`);
 
   return new Response(obj.body, { headers });
 }

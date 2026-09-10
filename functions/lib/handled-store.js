@@ -72,21 +72,71 @@ export function isExpired(record, now = Date.now()) {
   return Number.isFinite(t) && t < now;
 }
 
+/**
+ * Reads the record and the ETag it was read at. Every mutation writes back
+ * conditionally on that ETag — see updateRecord — because the record is a
+ * single JSON object that several requests can be mid-flight against at once:
+ * an autosave, an upload being attached, and a submit can all overlap.
+ */
 export async function readRecord(env, token) {
   const obj = await env.HANDLED_BUCKET.get(recordKey(await tokenPrefix(token)));
   if (!obj) return null;
   try {
-    return JSON.parse(await obj.text());
+    return { record: JSON.parse(await obj.text()), etag: obj.etag };
   } catch {
     return null;
   }
 }
 
-export async function writeRecord(env, token, record) {
-  await env.HANDLED_BUCKET.put(recordKey(await tokenPrefix(token)), JSON.stringify(record, null, 2), {
-    httpMetadata: { contentType: 'application/json; charset=utf-8' },
-  });
-  return record;
+/**
+ * Writes the record. With `etag`, the write only lands if nothing else has
+ * written since it was read; returns false if it did. Without one, it
+ * overwrites unconditionally — only issue.js does that, creating a record that
+ * by definition nobody else holds yet.
+ */
+export async function writeRecord(env, token, record, { etag } = {}) {
+  const opts = { httpMetadata: { contentType: 'application/json; charset=utf-8' } };
+  if (etag) opts.onlyIf = { etagMatches: etag };
+
+  const res = await env.HANDLED_BUCKET.put(
+    recordKey(await tokenPrefix(token)),
+    JSON.stringify(record, null, 2),
+    opts
+  );
+  // R2 returns null when a precondition fails rather than throwing.
+  return !etag || res !== null;
+}
+
+/**
+ * Read, change, write — safely.
+ *
+ * `mutate(record)` may change the record in place and returns a value passed
+ * back to the caller. If someone else's write landed first, the whole thing is
+ * retried against the fresh record rather than clobbering it, which is why
+ * mutate must be safe to run more than once.
+ *
+ * Without this, two overlapping saves silently lose one side's fields — and
+ * worse, a debounced autosave that read the record before a submit would write
+ * its stale `status: 'draft'` back over the submission, un-submitting a client
+ * who has already been told they are done.
+ */
+export async function updateRecord(context, mutate, { allowSubmitted = false, attempts = 5 } = {}) {
+  for (let i = 0; i < attempts; i++) {
+    const auth = await authenticate(context, { allowSubmitted });
+    if (auth.response) return { response: auth.response };
+
+    const result = await mutate(auth.record, auth);
+    if (result?.response) return result;
+
+    const written = await writeRecord(context.env, auth.token, auth.record, { etag: auth.etag });
+    if (written) return { record: auth.record, value: result, auth };
+  }
+
+  // Five straight conflicts is not contention, it is something wrong. Tell the
+  // client to retry rather than silently dropping their answer.
+  return {
+    response: json({ error: 'That didn’t save — try again in a moment.' }, 409),
+  };
 }
 
 export const recordKey = (prefix) => `${PREFIX}/${prefix}/${RECORD}`;
@@ -119,10 +169,11 @@ export async function authenticate(context, { allowSubmitted = false } = {}) {
     return { response: json({ error: 'invalid_link' }, 401) };
   }
 
-  const record = await readRecord(env, token);
-  if (!record) {
+  const found = await readRecord(env, token);
+  if (!found) {
     return { response: json({ error: 'invalid_link' }, 401) };
   }
+  const { record, etag } = found;
   if (isExpired(record)) {
     return { response: json({ error: 'expired_link' }, 410) };
   }
@@ -133,7 +184,7 @@ export async function authenticate(context, { allowSubmitted = false } = {}) {
     return { response: json({ error: 'already_submitted' }, 409) };
   }
 
-  return { record, prefix: await tokenPrefix(token), token };
+  return { record, etag, prefix: await tokenPrefix(token), token };
 }
 
 // --- shared helpers -------------------------------------------------------

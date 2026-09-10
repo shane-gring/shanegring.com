@@ -78,15 +78,22 @@ export async function presignPut(env, key, { expiresIn = 3600, now = new Date() 
  * A link Shane can open from an email. Signed over key + expiry so it cannot be
  * edited into a different object or a later date, and scoped to one file.
  */
-export async function signDownload(env, key, { ttlDays = 60 } = {}) {
+export async function signDownload(env, key, { ttlDays = 60, name = '' } = {}) {
   const exp = Math.floor(Date.now() / 1000) + ttlDays * 86400;
   const sig = await downloadSignature(env, key, exp);
   const qs = new URLSearchParams({ key, exp: String(exp), sig });
+  // The original filename rides on the link rather than in bucket metadata: a
+  // presigned PUT would have to sign x-amz-meta-* headers to carry it, and R2
+  // cannot add metadata to an object after the fact. It is not covered by the
+  // signature, so file.js sanitises it — it only ever decorates the download
+  // name and grants nothing.
+  if (name) qs.set('name', name.slice(0, 120));
   return `/api/handled/file?${qs.toString()}`;
 }
 
 export async function verifyDownload(env, key, exp, sig) {
   if (!key || !exp || !sig) return false;
+  if (!env.HANDLED_DOWNLOAD_SECRET && !env.HANDLED_ADMIN_SECRET) return false;
   const expNum = Number(exp);
   if (!Number.isFinite(expNum) || expNum * 1000 < Date.now()) return false;
   const expected = await downloadSignature(env, key, expNum);
@@ -95,8 +102,11 @@ export async function verifyDownload(env, key, exp, sig) {
 
 async function downloadSignature(env, key, exp) {
   // Falls back to the admin secret so local review works with one secret set.
-  // In production both exist and DOWNLOAD_SECRET is the one in use.
-  const secret = env.HANDLED_DOWNLOAD_SECRET || env.HANDLED_ADMIN_SECRET || '';
+  // Empty is NOT an acceptable third option: an HMAC keyed on "" is forgeable
+  // by anyone, and a deployment with R2 bound but secrets not yet added is a
+  // real intermediate state — the setup doc has them at different steps.
+  const secret = env.HANDLED_DOWNLOAD_SECRET || env.HANDLED_ADMIN_SECRET;
+  if (!secret) throw new Error('no signing secret configured');
   return toHex(await hmac(enc.encode(secret), `${key}:${exp}`)).slice(0, 32);
 }
 

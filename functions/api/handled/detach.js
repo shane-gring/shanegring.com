@@ -10,12 +10,9 @@
  */
 
 import { questionById, RECORDING_FIELD } from '../../../assets/handled/questions.js';
-import { authenticate, writeRecord, json } from '../../lib/handled-store.js';
+import { updateRecord, json } from '../../lib/handled-store.js';
 
 export async function onRequestPost(context) {
-  const auth = await authenticate(context);
-  if (auth.response) return auth.response;
-
   let body;
   try {
     body = await context.request.json();
@@ -27,16 +24,18 @@ export async function onRequestPost(context) {
   const isRecording = questionId === RECORDING_FIELD;
   if (!isRecording && !questionById(questionId)) return json({ error: 'Unknown field.' }, 400);
 
-  const record = auth.record;
-  const before = record.uploads[questionId] || [];
-  record.uploads[questionId] = before.filter((f) => f.key !== key);
+  const out = await updateRecord(context, (record) => {
+    const before = record.uploads[questionId] || [];
+    record.uploads[questionId] = before.filter((f) => f.key !== key);
 
-  // Dropping the recording drops its transcript with it, so the review screen
-  // can never show text from audio that is no longer attached.
-  if (isRecording && !record.uploads[questionId].length) record.transcript = null;
+    // Dropping the recording drops its transcript with it, so the review screen
+    // can never show text from audio that is no longer attached.
+    if (isRecording && !record.uploads[questionId].length) record.transcript = null;
 
-  record.updatedAt = new Date().toISOString();
-  await writeRecord(context.env, auth.token, record);
+    record.updatedAt = new Date().toISOString();
+    return record.uploads[questionId].length;
+  });
+  if (out.response) return out.response;
 
-  return json({ ok: true, remaining: record.uploads[questionId].length });
+  return json({ ok: true, remaining: out.value });
 }

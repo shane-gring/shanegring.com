@@ -18,40 +18,44 @@
  */
 
 import { allQuestions, requiredIds, questionById } from '../../../assets/handled/questions.js';
-import { authenticate, writeRecord, json } from '../../lib/handled-store.js';
+import { updateRecord, json } from '../../lib/handled-store.js';
 import { buildSummary, buildNote } from '../../lib/handled-summary.js';
 import { signDownload } from '../../lib/handled-uploads.js';
 import { attioCapture } from '../../lib/attio.js';
 
 export async function onRequestPost(context) {
-  const auth = await authenticate(context); // 409s if already submitted
-  if (auth.response) return auth.response;
+  // The completeness check runs inside the guarded update, against the record
+  // as it actually is at the moment of writing — not against a copy read
+  // moments earlier that an in-flight autosave may since have changed.
+  const out = await updateRecord(context, (record) => {
+    const missing = requiredIds().filter((id) => !hasAnswer(record, id));
+    if (missing.length) {
+      return {
+        response: json(
+          {
+            error: 'incomplete',
+            missing,
+            message: 'A few answers are still needed before this can go.',
+          },
+          422
+        ),
+      };
+    }
 
-  const record = auth.record;
-
-  const missing = requiredIds().filter((id) => !hasAnswer(record, id));
-  if (missing.length) {
-    return json(
-      {
-        error: 'incomplete',
-        missing,
-        message: 'A few answers are still needed before this can go.',
-      },
-      422
-    );
-  }
-
-  record.status = 'submitted';
-  record.submittedAt = new Date().toISOString();
-  record.updatedAt = record.submittedAt;
-  await writeRecord(context.env, auth.token, record);
+    record.status = 'submitted';
+    record.submittedAt = new Date().toISOString();
+    record.updatedAt = record.submittedAt;
+  });
+  if (out.response) return out.response;
 
   // Everything below is derived. Run it after the response so the client's
-  // "Sent" screen never waits on Gmail or Attio.
-  const forSummary = { ...record, _prefix: auth.prefix };
+  // "Sent" screen never waits on Gmail or Attio. The ETag guard means an
+  // autosave that started before this can no longer write `draft` back over
+  // it — its own write fails the precondition and its retry gets a 409.
+  const forSummary = { ...out.record, _prefix: out.auth.prefix };
   context.waitUntil(notify(context.env, forSummary).catch((e) => console.log('handled-submit: ' + e.message)));
 
-  return json({ ok: true, submittedAt: record.submittedAt });
+  return json({ ok: true, submittedAt: out.record.submittedAt });
 }
 
 function hasAnswer(record, id) {
@@ -68,7 +72,7 @@ async function notify(env, record) {
   // working for two months without Shane needing a session or credentials.
   const links = new Map();
   for (const files of Object.values(record.uploads || {})) {
-    for (const f of files) links.set(f.key, await signDownload(env, f.key, { ttlDays: 60 }));
+    for (const f of files) links.set(f.key, await signDownload(env, f.key, { ttlDays: 60, name: f.name }));
   }
 
   const summary = buildSummary(record, { links });
@@ -90,7 +94,9 @@ async function notify(env, record) {
           template: record.template,
           summary,                 // the pre-rendered text Shane reads
           transcript: record.transcript?.text || '',
-          record,                  // the structured original, for the sheet
+          // Everything except `label`, which is our own note about who the
+          // token went to and has no business leaving the platform.
+          record: { ...record, label: undefined },
         }),
       })
     );

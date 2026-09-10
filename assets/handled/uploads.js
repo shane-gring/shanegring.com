@@ -78,8 +78,13 @@ export function validateUpload(groupName, { name, size, type }) {
   const g = GROUPS[groupName];
   if (!g) return 'That kind of file can’t go here.';
 
+  // The extension is the primary signal and the MIME type is the fallback, not
+  // the other way round. Accepting "either matches" let a file named
+  // payload.exe through on a declared type of image/png, since the client
+  // controls both. HEIC — the case this leniency exists for — has a known
+  // extension and an empty MIME, which this still allows.
   const ext = extensionOf(name);
-  const typeOk = (type && g.mimeTypes.includes(type)) || (ext && g.extensions.includes(ext));
+  const typeOk = ext ? g.extensions.includes(ext) : Boolean(type) && g.mimeTypes.includes(type);
   if (!typeOk) {
     return `${g.label} need to be ${g.extensions.slice(0, -1).join(', ')} or ${g.extensions.slice(-1)}. ` +
            `That one is a .${ext || 'file'}.`;

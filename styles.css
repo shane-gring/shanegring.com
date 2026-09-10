@@ -7090,3 +7090,15 @@ footer .footer-nav ul,
 /* The native control, sized to the column. Building a custom player would buy
    nothing here and lose the platform's own keyboard and scrubbing behaviour. */
 .hi-audio { width: 100%; max-width: 420px; height: 40px; }
+
+/* Placeholder-transcript marker. Deliberately conspicuous: this text must never
+   be mistaken for a real transcription of real audio. */
+.hi-transcript-stub {
+  margin: 0.6rem 0 0;
+  font-size: 0.8rem;
+  color: #7a2718;
+  background: #fdf6f4;
+  border: 1px solid #d9a79b;
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+}

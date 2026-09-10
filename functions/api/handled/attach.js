@@ -13,11 +13,13 @@
  */
 
 import { questionById, RECORDING_FIELD, sectionById } from '../../../assets/handled/questions.js';
-import { authenticate, writeRecord, json } from '../../lib/handled-store.js';
+import { authenticate, updateRecord, json } from '../../lib/handled-store.js';
 import { signDownload } from '../../lib/handled-uploads.js';
 import { transcribe, STATUS_COPY } from '../../lib/handled-transcribe.js';
 
 export async function onRequestPost(context) {
+  // Validated up front, outside the retry loop: none of it depends on the
+  // record, and the transcription hop must not run twice if a write conflicts.
   const auth = await authenticate(context);
   if (auth.response) return auth.response;
 
@@ -42,7 +44,6 @@ export async function onRequestPost(context) {
   const head = await context.env.HANDLED_BUCKET.head(key);
   if (!head) return json({ error: 'That upload didn’t arrive. Try again.' }, 409);
 
-  const record = auth.record;
   const entry = {
     key,
     name: String(name || 'file').slice(0, 200),
@@ -52,33 +53,35 @@ export async function onRequestPost(context) {
   };
   if (Number.isFinite(durationSec)) entry.durationSec = Math.round(durationSec);
 
-  // Single-file fields replace; multi-file fields append. Replacing means the
-  // old object is now unreferenced — it is left in the bucket rather than
-  // deleted, because a failed re-upload that also destroyed the previous file
-  // would be the worst possible outcome for someone who has paid.
-  const existing = record.uploads[q.id] || [];
-  record.uploads[q.id] = q.type === 'files' ? [...existing, entry] : [entry];
-  record.updatedAt = entry.uploadedAt;
-
   let transcript = null;
   if (isRecording) {
     const section = sectionById('business');
     transcript = await transcribe(context.env, key, {
-      businessName: record.answers?.business_name || '',
+      businessName: auth.record.answers?.business_name || '',
       prompts: (section?.questions || []).map((p) => p.label),
     });
-    record.transcript = transcript;
   }
 
-  await writeRecord(context.env, auth.token, record);
+  const out = await updateRecord(context, (record) => {
+    // Single-file fields replace; multi-file fields append. Replacing means the
+    // old object is now unreferenced — it is left in the bucket rather than
+    // deleted, because a failed re-upload that also destroyed the previous file
+    // would be the worst possible outcome for someone who has paid.
+    const existing = record.uploads[q.id] || [];
+    record.uploads[q.id] = q.type === 'files' ? [...existing, entry] : [entry];
+    record.updatedAt = entry.uploadedAt;
+    if (isRecording) record.transcript = transcript;
+  });
+  if (out.response) return out.response;
 
   return json({
     ok: true,
-    file: { ...entry, url: await signDownload(context.env, key, { ttlDays: 2 }) },
+    file: { ...entry, url: await signDownload(context.env, key, { ttlDays: 2, name: entry.name }) },
     transcript: transcript && {
       status: transcript.status,
       text: transcript.text,
       words: transcript.words,
+      stub: Boolean(transcript.stub),
       // A reason code is for the log; the client gets a sentence.
       message: transcript.status === 'ok' ? null : STATUS_COPY[transcript.reason] || STATUS_COPY.model_error,
     },

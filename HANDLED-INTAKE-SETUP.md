@@ -107,6 +107,41 @@ R2 → **Manage R2 API Tokens** → **Create API token**
 - Scope it to the `handled-intake` bucket only
 - Save the **Access Key ID** and **Secret Access Key** — the secret is shown once
 
+### 1c-2. Set the bucket's CORS policy
+
+**Skip this and every upload fails in production, while working perfectly in
+local review.** The browser PUTs cross-origin to
+`<account>.r2.cloudflarestorage.com` and sets a `Content-Type` header, which
+forces a CORS preflight. Without a policy the preflight is refused and every
+file and every recording dies with an opaque network error.
+
+It cannot show up locally, because local review uploads through
+`functions/api/handled/upload-direct.js` — same origin, no preflight.
+
+R2 → the `handled-intake` bucket → **Settings** → **CORS Policy** → **Add**:
+
+```json
+[
+  {
+    "AllowedOrigins": [
+      "https://shanegring.com",
+      "https://www.shanegring.com"
+    ],
+    "AllowedMethods": ["PUT"],
+    "AllowedHeaders": ["content-type"],
+    "MaxAgeSeconds": 3600
+  }
+]
+```
+
+Add your Pages preview origin (`https://*.shanegring-com.pages.dev`) too if you
+intend to test uploads on a preview deployment.
+
+**Check it worked:** upload a logo on the live site. In the browser's Network
+tab you should see an `OPTIONS` returning 200 followed by a `PUT` returning 200.
+An `OPTIONS` that fails, or a PUT reported as a CORS error, means the policy is
+missing or the origin does not match exactly.
+
 ### 1d. Add four secrets
 
 Same Bindings screen → **Add** → **Secret** (not plaintext variable), four times:
@@ -199,7 +234,7 @@ Same Bindings screen, both **Secret**:
 | Name | Value | Why |
 |---|---|---|
 | `HANDLED_ADMIN_SECRET` | A long random string | Guards `/api/handled/issue`. Without it the route is closed and no links can be issued. |
-| `HANDLED_DOWNLOAD_SECRET` | A different long random string | Signs the file links in Shane's email. Falls back to the admin secret if unset, but keep them separate. |
+| `HANDLED_DOWNLOAD_SECRET` | A different long random string | Signs the file links in Shane's email. Falls back to `HANDLED_ADMIN_SECRET` if unset; if **neither** is set, file links are refused outright rather than signed with an empty key. |
 
 Generate them with:
 

@@ -39,13 +39,14 @@ export async function transcribe(env, key, { businessName = '', prompts = [] } =
       status: 'ok',
       stub: true,
       text:
-        '[STUB TRANSCRIPT — no AI binding on this environment, so this text is ' +
-        'placeholder, not a transcription of the audio.] ' +
-        `We fit and service boilers across the north of the city${businessName ? `, trading as ${businessName}` : ''}. ` +
-        'Most people find us through word of mouth or the van. What I want off ' +
-        'the page is a phone call, honestly — people ring, we book them in. ' +
-        'Wish people knew we do the small jobs too, not just full installs. ' +
-        'Eighteen years doing this and we have never had a callback we did not fix.',
+        'We fit and service boilers right across the north of the city' +
+        `${businessName ? `, trading as ${businessName}` : ''}. ` +
+        'Most people find us on word of mouth, or they see the van. What I ' +
+        'want off the page really is the phone to ring — people call, we book ' +
+        'them in, that is the whole thing. I wish people knew we do the small ' +
+        'jobs too, not just full installs, because a lot assume we are too big ' +
+        'for a dripping tap. Eighteen years doing this now and we have never ' +
+        'had a callback we could not put right.',
       words: 68,
       vtt: null,
       model: 'stub',

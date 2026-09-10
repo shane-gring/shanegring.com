@@ -16,10 +16,10 @@
  * indicator that is always telling the truth.
  */
 
-import { SECTIONS, WELCOME, CONFIRMATION, questionById, RECORDING_FIELD } from './questions.js?v=c1d815f7';
+import { SECTIONS, WELCOME, CONFIRMATION, questionById, allQuestions, RECORDING_FIELD } from './questions.js?v=acc03e6d';
 import { TEMPLATES, PLACEHOLDER_PREVIEW, templateBlurb, templateById } from './templates.js?v=c6787910';
 import { acceptAttr, formatBytes, validateUpload, GROUPS, canRecord, pickRecordType,
-         extensionForType, RECORD_BITRATE, RECORD_MAX_SECONDS } from './uploads.js?v=23478d20';
+         extensionForType, RECORD_BITRATE, RECORD_MAX_SECONDS } from './uploads.js?v=5f553a01';
 
 const API = '/api/handled';
 const SAVE_DEBOUNCE_MS = 600;
@@ -38,9 +38,12 @@ const state = {
   started: false,
   transcript: null,
   recBlobUrl: null,
-  rec: { active: false, startedAt: 0, recorder: null, interval: null },
+  rec: { active: false, abandoned: false, startedAt: 0, recorder: null, stream: null, interval: null },
   save: { phase: 'idle', at: null, pending: 0 },
   showMissing: false,         // only after a blocked submit — never pre-emptively
+  serverMissing: [],          // what the server said was missing, if it disagreed
+  lastScreen: null,           // where they left off, so a return visit resumes there
+  answerMode: null,           // record | upload | type, remembered across visits
 };
 
 const SCREENS = () => ['welcome', ...SECTIONS.map((s) => s.id), 'review', 'done'];
@@ -70,6 +73,8 @@ async function boot() {
       updatedAt: data.updatedAt || null,
       started: Boolean(data.started),
       transcript: data.transcript || null,
+      lastScreen: data.lastScreen || null,
+      answerMode: data.answerMode || null,
     });
     // Someone returning to a finished intake gets the read-only look back,
     // not the form again.
@@ -90,9 +95,18 @@ function readToken() {
 function firstUnfinishedScreen() {
   // Nothing saved yet: this is their first visit, so start at the beginning.
   if (!state.started) return 'welcome';
+
+  // Where they actually left off. Counting unanswered questions cannot stand in
+  // for this: nearly every question is optional by design, so someone who
+  // worked through all six sections and skipped a phone number would be sent
+  // back to section one on every visit — the opposite of what resuming is for.
+  const order = SCREENS();
+  if (state.lastScreen && order.includes(state.lastScreen)) return state.lastScreen;
+
+  // No record of where they were (a draft from before this was stored). Fall
+  // back to the first section still missing something required.
   for (const s of SECTIONS) {
-    const { answered, total } = sectionProgress(s);
-    if (answered < total) return s.id;
+    if (s.questions.some((q) => q.required && !answered(q))) return s.id;
   }
   return 'review';
 }
@@ -101,6 +115,10 @@ function firstUnfinishedScreen() {
 
 const queue = new Map();
 let saveTimer = null;
+// The PUT currently in flight, if any. Without this, `await flush()` returns
+// immediately whenever the queue happens to be empty — even though a save
+// started 200ms ago is still running — and submit() would race it.
+let inFlight = null;
 
 function stage(id, value) {
   queue.set(id, value);
@@ -111,7 +129,11 @@ function stage(id, value) {
 }
 
 async function flush() {
+  // Whoever called us wants the record settled, so wait out anything running
+  // before deciding there is nothing to do.
+  if (inFlight) await inFlight.catch(() => {});
   if (!queue.size || state.status === 'submitted') return;
+
   const patch = Object.fromEntries(queue);
   queue.clear();
 
@@ -120,11 +142,12 @@ async function flush() {
   paintSaveState();
 
   try {
-    const res = await fetch(`${API}/session`, {
+    inFlight = fetch(`${API}/session`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json', 'X-Handled-Token': state.token },
       body: JSON.stringify(patch),
     });
+    const res = await inFlight;
     if (!res.ok) throw new Error(String(res.status));
     const body = await res.json();
     state.updatedAt = body.updatedAt;
@@ -138,6 +161,7 @@ async function flush() {
     clearTimeout(saveTimer);
     saveTimer = setTimeout(flush, 4000);
   } finally {
+    inFlight = null;
     state.save.pending--;
     paintSaveState();
   }
@@ -145,10 +169,13 @@ async function flush() {
 
 // A last-chance save when the tab goes away. Not a guarantee, just a courtesy
 // on top of the debounce — which is short enough that this rarely has work.
-addEventListener('hashchange', () => {
+addEventListener('hashchange', async () => {
   if (readToken() === state.token) return;
-  queue.clear();
+  // Save what the previous client typed before switching away from their
+  // record — clearing the queue outright drops up to a debounce of work.
   clearTimeout(saveTimer);
+  await flush().catch(() => {});
+  queue.clear();
   Object.assign(state, { answers: {}, operations: {}, uploads: {}, template: null, started: false, status: 'draft' });
   boot();
 });
@@ -204,8 +231,20 @@ function answered(q) {
 
 const sectionProgress = (s) => ({ answered: s.questions.filter(answered).length, total: s.questions.length });
 
-const missingRequired = () =>
-  SECTIONS.flatMap((s) => s.questions.filter((q) => q.required && !answered(q)).map((q) => ({ ...q, sectionId: s.id })));
+function missingRequired() {
+  const own = SECTIONS.flatMap((s) =>
+    s.questions.filter((q) => q.required && !answered(q)).map((q) => ({ ...q, sectionId: s.id }))
+  );
+  // Anything the server named that we did not: include it so the client sees a
+  // real reason rather than a button that does nothing.
+  const seen = new Set(own.map((q) => q.id));
+  for (const id of state.serverMissing || []) {
+    if (seen.has(id)) continue;
+    const q = allQuestions().find((x) => x.id === id);
+    if (q) own.push(q);
+  }
+  return own;
+}
 
 // --- render ----------------------------------------------------------------
 
@@ -661,8 +700,12 @@ async function uploadFile(questionId, file, onProgress) {
     if (target.direct) xhr.setRequestHeader('X-Handled-Token', state.token);
     if (file.type) xhr.setRequestHeader('Content-Type', file.type);
     xhr.upload.onprogress = (e) => e.lengthComputable && onProgress(e.loaded / e.total);
-    xhr.onload = () => (xhr.status >= 200 && xhr.status < 300 ? resolve() : reject(new Error('upload_failed')));
-    xhr.onerror = () => reject(new Error('upload_failed'));
+    const failed = () => reject(new Error(
+      'That upload didn’t go through. Your connection may have dropped — try it again.'
+    ));
+    xhr.onload = () => (xhr.status >= 200 && xhr.status < 300 ? resolve() : failed());
+    xhr.onerror = failed;
+    xhr.ontimeout = failed;
     xhr.send(file);
   });
 
@@ -676,6 +719,26 @@ async function uploadFile(questionId, file, onProgress) {
   });
 }
 
+/**
+ * Server error codes are for the log; anything reaching a client has to be a
+ * sentence. `already_submitted` on screen after a five-minute recording is
+ * worse than no message at all.
+ *
+ * Some endpoints already return prose (validateUpload's messages come straight
+ * back from /upload), so a value containing a space is passed through as-is.
+ */
+function clientMessage(err) {
+  if (CODE_MESSAGES[err]) return CODE_MESSAGES[err];
+  if (typeof err === 'string' && err.includes(' ')) return err;
+  return 'That didn’t work. Try again in a moment.';
+}
+
+const CODE_MESSAGES = {
+  invalid_link: 'This link isn’t working any more. Email shane@shanegring.com for a fresh one.',
+  expired_link: 'This link has expired. Email shane@shanegring.com and I’ll send a new one.',
+  already_submitted: 'This intake has already been sent, so it can’t be changed.',
+};
+
 function groupFor(questionId) {
   if (questionId === RECORDING_FIELD) return 'audio';
   return questionById(questionId)?.accept || 'image';
@@ -687,7 +750,7 @@ async function api(path, init = {}) {
     headers: { 'Content-Type': 'application/json', 'X-Handled-Token': state.token, ...(init.headers || {}) },
   });
   const body = await res.json().catch(() => ({}));
-  if (!res.ok) throw new Error(body.error || 'That didn’t work. Try again.');
+  if (!res.ok) throw new Error(clientMessage(body.error));
   return body;
 }
 
@@ -721,11 +784,13 @@ function uploadField(q) {
   const take = async (files) => {
     err.textContent = '';
     for (const file of files) {
-      if (!multiple && done()) state.uploads[q.id] = [];
       const row = pendingRow(file);
       list.append(row.node);
       try {
         const out = await uploadFile(q.id, file, row.progress);
+        // Replace only on success. Clearing first meant a failed re-upload made
+        // the client's existing logo vanish from the page while the server
+        // still had it, recoverable only by reloading.
         state.uploads[q.id] = multiple ? [...(state.uploads[q.id] || []), out.file] : [out.file];
         paint(); refreshRail();
       } catch (e) {
@@ -816,7 +881,7 @@ function audioChooser(section) {
     { id: 'type', label: 'Type it instead', note: 'Answer in writing' },
   ];
 
-  const current = state.answers.__answer_mode || (recordable ? 'record' : 'type');
+  const current = state.answerMode || (recordable ? 'record' : 'type');
 
   const row = el('div', 'hi-ways-row');
   row.setAttribute('role', 'radiogroup');
@@ -831,7 +896,8 @@ function audioChooser(section) {
     if (m.id === current) b.classList.add('is-on');
     b.append(el('span', 'hi-way-label', m.label), el('span', 'hi-way-note', m.note));
     b.addEventListener('click', () => {
-      state.answers.__answer_mode = m.id;
+      state.answerMode = m.id;
+      stage('__answer_mode', m.id);
       render();
     });
     row.append(b);
@@ -911,6 +977,14 @@ function transcriptPanel() {
     box.append(el('p', 'hi-transcript-text', t.text));
     box.append(el('p', 'hi-transcript-note',
       'Shane gets this and your recording. Worth a quick skim — if a name or a number came through wrong, record it again.'));
+    // Never let placeholder text pass for a real transcription of real audio,
+    // but say so in its own line rather than inside the paragraph, where it
+    // both reads badly and is easier to skim past.
+    if (t.stub) {
+      const flag = el('p', 'hi-transcript-stub',
+        'Placeholder text — real transcription switches on with the Cloudflare AI binding.');
+      box.append(flag);
+    }
   } else {
     box.classList.add('is-note');
     box.append(el('p', 'hi-transcript-note', t.message || 'Your recording is saved — Shane will listen to it.'));
@@ -931,11 +1005,19 @@ function recorder(section) {
     const again = el('button', 'hi-rec-again', 'Record again');
     again.type = 'button';
     again.addEventListener('click', async () => {
-      await api('/detach', { method: 'POST', body: JSON.stringify({ questionId: RECORDING_FIELD, key: existing.key }) });
-      state.uploads[RECORDING_FIELD] = [];
-      state.transcript = null;
-      releaseBlobUrl();
-      render();
+      again.disabled = true;
+      try {
+        await api('/detach', { method: 'POST', body: JSON.stringify({ questionId: RECORDING_FIELD, key: existing.key }) });
+        state.uploads[RECORDING_FIELD] = [];
+        state.transcript = null;
+        releaseBlobUrl();
+        render();
+      } catch (e) {
+        again.disabled = false;
+        const err = el('p', 'hi-rec-status is-error', e.message);
+        err.setAttribute('role', 'alert');
+        again.after(err);
+      }
     });
     wrap.append(again);
     return wrap;
@@ -989,7 +1071,13 @@ function recorder(section) {
       clearInterval(state.rec.interval);
       stream.getTracks().forEach((t) => t.stop());
       const durationSec = (Date.now() - state.rec.startedAt) / 1000;
+      const abandoned = state.rec.abandoned;
       state.rec.active = false;
+      state.rec.abandoned = false;
+
+      // Navigated away mid-take. The mic is released above; there is nothing
+      // to upload and no screen left to report to.
+      if (abandoned) return;
 
       const blob = new Blob(chunks, { type: mimeType });
 
@@ -1040,7 +1128,12 @@ function recorder(section) {
     // A timeslice means chunks arrive as it goes, so a tab that dies mid-way
     // has not necessarily lost everything the browser had buffered.
     rec.start(1000);
-    state.rec = { active: true, startedAt: Date.now(), recorder: rec, interval: setInterval(tick, 250) };
+    // The stream is held on state so abandonRecording() can release the mic
+    // from outside this closure.
+    state.rec = {
+      active: true, abandoned: false, startedAt: Date.now(),
+      recorder: rec, stream, interval: setInterval(tick, 250),
+    };
     wrap.classList.add('is-recording');
     btn.classList.add('is-recording');
     btn.querySelector('.hi-rec-btn-label').textContent = 'Stop recording';
@@ -1085,10 +1178,29 @@ function pager() {
 }
 
 function go(screen) {
-  flush();
+  // Leaving the page mid-recording must not leave the microphone live. Without
+  // this the recorder keeps running, the tracks are never released, and the
+  // client keeps a recording indicator for up to RECORD_MAX_SECONDS with no
+  // recorder visible anywhere.
+  abandonRecording();
   state.screen = screen;
+  state.lastScreen = screen;
   state.showMissing = false;
+  state.serverMissing = [];
+  // Reserved keys, not questions — session.js allows exactly these two.
+  stage('__screen', screen);
+  flush();
   render();
+}
+
+// Stop and release, without the upload that a deliberate stop triggers.
+function abandonRecording() {
+  if (!state.rec.active) return;
+  state.rec.abandoned = true;
+  state.rec.active = false;
+  clearInterval(state.rec.interval);
+  try { state.rec.recorder?.stop(); } catch { /* already stopped */ }
+  state.rec.stream?.getTracks().forEach((t) => t.stop());
 }
 
 // Repaint only the rail's counts, so typing doesn't rebuild the field you are
@@ -1129,8 +1241,14 @@ async function submit(button) {
     const body = await res.json().catch(() => ({}));
 
     if (res.status === 422) {
+      // Trust the server's list over our own. If the two disagree — a stale
+      // questions.js in a long-open tab, or an autosave that never landed —
+      // recomputing locally finds nothing and the client is left staring at a
+      // button that silently does nothing.
+      state.serverMissing = Array.isArray(body.missing) ? body.missing : [];
       state.showMissing = true;
       render();
+      document.querySelector('.hi-warn')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       return;
     }
     if (!res.ok) throw new Error(body.error || String(res.status));

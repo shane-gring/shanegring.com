@@ -20,7 +20,7 @@
 
 import { SECTIONS, questionById } from '../../../assets/handled/questions.js';
 import { templateById } from '../../../assets/handled/templates.js';
-import { authenticate, writeRecord, json } from '../../lib/handled-store.js';
+import { authenticate, updateRecord, json } from '../../lib/handled-store.js';
 import { signDownload } from '../../lib/handled-uploads.js';
 
 // A generous ceiling that still bounds the object. Nobody types 20k characters
@@ -39,9 +39,6 @@ export async function onRequestGet(context) {
 }
 
 export async function onRequestPut(context) {
-  const auth = await authenticate(context); // refuses once submitted
-  if (auth.response) return auth.response;
-
   let patch;
   try {
     patch = await context.request.json();
@@ -52,10 +49,36 @@ export async function onRequestPut(context) {
     return json({ error: 'Could not read that save.' }, 400);
   }
 
-  const record = auth.record;
+  const out = await updateRecord(context, (record) => applyPatch(record, patch));
+  if (out.response) return out.response;
+
+  return json({ ok: true, updatedAt: out.record.updatedAt, applied: out.value });
+}
+
+// Runs against a freshly read record, and may run more than once if another
+// write lands mid-flight — so it only ever sets fields from `patch` and never
+// derives anything from what it read.
+// Not questions: where the client last was, and which of the three ways to
+// answer they picked. Both exist so a return visit resumes properly rather than
+// dumping someone back at the first screen. Kept to an explicit allowlist so
+// the record cannot accumulate arbitrary client-supplied keys.
+const RESERVED = {
+  __screen: (record, v) => { record.lastScreen = String(v || '').slice(0, 40); },
+  __answer_mode: (record, v) => {
+    record.answerMode = ['record', 'upload', 'type'].includes(v) ? v : null;
+  },
+};
+
+function applyPatch(record, patch) {
   const applied = [];
 
   for (const [id, raw] of Object.entries(patch)) {
+    if (RESERVED[id]) {
+      RESERVED[id](record, raw);
+      applied.push(id);
+      continue;
+    }
+
     const q = questionById(id);
     if (!q) continue; // unknown field: ignore, don't fail the save
 
@@ -80,12 +103,8 @@ export async function onRequestPut(context) {
     applied.push(id);
   }
 
-  if (!applied.length) return json({ ok: true, updatedAt: record.updatedAt, applied: [] });
-
-  record.updatedAt = new Date().toISOString();
-  await writeRecord(context.env, auth.token, record);
-
-  return json({ ok: true, updatedAt: record.updatedAt, applied });
+  if (applied.length) record.updatedAt = new Date().toISOString();
+  return applied;
 }
 
 // Section 3 keeps its answer and its "Not sure" flag together, because the
@@ -125,7 +144,7 @@ async function publicView(env, record) {
   const uploads = {};
   for (const [id, files] of Object.entries(record.uploads || {})) {
     uploads[id] = await Promise.all(
-      files.map(async (f) => ({ ...f, url: await signDownload(env, f.key, { ttlDays: 2 }) }))
+      files.map(async (f) => ({ ...f, url: await signDownload(env, f.key, { ttlDays: 2, name: f.name }) }))
     );
   }
 
@@ -140,6 +159,8 @@ async function publicView(env, record) {
     uploads,
     template: record.template || null,
     transcript: record.transcript || null,
+    lastScreen: record.lastScreen || null,
+    answerMode: record.answerMode || null,
     updatedAt: record.updatedAt,
     submittedAt: record.submittedAt,
     expiresAt: record.expiresAt,

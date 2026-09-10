@@ -75,7 +75,7 @@ if (existsSync(appPath)) {
     const modPath = resolve(ROOT, HANDLED_DIR, mod);
     if (!existsSync(modPath)) continue;
     const hash = shortHash(modPath);
-    const re = new RegExp(`(from\\s+['"]\\./)${mod.replace('.', '\\.')}(?:\\?v=[a-f0-9]+)?(['"])`, 'g');
+    const re = new RegExp(`(from\\s+['"]\\./)${mod.replace(/\./g, '\\.')}(?:\\?v=[a-f0-9]+)?(['"])`, 'g');
     after = after.replace(re, `$1${mod}?v=${hash}$2`);
     console.log(`  ${HANDLED_DIR}/${mod} -> ?v=${hash}`);
   }
