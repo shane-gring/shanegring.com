@@ -39,6 +39,28 @@ if (!secret) {
     'For production, export it in your shell instead.'
   );
 }
+// --reset puts an existing link back to a blank form, keeping the same URL.
+if (args.reset) {
+  const token = args.reset === true ? '' : String(args.reset);
+  const r = await fetch(base + '/api/handled/reset', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'X-Handled-Admin': secret },
+    body: JSON.stringify({ token }),
+  }).catch((e) => fail(`Could not reach ${base} — is the dev server running?\n  ${e.message}`));
+
+  const b = await r.json().catch(() => null);
+  if (!r.ok) fail(`${base} said ${r.status}: ${b?.error || '(no message)'}`);
+
+  console.log('');
+  console.log('  Link reset to a blank form');
+  console.log('  ─────────────────────────────────────────────');
+  console.log('  For       ' + (b.label || '(no label)'));
+  console.log('  Was       ' + b.was);
+  console.log('  The URL is unchanged — anything already sent still works.');
+  console.log('');
+  process.exit(0);
+}
+
 if (!args.label) fail('A --label is required. It is our own note about who this link went to, and the client never sees it.');
 
 const res = await fetch(base + '/api/handled/issue', {

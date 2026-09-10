@@ -260,6 +260,21 @@ The token is stored **hashed**, so it cannot be recovered later — if a client
 loses their link, issue a new one rather than trying to look the old one up.
 Links last 45 days by default (`--days` to change, minimum 30).
 
+### Putting a link back to a blank form
+
+```bash
+HANDLED_ADMIN_SECRET='<the secret>' \
+  node tools/handled-token.mjs --reset '<the token>' --base https://shanegring.com
+```
+
+Same URL, empty form — so a link already sent to someone keeps working. Useful
+for re-running a demo, or for a client who asks to start over.
+
+**This is destructive.** On a submitted record it clears a client's finished
+brief, and there is no undo. It needs the admin secret *and* the raw token, so
+knowing one is not enough. Uploaded files stay in the bucket; only the record is
+reset.
+
 **Token issuance is deliberately manual and knows nothing about Stripe.** A
 client who paid and a friend whose fee was waived get the same link the same
 way. Do not wire this to a payment webhook without deciding that is what you
