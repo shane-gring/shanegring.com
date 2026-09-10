@@ -7066,3 +7066,27 @@ footer .footer-nav ul,
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 .hi-rec-again:hover { color: var(--fg); border-color: var(--fg); }
+
+/* --- Handled intake: listening back --------------------------------------- */
+
+.hi-playback { margin-top: 0.9rem; display: flex; flex-direction: column; gap: 0.6rem; align-items: flex-start; }
+.hi-playback-label { font-size: 0.9rem; color: var(--mid); margin: 0; }
+
+/* Same quiet pill as the page's other standalone secondary actions. */
+.hi-playback-toggle {
+  font: inherit;
+  font-size: 0.88rem;
+  color: var(--mid);
+  background: var(--bg);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  min-height: 44px;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.hi-playback-toggle:hover { color: var(--fg); border-color: var(--fg); }
+
+/* The native control, sized to the column. Building a custom player would buy
+   nothing here and lose the platform's own keyboard and scrubbing behaviour. */
+.hi-audio { width: 100%; max-width: 420px; height: 40px; }

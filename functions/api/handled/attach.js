@@ -14,6 +14,7 @@
 
 import { questionById, RECORDING_FIELD, sectionById } from '../../../assets/handled/questions.js';
 import { authenticate, writeRecord, json } from '../../lib/handled-store.js';
+import { signDownload } from '../../lib/handled-uploads.js';
 import { transcribe, STATUS_COPY } from '../../lib/handled-transcribe.js';
 
 export async function onRequestPost(context) {
@@ -73,7 +74,7 @@ export async function onRequestPost(context) {
 
   return json({
     ok: true,
-    file: entry,
+    file: { ...entry, url: await signDownload(context.env, key, { ttlDays: 2 }) },
     transcript: transcript && {
       status: transcript.status,
       text: transcript.text,

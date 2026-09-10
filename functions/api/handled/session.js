@@ -21,6 +21,7 @@
 import { SECTIONS, questionById } from '../../../assets/handled/questions.js';
 import { templateById } from '../../../assets/handled/templates.js';
 import { authenticate, writeRecord, json } from '../../lib/handled-store.js';
+import { signDownload } from '../../lib/handled-uploads.js';
 
 // A generous ceiling that still bounds the object. Nobody types 20k characters
 // into "Best phone number", but a paste of an existing About page into
@@ -34,7 +35,7 @@ export async function onRequestGet(context) {
   const auth = await authenticate(context, { allowSubmitted: true });
   if (auth.response) return auth.response;
 
-  return json(publicView(auth.record));
+  return json(await publicView(context.env, auth.record));
 }
 
 export async function onRequestPut(context) {
@@ -117,7 +118,17 @@ function clip(v) {
 
 // What the browser is allowed to see. `label` is our own note about who the
 // token was issued to and is never sent to the client.
-function publicView(record) {
+async function publicView(env, record) {
+  // Every uploaded file comes back with a short-lived signed URL so the page can
+  // play a recording back on a return visit. Signed per request rather than
+  // stored, so a link cannot outlive the session it was minted for.
+  const uploads = {};
+  for (const [id, files] of Object.entries(record.uploads || {})) {
+    uploads[id] = await Promise.all(
+      files.map(async (f) => ({ ...f, url: await signDownload(env, f.key, { ttlDays: 2 }) }))
+    );
+  }
+
   return {
     status: record.status,
     // Whether the client has ever saved anything. `updatedAt` cannot answer
@@ -126,7 +137,7 @@ function publicView(record) {
     started: Object.keys(record.answers || {}).length > 0 || Object.keys(record.operations || {}).length > 0,
     answers: record.answers || {},
     operations: record.operations || {},
-    uploads: record.uploads || {},
+    uploads,
     template: record.template || null,
     transcript: record.transcript || null,
     updatedAt: record.updatedAt,

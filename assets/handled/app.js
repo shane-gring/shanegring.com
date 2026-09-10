@@ -37,6 +37,7 @@ const state = {
   screen: 'welcome',          // 'welcome' | <section id> | 'review' | 'done'
   started: false,
   transcript: null,
+  recBlobUrl: null,
   rec: { active: false, startedAt: 0, recorder: null, interval: null },
   save: { phase: 'idle', at: null, pending: 0 },
   showMissing: false,         // only after a blocked submit — never pre-emptively
@@ -771,7 +772,7 @@ function fileRow(q, f, paint) {
     try {
       await api('/detach', { method: 'POST', body: JSON.stringify({ questionId: q.id, key: f.key }) });
       state.uploads[q.id] = (state.uploads[q.id] || []).filter((x) => x.key !== f.key);
-      if (q.id === RECORDING_FIELD) state.transcript = null;
+      if (q.id === RECORDING_FIELD) { state.transcript = null; releaseBlobUrl(); }
       paint(); refreshRail();
     } catch { rm.disabled = false; }
   });
@@ -840,8 +841,65 @@ function audioChooser(section) {
   if (current === 'record') wrap.append(recorder(section));
   else if (current === 'upload') wrap.append(uploadField({ id: RECORDING_FIELD, type: 'file', accept: 'audio' }));
 
+  // Both paths leave the file in the same place, so playback is rendered once
+  // here rather than duplicated inside the recorder and the upload control.
+  const rec = (state.uploads[RECORDING_FIELD] || [])[0];
+  if (current !== 'type' && rec) {
+    const panel = playbackPanel(rec);
+    if (panel) wrap.append(panel);
+  }
   if (current !== 'type' && state.transcript) wrap.append(transcriptPanel());
 
+  return wrap;
+}
+
+/**
+ * Listening back.
+ *
+ * Weighted by whether there is a transcript, because the two are answering the
+ * same question — "did that actually work?" — and the transcript answers it in
+ * five seconds of skimming rather than five minutes of listening.
+ *
+ * With a transcript: a quiet toggle. Present for the person who wants to check
+ * they were not drowned out by the van, but not a step, because inviting
+ * someone to listen to their own voice invites them to cringe and re-record,
+ * and that loop costs five minutes a go on the longest part of the form.
+ *
+ * Without one: promoted, since otherwise the client has no evidence at all
+ * that their recording came out.
+ */
+function playbackPanel(entry) {
+  const src = state.recBlobUrl || entry.url;
+  if (!src) return null;
+
+  const wrap = el('div', 'hi-playback');
+  const player = el('audio', 'hi-audio');
+  player.controls = true;
+  player.preload = 'metadata';
+  player.src = src;
+
+  const hasTranscript = state.transcript?.status === 'ok';
+  if (!hasTranscript) {
+    wrap.append(el('p', 'hi-playback-label', 'Have a listen and check it came out.'));
+    wrap.append(player);
+    return wrap;
+  }
+
+  const toggle = el('button', 'hi-playback-toggle', 'Play it back');
+  toggle.type = 'button';
+  toggle.setAttribute('aria-expanded', 'false');
+  player.hidden = true;
+  toggle.addEventListener('click', () => {
+    const open = player.hidden;
+    player.hidden = !open;
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.textContent = open ? 'Hide the recording' : 'Play it back';
+    // A media element that was display:none when its src was set may have
+    // deferred loading entirely, leaving a dead-looking control on reveal.
+    // load() is a no-op if it already started.
+    if (open && player.readyState === 0) player.load();
+  });
+  wrap.append(toggle, player);
   return wrap;
 }
 
@@ -852,10 +910,10 @@ function transcriptPanel() {
     box.append(el('h3', 'hi-transcript-title', 'What we heard'));
     box.append(el('p', 'hi-transcript-text', t.text));
     box.append(el('p', 'hi-transcript-note',
-      'Shane reads this rather than sitting through the audio. If a name came out wrong, record it again — the recording is what counts.'));
+      'Shane gets this and your recording. Worth a quick skim — if a name or a number came through wrong, record it again.'));
   } else {
     box.classList.add('is-note');
-    box.append(el('p', 'hi-transcript-note', t.message || 'Shane will listen to the recording.'));
+    box.append(el('p', 'hi-transcript-note', t.message || 'Your recording is saved — Shane will listen to it.'));
   }
   return box;
 }
@@ -876,6 +934,7 @@ function recorder(section) {
       await api('/detach', { method: 'POST', body: JSON.stringify({ questionId: RECORDING_FIELD, key: existing.key }) });
       state.uploads[RECORDING_FIELD] = [];
       state.transcript = null;
+      releaseBlobUrl();
       render();
     });
     wrap.append(again);
@@ -963,6 +1022,11 @@ function recorder(section) {
         });
         state.uploads[RECORDING_FIELD] = [out.file];
         state.transcript = out.transcript || null;
+        // Play back from the blob still in memory rather than re-fetching what
+        // we just uploaded — it is instant, and it works before the signed URL
+        // has been anywhere near the network.
+        releaseBlobUrl();
+        state.recBlobUrl = URL.createObjectURL(blob);
         refreshRail();
         render();
       } catch (e) {
@@ -1126,6 +1190,13 @@ function renderFatal(kind) {
 }
 
 // --- tiny helpers ----------------------------------------------------------
+
+// An object URL pins the blob in memory until it is revoked, and a client who
+// re-records a few times would otherwise hold every attempt.
+function releaseBlobUrl() {
+  if (state.recBlobUrl) URL.revokeObjectURL(state.recBlobUrl);
+  state.recBlobUrl = null;
+}
 
 function el(tag, cls, text) {
   const n = document.createElement(tag);

@@ -115,9 +115,9 @@ function toBase64(bytes) {
 // error code, and never an apology — just what happened and what it means for
 // them, which in every case is "nothing, Shane has the audio".
 export const STATUS_COPY = {
-  no_ai_binding: 'Transcription isn’t switched on yet — Shane will listen to the recording.',
+  no_ai_binding: 'Your recording is saved — Shane will listen to it.',
   audio_missing: 'We couldn’t find that recording. Try recording it again.',
-  audio_too_large: 'That recording is too long to transcribe, so Shane will listen to it instead.',
-  empty_transcript: 'We couldn’t make out any speech. Check your microphone and try again.',
-  model_error: 'Transcription didn’t run this time — Shane will listen to the recording.',
+  audio_too_large: 'That’s a long one, so Shane will listen to it rather than read it back.',
+  empty_transcript: 'We couldn’t make out any speech. Check your microphone is on, then try again.',
+  model_error: 'We couldn’t turn this one into text — Shane will listen to your recording.',
 };
