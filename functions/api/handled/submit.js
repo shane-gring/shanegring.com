@@ -20,6 +20,7 @@
 import { allQuestions, requiredIds, questionById } from '../../../assets/handled/questions.js';
 import { authenticate, writeRecord, json } from '../../lib/handled-store.js';
 import { buildSummary, buildNote } from '../../lib/handled-summary.js';
+import { signDownload } from '../../lib/handled-uploads.js';
 import { attioCapture } from '../../lib/attio.js';
 
 export async function onRequestPost(context) {
@@ -63,7 +64,14 @@ function hasAnswer(record, id) {
 }
 
 async function notify(env, record) {
-  const summary = buildSummary(record);
+  // Sign every uploaded file once, here, so the email carries links that keep
+  // working for two months without Shane needing a session or credentials.
+  const links = new Map();
+  for (const files of Object.values(record.uploads || {})) {
+    for (const f of files) links.set(f.key, await signDownload(env, f.key, { ttlDays: 60 }));
+  }
+
+  const summary = buildSummary(record, { links });
   const email = (record.answers?.email || '').trim();
   const business = (record.answers?.business_name || '').trim();
 
@@ -81,6 +89,7 @@ async function notify(env, record) {
           submittedAt: record.submittedAt,
           template: record.template,
           summary,                 // the pre-rendered text Shane reads
+          transcript: record.transcript?.text || '',
           record,                  // the structured original, for the sheet
         }),
       })
@@ -102,7 +111,7 @@ async function notify(env, record) {
         nextActionDays: 0,
         touch: { ifIn: ['New', 'Contacted', 'Replied', 'Nurture'], nextAction: today() },
         noteTitle: `Handled intake — ${business || email}`,
-        noteContent: buildNote(record),
+        noteContent: buildNote(record, { links }),
       })
     );
   }

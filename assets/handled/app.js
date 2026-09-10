@@ -16,9 +16,10 @@
  * indicator that is always telling the truth.
  */
 
-import { SECTIONS, WELCOME, CONFIRMATION, questionById } from './questions.js?v=6621bbb0';
+import { SECTIONS, WELCOME, CONFIRMATION, questionById, RECORDING_FIELD } from './questions.js?v=c1d815f7';
 import { TEMPLATES, PLACEHOLDER_PREVIEW, templateBlurb, templateById } from './templates.js?v=c6787910';
-import { acceptAttr, formatBytes } from './uploads.js?v=77cbd9e5';
+import { acceptAttr, formatBytes, validateUpload, GROUPS, canRecord, pickRecordType,
+         extensionForType, RECORD_BITRATE, RECORD_MAX_SECONDS } from './uploads.js?v=23478d20';
 
 const API = '/api/handled';
 const SAVE_DEBOUNCE_MS = 600;
@@ -35,6 +36,8 @@ const state = {
   updatedAt: null,
   screen: 'welcome',          // 'welcome' | <section id> | 'review' | 'done'
   started: false,
+  transcript: null,
+  rec: { active: false, startedAt: 0, recorder: null, interval: null },
   save: { phase: 'idle', at: null, pending: 0 },
   showMissing: false,         // only after a blocked submit — never pre-emptively
 };
@@ -65,6 +68,7 @@ async function boot() {
       template: data.template || null,
       updatedAt: data.updatedAt || null,
       started: Boolean(data.started),
+      transcript: data.transcript || null,
     });
     // Someone returning to a finished intake gets the read-only look back,
     // not the form again.
@@ -345,52 +349,12 @@ function screenSection(section) {
   wrap.append(el('h1', 'cs-hook', section.title));
   if (section.intro) wrap.append(el('p', 'om-lede', section.intro));
 
-  if (section.video) wrap.append(videoChooser(section));
+  if (section.audio) wrap.append(audioChooser(section));
 
   const fields = el('div', 'hi-fields');
   fields.id = 'hi-fields';
   for (const q of section.questions) fields.append(field({ ...q, sectionId: section.id }));
   wrap.append(fields);
-  return wrap;
-}
-
-// Three ways to answer the same five prompts, presented as equals. The typed
-// path is not a fallback: plenty of people will not put themselves on camera,
-// and their answers are worth exactly as much.
-function videoChooser(section) {
-  const wrap = el('div', 'hi-ways');
-  const modes = [
-    { id: 'record', label: 'Record here', note: 'Prompts on screen, five minutes' },
-    { id: 'upload', label: 'Upload a video', note: 'Use your own camera app' },
-    { id: 'type',   label: 'Type it instead', note: 'Answer in writing' },
-  ];
-  const current = state.answers.__video_mode || 'type';
-
-  const row = el('div', 'hi-ways-row');
-  row.setAttribute('role', 'radiogroup');
-  row.setAttribute('aria-label', 'How would you like to answer?');
-
-  for (const m of modes) {
-    const b = el('button', 'hi-way');
-    b.type = 'button';
-    b.setAttribute('role', 'radio');
-    b.setAttribute('aria-checked', String(m.id === current));
-    if (m.id === current) b.classList.add('is-on');
-    b.append(el('span', 'hi-way-label', m.label));
-    b.append(el('span', 'hi-way-note', m.note));
-
-    if (m.id !== 'type') {
-      b.disabled = true;
-      b.classList.add('is-pending');
-      b.append(el('span', 'hi-way-soon', 'Not wired yet'));
-    } else {
-      b.addEventListener('click', () => { state.answers.__video_mode = m.id; render(); });
-    }
-    row.append(b);
-  }
-  wrap.append(row);
-  wrap.append(el('p', 'hi-ways-note',
-    'Recording and video upload land in the next pass. Typed answers below are live and saving.'));
   return wrap;
 }
 
@@ -541,7 +505,7 @@ function field(q) {
     case 'repeatable-text':  wrap.append(repeatable(q)); break;
     case 'file':
     case 'files':
-    case 'text-or-file':     wrap.append(uploadStub(q)); break;
+    case 'text-or-file':     wrap.append(uploadField(q)); break;
     default:                 wrap.append(inputField(q));
   }
   return wrap;
@@ -670,22 +634,121 @@ function templatePicker(q) {
   return grid;
 }
 
-// Pass 1 placeholder. The real control (presigned PUT straight to R2, per-file
-// progress, remove and re-upload) lands in Pass 2. It says what it is rather
-// than pretending to work.
-function uploadStub(q) {
-  const wrap = el('div', 'hi-upload is-pending');
-  const box = el('div', 'hi-upload-box');
-  box.append(el('span', 'hi-upload-icon', '↑'));
-  box.append(el('span', 'hi-upload-text', q.type === 'files' ? 'Add files' : 'Add a file'));
-  box.append(el('span', 'hi-upload-soon', 'Uploads land in the next pass'));
-  box.setAttribute('aria-disabled', 'true');
-  box.title = 'Accepts ' + acceptAttr(q.accept || 'image').split(',').filter((s) => s.startsWith('.')).join(' ');
-  wrap.append(box);
+// --- uploading -------------------------------------------------------------
+
+/**
+ * Three steps, deliberately separate: ask for somewhere to put it, put it
+ * there, then tell the record it arrived. Splitting the byte transfer from the
+ * record write means a connection lost mid-upload changes nothing — the file
+ * either landed and got filed, or it didn't and there is nothing to undo.
+ *
+ * XHR rather than fetch, because fetch still cannot report upload progress and
+ * a silent progress bar is exactly what makes someone close the tab.
+ */
+async function uploadFile(questionId, file, onProgress) {
+  const local = validateUpload(groupFor(questionId), { name: file.name, size: file.size, type: file.type });
+  if (local) throw new Error(local);
+
+  const target = await api('/upload', {
+    method: 'POST',
+    body: JSON.stringify({ questionId, name: file.name, size: file.size, type: file.type }),
+  });
+
+  await new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open(target.method, target.url, true);
+    if (target.direct) xhr.setRequestHeader('X-Handled-Token', state.token);
+    if (file.type) xhr.setRequestHeader('Content-Type', file.type);
+    xhr.upload.onprogress = (e) => e.lengthComputable && onProgress(e.loaded / e.total);
+    xhr.onload = () => (xhr.status >= 200 && xhr.status < 300 ? resolve() : reject(new Error('upload_failed')));
+    xhr.onerror = () => reject(new Error('upload_failed'));
+    xhr.send(file);
+  });
+
+  onProgress(1);
+  return api('/attach', {
+    method: 'POST',
+    body: JSON.stringify({
+      questionId, key: target.key, name: file.name, size: file.size, type: file.type,
+      durationSec: file.__durationSec,
+    }),
+  });
+}
+
+function groupFor(questionId) {
+  if (questionId === RECORDING_FIELD) return 'audio';
+  return questionById(questionId)?.accept || 'image';
+}
+
+async function api(path, init = {}) {
+  const res = await fetch(API + path, {
+    ...init,
+    headers: { 'Content-Type': 'application/json', 'X-Handled-Token': state.token, ...(init.headers || {}) },
+  });
+  const body = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(body.error || 'That didn’t work. Try again.');
+  return body;
+}
+
+function uploadField(q) {
+  const wrap = el('div', 'hi-upload');
+  const list = el('div', 'hi-files');
+  const multiple = q.type === 'files';
+
+  const paint = () => {
+    list.innerHTML = '';
+    for (const f of state.uploads[q.id] || []) list.append(fileRow(q, f, paint));
+  };
+  paint();
+  wrap.append(list);
+
+  const done = () => (state.uploads[q.id] || []).length;
+  const box = el('label', 'hi-drop');
+  const input = el('input');
+  input.type = 'file';
+  input.accept = acceptAttr(q.accept || 'image');
+  input.multiple = multiple;
+  input.className = 'hi-drop-input';
+
+  const label = el('span', 'hi-drop-text', multiple ? 'Choose files' : 'Choose a file');
+  box.append(input, el('span', 'hi-drop-icon', '↑'), label,
+    el('span', 'hi-drop-hint', `${GROUPS[q.accept || 'image'].label}, up to ${formatBytes(GROUPS[q.accept || 'image'].maxBytes)} each`));
+
+  const err = el('p', 'hi-file-error');
+  err.setAttribute('role', 'alert');
+
+  const take = async (files) => {
+    err.textContent = '';
+    for (const file of files) {
+      if (!multiple && done()) state.uploads[q.id] = [];
+      const row = pendingRow(file);
+      list.append(row.node);
+      try {
+        const out = await uploadFile(q.id, file, row.progress);
+        state.uploads[q.id] = multiple ? [...(state.uploads[q.id] || []), out.file] : [out.file];
+        paint(); refreshRail();
+      } catch (e) {
+        row.node.remove();
+        err.textContent = e.message;
+      }
+    }
+    input.value = '';
+  };
+
+  input.addEventListener('change', () => take([...input.files]));
+
+  // Drag and drop is a desktop nicety; the label/input above is what phones use.
+  box.addEventListener('dragover', (e) => { e.preventDefault(); box.classList.add('is-over'); });
+  box.addEventListener('dragleave', () => box.classList.remove('is-over'));
+  box.addEventListener('drop', (e) => {
+    e.preventDefault(); box.classList.remove('is-over');
+    take([...(e.dataTransfer?.files || [])]);
+  });
+
+  wrap.append(box, err);
 
   if (q.type === 'text-or-file') {
-    const or = el('p', 'hi-upload-or', 'Or paste it here — this part works now:');
-    wrap.append(or);
+    wrap.append(el('p', 'hi-upload-or', 'Or paste it straight in:'));
     const t = el('textarea', 'hi-textarea');
     t.id = 'f-' + q.id;
     t.rows = 4;
@@ -694,6 +757,237 @@ function uploadStub(q) {
     queueMicrotask(() => grow(t));
     wrap.append(t);
   }
+  return wrap;
+}
+
+function fileRow(q, f, paint) {
+  const row = el('div', 'hi-file');
+  row.append(el('span', 'hi-file-name', f.name));
+  row.append(el('span', 'hi-file-meta', formatBytes(f.size) + (f.durationSec ? ` · ${mmss(f.durationSec)}` : '')));
+  const rm = el('button', 'hi-file-rm', 'Remove');
+  rm.type = 'button';
+  rm.addEventListener('click', async () => {
+    rm.disabled = true;
+    try {
+      await api('/detach', { method: 'POST', body: JSON.stringify({ questionId: q.id, key: f.key }) });
+      state.uploads[q.id] = (state.uploads[q.id] || []).filter((x) => x.key !== f.key);
+      if (q.id === RECORDING_FIELD) state.transcript = null;
+      paint(); refreshRail();
+    } catch { rm.disabled = false; }
+  });
+  row.append(rm);
+  return row;
+}
+
+function pendingRow(file) {
+  const node = el('div', 'hi-file is-uploading');
+  node.append(el('span', 'hi-file-name', file.name));
+  const bar = el('span', 'hi-file-bar');
+  const fill = el('span', 'hi-file-fill');
+  bar.append(fill);
+  node.append(bar);
+  const pct = el('span', 'hi-file-meta', '0%');
+  node.append(pct);
+  return {
+    node,
+    progress: (r) => {
+      fill.style.width = Math.round(r * 100) + '%';
+      pct.textContent = Math.round(r * 100) + '%';
+    },
+  };
+}
+
+const mmss = (s) => `${Math.floor(s / 60)}:${String(Math.round(s % 60)).padStart(2, '0')}`;
+
+// --- the three ways to answer ----------------------------------------------
+
+// Presented as equals, because they are. Plenty of people will not record
+// themselves and their typed answers are worth exactly as much. Recording is
+// listed first only because it is the fastest, and it disappears entirely on a
+// browser that cannot do it rather than sitting there broken.
+function audioChooser(section) {
+  const wrap = el('div', 'hi-ways');
+  const recordable = canRecord();
+
+  const modes = [
+    ...(recordable ? [{ id: 'record', label: 'Record it', note: 'Talk for five minutes' }] : []),
+    { id: 'upload', label: 'Upload a recording', note: 'A voice memo works' },
+    { id: 'type', label: 'Type it instead', note: 'Answer in writing' },
+  ];
+
+  const current = state.answers.__answer_mode || (recordable ? 'record' : 'type');
+
+  const row = el('div', 'hi-ways-row');
+  row.setAttribute('role', 'radiogroup');
+  row.setAttribute('aria-label', 'How would you like to answer?');
+  row.style.setProperty('--ways', String(modes.length));
+
+  for (const m of modes) {
+    const b = el('button', 'hi-way');
+    b.type = 'button';
+    b.setAttribute('role', 'radio');
+    b.setAttribute('aria-checked', String(m.id === current));
+    if (m.id === current) b.classList.add('is-on');
+    b.append(el('span', 'hi-way-label', m.label), el('span', 'hi-way-note', m.note));
+    b.addEventListener('click', () => {
+      state.answers.__answer_mode = m.id;
+      render();
+    });
+    row.append(b);
+  }
+  wrap.append(row);
+
+  if (current === 'record') wrap.append(recorder(section));
+  else if (current === 'upload') wrap.append(uploadField({ id: RECORDING_FIELD, type: 'file', accept: 'audio' }));
+
+  if (current !== 'type' && state.transcript) wrap.append(transcriptPanel());
+
+  return wrap;
+}
+
+function transcriptPanel() {
+  const t = state.transcript;
+  const box = el('div', 'hi-transcript');
+  if (t.status === 'ok') {
+    box.append(el('h3', 'hi-transcript-title', 'What we heard'));
+    box.append(el('p', 'hi-transcript-text', t.text));
+    box.append(el('p', 'hi-transcript-note',
+      'Shane reads this rather than sitting through the audio. If a name came out wrong, record it again — the recording is what counts.'));
+  } else {
+    box.classList.add('is-note');
+    box.append(el('p', 'hi-transcript-note', t.message || 'Shane will listen to the recording.'));
+  }
+  return box;
+}
+
+// --- the recorder ----------------------------------------------------------
+
+function recorder(section) {
+  const wrap = el('div', 'hi-rec');
+  const existing = (state.uploads[RECORDING_FIELD] || [])[0];
+
+  if (existing && !state.rec.active) {
+    wrap.append(el('p', 'hi-rec-done', `Recorded — ${mmss(existing.durationSec || 0)}`));
+    // Not .btn-secondary: that one is deliberately borderless because it always
+    // sits next to a primary button. Alone in this card it reads as static text.
+    const again = el('button', 'hi-rec-again', 'Record again');
+    again.type = 'button';
+    again.addEventListener('click', async () => {
+      await api('/detach', { method: 'POST', body: JSON.stringify({ questionId: RECORDING_FIELD, key: existing.key }) });
+      state.uploads[RECORDING_FIELD] = [];
+      state.transcript = null;
+      render();
+    });
+    wrap.append(again);
+    return wrap;
+  }
+
+  const status = el('p', 'hi-rec-status', 'Nothing recorded yet.');
+  const timer = el('div', 'hi-rec-timer', '0:00');
+  const btn = el('button', 'hi-rec-btn');
+  btn.type = 'button';
+  btn.append(el('span', 'hi-rec-dot'), el('span', 'hi-rec-btn-label', 'Start recording'));
+
+  // The prompts stay on screen while recording. Someone talking to their phone
+  // for five minutes needs to see what they are answering; hiding them behind
+  // the recording UI is how you get a client who dries up after question two.
+  const prompts = el('ol', 'hi-rec-prompts');
+  for (const q of section.questions) prompts.append(el('li', 'hi-rec-prompt', q.label));
+
+  wrap.append(status, timer, btn, prompts);
+
+  btn.addEventListener('click', () => (state.rec.active ? stopRecording() : startRecording()));
+
+  function tick() {
+    const secs = (Date.now() - state.rec.startedAt) / 1000;
+    timer.textContent = mmss(secs);
+    if (secs >= RECORD_MAX_SECONDS) stopRecording();
+  }
+
+  async function startRecording() {
+    status.textContent = '';
+    let stream;
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({
+        audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true },
+      });
+    } catch (e) {
+      // Denied, dismissed, or no microphone. Say which, and leave the other two
+      // ways to answer sitting right above.
+      status.textContent = e?.name === 'NotAllowedError'
+        ? 'Your browser blocked the microphone. Allow it in the address bar, or use one of the other two options above.'
+        : 'No microphone found. Upload a recording or type your answers instead.';
+      status.className = 'hi-rec-status is-error';
+      return;
+    }
+
+    const mimeType = pickRecordType();
+    const rec = new MediaRecorder(stream, { mimeType, audioBitsPerSecond: RECORD_BITRATE });
+    const chunks = [];
+    rec.ondataavailable = (e) => e.data.size && chunks.push(e.data);
+
+    rec.onstop = async () => {
+      clearInterval(state.rec.interval);
+      stream.getTracks().forEach((t) => t.stop());
+      const durationSec = (Date.now() - state.rec.startedAt) / 1000;
+      state.rec.active = false;
+
+      const blob = new Blob(chunks, { type: mimeType });
+
+      // A recording can come back empty — a muted or disconnected input, or a
+      // browser that handed over a live-looking track producing no audio. Catch
+      // it here, because falling through to the upload validator tells someone
+      // who just recorded for five minutes to "try picking the file again",
+      // which is upload language and means nothing to them.
+      if (!blob.size) {
+        btn.disabled = false;
+        btn.querySelector('.hi-rec-btn-label').textContent = 'Start recording';
+        timer.textContent = '0:00';
+        status.className = 'hi-rec-status is-error';
+        status.textContent = 'That recording came out silent. Check your microphone is on and not muted, then try again — or use one of the other two options above.';
+        return;
+      }
+
+      const file = new File([blob], `recording.${extensionForType(mimeType)}`, { type: mimeType });
+      file.__durationSec = durationSec;
+
+      btn.disabled = true;
+      btn.querySelector('.hi-rec-btn-label').textContent = 'Saving…';
+      status.className = 'hi-rec-status';
+      status.textContent = 'Uploading and transcribing — this takes a few seconds.';
+      wrap.classList.remove('is-recording');
+
+      try {
+        const out = await uploadFile(RECORDING_FIELD, file, (r) => {
+          status.textContent = r < 1 ? `Uploading… ${Math.round(r * 100)}%` : 'Transcribing…';
+        });
+        state.uploads[RECORDING_FIELD] = [out.file];
+        state.transcript = out.transcript || null;
+        refreshRail();
+        render();
+      } catch (e) {
+        btn.disabled = false;
+        btn.querySelector('.hi-rec-btn-label').textContent = 'Start recording';
+        status.className = 'hi-rec-status is-error';
+        status.textContent = e.message;
+      }
+    };
+
+    // A timeslice means chunks arrive as it goes, so a tab that dies mid-way
+    // has not necessarily lost everything the browser had buffered.
+    rec.start(1000);
+    state.rec = { active: true, startedAt: Date.now(), recorder: rec, interval: setInterval(tick, 250) };
+    wrap.classList.add('is-recording');
+    btn.classList.add('is-recording');
+    btn.querySelector('.hi-rec-btn-label').textContent = 'Stop recording';
+    status.textContent = 'Recording. Work down the list — take your time.';
+  }
+
+  function stopRecording() {
+    if (!state.rec.active) return;
+    try { state.rec.recorder.stop(); } catch { /* already stopped */ }
+  }
+
   return wrap;
 }
 

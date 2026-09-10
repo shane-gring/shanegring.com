@@ -49,12 +49,19 @@ export const SECTIONS = [
     title: 'Tell us about the business',
     intro:
       'Easiest way to do this is to talk. Hit record and work through the ' +
-      'prompts below — about five minutes total, no script needed. Rather ' +
-      'not be on camera? Type your answers instead, that works just as well.',
+      'prompts below — about five minutes total, no script needed. It’s ' +
+      'audio only, so there’s no camera. Prefer to write? Type your answers ' +
+      'instead, that works just as well.',
     // Rendered as on-screen prompts while recording, AND as one textarea each
     // in the typed path. Same ids either way, so switching paths mid-answer
     // never loses what is already written.
-    video: true,
+    //
+    // Audio rather than video: it is the one thing iOS Safari reliably records,
+    // a five-minute file is ~2.4 MB instead of ~300 MB, and asking someone to
+    // talk for five minutes is a phone call while asking them to be on camera
+    // is a performance. The recording is transcribed on upload, so what Shane
+    // reads is text, not a file he has to sit through.
+    audio: true,
     questions: [
       { id: 'who_you_help',   type: 'textarea', label: 'Who do you help, and what do you do for them?' },
       { id: 'how_found',      type: 'textarea', label: 'How do people find you right now?' },
@@ -158,6 +165,12 @@ export const CONFIRMATION = {
 // Helpers — used by both the browser app and the Function. Keep them here so
 // section/question lookups can never disagree between the two.
 // ---------------------------------------------------------------------------
+
+// The id the recording is stored under. Deliberately NOT a question: the
+// prompts above are the questions, and this is one of the three ways to answer
+// them. Keeping it out of SECTIONS means the question list, the review screen
+// and Shane's email stay exactly as briefed.
+export const RECORDING_FIELD = 'recording';
 
 export const allQuestions = () => SECTIONS.flatMap((s) => s.questions.map((q) => ({ ...q, sectionId: s.id })));
 

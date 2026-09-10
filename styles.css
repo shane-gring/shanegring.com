@@ -6816,11 +6816,8 @@ footer .footer-nav ul,
 }
 .hi-way:hover:not(:disabled) { border-color: var(--fg); }
 .hi-way.is-on { border-color: var(--fg); box-shadow: inset 0 0 0 1px var(--fg); }
-.hi-way:disabled { cursor: not-allowed; opacity: 0.55; }
 .hi-way-label { font-size: 0.98rem; color: var(--fg); font-weight: 500; }
 .hi-way-note { font-size: 0.85rem; color: var(--dim); }
-.hi-way-soon { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--dim); margin-top: 0.3rem; }
-.hi-ways-note { font-size: 0.85rem; color: var(--dim); margin: 0.75rem 0 0; }
 
 /* --- template picker ----------------------------------------------------- */
 
@@ -6862,16 +6859,7 @@ footer .footer-nav ul,
 }
 .hi-repeat-add:hover { color: var(--fg); }
 
-.hi-upload { display: flex; flex-direction: column; gap: 0.6rem; }
-.hi-upload-box {
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.2rem;
-  border: 1px dashed var(--border-strong); border-radius: 10px;
-  padding: 1.5rem 1rem; background: var(--bg-soft); text-align: center;
-}
-.hi-upload.is-pending .hi-upload-box { opacity: 0.7; }
-.hi-upload-icon { font-size: 1.1rem; color: var(--dim); }
-.hi-upload-text { font-size: 0.95rem; color: var(--mid); font-weight: 500; }
-.hi-upload-soon { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--dim); }
+.hi-upload { display: flex; flex-direction: column; gap: 0.7rem; }
 .hi-upload-or { font-size: 0.88rem; color: var(--mid); margin: 0; }
 
 /* --- review + send ------------------------------------------------------- */
@@ -6949,6 +6937,132 @@ footer .footer-nav ul,
   .hi-rail-btn.is-complete .hi-rail-count { color: var(--mid); }
   .hi-save { margin: 1rem 0 0; padding: 0 0.7rem; }
 
-  .hi-ways-row { grid-template-columns: repeat(3, 1fr); }
+  /* --ways is set by the app: the record option is absent on a browser that
+     cannot record, and the row should be two-up rather than leave a gap. */
+  .hi-ways-row { grid-template-columns: repeat(var(--ways, 3), 1fr); }
   .hi-send { width: auto; }
 }
+
+/* --- Handled intake: files and recording ---------------------------------- */
+
+.hi-drop {
+  position: relative;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 0.25rem;
+  border: 1px dashed var(--border-strong);
+  border-radius: 10px;
+  padding: 1.4rem 1rem;
+  background: var(--bg-soft);
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.hi-drop:hover, .hi-drop.is-over { border-color: var(--fg); background: var(--bg); }
+/* The input covers the label so the whole box is the tap target on a phone,
+   while remaining a real focusable input for the keyboard. */
+.hi-drop-input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.hi-drop-input:focus-visible + .hi-drop-icon { outline: 2px solid var(--fg); outline-offset: 4px; }
+.hi-drop-icon { font-size: 1.05rem; color: var(--dim); }
+.hi-drop-text { font-size: 0.95rem; color: var(--fg); font-weight: 500; }
+.hi-drop-hint { font-size: 0.8rem; color: var(--dim); }
+
+.hi-files { display: flex; flex-direction: column; gap: 0.4rem; }
+.hi-file {
+  display: flex; align-items: center; gap: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+  background: var(--bg);
+  font-size: 0.9rem;
+}
+.hi-file-name { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--fg); }
+.hi-file-meta { flex: none; font-size: 0.8rem; color: var(--dim); font-variant-numeric: tabular-nums; }
+.hi-file-rm {
+  flex: none; font: inherit; font-size: 0.82rem; color: var(--dim);
+  background: none; border: none; cursor: pointer; padding: 0.35rem 0.2rem;
+  text-decoration: underline; text-underline-offset: 3px; min-height: 36px;
+}
+.hi-file-rm:hover { color: var(--fg); }
+.hi-file-rm:disabled { opacity: 0.5; cursor: default; }
+.hi-file.is-uploading .hi-file-name { color: var(--mid); }
+.hi-file-bar { flex: 1 1 40%; height: 4px; border-radius: 2px; background: var(--border); overflow: hidden; }
+.hi-file-fill { display: block; height: 100%; width: 0; background: var(--fg); transition: width 0.2s ease; }
+.hi-file-error { color: #a4341f; font-size: 0.87rem; margin: 0; }
+
+/* --- recorder ------------------------------------------------------------- */
+
+.hi-rec {
+  margin-top: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  background: var(--bg);
+  display: flex; flex-direction: column; align-items: flex-start; gap: 0.75rem;
+}
+.hi-rec-status { font-size: 0.9rem; color: var(--mid); margin: 0; }
+.hi-rec-status.is-error { color: #a4341f; }
+.hi-rec-done { font-size: 0.95rem; color: var(--fg); font-weight: 500; margin: 0; }
+
+.hi-rec-timer {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--dim);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+.hi-rec.is-recording .hi-rec-timer { color: var(--fg); }
+
+.hi-rec-btn {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font: inherit; font-size: 0.95rem; font-weight: 500;
+  background: var(--fg); color: var(--bg);
+  border: 1px solid var(--fg); border-radius: 999px;
+  padding: 0.7rem 1.4rem; min-height: 48px; cursor: pointer;
+}
+.hi-rec-btn:disabled { opacity: 0.6; cursor: default; }
+.hi-rec-dot { width: 10px; height: 10px; border-radius: 50%; background: #e2554a; flex: none; }
+.hi-rec-btn.is-recording .hi-rec-dot { animation: hi-pulse 1.4s ease-in-out infinite; }
+
+@keyframes hi-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+@media (prefers-reduced-motion: reduce) { .hi-rec-btn.is-recording .hi-rec-dot { animation: none; } }
+
+.hi-rec-prompts {
+  margin: 0.5rem 0 0;
+  padding-left: 1.3rem;
+  display: flex; flex-direction: column; gap: 0.7rem;
+  color: var(--mid); font-size: 0.95rem; line-height: 1.5;
+}
+.hi-rec.is-recording .hi-rec-prompts { color: var(--fg); }
+.hi-rec-prompt::marker { color: var(--dim); font-variant-numeric: tabular-nums; }
+
+/* --- transcript ----------------------------------------------------------- */
+
+.hi-transcript {
+  margin-top: 1rem;
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--fg);
+  border-radius: 0 10px 10px 0;
+  padding: 1rem 1.1rem;
+  background: var(--bg-soft);
+}
+.hi-transcript.is-note { border-left-color: var(--border-strong); }
+.hi-transcript-title { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--dim); margin: 0 0 0.6rem; font-weight: 500; }
+.hi-transcript-text { font-size: 0.95rem; line-height: 1.65; color: var(--fg); margin: 0 0 0.75rem; white-space: pre-wrap; }
+.hi-transcript-note { font-size: 0.85rem; color: var(--dim); margin: 0; line-height: 1.55; }
+
+/* The same bordered pill as "Not sure" — this page's own vocabulary for a
+   standalone secondary action, and a real 48px target on a phone. */
+.hi-rec-again {
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--mid);
+  background: var(--bg);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  padding: 0.55rem 1.1rem;
+  min-height: 44px;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.hi-rec-again:hover { color: var(--fg); border-color: var(--fg); }

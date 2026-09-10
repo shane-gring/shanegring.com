@@ -12,12 +12,12 @@
  * page being built.
  */
 
-import { SECTIONS } from '../../assets/handled/questions.js';
+import { SECTIONS, RECORDING_FIELD } from '../../assets/handled/questions.js';
 import { templateById } from '../../assets/handled/templates.js';
 
 const RULE = '─'.repeat(34);
 
-export function buildSummary(record, { publicBase = 'https://shanegring.com' } = {}) {
+export function buildSummary(record, { publicBase = 'https://shanegring.com', links = new Map() } = {}) {
   const out = [];
   const name = record.answers?.business_name || '(no business name given)';
 
@@ -30,9 +30,13 @@ export function buildSummary(record, { publicBase = 'https://shanegring.com' } =
     out.push(RULE);
     out.push(section.title.toUpperCase());
     out.push('');
+    // A recording answers this whole section at once, so the transcript sits
+    // above the prompts rather than against any one of them.
+    if (section.audio) out.push(...renderRecording(record, publicBase, links));
+
     for (const q of section.questions) {
       out.push(q.label);
-      out.push(renderAnswer(q, record, publicBase));
+      out.push(renderAnswer(q, record, publicBase, links));
       out.push('');
     }
   }
@@ -56,7 +60,7 @@ export function buildSummary(record, { publicBase = 'https://shanegring.com' } =
   return out.join('\n');
 }
 
-function renderAnswer(q, record, publicBase) {
+function renderAnswer(q, record, publicBase, links = new Map()) {
   if (q.type === 'template-picker') {
     const t = templateById(record.template);
     return indent(t ? `${t.name}  (${t.id})` : 'Not chosen');
@@ -70,7 +74,7 @@ function renderAnswer(q, record, publicBase) {
     if (files.length) {
       for (const f of files) {
         lines.push(indent(`${f.name}  (${mb(f.size)})`));
-        lines.push(indent(`  ${publicBase}/api/handled/file?key=${encodeURIComponent(f.key)}`));
+        lines.push(indent('  ' + fileLink(f, publicBase, links)));
       }
     }
     return lines.length ? lines.join('\n') : indent('—');
@@ -83,6 +87,54 @@ function renderAnswer(q, record, publicBase) {
   }
 
   return indent(text(record.answers?.[q.id]));
+}
+
+// The recording block: the transcript is the thing Shane reads, and the audio
+// link is there for the times the transcript is ambiguous or a name is wrong.
+function renderRecording(record, publicBase, links) {
+  const files = record.uploads?.[RECORDING_FIELD] || [];
+  const t = record.transcript;
+  if (!files.length && !t?.text) return [];
+
+  const out = ['RECORDED ANSWER', ''];
+
+  if (t?.status === 'ok' && t.text) {
+    out.push(indent(wrap(t.text)));
+    out.push('');
+    out.push(indent(`(transcribed automatically${t.words ? `, ${t.words} words` : ''} — the audio is below if a name looks wrong)`));
+  } else if (files.length) {
+    out.push(indent('Not transcribed — have a listen.'));
+  }
+
+  for (const f of files) {
+    out.push('');
+    out.push(indent(`${f.name}  (${mb(f.size)}${f.durationSec ? `, ${mmss(f.durationSec)}` : ''})`));
+    out.push(indent('  ' + fileLink(f, publicBase, links)));
+  }
+  out.push('');
+  return out;
+}
+
+const fileLink = (f, publicBase, links) => {
+  const signed = links.get(f.key);
+  return signed ? publicBase + signed : '(link unavailable)';
+};
+
+const mmss = (s) => `${Math.floor(s / 60)}:${String(Math.round(s % 60)).padStart(2, '0')}`;
+
+// Shane reads these on a phone, so a wall of transcript gets wrapped rather
+// than arriving as one unbroken line.
+function wrap(text, width = 68) {
+  const out = [];
+  for (const para of String(text).split(/\n+/)) {
+    let line = '';
+    for (const word of para.split(/\s+/)) {
+      if ((line + ' ' + word).trim().length > width) { out.push(line.trim()); line = word; }
+      else line += ' ' + word;
+    }
+    if (line.trim()) out.push(line.trim());
+  }
+  return out.join('\n');
 }
 
 // A blank answer is meaningful — it says the client chose to skip it — so it
@@ -103,6 +155,6 @@ function formatWhen(iso) {
 
 // Shorter form for the Attio note, which sits beside a person record that
 // already carries the name and email.
-export function buildNote(record) {
-  return buildSummary(record);
+export function buildNote(record, opts) {
+  return buildSummary(record, opts);
 }

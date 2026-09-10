@@ -5,9 +5,15 @@
 // Client-side validation is a courtesy that fails fast; the server check is
 // the one that actually matters, and it reads these same numbers.
 //
-// The video ceiling is high on purpose. A five-minute clip from a recent phone
-// at default settings lands between 200 MB and 400 MB, and a client who hits a
-// limit at the end of a five-minute recording does not try again — they leave.
+// Audio, not video. Five minutes of AAC at 64 kbps mono is about 2.4 MB; the
+// same five minutes of phone video is 200-400 MB. That difference removes a
+// whole class of failure — no progress bar to watch, no mobile data burned, no
+// upload dying in a van on a bad signal at the end of a five-minute recording,
+// which was the worst abandonment case in this flow.
+//
+// 50 MB is far above anything the in-browser recorder produces. It is sized for
+// someone uploading a voice memo their phone recorded at a much higher bitrate,
+// which is the one case that legitimately gets large.
 
 export const GROUPS = {
   image: {
@@ -19,11 +25,18 @@ export const GROUPS = {
     extensions: ['jpg', 'jpeg', 'png', 'webp', 'svg', 'heic', 'heif'],
     mimeTypes: ['image/jpeg', 'image/png', 'image/webp', 'image/svg+xml', 'image/heic', 'image/heif'],
   },
-  video: {
-    label: 'Video',
-    maxBytes: 500 * 1024 * 1024,
-    extensions: ['mp4', 'mov', 'webm', 'm4v'],
-    mimeTypes: ['video/mp4', 'video/quicktime', 'video/webm', 'video/x-m4v'],
+  audio: {
+    label: 'Audio files',
+    maxBytes: 50 * 1024 * 1024,
+    // m4a and mp4 are the same container; iOS hands back audio/mp4 from
+    // MediaRecorder and audio/x-m4a from the Files picker for the same file.
+    extensions: ['m4a', 'mp4', 'mp3', 'wav', 'aac', 'webm', 'ogg', 'oga'],
+    mimeTypes: [
+      'audio/mp4', 'audio/x-m4a', 'audio/aac',
+      'audio/mpeg', 'audio/mp3',
+      'audio/wav', 'audio/x-wav', 'audio/wave',
+      'audio/webm', 'audio/ogg',
+    ],
   },
   document: {
     label: 'Documents',
@@ -74,8 +87,65 @@ export function validateUpload(groupName, { name, size, type }) {
 
   if (!Number.isFinite(size) || size <= 0) return 'That file came through empty. Try picking it again.';
   if (size > g.maxBytes) {
-    return `That file is ${formatBytes(size)} and the limit is ${formatBytes(g.maxBytes)}. ` +
-           `A shorter clip or a smaller export will go through.`;
+    // The way out of this differs by kind, and "try a smaller one" is useless
+    // advice on its own — say the thing that actually works.
+    const remedy = {
+      audio: 'A shorter recording will go through.',
+      image: 'Most phones can export a smaller version.',
+      document: 'A PDF export is usually much smaller.',
+    }[groupName] || 'A smaller file will go through.';
+    return `That file is ${formatBytes(size)} and the limit is ${formatBytes(g.maxBytes)}. ${remedy}`;
   }
   return null;
 }
+
+// ---------------------------------------------------------------------------
+// In-browser recording.
+// ---------------------------------------------------------------------------
+
+// Ordered by how widely the container is understood, not by quality. audio/mp4
+// is first because it is the only one iOS Safari has ever produced, and a file
+// every browser and every transcription service can open matters more here than
+// squeezing the bitrate. Chrome and Firefox accept it too, so in practice one
+// format covers everyone and there is no per-browser branch.
+export const RECORD_TYPES = [
+  'audio/mp4',
+  'audio/mp4;codecs=mp4a.40.2',
+  'audio/webm;codecs=opus',
+  'audio/webm',
+  'audio/ogg;codecs=opus',
+];
+
+// Returns the first type this browser will actually record, or null if it
+// cannot record at all — in which case the UI hides the option rather than
+// showing a control that throws when pressed.
+export function pickRecordType() {
+  if (typeof MediaRecorder === 'undefined') return null;
+  for (const t of RECORD_TYPES) {
+    try {
+      if (MediaRecorder.isTypeSupported(t)) return t;
+    } catch { /* isTypeSupported throws on some older builds */ }
+  }
+  return null;
+}
+
+export function canRecord() {
+  return Boolean(
+    typeof MediaRecorder !== 'undefined' &&
+    navigator.mediaDevices?.getUserMedia &&
+    window.isSecureContext &&
+    pickRecordType()
+  );
+}
+
+export const extensionForType = (type) => {
+  const t = String(type || '').split(';')[0];
+  return { 'audio/mp4': 'm4a', 'audio/webm': 'webm', 'audio/ogg': 'oga', 'audio/mpeg': 'mp3', 'audio/wav': 'wav' }[t] || 'm4a';
+};
+
+// 64 kbps mono is transparent for speech and keeps five minutes near 2.4 MB.
+export const RECORD_BITRATE = 64000;
+
+// A hard stop so a recorder left running in a pocket cannot produce a file that
+// costs real money to transcribe or fails to upload. The UI warns before it.
+export const RECORD_MAX_SECONDS = 15 * 60;

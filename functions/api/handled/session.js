@@ -128,6 +128,7 @@ function publicView(record) {
     operations: record.operations || {},
     uploads: record.uploads || {},
     template: record.template || null,
+    transcript: record.transcript || null,
     updatedAt: record.updatedAt,
     submittedAt: record.submittedAt,
     expiresAt: record.expiresAt,
