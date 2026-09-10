@@ -43,14 +43,16 @@ the freelancer, without the weekend.
 
 - **Analytics and search, set up right.** Google Analytics and Search Console, configured and quietly working, so your site is measured instead of guessed at.
 
-- **Code you own.** It's built on clean, standard code — yours to keep. Stay because it's handled, not because you're trapped.
+- **Everything in your name, from day one.** The code, the design files, the Google Analytics and Search Console accounts, and the domain — which I buy for you, up to $15 — all yours, not borrowed from me. Ask and I hand the lot over. Stay because it's handled, not because you're trapped.
 
 ## How it works
 
 ### 1. We spin you up
 
 Quick conversation about who you are and what the site needs to
-do. I handle the domain, the design, the words, the images.
+do. I handle the design, the words, the images, and the domain
+— I'll buy it for you, up to $15, and register it in your
+name, not mine.
 
 ### 2. You go live in days
 
@@ -123,9 +125,10 @@ Green home certification. greenstarhomes.org
 
 ## $300 to build. $200/month to keep it handled.
 
-Six-month minimum, because good management is a relationship, not a
-transaction — and cancel anytime after. When you go, you take your
-site with you: I hand over the repo, no hostage situation.
+**Month to month. Cancel any time.** No minimum, no notice
+period, no exit fee, and nothing to talk me out of — one email
+ends it. If I'm worth keeping, that should show up in the work, not in
+a contract you can't get out of.
 
 That's it. No plan tiers to decode, no upsells buried in a dashboard, no
 surprise renewal. Want more than the base? The upgrades below are the
@@ -264,14 +267,19 @@ smaller and starts earlier: it includes building the site in the first
 place, then keeps one page sharp for $200 a month. If you already have
 a site worth tending, the Autopilot is the better fit.
 
-**Why is there a six-month minimum?** Because good management is a relationship, not a transaction. A week of
-watching a site tells you very little — six months of it is where
-the improving actually shows up. After that, cancel any time, and you
-take the site with you.
+**Why make it this easy to cancel?** Because a site you can't leave is worth less
+than one you can. Lock-ins exist to hold on to clients whose work
+stopped being worth paying for — I'd rather find that out and
+fix it. Everything is in your name from the start, so leaving is a
+transfer, not a negotiation.
 
-**What if I want to leave?** After the six months, cancel
-whenever. You keep the site — I hand you the repo and you can take
-it anywhere. No lock-in, no drama.
+**What if I want to leave?** Whenever you want. No minimum, no notice
+period, no exit fee — send one email and it stops at the end of
+that month. You keep everything, because it was always yours: the
+code, the design files, the Google Analytics and Search Console
+accounts, and the domain, which is registered in your name from day
+one. Anything I'm administering, I transfer wherever you want it, at
+no charge, and I don't make you ask twice.
 
 **Who is this not for?** If you love tinkering with your
 own site, or you've got more time than money, Squarespace is genuinely
@@ -284,6 +292,8 @@ Stop paying for tools you have to operate yourself. Stop hiring people who
 vanish. Get a site that's built well and stays that way.
 
 **Handled. $300 to build, $200/month** to keep it running.
+Month to month, cancel any time, and everything is in your name from
+day one.
 
 [Claim a founding spot →](https://checkout.shanegring.com/b/5kQ6oG0z98g86bsdeHfbq03)
 **Checkout is open.** $300 build today, $200/month after — founding spots included.
