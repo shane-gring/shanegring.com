@@ -14,6 +14,35 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="referrer" content="same-origin">
 
+<!-- Social preview, so a link pasted into Slack or a message says what it is
+     rather than showing a bare URL.
+
+     Safe to unfurl despite this being a private, token-gated page: the token
+     lives in the URL fragment, which is never sent to a server, so an unfurl
+     bot fetching this URL gets the empty app shell and nothing client-specific.
+     The card is identical for every client, which is exactly what we want if
+     one of them ever pastes their own link somewhere.
+
+     noindex above and unfurling here are not in conflict — noindex keeps the
+     page out of search results; it does not stop a link preview, and robots.txt
+     allows all agents. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Your Handled intake">
+<meta property="og:description" content="Everything Shane needs to build your page. About fifteen minutes, and it saves as you go — leave and come back whenever.">
+<meta property="og:url" content="https://shanegring.com/handled-intake">
+<meta property="og:site_name" content="Shane Gring">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://shanegring.com/og-social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Shane Gring">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Your Handled intake">
+<meta name="twitter:description" content="Everything Shane needs to build your page. About fifteen minutes, and it saves as you go.">
+<meta name="twitter:image" content="https://shanegring.com/og-social.png">
+<meta name="twitter:image:alt" content="Shane Gring">
+
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="alternate icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
