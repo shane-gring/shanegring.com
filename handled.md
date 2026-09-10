@@ -164,7 +164,7 @@ say what it goes toward.
 A signup form on your site and a clean place to send from.
 Your list is yours, same as your code.
 
-**Pricing at launch**
+**$49 one-time**
 
 ### A lean CMS
 
@@ -199,8 +199,8 @@ it. The CMS is what lets you skip the ask.
 
 **The hour blocks and the lean CMS are live in checkout**
 — the links are right on the cards. Extra pages are $99 each and
-the newsletter still prices at launch: mention either when you get in
-line and I'll fold it into your build.
+the newsletter is $49: mention either when you get in line and I'll
+fold it into your build.
 
 ## Founding cohort — first 10 only
 
@@ -230,6 +230,44 @@ emailing me.
 every month, not grinding out code by hand. The build is quick by
 design. The *handling* is where a person shows up, and that's
 what you're paying for.
+
+**What do you need from me to get started?** A conversation, and whatever you already have. I handle the domain, the
+design, the words and the images — that's the point of it. If you
+have a logo, photos or copy you like, send them and I'll use them. If
+you don't, that's not a task I hand back to you.
+
+**How long until it's live?** Days, not weeks. We talk, I build, you review, we tighten, it ships. The
+build is quick by design — the *handling* is the part that
+runs for as long as you want it to.
+
+**What counts as a change I can just email you?** A headline, a photo, a rewritten line, a new price, a link that needs
+fixing. Send it and it gets done — no ticket, no portal, no
+“please allow 5–7 business days.” Bigger jobs are the
+exception: a run of posts or listings isn't email-sized work, so it
+comes out of a block of hours, or you add the lean CMS and publish
+those yourself.
+
+**What actually happens in the weekly check?** I check how the site is performing, catch bugs before you run into them,
+and send you a short read on how it's doing and what I'd improve.
+Google Analytics and Search Console are set up and quietly working
+underneath that, so your site is measured instead of guessed at.
+
+**What if I need more than one page later?** You add one. Extra pages are **$99 each**, built to the same
+standard and folded into the same weekly watch. A newsletter wired in
+is $49, a lean CMS is $200 one-time, and blocks of hours are $300 for
+two or $500 for five. None of it is required, and none of it is
+bundled in ahead of time. The upgrades are all here.
+
+**How is this different from the Autopilot?** The [Autopilot](https://shanegring.com/autopilot) is $899 a month and runs on a site
+you already have, as part of a wider operating engagement. Handled is
+smaller and starts earlier: it includes building the site in the first
+place, then keeps one page sharp for $200 a month. If you already have
+a site worth tending, the Autopilot is the better fit.
+
+**Why is there a six-month minimum?** Because good management is a relationship, not a transaction. A week of
+watching a site tells you very little — six months of it is where
+the improving actually shows up. After that, cancel any time, and you
+take the site with you.
 
 **What if I want to leave?** After the six months, cancel
 whenever. You keep the site — I hand you the repo and you can take
