@@ -6621,3 +6621,334 @@ footer .footer-nav ul,
   margin-bottom: 0.8rem;
   background: var(--bg-soft);
 }
+
+/* ===========================================================================
+   HANDLED INTAKE  (.hi-*)
+   ---------------------------------------------------------------------------
+   Only used by /handled-intake, a noindex page reached with a token. Built
+   entirely from the tokens above — no new colours, no new type scale — because
+   the client should feel like they are still on shanegring.com after paying,
+   not handed off to a form vendor.
+
+   One idea gets any emphasis: the rail. It answers "is this saved, and how
+   much is left?" continuously, because the failure mode this whole page is
+   designed against is a paying client closing the tab. Everything else is the
+   existing .contact-field vocabulary with a wider label.
+   =========================================================================== */
+
+.hi-body { background: var(--bg-soft); }
+.hi-boot { color: var(--dim); padding: 4rem 0; }
+
+.hi-shell { padding: 2.5rem 0 5rem; }
+
+.hi-grid {
+  display: grid;
+  /* minmax(0, 1fr), not 1fr: a grid track's default min-width is auto, which
+     lets the horizontally-scrolling rail below stretch the track instead of
+     scrolling inside it — and take the whole page sideways with it on a
+     phone. */
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.hi-col {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.75rem 1.25rem 1.5rem;
+  min-width: 0;
+}
+
+/* --- the rail ------------------------------------------------------------ */
+
+.hi-rail {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--bg-soft);
+  padding: 0.5rem 0 0.75rem;
+  margin: 0 -1rem;
+  min-width: 0;
+}
+
+.hi-rail-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 1rem;
+  display: flex;
+  gap: 0.4rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.hi-rail-list::-webkit-scrollbar { display: none; }
+
+.hi-rail-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.5rem 0.85rem;
+  min-height: 44px;
+  font: inherit;
+  font-size: 0.85rem;
+  color: var(--mid);
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.hi-rail-btn:hover { border-color: var(--border-strong); color: var(--fg); }
+.hi-rail-btn.is-current { border-color: var(--fg); color: var(--fg); font-weight: 500; }
+.hi-rail-count { display: none; }
+
+.hi-ring { width: 18px; height: 18px; flex: none; overflow: visible; }
+.hi-ring-track { fill: none; stroke: var(--border-strong); stroke-width: 2; }
+.hi-ring-arc {
+  fill: none;
+  stroke: var(--fg);
+  stroke-width: 2;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: 10px 10px;
+  transition: stroke-dasharray 0.3s ease;
+}
+.hi-ring-tick { fill: none; stroke: var(--fg); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+.hi-save {
+  margin: 0.6rem 1rem 0;
+  font-size: 0.8rem;
+  color: var(--dim);
+  min-height: 1.2em;
+}
+.hi-save.is-error { color: #a4341f; }
+
+/* --- screens ------------------------------------------------------------- */
+
+.hi-screen .cs-hook { font-size: clamp(1.5rem, 3.4vw, 2.1rem); margin-bottom: 1rem; }
+.hi-screen .om-lede { font-size: 1.02rem; margin-bottom: 1.75rem; }
+
+.hi-handy {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  margin-bottom: 1.5rem;
+  background: var(--bg-soft);
+}
+.hi-handy-title { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--dim); margin: 0 0 0.6rem; font-weight: 500; }
+.hi-handy-list { margin: 0; padding-left: 1.1rem; color: var(--mid); line-height: 1.75; font-size: 0.95rem; }
+
+.hi-reassure { font-size: 0.92rem; color: var(--mid); line-height: 1.65; border-left: 2px solid var(--border-strong); padding-left: 0.9rem; margin: 0; }
+
+/* --- fields -------------------------------------------------------------- */
+
+.hi-fields { display: flex; flex-direction: column; gap: 1.75rem; margin-top: 0.5rem; }
+.hi-field { display: flex; flex-direction: column; gap: 0.5rem; scroll-margin-top: 5rem; }
+
+.hi-label { display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap; cursor: pointer; }
+.hi-label-text { font-size: 0.98rem; color: var(--fg); line-height: 1.45; font-weight: 500; }
+.hi-req {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--dim);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  padding: 0.1rem 0.45rem;
+}
+.hi-help { font-size: 0.87rem; color: var(--dim); margin: -0.2rem 0 0; }
+
+.hi-input, .hi-textarea {
+  background: var(--bg);
+  border: 1px solid var(--border-strong);
+  color: var(--fg);
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.8rem 0.85rem;
+  border-radius: 8px;
+  width: 100%;
+  min-height: 48px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.hi-textarea { line-height: 1.6; resize: none; overflow-y: auto; }
+.hi-input:focus, .hi-textarea:focus { border-color: var(--fg); box-shadow: 0 0 0 3px rgba(0,0,0,0.06); }
+.hi-textarea:disabled { background: var(--bg-soft); color: var(--dim); }
+
+.hi-field.is-missing .hi-input,
+.hi-field.is-missing .hi-textarea { border-color: #a4341f; }
+
+.hi-textwrap { display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-start; }
+
+.hi-notsure {
+  font: inherit;
+  font-size: 0.82rem;
+  color: var(--dim);
+  background: var(--bg);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  padding: 0.4rem 0.8rem;
+  min-height: 36px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.hi-notsure:hover { color: var(--fg); border-color: var(--fg); }
+.hi-notsure.is-on { background: var(--fg); border-color: var(--fg); color: var(--bg); }
+
+/* --- three ways to answer ------------------------------------------------ */
+
+.hi-ways { margin-bottom: 2rem; }
+.hi-ways-row { display: grid; grid-template-columns: 1fr; gap: 0.6rem; }
+.hi-way {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  text-align: left;
+  font: inherit;
+  background: var(--bg);
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  min-height: 60px;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+.hi-way:hover:not(:disabled) { border-color: var(--fg); }
+.hi-way.is-on { border-color: var(--fg); box-shadow: inset 0 0 0 1px var(--fg); }
+.hi-way:disabled { cursor: not-allowed; opacity: 0.55; }
+.hi-way-label { font-size: 0.98rem; color: var(--fg); font-weight: 500; }
+.hi-way-note { font-size: 0.85rem; color: var(--dim); }
+.hi-way-soon { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--dim); margin-top: 0.3rem; }
+.hi-ways-note { font-size: 0.85rem; color: var(--dim); margin: 0.75rem 0 0; }
+
+/* --- template picker ----------------------------------------------------- */
+
+.hi-templates { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.75rem; }
+.hi-template {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  text-align: left;
+  font: inherit;
+  background: var(--bg);
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  padding: 0.6rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.hi-template:hover { border-color: var(--fg); }
+.hi-template.is-on { border-color: var(--fg); box-shadow: inset 0 0 0 1px var(--fg); }
+.hi-template-img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; border: 1px solid var(--border); background: var(--bg-soft); display: block; }
+.hi-template-name { font-size: 0.9rem; color: var(--fg); font-weight: 500; }
+.hi-template-desc { font-size: 0.82rem; color: var(--dim); line-height: 1.45; }
+
+/* --- repeatable + uploads ------------------------------------------------ */
+
+.hi-repeat { display: flex; flex-direction: column; gap: 0.5rem; }
+.hi-repeat-row { display: flex; gap: 0.5rem; align-items: center; }
+.hi-repeat-rm {
+  flex: none; width: 44px; height: 44px;
+  font: inherit; font-size: 1.2rem; line-height: 1;
+  color: var(--dim); background: var(--bg);
+  border: 1px solid var(--border-strong); border-radius: 8px; cursor: pointer;
+}
+.hi-repeat-rm:hover { color: var(--fg); border-color: var(--fg); }
+.hi-repeat-add {
+  align-self: flex-start; font: inherit; font-size: 0.88rem;
+  color: var(--mid); background: none; border: none; padding: 0.4rem 0;
+  cursor: pointer; text-decoration: underline; text-underline-offset: 3px;
+}
+.hi-repeat-add:hover { color: var(--fg); }
+
+.hi-upload { display: flex; flex-direction: column; gap: 0.6rem; }
+.hi-upload-box {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.2rem;
+  border: 1px dashed var(--border-strong); border-radius: 10px;
+  padding: 1.5rem 1rem; background: var(--bg-soft); text-align: center;
+}
+.hi-upload.is-pending .hi-upload-box { opacity: 0.7; }
+.hi-upload-icon { font-size: 1.1rem; color: var(--dim); }
+.hi-upload-text { font-size: 0.95rem; color: var(--mid); font-weight: 500; }
+.hi-upload-soon { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--dim); }
+.hi-upload-or { font-size: 0.88rem; color: var(--mid); margin: 0; }
+
+/* --- review + send ------------------------------------------------------- */
+
+.hi-review-block { border-top: 1px solid var(--border); padding-top: 1.25rem; margin-top: 1.5rem; }
+.hi-review-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+.hi-review-title { font-size: 1.05rem; font-weight: 600; color: var(--fg); margin: 0 0 0.75rem; letter-spacing: -0.01em; }
+.hi-review-edit {
+  font: inherit; font-size: 0.85rem; color: var(--mid); background: none; border: none;
+  cursor: pointer; text-decoration: underline; text-underline-offset: 3px; padding: 0.25rem;
+}
+.hi-review-edit:hover { color: var(--fg); }
+.hi-review-list { margin: 0; }
+.hi-review-q { font-size: 0.85rem; color: var(--dim); margin-top: 0.9rem; line-height: 1.45; }
+.hi-review-a { margin: 0.2rem 0 0; font-size: 0.98rem; color: var(--fg); line-height: 1.6; white-space: pre-wrap; }
+.hi-review-a.is-empty { color: var(--dim); font-style: italic; white-space: normal; }
+.hi-review-a.is-notsure { color: var(--mid); }
+.hi-review-ul { margin: 0; padding-left: 1.1rem; }
+.hi-review-file { margin: 0.15rem 0; font-size: 0.9rem; color: var(--mid); }
+.hi-review-text { margin: 0 0 0.4rem; }
+
+.hi-warn { border: 1px solid #d9a79b; background: #fdf6f4; border-radius: 10px; padding: 0.9rem 1rem; margin-bottom: 1.5rem; }
+.hi-warn strong { display: block; margin-bottom: 0.4rem; color: #7a2718; font-size: 0.95rem; }
+.hi-warn-list { margin: 0; padding-left: 1.1rem; }
+.hi-warn-link { font: inherit; font-size: 0.9rem; color: #7a2718; background: none; border: none; padding: 0.2rem 0; cursor: pointer; text-align: left; text-decoration: underline; text-underline-offset: 3px; }
+
+.hi-send { margin-top: 2rem; width: 100%; justify-content: center; }
+.hi-send-error { color: #a4341f; font-size: 0.9rem; margin: 0.75rem 0 0; }
+
+.hi-sent { margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1rem; }
+.hi-sent summary { cursor: pointer; font-size: 0.92rem; color: var(--mid); padding: 0.4rem 0; }
+.hi-sent summary:hover { color: var(--fg); }
+
+/* --- pager --------------------------------------------------------------- */
+
+.hi-pager {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border);
+}
+.hi-pager .btn-primary, .hi-pager .btn-secondary { min-height: 48px; }
+
+/* --- focus + motion ------------------------------------------------------ */
+
+.hi-app :focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hi-ring-arc, .hi-template, .hi-way, .hi-rail-btn { transition: none; }
+}
+
+/* --- from tablet up: the rail becomes a column ---------------------------- */
+
+@media (min-width: 860px) {
+  .hi-grid { grid-template-columns: 232px minmax(0, 1fr); gap: 2.5rem; }
+  .hi-col { padding: 2.25rem 2.25rem 1.75rem; }
+
+  .hi-rail { top: 2.5rem; margin: 0; padding: 0; background: none; }
+  .hi-rail-list { flex-direction: column; gap: 0.15rem; padding: 0; overflow: visible; }
+  .hi-rail-btn {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    border-color: transparent;
+    background: none;
+    border-radius: 8px;
+    padding: 0.55rem 0.7rem;
+    white-space: normal;
+  }
+  .hi-rail-btn:hover { background: var(--bg); border-color: var(--border); }
+  .hi-rail-btn.is-current { background: var(--bg); border-color: var(--border-strong); }
+  .hi-rail-count { display: block; width: 100%; padding-left: 1.75rem; font-size: 0.75rem; color: var(--dim); }
+  .hi-rail-btn.is-complete .hi-rail-count { color: var(--mid); }
+  .hi-save { margin: 1rem 0 0; padding: 0 0.7rem; }
+
+  .hi-ways-row { grid-template-columns: repeat(3, 1fr); }
+  .hi-send { width: auto; }
+}
