@@ -53,7 +53,7 @@ Your website rebuilt as an operating surface
 An operator in the seat a few days a month
 
 [Handled](https://shanegring.com/handled)
-Your site built and kept running, $299 then $199 a month
+Your site built and kept running, $300 then $200 a month
 
 [Fractional COO rates](https://shanegring.com/fractional-coo-rates)
 What the role costs, and how the pricing compares

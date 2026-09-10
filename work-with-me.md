@@ -61,7 +61,7 @@ product at a different price. It is called Handled.
 
 I build the site and I keep it running. Changes go by email. You own
 the code and you can take it with you.
-**$299 to build, $199 a month to keep it handled.**
+**$300 to build, $200 a month to keep it handled.**
 
 [See how Handled works →](https://shanegring.com/handled)
 
