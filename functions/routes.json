@@ -1,8 +1,6 @@
 {
   "pages": {
     "/": "/index.md",
-    "/2-handled": "/2-handled.md",
-    "/2-handled.html": "/2-handled.md",
     "/404": "/404.md",
     "/404.html": "/404.md",
     "/about": "/about.md",
@@ -130,8 +128,6 @@
   "assets": [
     "/.gitignore",
     "/.worktrees/ga4-lead-completions/",
-    "/2-handled.md",
-    "/3-handled.md",
     "/404.md",
     "/SCAN-EMAIL-SETUP.md",
     "/SCAN-NURTURE-SEQUENCE.md",
@@ -363,6 +359,9 @@
     "/work/teambuildr.md"
   ],
   "redirects": [
+    "/2-handled",
+    "/2-handled.md",
+    "/3-handled.md",
     "/ai-operations",
     "/do-it-yourself",
     "/done-for-you",
