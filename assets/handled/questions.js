@@ -135,9 +135,9 @@ export const SECTIONS = [
 export const WELCOME = {
   title: 'Let’s build your site.',
   lede:
-    'This is everything I need from you. It takes about fifteen minutes, ' +
-    'and the longest part is a five-minute video you can skip and type ' +
-    'instead if you’d rather.',
+    'This is everything I need from you. It takes about fifteen minutes. ' +
+    'The longest part is recording yourself for five minutes — audio only, ' +
+    'no camera — and you can type it instead if you’d rather.',
   handy: [
     'Your logo, if you have one',
     'A few photos of your work, your space, or your team',
