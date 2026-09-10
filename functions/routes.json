@@ -127,7 +127,6 @@
   },
   "assets": [
     "/.gitignore",
-    "/.worktrees/ga4-lead-completions/",
     "/404.md",
     "/SCAN-EMAIL-SETUP.md",
     "/SCAN-NURTURE-SEQUENCE.md",

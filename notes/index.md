@@ -45,7 +45,7 @@ It's a lot of work, honestly. But it's all worth it. Taking a beat to actually c
 
 Sky's eye and creativity are just a few more things that make her special. And I'm grateful I get to watch, help, and enjoy these little time-lapse photos of all my girls.
 
-1 reaction[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503814567140007936)
+12 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503814567140007936)
 
 Personal Story
 
