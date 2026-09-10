@@ -52,5 +52,6 @@
 # content pointed at the wrong version. Removed 2026-09-10; these 301s
 # catch anything that indexed or linked them in the meantime.
 /2-handled            /handled                301
+/2-handled.html       /handled                301
 /2-handled.md         /handled                301
 /3-handled.md         /handled                301
