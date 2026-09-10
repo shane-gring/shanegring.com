@@ -37,7 +37,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="stylesheet" href="/styles.css?v=5e3711e7">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"Service","@id":"https://shanegring.com/handled#service","name":"Handled","serviceType":"Website build and ongoing management","provider":{"@id":"https://shanegring.com/#person"},"areaServed":{"@type":"Country","name":"United States"},"audience":{"@type":"BusinessAudience","name":"Founders and independent professionals"},"description":"A clean, single-page website built to the client's specs, then watched, reported on, and improved every week after. Changes are made by email, with no dashboard, tickets, or portal. Includes Google Analytics and Search Console set up, and the client owns the code. $300 to build and $200 per month to keep it handled, with a six-month minimum.","offers":[{"@type":"Offer","name":"Site build","price":"300","priceCurrency":"USD","url":"https://shanegring.com/handled"},{"@type":"Offer","name":"Monthly handling","price":"200","priceCurrency":"USD","url":"https://shanegring.com/handled","priceSpecification":{"@type":"UnitPriceSpecification","price":"200","priceCurrency":"USD","billingDuration":1,"billingIncrement":1,"unitText":"MONTH"}},{"@type":"Offer","name":"Lean CMS (optional upgrade)","description":"Sanity CMS added to the site and configured, one-time","price":"200","priceCurrency":"USD","url":"https://shanegring.com/handled#upgrades"},{"@type":"Offer","name":"Block of hours \u2014 2 hours (optional upgrade)","price":"300","priceCurrency":"USD","url":"https://shanegring.com/handled#upgrades"},{"@type":"Offer","name":"Block of hours \u2014 5 hours (optional upgrade)","price":"500","priceCurrency":"USD","url":"https://shanegring.com/handled#upgrades"}]},
+{"@type":"Service","@id":"https://shanegring.com/handled#service","name":"Handled","serviceType":"Website build and ongoing management","provider":{"@id":"https://shanegring.com/#person"},"areaServed":{"@type":"Country","name":"United States"},"audience":{"@type":"BusinessAudience","name":"Founders and independent professionals"},"description":"A clean, single-page website built to the client's specs, then watched, reported on, and improved every week after. Changes are made by email, with no dashboard, tickets, or portal. Includes Google Analytics and Search Console set up, and the client owns the code. $300 to build and $200 per month to keep it handled, with a six-month minimum.","offers":[{"@type":"Offer","name":"Site build","price":"300","priceCurrency":"USD","url":"https://shanegring.com/handled"},{"@type":"Offer","name":"Monthly handling","price":"200","priceCurrency":"USD","url":"https://shanegring.com/handled","priceSpecification":{"@type":"UnitPriceSpecification","price":"200","priceCurrency":"USD","billingDuration":1,"billingIncrement":1,"unitText":"MONTH"}},{"@type":"Offer","name":"Lean CMS (optional upgrade)","description":"Sanity CMS added to the site and configured, one-time","price":"200","priceCurrency":"USD","url":"https://shanegring.com/handled#upgrades"},{"@type":"Offer","name":"Block of hours \u2014 2 hours (optional upgrade)","price":"300","priceCurrency":"USD","url":"https://shanegring.com/handled#upgrades"},{"@type":"Offer","name":"Block of hours \u2014 5 hours (optional upgrade)","price":"500","priceCurrency":"USD","url":"https://shanegring.com/handled#upgrades"},{"@type":"Offer","name":"Another page (optional upgrade)","description":"An additional page built to the same standard and folded into the same weekly watch, per page","price":"99","priceCurrency":"USD","url":"https://shanegring.com/handled#upgrades"}]},
 {"@type":"FAQPage","@id":"https://shanegring.com/handled#faq","mainEntity":[
 {"@type":"Question","name":"Is this really just for a one-page site?","acceptedAnswer":{"@type":"Answer","text":"Yes, and on purpose. Most people don't need more; they need one page that's sharp, credible, and actually maintained. Want more later? We scale the budget and do more. Start simple, grow when there's a reason to."}},
 {"@type":"Question","name":"Who's actually behind this?","acceptedAnswer":{"@type":"Answer","text":"Me. Shane Gring, a fractional operator who's spent 15 years running websites, analytics, and digital operations for founders and companies. This is the same machinery I run for clients, pointed at your personal site. When you email, you're emailing me."}},
@@ -65,8 +65,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
        completion, and the monthly link returns to /handled?checkout=success
        (the small script at the bottom of this page turns that param into a
        confirmation line). Upgrade links: 2-hour and 5-hour blocks and the
-       lean CMS ($200 one-time, Sanity add + configure). "Another page" and "A newsletter, wired in" stay
-       unpriced until Shane sets numbers (note 3).
+       lean CMS ($200 one-time, Sanity add + configure). "Another page" is
+       priced ($99/page, 2026-09-10) but has NO payment link yet -- its card
+       shows the price with no button, and the closing paragraph tells buyers
+       to mention it when they get in line. It needs a Stripe link. "A
+       newsletter, wired in" stays unpriced (note 3).
     1b. THE 4TH CARD - the "Keep It Handled" retainer ($750 month 1, $600
        month 2, then $400/mo) is still in Doc's PR and is NOT wired here.
        When it lands it needs its own links: Stripe has no declining-price
@@ -84,10 +87,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
        wiring was wrong, and its Stripe price and payment link were
        deactivated, not deleted) and the hour blocks ($300 for 2h, $500
        for 5h). Those are on the cards and in the
-       schema. "Another page" and "A newsletter, wired in" still carry the
-       "Pricing at launch" marker — do NOT invent numbers for them; swap in
-       Shane's when he supplies them and add the matching schema Offers then.
-       Update handled.md in the same pass.
+       schema. "Another page" was priced by Shane on 2026-09-10 at $99 per
+       page and is now on the card and in the schema. Only "A newsletter,
+       wired in" still carries the "Pricing at launch" marker — do NOT invent
+       a number for it; swap in Shane's when he supplies it and add the
+       matching schema Offer then. Update handled.md in the same pass.
     4. THE LEAN CMS "what you get" LIST (2026-08-30) sits in its own full-width
        card under the upgrade grid, because four bullets inside a 250px grid
        column leave the three sibling cards half-empty. The bullets were
@@ -363,7 +367,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>A second page, built to the same standard and folded into the
           same weekly watch. An about page, a services page, a page for the
           thing you launch next.</p>
-          <p><strong>Pricing at launch</strong></p>
+          <p><strong>$99 per page</strong></p>
         </div>
         <div class="om-card">
           <h3>A block of hours</h3>
@@ -410,9 +414,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <p>
         <strong>The hour blocks and the lean CMS are live in checkout</strong>
-        &mdash; the links are right on the cards. Another page and the
-        newsletter still price at launch: mention them when you get in line
-        and I'll fold them into your build.
+        &mdash; the links are right on the cards. Extra pages are $99 each and
+        the newsletter still prices at launch: mention either when you get in
+        line and I'll fold it into your build.
       </p>
     </div>
   </section>

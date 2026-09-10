@@ -149,7 +149,7 @@ A second page, built to the same standard and folded into the
 same weekly watch. An about page, a services page, a page for the
 thing you launch next.
 
-**Pricing at launch**
+**$99 per page**
 
 ### A block of hours
 
@@ -198,9 +198,9 @@ it. The CMS is what lets you skip the ask.
 **[Add the lean CMS — $200 one-time](https://checkout.shanegring.com/b/00w8wO1DddAs7fw5Mffbq07)**
 
 **The hour blocks and the lean CMS are live in checkout**
-— the links are right on the cards. Another page and the
-newsletter still price at launch: mention them when you get in line
-and I'll fold them into your build.
+— the links are right on the cards. Extra pages are $99 each and
+the newsletter still prices at launch: mention either when you get in
+line and I'll fold it into your build.
 
 ## Founding cohort — first 10 only
 
