@@ -129,6 +129,7 @@
   },
   "assets": [
     "/.gitignore",
+    "/.worktrees/ga4-lead-completions/",
     "/2-handled.md",
     "/3-handled.md",
     "/404.md",
@@ -344,6 +345,7 @@
     "/tools/chrome.mjs",
     "/tools/html-to-markdown.mjs",
     "/tools/indexnow.mjs",
+    "/tools/sync-announce.mjs",
     "/tools/sync-beehiiv.mjs",
     "/tools/sync-nav.mjs",
     "/tools/sync-ordinal.mjs",

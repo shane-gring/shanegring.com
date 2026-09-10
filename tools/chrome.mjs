@@ -31,9 +31,9 @@ const GTM_BODY = `<!-- Google Tag Manager (noscript) -->
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->`;
 
-const ANNOUNCE = `<a class="announce-bar" href="/work-with-me">
+const ANNOUNCE = `<a class="announce-bar" href="/handled">
   <span class="announce-tag">New</span>
-  <span class="announce-text">Nobody owns the digital side of your business.</span>
+  <span class="announce-text">Handled &mdash; a site built for $299, kept running for $199 a month.</span>
   <span class="announce-arrow btn-arrow">&rarr;</span>
 </a>`;
 
@@ -69,6 +69,7 @@ const NAV = `<nav class="site-nav" aria-label="Site">
       </li>
       <li class="nav-mobile-only"><a href="/approach">Approach</a></li>
       <li><a href="/work/">Recent work</a></li>
+      <li><a href="/handled">Handled</a></li>
       <li class="nav-drop">
         <a href="/guides/">Content <span class="nav-caret">&#9662;</span></a>
         <ul class="nav-dropdown">

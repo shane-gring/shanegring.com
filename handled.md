@@ -4,7 +4,7 @@ Your site, handled
 
 # You didn't want a website builder. You wanted a website.
 
-A clean single-page site, built to your specs and watched every week after. $300 to build, $200 a month to keep it handled. Change anything by email. Founding cohort of ten at a locked rate.
+A clean single-page site, built to your specs and watched every week after. $299 to build, # You didn't want a website builder. You wanted a website.99 a month to keep it handled. Change anything by email. Founding cohort of ten at a locked rate.
 
 You've got a business reason to have a site — clients to win, credibility
 to hold, inbound to catch. What you don't have is a free weekend to become a
@@ -13,7 +13,7 @@ So here's the deal: **I build your site, and I keep it running. You
 never open a dashboard again.**
 
 [Claim a founding spot →](https://checkout.shanegring.com/b/5kQ6oG0z98g86bsdeHfbq03)
-**Checkout is open.** $300 to build, then $200/month — founding rate locks for the first ten.
+**Checkout is open.** $299 to build, then $199/month — founding rate locks for the first ten.
 
 ## The two ways this usually goes — and why both leave you stuck
 
@@ -121,7 +121,7 @@ Brooklyn and NYC real estate. albizhubi.com
 
 Green home certification. greenstarhomes.org
 
-## $300 to build. $200/month to keep it handled.
+## $299 to build. $199/month to keep it handled.
 
 Six-month minimum, because good management is a relationship, not a
 transaction — and cancel anytime after. When you go, you take your
@@ -141,7 +141,7 @@ Compared to the alternatives you already know:
 
 The base covers most people. When you want more, add it when there's a
 reason — and whatever we add gets watched and handled the same
-as the rest of your site. The $200/month already covers that.
+as the rest of your site. The $199/month already covers that.
 
 ### Another page
 
@@ -204,7 +204,7 @@ and I'll fold them into your build.
 
 ## Founding cohort — first 10 only
 
-I'm taking my first ten clients at **a locked-in rate of $200/month,
+I'm taking my first ten clients at **a locked-in rate of $199/month,
 guaranteed even when the price goes up for everyone after.** You get
 in early, I get to build something worth referring, and your rate never
 moves. When these ten are full, this offer's gone.
@@ -245,10 +245,10 @@ homework, wants it handled by someone who knows what they're doing.
 Stop paying for tools you have to operate yourself. Stop hiring people who
 vanish. Get a site that's built well and stays that way.
 
-**Handled. $300 to build, $200/month** to keep it running.
+**Handled. $299 to build, $199/month** to keep it running.
 
 [Claim a founding spot →](https://checkout.shanegring.com/b/5kQ6oG0z98g86bsdeHfbq03)
-**Checkout is open.** $300 build today, $200/month after — founding spots included.
+**Checkout is open.** $299 build today, $199/month after — founding spots included.
 
 ---
 
