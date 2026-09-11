@@ -372,8 +372,9 @@ function screenWelcome() {
   wrap.append(el('h1', 'cs-hook', WELCOME.title));
   wrap.append(el('p', 'om-lede', WELCOME.lede));
 
-  const intro = introVideo();
-  if (intro) wrap.append(intro);
+  const slot = el('div', 'hi-intro-slot');
+  wrap.append(slot);
+  mountIntroVideo(slot);
 
   const box = el('div', 'hi-handy');
   box.append(el('h2', 'hi-handy-title', 'Worth having nearby'));
@@ -386,13 +387,31 @@ function screenWelcome() {
   return wrap;
 }
 
-// Shane introducing himself, if the file is there. Same contract as the template
-// previews: something that isn't in the repo yet must leave no trace on the page
-// rather than a broken player. The <video> reports `error` both for a real 404
-// and for a 404 page served as HTML, so either shape of missing file is caught.
-function introVideo() {
+// Shane introducing himself, if the file is there.
+//
+// Probe before rendering rather than rendering and reacting to `error`. Letting
+// the element find out for itself is what a first draft of this did, and a
+// missing file produced a black box with a spinner that never resolved — the
+// worst of both worlds, since `error` never fires on a stall. A client must
+// never meet that, so nothing reaches the DOM until a real video is confirmed.
+//
+// The content type decides, not the status: this host answers some missing
+// assets with 200 and an HTML error page, which a status check would pass.
+let introProbe = null;
+
+async function mountIntroVideo(slot) {
   const v = WELCOME.video;
-  if (!v || !v.src) return null;
+  if (!v || !v.src) return;
+
+  if (!introProbe) {
+    introProbe = fetch(v.src, { method: 'HEAD' })
+      .then((r) => r.ok && (r.headers.get('content-type') || '').toLowerCase().startsWith('video/'))
+      .catch(() => false);
+  }
+  if (!(await introProbe)) return;
+
+  // The screen may have been navigated away from while the probe was in flight.
+  if (!slot.isConnected) return;
 
   const figure = el('figure', 'hi-intro');
   const video = document.createElement('video');
@@ -402,11 +421,10 @@ function introVideo() {
   video.playsInline = true; // iOS opens fullscreen without this
   if (v.poster) video.poster = v.poster;
   video.src = v.src;
-  video.addEventListener('error', () => figure.remove(), { once: true });
 
   figure.append(video);
   if (v.caption) figure.append(el('figcaption', 'hi-intro-cap', v.caption));
-  return figure;
+  slot.append(figure);
 }
 
 function screenSection(section) {
