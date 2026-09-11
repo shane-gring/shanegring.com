@@ -735,3 +735,55 @@ action the same way the stills are:
   `ffmpeg -i in.mp4 -an -c:v libx264 -crf 30 -preset slow -pix_fmt yuv420p -r 12 -movflags +faststart handled-hero.mp4`
   `-an` because the element is muted and the audio track is dead weight; 12 fps
   suits pixel art and roughly halves the file against 24.
+
+## 20. Handled's icon — the hand ⬜ TO GENERATE (`icons/handled.png`)
+
+Same recipe as sections 6 and 14: flat, front-facing, one colour, `--stylize 50`,
+then processed through the identical pipeline at the foot of section 14 —
+floodfill from the four corners, trim, 104px long side, centred on a 112×112
+transparent canvas.
+
+**Hue.** Taken across the eight offers and the three tracks: 9°, 23°, 27°, 48°,
+95°, 150°, 176°, 178°, 214°, 226°, 292°. The gaps left are 292→9 (77° wide,
+midpoint ~330), 226→292 (66°, midpoint ~259) and 48→95 (47°, midpoint ~71).
+Note that the page's own accent green is ~155°, which is 5° off the Install's
+forest green — unusable here, whatever it does on the page.
+
+1. **Pick — muted rose, ~330°.** The widest gap on the wheel, 38° from Map's
+   purple and 39° from Partner's brick red. Section 14 rejected a burgundy at
+   ~350° as "mush next to Partner's 9° at icon size"; 330° is ten degrees
+   further off and reads pink rather than red, which is what separates it.
+
+   ```
+   a single open hand held up palm forward with the fingers slightly apart, simple pixel art icon, chunky 16x16-style pixel sprite, thick blocky pixels, flat muted rose palette (#9c2f5e, #bc4a79, #d4759a) on a plain white background, single centered object, retro videogame inventory icon, no text, no border --ar 1:1 --stylize 50
+   ```
+
+2. **Alternative — slate, no hue at all.** Handled is outside the eight: llms.txt
+   says so, it does not follow the "The" plus one noun rule, and it does not
+   credit forward. An argument says it should not compete in the rung wheel,
+   and should carry the house blue-grey instead. Guaranteed never to collide,
+   at the cost of punch.
+
+   ```
+   a single open hand held up palm forward with the fingers slightly apart, simple pixel art icon, chunky 16x16-style pixel sprite, thick blocky pixels, flat slate blue-grey palette (#4a5f73, #63798f, #8ba0b3) on a plain white background, single centered object, retro videogame inventory icon, no text, no border --ar 1:1 --stylize 50
+   ```
+
+**The shape risk, and it is real.** Section 14's lesson was that two objects
+cannot both survive at 22px and the meaning has to live on the outer
+silhouette. A hand is one object but five fingers, and at 16 pixels wide the
+fingers are one pixel each with nothing between them — the most likely failure
+is a mitten. Palm forward and fingers apart is the framing that gives them the
+best chance, and it is why the prompt says both.
+
+If every variant comes back as a mitten, do what the Install did: hand-draw it.
+`icons/install-sprite.py` is the working precedent — a 16×16 `GRID` you edit and
+re-run, point-upscaled to 1024 and then put through the same downscale as the
+other seven so the edge softening matches. A hand is an easier sprite than a
+plug: four fingers as alternating lit and dark columns with a thumb breaking the
+left silhouette will read where a generated one will not.
+
+**Where it goes once it exists.** `offer-mark` in the /handled hero is the
+obvious slot, the same way /seat, /install and /session carry theirs — though
+note this hero is currently centred art with no mark, so check it earns its
+place rather than adding it by default. The footer and nav list Handled as
+text only.
