@@ -133,6 +133,7 @@
   },
   "assets": [
     "/.gitignore",
+    "/.worktrees/ga4-lead-completions/",
     "/404.md",
     "/HANDLED-INTAKE-SETUP.md",
     "/HANDLED-R2-SETUP-FOR-AGENT.md",
@@ -220,7 +221,6 @@
     "/images/cloud-3.svg",
     "/images/cloud-bolt.svg",
     "/images/do-it-yourself-hero.png",
-    "/images/done-for-you-hero.png",
     "/images/find-out-hero.png",
     "/images/footer-city.png",
     "/images/guides/build-a-content-layer.png",
@@ -238,6 +238,7 @@
     "/images/guides/what-is-a-fractional-coo.png",
     "/images/guides/why-your-website-isnt-bringing-in-clients.png",
     "/images/guides/your-website-was-true-at-launch.png",
+    "/images/handled-hero.png",
     "/images/handled/1-albizhubi.png",
     "/images/handled/1-buckhead-restaurant-week.png",
     "/images/handled/2-west-midtown-restaurant-week.png",

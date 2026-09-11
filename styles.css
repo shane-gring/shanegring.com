@@ -4839,6 +4839,640 @@ body[class*="offer-"] .om-hero .section-eyebrow { color: var(--offer-deep, var(-
 }
 
 /* ══════════════════════════════════════════════════════════════
+   /handled — THE SALES PAGE
+   The one page on this site that takes paid traffic AND organic,
+   so it keeps the nav and the footer (a visitor from search needs
+   the rest of the site; /get-the-read, which is ads-only and
+   noindex, strips both) but drops the shared offer-page layout.
+
+   What makes it its own thing:
+     · a full-bleed hero band with the art behind centred copy,
+       rather than the left-aligned, image-free .om-hero every
+       other offer page uses;
+     · one inverted band, where the price and the buy live. On a
+       site that is white from top to bottom, the single dark
+       section is the strongest way to mark "this is the decision"
+       without inventing a new colour system;
+     · the proof — thirteen real sites — pulled up near the top,
+       because on ad traffic nobody scrolls to find out whether
+       the work is any good.
+
+   Everything is scoped to .hd- or to body.offer-handled. The
+   sticky buy bar is deliberately NOT re-implemented: it borrows
+   .vsl-sticky, which already solves the same problem on the other
+   paid page, so the two bars cannot drift apart.
+   ══════════════════════════════════════════════════════════════ */
+
+/* Green is the one hue the five rung colours (teal, sky, purple, orange,
+   brick) left free, and it is the only place on the page that is not ink,
+   white or the art — so the eye lands on the price. */
+body.offer-handled { --offer: #1f7a4d; --offer-deep: #145736; }
+
+/* ── The hero band ───────────────────────────────────────────────
+   Full-bleed: the band cancels the container's gutter so the art
+   runs edge to edge, while the copy inside stays on the 880px
+   measure. min-height, not an aspect-ratio, because the copy is
+   what sets the height and the art has to fill whatever is left. */
+.hd-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: 3.5rem 0 4rem;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+/* A real <img>, not a CSS background, so it keeps alt text and can be
+   given fetchpriority — this is the largest paint on the page, and on
+   ad traffic the first paint is the whole first impression.
+   object-position is low on the Y so the crop keeps the crew and the
+   waterline rather than a band of empty sky. */
+.hd-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 62%;
+  image-rendering: pixelated;
+  z-index: 0;
+}
+
+/* Two washes in one layer. The radial keeps an opaque oval under the
+   centred copy — a left-to-right scrim like .track-hero's would only
+   protect one side of a centred headline. The linear closes the bottom
+   edge to solid white so the band hands off to the next section with
+   no seam. */
+.hd-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(255, 255, 255, 0) 22%,
+      rgba(255, 255, 255, 0) 80%,
+      rgba(255, 255, 255, 0.9) 97%,
+      rgba(255, 255, 255, 1) 100%
+    ),
+    radial-gradient(
+      ellipse 58% 68% at 50% 48%,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(255, 255, 255, 0.93) 52%,
+      rgba(255, 255, 255, 0.74) 74%,
+      rgba(255, 255, 255, 0.3) 90%,
+      rgba(255, 255, 255, 0) 100%
+    );
+}
+
+.hd-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hd-hero .section-eyebrow { color: var(--offer-deep); }
+
+/* Bigger than .cs-hook and capped in characters rather than pixels:
+   a centred headline reads as a shape, and the shape falls apart past
+   about three lines. */
+.hd-hook {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5.2vw, 3.25rem);
+  font-weight: 650;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--fg);
+  max-width: 17ch;
+  margin: 0 auto 1.35rem;
+  text-wrap: balance;
+}
+
+.hd-hook .hd-hook-turn {
+  display: block;
+  color: var(--offer-deep);
+}
+
+.hd-lede {
+  font-size: clamp(1.08rem, 1.7vw, 1.22rem);
+  line-height: 1.6;
+  color: var(--mid);
+  max-width: 46ch;
+  margin: 0 auto;
+}
+
+.hd-lede strong { color: var(--fg); }
+
+/* ── The price, said out loud ─────────────────────────────────────
+   Ad traffic bounces on unanswered price. It is in the hero, in the
+   sticky bar, in the dark band and in the close — four times before
+   anyone has to ask. */
+.hd-pricetag {
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.15rem 0.9rem;
+  margin: 1.9rem auto 0;
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+}
+
+.hd-pricetag .hd-pricetag-sep {
+  color: var(--border-strong);
+  font-weight: 400;
+}
+
+.hd-pricetag .hd-pricetag-sub {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--offer-deep);
+}
+
+/* ── Calls to action ─────────────────────────────────────────────── */
+.hd-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: 1.6rem;
+}
+
+.hd-cta .btn-primary {
+  font-size: 1.05rem;
+  padding: 1.05rem 2.2rem;
+}
+
+.hd-cta-note {
+  margin: 0;
+  max-width: 34rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--mid);
+}
+
+.hd-cta-note strong { color: var(--fg); }
+
+/* The three promises that answer the three reasons someone hesitates
+   on a subscription: term, exit, ownership. Inline, small, directly
+   under the button where the doubt actually happens. */
+.hd-assure {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem 1.4rem;
+  margin: 0.35rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--mid);
+}
+
+.hd-assure li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.hd-assure li::before {
+  content: "";
+  width: 0.95rem;
+  height: 0.95rem;
+  flex: none;
+  background: var(--offer);
+  /* A tick, drawn as a mask so it takes the offer colour rather than
+     shipping two colour variants of the same glyph. */
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M13.5 4.2 6.4 11.3 2.5 7.4l1.1-1.1 2.8 2.8 6-6z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M13.5 4.2 6.4 11.3 2.5 7.4l1.1-1.1 2.8 2.8 6-6z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* ── Sections ────────────────────────────────────────────────────
+   Same rhythm as .om-section so the page still belongs to the site,
+   but the titles centre and the measure is wider. */
+.hd-section {
+  padding: 4.25rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.hd-section:first-of-type { border-top: 0; }
+
+.hd-section > .container { max-width: 1000px; }
+
+.hd-title {
+  font-size: clamp(1.55rem, 3.2vw, 2.15rem);
+  font-weight: 650;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: var(--fg);
+  max-width: 24ch;
+  margin: 0 auto 0.9rem;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.hd-sub {
+  max-width: 56ch;
+  margin: 0 auto 2.4rem;
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--mid);
+}
+
+.hd-sub:last-child { margin-bottom: 0; }
+.hd-sub strong { color: var(--fg); }
+
+/* ── The two dead ends ───────────────────────────────────────────
+   Two cards side by side, then the resolution line under them. The
+   shape is the argument: each option fails where the other works,
+   and the third thing sits below both. */
+.hd-versus {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+
+.hd-versus-card {
+  padding: 1.6rem 1.7rem;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.hd-versus-card h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+
+.hd-versus-card p {
+  margin: 0;
+  font-size: 0.97rem;
+  line-height: 1.65;
+  color: var(--mid);
+}
+
+.hd-versus-card .hd-versus-cost {
+  display: block;
+  margin-top: 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--fg);
+}
+
+.hd-resolve {
+  margin: 1.6rem auto 0;
+  max-width: 52ch;
+  padding: 1.35rem 1.6rem;
+  border: 1px solid var(--fg);
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--mid);
+}
+
+.hd-resolve strong { color: var(--fg); }
+
+/* ── What you get ────────────────────────────────────────────────
+   Ticked, not bulleted. On a sales page the list is the spec sheet,
+   and a tick reads as "included" where a dot reads as "topic". */
+.hd-gets {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.3rem 2.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.hd-gets li {
+  position: relative;
+  padding-left: 1.9rem;
+  font-size: 0.99rem;
+  line-height: 1.6;
+  color: var(--mid);
+}
+
+.hd-gets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.28rem;
+  width: 1.15rem;
+  height: 1.15rem;
+  background: var(--offer);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M13.5 4.2 6.4 11.3 2.5 7.4l1.1-1.1 2.8 2.8 6-6z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M13.5 4.2 6.4 11.3 2.5 7.4l1.1-1.1 2.8 2.8 6-6z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.hd-gets li strong {
+  color: var(--fg);
+  display: block;
+}
+
+/* ── How it works ────────────────────────────────────────────────
+   A numbered rail rather than four equal cards: the steps are a
+   sequence, and cards say "menu". */
+.hd-steps {
+  counter-reset: hd-step;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.6rem 1.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hd-steps li {
+  counter-increment: hd-step;
+  position: relative;
+  padding-top: 1.3rem;
+  border-top: 2px solid var(--border-strong);
+}
+
+.hd-steps li::before {
+  content: "0" counter(hd-step);
+  display: block;
+  margin-bottom: 0.45rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  color: var(--offer);
+}
+
+.hd-steps h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.02rem;
+  letter-spacing: -0.01em;
+}
+
+.hd-steps p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--mid);
+}
+
+/* ── Proof ───────────────────────────────────────────────────────
+   Three across at full width. .om-cards' auto-fit(250px) gives four
+   columns here and the screenshots get too small to read as sites. */
+.hd-shots {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+
+.hd-shot {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+a.hd-shot { display: block; text-decoration: none; }
+a.hd-shot:hover { border-color: var(--fg); transform: translateY(-2px); }
+
+.hd-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+  border-bottom: 1px solid var(--border);
+}
+
+.hd-shot-meta {
+  padding: 0.85rem 1rem 1rem;
+}
+
+.hd-shot-name {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+}
+
+.hd-shot-what {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--dim);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a.hd-shot:hover { transform: none; }
+}
+
+/* ── The inverted band ───────────────────────────────────────────
+   The buy zone. Rather than restyling every child, the band swaps
+   the tokens the components already read, so .btn-primary, borders
+   and body copy all invert on their own. Only :hover has to be
+   named, because .btn-primary hard-codes #000 for it — which on a
+   near-black band is an invisible button. */
+.hd-band {
+  --bg: #111111;
+  --bg-soft: #1a1a1a;
+  --fg: #ffffff;
+  --mid: rgba(255, 255, 255, 0.78);
+  --dim: rgba(255, 255, 255, 0.58);
+  --border: rgba(255, 255, 255, 0.16);
+  --border-strong: rgba(255, 255, 255, 0.28);
+  --offer: #55c98c;
+  --offer-deep: #7fe0ab;
+
+  background: #111111;
+  color: #ffffff;
+  border-top: 0;
+  padding: 4.5rem 0;
+}
+
+.hd-band .btn-primary:hover { background: #ffffff; opacity: 0.88; }
+
+.hd-band .hd-title,
+.hd-band .hd-sub strong { color: #ffffff; }
+
+/* The title here carries the price, which is longer than a heading normally
+   is; at 24ch it broke as "$200 a / month". */
+.hd-band .hd-title {
+  max-width: 30ch;
+  margin-bottom: 1.9rem;
+}
+
+/* The number, set as the loudest thing on the page. */
+.hd-figure {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0.9rem;
+  margin: 0 auto 1.9rem;
+  max-width: 44rem;
+}
+
+.hd-figure-half {
+  flex: 1 1 15rem;
+  padding: 1.5rem 1.4rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-soft);
+  text-align: center;
+}
+
+.hd-figure-num {
+  display: block;
+  font-size: clamp(2.1rem, 5vw, 2.9rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  color: #ffffff;
+}
+
+.hd-figure-num .hd-figure-per {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--dim);
+}
+
+.hd-figure-what {
+  display: block;
+  margin-top: 0.55rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--mid);
+}
+
+/* Scarcity, stated plainly and only once. */
+.hd-founding {
+  margin: 2.2rem auto 0;
+  max-width: 46ch;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 0.97rem;
+  line-height: 1.65;
+  color: var(--mid);
+}
+
+.hd-founding strong { color: #ffffff; }
+
+/* ── Objections ──────────────────────────────────────────────────
+   <details> rather than a wall of Q&A: twelve answers open by
+   default is a page nobody finishes, and the question line is the
+   part that does the reassuring. */
+.hd-qa {
+  max-width: 760px;
+  margin: 0 auto;
+  border-top: 1px solid var(--border);
+}
+
+.hd-qa details {
+  border-bottom: 1px solid var(--border);
+}
+
+.hd-qa summary {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 1.05rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+  cursor: pointer;
+  list-style: none;
+  min-height: 44px;
+}
+
+.hd-qa summary::-webkit-details-marker { display: none; }
+
+.hd-qa summary::after {
+  content: "+";
+  margin-left: auto;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--dim);
+  transition: transform 0.15s ease;
+}
+
+.hd-qa details[open] summary::after { content: "\2212"; }
+
+.hd-qa summary:hover { color: var(--offer-deep); }
+
+.hd-qa p {
+  margin: 0;
+  padding: 0 2rem 1.25rem 0;
+  font-size: 0.97rem;
+  line-height: 1.7;
+  color: var(--mid);
+}
+
+.hd-qa p + p { padding-top: 0.8rem; }
+
+/* ── Close ───────────────────────────────────────────────────────── */
+.hd-final {
+  padding: 4.5rem 0 5rem;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Narrow ──────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .hd-shots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hd-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 768px) {
+  /* On a phone the copy fills the band, so the radial has nothing
+     left to reveal — drop to a near-flat wash and let the art read
+     as texture behind the headline rather than as a picture. */
+  .hd-hero {
+    min-height: 0;
+    padding: 2.5rem 0 3rem;
+  }
+  .hd-hero-bg { object-position: 55% 60%; }
+  .hd-hero::after {
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.78) 0%,
+      rgba(255, 255, 255, 0.86) 55%,
+      rgba(255, 255, 255, 0.97) 92%,
+      rgba(255, 255, 255, 1) 100%
+    );
+  }
+
+  .hd-hook { max-width: none; }
+  .hd-cta .btn-primary { width: 100%; justify-content: center; }
+  .hd-versus { grid-template-columns: 1fr; }
+  .hd-shots { grid-template-columns: 1fr; }
+  .hd-gets { grid-template-columns: 1fr; }
+  .hd-steps { grid-template-columns: 1fr; }
+  .hd-section { padding: 3.25rem 0; }
+  .hd-band { padding: 3.5rem 0; }
+
+  /* Room for the borrowed .vsl-sticky bar so it never covers the
+     final CTA or the footer's last link. */
+  .hd-page footer { padding-bottom: 5rem; }
+}
+
+/* ══════════════════════════════════════════════════════════════
    THE THREE WAY-IN PAGES (/find-out, /done-for-you, /do-it-yourself)
    ══════════════════════════════════════════════════════════════ */
 

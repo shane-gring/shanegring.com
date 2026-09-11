@@ -1,150 +1,152 @@
-[← Work with me](https://shanegring.com/work-with-me)
-
 Your site, handled
 
-# You didn't want a website builder. You wanted a website.
+#
+You didn't want a website builder.
 
-A clean single-page site, built to your specs and watched every week after. $300 to build, $200 a month to keep it handled. Change anything by email. Founding cohort of ten at a locked rate.
+A clean single-page site, built to your specs and watched every week after. $300 to build, $200 a month to keep it handled. Change anything by email. Month to month, everything in your name. Founding cohort of ten at a locked rate.
+You wanted a website.
 
-You've got a business reason to have a site — clients to win, credibility
-to hold, inbound to catch. What you don't have is a free weekend to become a
-web designer, or the appetite to babysit a page for the rest of its life.
-So here's the deal: **I build your site, and I keep it running. You
-never open a dashboard again.**
+Clients to win, credibility to hold, inbound to catch — and no free
+weekend to spend becoming a web designer. So here's the deal:
+**I build your site, and I keep it running.** You never open a
+dashboard.
+
+$300 to build
+·
+$200 a month to keep it running
+Founding rate — first 10
 
 [Claim a founding spot →](https://checkout.shanegring.com/b/5kQ6oG0z98g86bsdeHfbq03)
-**Checkout is open.** $300 to build, then $200/month — founding rate locks for the first ten.
 
-## The two ways this usually goes — and why both leave you stuck
+**Checkout is open.** The ten founding spots go in order of who's in first, and that rate never moves after.
 
-You end up on **Squarespace**, paying for a plan and a domain,
-and then it hands you the tools and a weekend of homework. Weeks later you've
-got a half-finished page you're a little embarrassed by and a subscription
-you're paying anyway.
+- Month to month
 
-Or you **hire a freelancer**, drop a couple thousand on a build
-— and then they vanish. The site's live, but the moment anything needs
-to change, or breaks, or falls behind, you're on your own. It rots. Fixing it
-means starting the hunt over.
+- Cancel any time
 
-Each one fails exactly where the other wins. Nobody does both.
+- Everything in your name
 
-**I do both.** Agency-quality site, built for you —
-*and* kept sharp, watched, and handled every week after. For less than
-the freelancer, without the weekend.
+Fifteen years of this work, trusted by
 
-## What you get
+TeamBuildr
 
-- **A clean, single-page site, built to your specs.** Your domain, your design direction, your copy, your images. Live in days, not weeks.
+IWBI
 
-- **A real person watching it every week.** That's me — Shane. I check performance, catch bugs before you do, and send you a short read on how it's doing and what I'd improve.
+USGBC
 
-- **An email that reaches me.** Want a headline changed, a photo swapped, a line rewritten? Send it. It gets done. No tickets, no portal, no "please allow 5–7 business days."
+SEAM Certification
 
-- **Analytics and search, set up right.** Google Analytics and Search Console, configured and quietly working, so your site is measured instead of guessed at.
+DRVN Golf
 
-- **Everything in your name, from day one.** The code, the design files, the Google Analytics and Search Console accounts, and the domain — which I buy for you, up to $15 — all yours, not borrowed from me. Ask and I hand the lot over. Stay because it's handled, not because you're trapped.
+## Two ways this usually goes. Both leave you stuck.
 
-## How it works
+### You build it yourself
 
-### 1. We spin you up
+You pay for a plan and a domain, and the tool hands you the work.
+Weeks later there's a half-finished page you're a little embarrassed
+by — and the subscription bills either way.
 
-Quick conversation about who you are and what the site needs to
-do. I handle the design, the words, the images, and the domain
-— I'll buy it for you, up to $15, and register it in your
-name, not mine.
+Costs you the weekend you didn't have.
 
-### 2. You go live in days
+### You hire a freelancer
+
+A couple of thousand for a build, and then they're gone. The site's
+live, but the moment it needs a change, or breaks, or falls behind,
+you're on your own. It rots.
+
+Costs you again the day it needs anything.
+
+Each one fails exactly where the other wins.
+**I do both.** A site built for you — and kept sharp,
+watched and handled every week after. For less than the freelancer,
+without the weekend.
+
+## What $200 a month actually buys
+
+The build is quick by design. The handling is the part a person shows up
+for, every week, for as long as you want it.
+
+- **A clean, single-page site, built to your specs.** Your domain, your design direction, your words, your images. Live in days, not weeks.
+
+- **A real person watching it every week.** That's me. I check how it's performing, catch bugs before you run into them, and send you a short read on what I'd improve.
+
+- **An email that reaches me.** Headline changed, photo swapped, a line rewritten, a price updated. Send it, it gets done. No tickets, no portal, no five-to-seven business days.
+
+- **Analytics and search, set up right.** Google Analytics and Search Console, configured and quietly working, so the site is measured instead of guessed at.
+
+- **Everything in your name, from day one.** The code, the design files, the analytics accounts, and the domain — which I buy for you, up to $15. Ask and I hand the lot over.
+
+## Four steps, and three of them are mine
+
+### We spin you up
+
+A quick conversation about who you are and what the site has to do.
+I handle the design, the words, the images and the domain —
+registered in your name, not mine.
+
+### You go live in days
 
 You review, we tighten, it ships.
 
-### 3. I keep it running
+### I keep it running
 
-Every week I'm watching, reporting, and improving. Any change
-you want, you email — and it's handled.
+Every week I'm watching, reporting and improving. Any change you
+want, you email — and it's handled.
 
-### 4. You get on with your work
+### You get on with your work
 
 Which was the whole point.
 
-## Sites like these
+## Sites built and handled the same way yours will be
 
-Real sites, built and handled the same way yours will be.
+Real sites, live right now. Click any of them.
 
-### [Ted Gonder](https://tedgonder.co)
+[Ted GonderPrivate strategic advisory · tedgonder.co](https://tedgonder.co)
+[Skyler GringTravel agent, Dreamers Do Travels · skylergring.com](https://skylergring.com)
+[EarthlightCircadian lighting ROI · earthlight.app](https://earthlight.app)
+[Buckhead Restaurant WeekAtlanta dining week · buckheadrestaurantweek.com](https://buckheadrestaurantweek.com)
+[West Midtown Restaurant WeekAtlanta dining week · westmidtownrestaurantweek.com](https://westmidtownrestaurantweek.com)
+[SEAMSocial equity certification · seamcertification.com](https://seamcertification.com)
+[FORJ SportsBuilding sports companies · theforjgroup.com](https://theforjgroup.com)
+[BFSWeight rooms and leadership · biggerfasterstronger.com](https://biggerfasterstronger.com)
+[Excel Training DesignsTemplates for strength coaches · exceltrainingdesigns.com](https://exceltrainingdesigns.com)
+[DRVNThe golf performance system · drvngolf.com](https://drvngolf.com)
+[Albi ZhubiBrooklyn and NYC real estate · albizhubi.com](https://albizhubi.com)
+[GreenStar HomesGreen home certification · greenstarhomes.org](https://greenstarhomes.org)
 
-Private strategic advisory. tedgonder.co
+## $300 to build. $200 a month to keep it handled.
 
-### [Skyler Gring](https://skylergring.com)
+$300
+Once, to build it. Domain bought for you, up to $15.
 
-Travel agent, Dreamers Do Travels. skylergring.com
+$200/month
+To watch it, report on it, improve it, and make any change you email.
 
-### [Earthlight](https://earthlight.app)
+That's the whole price. No tiers to decode, no upsells buried in a
+dashboard, no surprise renewal. **Month to month, cancel any
+time** — no minimum, no notice period, no exit fee. One
+email ends it. If I'm worth keeping, that should show up in the work and
+not in a contract you can't get out of.
 
-Circadian lighting ROI. earthlight.app
+[Claim a founding spot →](https://checkout.shanegring.com/b/5kQ6oG0z98g86bsdeHfbq03)
 
-### Inner Assembly
+- Live in days
 
-In a private preview while the client finishes their launch.
+- Changes by email
 
-### [Buckhead Restaurant Week](https://buckheadrestaurantweek.com)
+- Yours to take with you
 
-Atlanta dining week in Buckhead. buckheadrestaurantweek.com
+**Founding cohort — first 10 only.** The first ten
+clients hold $200 a month, guaranteed, even when the price goes up for
+everyone after. You get in early, I get to build something worth
+referring, and your rate never moves. When the ten are full, this
+is gone.
 
-### [West Midtown Restaurant Week](https://westmidtownrestaurantweek.com)
+## Optional upgrades, priced in the open
 
-Atlanta dining week in West Midtown. westmidtownrestaurantweek.com
-
-### [SEAM](https://seamcertification.com)
-
-Social equity certification for the built environment. seamcertification.com
-
-### [FORJ Sports](https://theforjgroup.com)
-
-Building sports companies in North America. theforjgroup.com
-
-### [BFS](https://biggerfasterstronger.com)
-
-Weight rooms, programs, and leadership development. biggerfasterstronger.com
-
-### [Excel Training Designs](https://exceltrainingdesigns.com)
-
-Free Excel templates for strength coaches. exceltrainingdesigns.com
-
-### [DRVN](https://drvngolf.com)
-
-The golf performance system. drvngolf.com
-
-### [Albi Zhubi](https://albizhubi.com)
-
-Brooklyn and NYC real estate. albizhubi.com
-
-### [GreenStar Homes](https://greenstarhomes.org)
-
-Green home certification. greenstarhomes.org
-
-## $300 to build. $200/month to keep it handled.
-
-**Month to month. Cancel any time.** No minimum, no notice
-period, no exit fee, and nothing to talk me out of — one email
-ends it. If I'm worth keeping, that should show up in the work, not in
-a contract you can't get out of.
-
-That's it. No plan tiers to decode, no upsells buried in a dashboard, no
-surprise renewal. Want more than the base? The upgrades below are the
-whole list, out in the open — none of them required.
-
-Compared to the alternatives you already know:
-
-- **Cheaper than the freelancer** — and unlike the freelancer, I don't disappear the day it launches.
-
-- **A fraction of the time Squarespace costs you** — because the time isn't yours. It's mine.
-
-## Optional upgrades
-
-The base covers most people. When you want more, add it when there's a
-reason — and whatever we add gets watched and handled the same
-as the rest of your site. The $200/month already covers that.
+The base covers most people. Add these when there's a reason — and
+whatever we add gets watched and handled the same as the rest of your
+site. The $200 a month already covers that. None of it is required.
 
 ### Another page
 
@@ -201,102 +203,122 @@ it. The CMS is what lets you skip the ask.
 **[Add the lean CMS — $200 one-time](https://checkout.shanegring.com/b/00w8wO1DddAs7fw5Mffbq07)**
 
 **The hour blocks and the lean CMS are live in checkout**
-— the links are right on the cards. Extra pages are $99 each and
-the newsletter is $49: mention either when you get in line and I'll
-fold it into your build.
-
-## Founding cohort — first 10 only
-
-I'm taking my first ten clients at **a locked-in rate of $200/month,
-guaranteed even when the price goes up for everyone after.** You get
-in early, I get to build something worth referring, and your rate never
-moves. When these ten are full, this offer's gone.
-
-[Claim a founding spot →](https://checkout.shanegring.com/b/5kQ6oG0z98g86bsdeHfbq03)
-**Checkout is open.** The ten spots go in order of who's in first.
+— the links are on the cards. Extra pages are $99 each and the
+newsletter is $49: mention either when you get in line and I'll fold it
+into your build.
 
 ## A few honest answers
 
-**Is this really just for a one-page site?** Yes — and
-on purpose. Most people don't need more; they need *one* page
-that's sharp, credible, and actually maintained. Want more later? We
-scale the budget and do more. Start simple, grow when there's a reason to.
+Is this really just for a one-page site?
 
-**Who's actually behind this?** Me. Shane Gring — a
-fractional operator who's spent 15 years running websites, analytics, and
-digital operations for founders and companies. This is the same machinery
-I run for clients, pointed at your personal site. When you email, you're
-emailing me.
+Yes — and on purpose. Most people don't need more; they need
+one page that's sharp, credible and actually maintained. Want more
+later? We scale the budget and do more. Start simple, grow when
+there's a reason to.
 
-**What do you use to build it?** Good tools, used fast
-— so my actual time goes into managing and improving your site
-every month, not grinding out code by hand. The build is quick by
-design. The *handling* is where a person shows up, and that's
-what you're paying for.
+Who's actually behind this?
 
-**What do you need from me to get started?** A conversation, and whatever you already have. I handle the domain, the
-design, the words and the images — that's the point of it. If you
-have a logo, photos or copy you like, send them and I'll use them. If
-you don't, that's not a task I hand back to you.
+Me. Shane Gring — a fractional operator who's spent 15 years
+running websites, analytics and digital operations for founders and
+companies. This is the same machinery I run for clients, pointed at
+your site. When you email, you're emailing me.
 
-**How long until it's live?** Days, not weeks. We talk, I build, you review, we tighten, it ships. The
-build is quick by design — the *handling* is the part that
-runs for as long as you want it to.
+What do you need from me to get started?
 
-**What counts as a change I can just email you?** A headline, a photo, a rewritten line, a new price, a link that needs
-fixing. Send it and it gets done — no ticket, no portal, no
-“please allow 5–7 business days.” Bigger jobs are the
-exception: a run of posts or listings isn't email-sized work, so it
-comes out of a block of hours, or you add the lean CMS and publish
+A conversation, and whatever you already have. I handle the domain,
+the design, the words and the images — that's the point of it.
+If you have a logo, photos or copy you like, send them and I'll use
+them. If you don't, that's not a task I hand back to you.
+
+How long until it's live?
+
+Days, not weeks. We talk, I build, you review, we tighten, it
+ships. The build is quick by design — the handling is the part
+that runs for as long as you want it to.
+
+What counts as a change I can just email you?
+
+A headline, a photo, a rewritten line, a new price, a link that
+needs fixing. Send it and it gets done — no ticket, no portal,
+no “please allow 5–7 business days.” Bigger jobs are
+the exception: a run of posts or listings isn't email-sized work, so
+it comes out of a block of hours, or you add the lean CMS and publish
 those yourself.
 
-**What actually happens in the weekly check?** I check how the site is performing, catch bugs before you run into them,
-and send you a short read on how it's doing and what I'd improve.
-Google Analytics and Search Console are set up and quietly working
-underneath that, so your site is measured instead of guessed at.
+What actually happens in the weekly check?
 
-**What if I need more than one page later?** You add one. Extra pages are **$99 each**, built to the same
-standard and folded into the same weekly watch. A newsletter wired in
-is $49, a lean CMS is $200 one-time, and blocks of hours are $300 for
-two or $500 for five. None of it is required, and none of it is
-bundled in ahead of time. The upgrades are all here.
+I check how the site is performing, catch bugs before you run into
+them, and send you a short read on how it's doing and what I'd
+improve. Google Analytics and Search Console are set up and quietly
+working underneath that, so your site is measured instead of guessed
+at.
 
-**How is this different from the Autopilot?** The [Autopilot](https://shanegring.com/autopilot) is $899 a month and runs on a site
-you already have, as part of a wider operating engagement. Handled is
-smaller and starts earlier: it includes building the site in the first
-place, then keeps one page sharp for $200 a month. If you already have
-a site worth tending, the Autopilot is the better fit.
+What do you use to build it?
 
-**Why make it this easy to cancel?** Because a site you can't leave is worth less
-than one you can. Lock-ins exist to hold on to clients whose work
-stopped being worth paying for — I'd rather find that out and
-fix it. Everything is in your name from the start, so leaving is a
-transfer, not a negotiation.
+Good tools, used fast — so my actual time goes into managing
+and improving your site every month, not grinding out code by hand.
+The build is quick by design. The handling is where a person shows up,
+and that's what you're paying for.
 
-**What if I want to leave?** Whenever you want. No minimum, no notice
-period, no exit fee — send one email and it stops at the end of
-that month. You keep everything, because it was always yours: the
-code, the design files, the Google Analytics and Search Console
-accounts, and the domain, which is registered in your name from day
-one. Anything I'm administering, I transfer wherever you want it, at
-no charge, and I don't make you ask twice.
+What if I need more than one page later?
 
-**Who is this not for?** If you love tinkering with your
-own site, or you've got more time than money, Squarespace is genuinely
-the right call. This is for the opposite person: time-poor, allergic to
-homework, wants it handled by someone who knows what they're doing.
+You add one. Extra pages are $99 each, built to the same standard
+and folded into the same weekly watch. A newsletter wired in is $49, a
+lean CMS is $200 one-time, and blocks of hours are $300 for two or
+$500 for five. None of it is required, and none of it is bundled in
+ahead of time. The upgrades are all here.
+
+How is this different from the Autopilot?
+
+The [Autopilot](https://shanegring.com/autopilot) is $899 a month and runs on
+a site you already have, as part of a wider operating engagement.
+Handled is smaller and starts earlier: it includes building the site
+in the first place, then keeps one page sharp for $200 a month. If you
+already have a site worth tending, the Autopilot is the better fit.
+
+Why make it this easy to cancel?
+
+Because a site you can't leave is worth less than one you can.
+Lock-ins exist to hold on to clients whose work stopped being worth
+paying for — I'd rather find that out and fix it. Everything is
+in your name from the start, so leaving is a transfer, not a
+negotiation.
+
+What if I want to leave?
+
+Whenever you want. No minimum, no notice period, no exit fee
+— send one email and it stops at the end of that month. You keep
+everything, because it was always yours: the code, the design files,
+the Google Analytics and Search Console accounts, and the domain,
+which is registered in your name from day one. Anything I'm
+administering, I transfer wherever you want it, at no charge, and I
+don't make you ask twice.
+
+Who is this not for?
+
+If you love tinkering with your own site, or you've got more time
+than money, Squarespace is genuinely the right call. This is for the
+opposite person: time-poor, allergic to homework, wants it handled by
+someone who knows what they're doing.
 
 ## Your site, handled — for good.
 
-Stop paying for tools you have to operate yourself. Stop hiring people who
-vanish. Get a site that's built well and stays that way.
+Stop paying for tools you have to operate yourself. Stop hiring people
+who vanish. Get a site that's built well and stays that way.
 
-**Handled. $300 to build, $200/month** to keep it running.
-Month to month, cancel any time, and everything is in your name from
-day one.
+$300 to build
+·
+$200 a month to keep it running
 
 [Claim a founding spot →](https://checkout.shanegring.com/b/5kQ6oG0z98g86bsdeHfbq03)
-**Checkout is open.** $300 build today, $200/month after — founding spots included.
+
+**Checkout is open.** $300 today, $200 a month after — founding rate locked for the first ten.
+
+- Month to month
+
+- Cancel any time
+
+- Everything in your name
 
 ---
 
