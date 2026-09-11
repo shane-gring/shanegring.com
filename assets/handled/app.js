@@ -372,6 +372,9 @@ function screenWelcome() {
   wrap.append(el('h1', 'cs-hook', WELCOME.title));
   wrap.append(el('p', 'om-lede', WELCOME.lede));
 
+  const intro = introVideo();
+  if (intro) wrap.append(intro);
+
   const box = el('div', 'hi-handy');
   box.append(el('h2', 'hi-handy-title', 'Worth having nearby'));
   const ul = el('ul', 'hi-handy-list');
@@ -381,6 +384,29 @@ function screenWelcome() {
 
   wrap.append(el('p', 'hi-reassure', WELCOME.reassurance));
   return wrap;
+}
+
+// Shane introducing himself, if the file is there. Same contract as the template
+// previews: something that isn't in the repo yet must leave no trace on the page
+// rather than a broken player. The <video> reports `error` both for a real 404
+// and for a 404 page served as HTML, so either shape of missing file is caught.
+function introVideo() {
+  const v = WELCOME.video;
+  if (!v || !v.src) return null;
+
+  const figure = el('figure', 'hi-intro');
+  const video = document.createElement('video');
+  video.className = 'hi-intro-video';
+  video.controls = true;
+  video.preload = 'metadata';
+  video.playsInline = true; // iOS opens fullscreen without this
+  if (v.poster) video.poster = v.poster;
+  video.src = v.src;
+  video.addEventListener('error', () => figure.remove(), { once: true });
+
+  figure.append(video);
+  if (v.caption) figure.append(el('figcaption', 'hi-intro-cap', v.caption));
+  return figure;
 }
 
 function screenSection(section) {

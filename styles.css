@@ -6739,6 +6739,24 @@ footer .footer-nav ul,
 .hi-screen .cs-hook { font-size: clamp(1.5rem, 3.4vw, 2.1rem); margin-bottom: 1rem; }
 .hi-screen .om-lede { font-size: 1.02rem; margin-bottom: 1.75rem; }
 
+/* Shane's intro video on the first screen. Absent until the file exists — see
+   introVideo() in assets/handled/app.js. */
+.hi-intro { margin: 0 0 1.5rem; }
+.hi-intro-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--fg);
+  object-fit: cover;
+}
+.hi-intro-cap {
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  color: var(--dim);
+}
+
 .hi-handy {
   border: 1px solid var(--border);
   border-radius: 10px;
@@ -6847,7 +6865,10 @@ footer .footer-nav ul,
 }
 .hi-template:hover { border-color: var(--fg); }
 .hi-template.is-on { border-color: var(--fg); box-shadow: inset 0 0 0 1px var(--fg); }
-.hi-template-img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; border: 1px solid var(--border); background: var(--bg-soft); display: block; }
+/* object-position: top because these are full-page screenshots. Cropping to 4:3
+   from the centre would show a client the middle of someone else's page instead
+   of the hero, which is the part they are actually choosing between. */
+.hi-template-img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: top; border-radius: 6px; border: 1px solid var(--border); background: var(--bg-soft); display: block; }
 .hi-template-name { font-size: 0.9rem; color: var(--fg); font-weight: 500; }
 .hi-template-desc { font-size: 0.82rem; color: var(--dim); line-height: 1.45; }
 
@@ -6934,16 +6955,25 @@ footer .footer-nav ul,
   .hi-rail-btn {
     width: 100%;
     justify-content: flex-start;
-    flex-wrap: wrap;
     border-color: transparent;
     background: none;
     border-radius: 8px;
     padding: 0.55rem 0.7rem;
-    white-space: normal;
   }
   .hi-rail-btn:hover { background: var(--bg); border-color: var(--border); }
   .hi-rail-btn.is-current { background: var(--bg); border-color: var(--border-strong); }
-  .hi-rail-count { display: block; width: 100%; padding-left: 1.75rem; font-size: 0.75rem; color: var(--dim); }
+  /* The count sits on the label's line, pushed to the right edge. It used to be
+     width:100% inside a wrapping flex row, which forced it onto a line of its
+     own and made the rail read as fourteen loose items instead of seven. */
+  .hi-rail-label { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+  .hi-rail-count {
+    display: block;
+    margin-left: auto;
+    padding-left: 0.5rem;
+    font-size: 0.75rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--dim);
+  }
   .hi-rail-btn.is-complete .hi-rail-count { color: var(--mid); }
   .hi-save { margin: 1rem 0 0; padding: 0 0.7rem; }
 

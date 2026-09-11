@@ -138,6 +138,21 @@ export const WELCOME = {
     'This is everything I need from you. It takes about fifteen minutes. ' +
     'The longest part is recording yourself for five minutes — audio only, ' +
     'no camera — and you can type it instead if you’d rather.',
+  // A short intro from Shane, shown under the lede on the first screen.
+  //
+  // The file is not in the repo yet. Until it is, the player takes itself off
+  // the page on error and the screen looks exactly as it does today — a client
+  // must never meet a broken video. Drop the file at this path and it appears;
+  // there is no code change and no flag to flip.
+  //
+  // Keep it short and keep it audio-first: this plays before anyone has typed
+  // anything, and it is the only part of the intake that costs them time
+  // without collecting an answer.
+  video: {
+    src: '/videos/handled-intro.mp4',
+    poster: '', // optional still; without one the browser shows the first frame
+    caption: '',
+  },
   handy: [
     'Your logo, if you have one',
     'A few photos of your work, your space, or your team',
