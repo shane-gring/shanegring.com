@@ -6865,10 +6865,12 @@ footer .footer-nav ul,
 }
 .hi-template:hover { border-color: var(--fg); }
 .hi-template.is-on { border-color: var(--fg); box-shadow: inset 0 0 0 1px var(--fg); }
-/* object-position: top because these are full-page screenshots. Cropping to 4:3
-   from the centre would show a client the middle of someone else's page instead
-   of the hero, which is the part they are actually choosing between. */
-.hi-template-img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: top; border-radius: 6px; border: 1px solid var(--border); background: var(--bg-soft); display: block; }
+/* 16/9 because every preview is 1279x712. A 4:3 card cropped 26% off the sides,
+   which cut the first word off half the headlines — a client was choosing between
+   six pages with their left edge sliced away. Matching the card to the source
+   means nothing is cropped at all. object-position stays as insurance for a
+   future screenshot that isn't this shape. */
+.hi-template-img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: top; border-radius: 6px; border: 1px solid var(--border); background: var(--bg-soft); display: block; }
 .hi-template-name { font-size: 0.9rem; color: var(--fg); font-weight: 500; }
 .hi-template-desc { font-size: 0.82rem; color: var(--dim); line-height: 1.45; }
 
