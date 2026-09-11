@@ -4,22 +4,60 @@
 // picker re-renders from this array and nothing needs a code change. Nothing
 // anywhere assumes how many there are.
 //
-// Names and previews below are placeholders; Chris is producing the real ones.
-// A preview image that doesn't exist yet falls back to a neutral placeholder
-// rather than breaking the render, so you can drop PNGs in one at a time.
+// These are real sites Shane has built, not mockups. A client picking from work
+// that exists is picking something they can go and look at, which is why the
+// description is the domain rather than a word like "bold" — they can open it in
+// another tab and judge for themselves.
+//
+// The same screenshots appear on /handled, so the look a client chooses here is
+// the look they were sold on the page they bought from.
+//
+// A preview image that doesn't exist falls back to a neutral placeholder rather
+// than breaking the render, so entries can be swapped one at a time.
 //
 //   id            stable key stored on the record. Don't reuse or repoint an
 //                 id once a client has chosen it.
 //   name          shown under the preview.
 //   description   one line. "TBD" renders as nothing rather than the word.
-//   previewImage  path under /images/handled/templates/.
+//   previewImage  path under /images/handled/.
 
 export const TEMPLATES = [
-  { id: 'template-01', name: 'Placeholder A', description: 'TBD', previewImage: '/images/handled/templates/01.png' },
-  { id: 'template-02', name: 'Placeholder B', description: 'TBD', previewImage: '/images/handled/templates/02.png' },
-  { id: 'template-03', name: 'Placeholder C', description: 'TBD', previewImage: '/images/handled/templates/03.png' },
-  { id: 'template-04', name: 'Placeholder D', description: 'TBD', previewImage: '/images/handled/templates/04.png' },
-  { id: 'template-05', name: 'Placeholder E', description: 'TBD', previewImage: '/images/handled/templates/05.png' },
+  {
+    id: 'look-buckhead',
+    name: 'Buckhead Restaurant Week',
+    description: 'buckheadrestaurantweek.com',
+    previewImage: '/images/handled/1-buckhead-restaurant-week.png',
+  },
+  {
+    id: 'look-drvn',
+    name: 'DRVN Golf',
+    description: 'drvngolf.com',
+    previewImage: '/images/handled/7-drvn.png',
+  },
+  {
+    id: 'look-forj',
+    name: 'The Forj Group',
+    description: 'theforjgroup.com',
+    previewImage: '/images/handled/4-forj.png',
+  },
+  {
+    id: 'look-bfs',
+    name: 'Bigger Faster Stronger',
+    description: 'biggerfasterstronger.com',
+    previewImage: '/images/handled/5-bfs.png',
+  },
+  {
+    id: 'look-excel',
+    name: 'Excel Training Designs',
+    description: 'exceltrainingdesigns.com',
+    previewImage: '/images/handled/6-excel-training-designs.png',
+  },
+  {
+    id: 'look-albizhubi',
+    name: 'Albi Zhubi',
+    description: 'albizhubi.com',
+    previewImage: '/images/handled/1-albizhubi.png',
+  },
 ];
 
 // Shown when previewImage 404s or isn't there yet. Inline SVG so it needs no
