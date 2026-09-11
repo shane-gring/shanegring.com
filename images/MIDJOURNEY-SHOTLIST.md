@@ -619,17 +619,33 @@ rationale in that folder's `README.md`. Bake-off before adoption: regenerate
 `map-hero` + one guide card via the trained LoRA and compare against the MJ
 versions.
 
-## 19. `/handled` — the Handled hero ⬜ TO GENERATE (`handled-hero.png`)
+## 19. `/handled` — the Handled hero ✅ DONE (`handled-hero.png`, 2026-09-11)
 
 Full-bleed band, so `--ar 21:9` like the three way-in pages, not 16:9. Export
 ~3000px wide.
 
-**Standing in right now:** `done-for-you-hero.png`, renamed to
-`handled-hero.png` on 2026-09-11 when /handled was rebuilt — /done-for-you had
-become a 301 to /work-with-me, so its art was orphaned, and the dry dock says
-what this page says. Section 15 records its prompt and why it was picked. It is
-a stand-in only because it was written for a different page's aspect and
-subject placement, not because it is wrong.
+**Shipped: Option A, the water tower**, first generation, no retries. The
+prompt as sent:
+
+```
+a small-town water tower at the far left and the town's low rooftops at the
+far right, a maintenance crew at work on the tower catwalk, low horizon under
+a tall open sky, [style suffix] --ar 21:9
+```
+
+Four clauses, against section 15's warning that the third one gets dropped —
+it held all four. Worth knowing: the clauses that survived are the ones that
+describe *where things sit*, which suggests placement language is stickier
+than action language.
+
+1680x720 out of Midjourney, quantised to a 256-colour PNG with
+`pngquant --quality=70-98 --speed 1 256`, 1.0 MB down to 383K, which puts it
+level with its siblings (scan 308K, work-with-me 421K, site 493K). The sky
+gradient bands very slightly at 256 and it does not show at render size.
+
+**Superseded:** `done-for-you-hero.png` stood in here from 2026-09-11 until
+this landed — /done-for-you had become a 301 to /work-with-me, orphaning its
+dry dock. That file is now unused. Section 15 records its prompt.
 
 **Scenes already spent, and this one has to avoid all of them:** the funicular
 (`/work-with-me`), the facade inspection (`/read`), the crane and modules
@@ -657,7 +673,26 @@ everyone who relies on it gets on with their day and never thinks about it.
    are "somebody keeps the public face true," and two pages saying that with
    the same idea in different housings is worse than one.
 
-**Composition.** Section 15's note holds — subject about a third in from the
+**Composition — and this is the part that worked.** Pushing the art to the
+sides is what let the centred copy land. Midjourney ignores "leave the middle
+empty" as an instruction, but it honours a described horizon, so the reliable
+recipe is: name what sits at each edge, put the horizon low, and let the tall
+sky be the void. Both edges came back occupied and the middle came back as
+cloud, first try.
+
+The page then had to stop washing it away. Two scrim changes went with this
+art: the bottom close-out to white was starting at 80%, which erased the
+rooftop line and the foot of the tower — the whole reason the frame is
+composed this way — so it holds off until 87%. And the radial under the copy
+came in from 58% to 54% wide, which hands the edges back about 56px each side.
+
+On a phone, cover scales to height and keeps only ~40% of the width, so the
+question becomes which slice sits behind the copy. Framing the tower
+(`object-position: 16%`) put its legs directly behind the headline as a
+vertical smear. The cloud mass at `72%` reads as texture and leaves the
+rooftops along the bottom, which is what shipped.
+
+Section 15's note holds — subject about a third in from the
 left — but the reason changes, so read this before framing. The way-in bands
 are left-aligned copy with a left-to-right scrim, so their right side stays
 quiet. **This hero centres its copy over a radial scrim**, which means the
