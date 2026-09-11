@@ -44,3 +44,14 @@
 # entry as a duplicate and ignored it.
 /partner              /autopilot              301
 /operating-partner    /autopilot              301
+
+# 2-handled and 3-handled were never real pages: they were accidental
+# duplicate copies of /handled committed in d6d9c75, most likely a shell
+# mishap. They were served for a week and are older, thinner snapshots of
+# the page (missing five of the example sites), so they are duplicate
+# content pointed at the wrong version. Removed 2026-09-10; these 301s
+# catch anything that indexed or linked them in the meantime.
+/2-handled            /handled                301
+/2-handled.html       /handled                301
+/2-handled.md         /handled                301
+/3-handled.md         /handled                301

@@ -1,4 +1,4 @@
-Notes · 60 of them
+Notes · 62 of them
 
 # What I'm working through, most weekdays.
 
@@ -10,6 +10,44 @@ businesses, what broke, what I'd do differently.
 on the way there.** Also on
 [LinkedIn](https://www.linkedin.com/in/shanegring/),
 which is where they start.
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 10, 2026
+
+When most small teams launch a campaign, the first week disappears into asset-making: landing page copy, ad variations, building a gated resource, tagline testing.
+
+The campaign hasn't started, and the week's gone.
+
+Most of that week is rewriting things you've already said. The offer, the positioning, the proof, the way you describe the problem -- if that lives on your site in a form tools can read, the assets come off it fast.
+
+Landing pages that match the campaign. Ad angles to test. A resource built from what's already there.
+
+The campaign starts from a foundation instead of a blank page.
+
+If a launch always seems to take weeks of setup before anything ships, the setup is usually the tell. The pieces you keep rebuilding are the ones worth building into the foundation once and for all.
+
+[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503835944895315969)
+
+Tips
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 10, 2026
+
+Every month for the first year, Skyler builds a ring of flowers around each of our girls and takes their picture.
+
+This one's the twins at eleven months. The flowers come from a neighbor of ours who grows them in her backyard and turns it into these arrangements -- she runs a little business doing it. Sky lays the whole circle out by hand, then we get maybe thirty seconds before someone starts grabbing at a rose.
+
+She's done this for all four of the girls. Parker and Dylan get in on it now too, half helping, half supervising.
+
+It's a lot of work, honestly. But it's all worth it. Taking a beat to actually capture a moment, instead of letting the month blur past, turns a random Tuesday into something the girls will have forever.
+
+Sky's eye and creativity are just a few more things that make her special. And I'm grateful I get to watch, help, and enjoy these little time-lapse photos of all my girls.
+
+12 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503814567140007936)
+
+Personal Story
 
 Shane Gring
 Fractional COO · operations for expert-led businesses
@@ -83,7 +121,7 @@ Mostly, though, it was the feeling of being led for a change. Letting somebody e
 
 Still think about that room.
 
-11 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503093566563303425)
+16 reactions · 4 comments[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503093566563303425)
 
 Personal Story
 
@@ -121,7 +159,7 @@ Get that right and the posts, the pages, the ads all pull from one source and so
 
 So, before you spend a dollar on a rebuild, here are the questions to ask whoever builds or runs your site. The answers tell you whether you're buying a foundation for your business or just a passing snapshot of how it stands today.
 
-[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:ugcPost:7501298018747465728)
+2 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:ugcPost:7501298018747465728)
 
 Shane Gring
 Fractional COO · operations for expert-led businesses
@@ -141,7 +179,7 @@ The Institute has since transitioned. The movement wave crested and fell, the ne
 
 But the premise held up. I still think a business is one of the best tools there is for taking care of people. Most of what I do today runs on some version of that idea.
 
-2 reactions · 2 comments[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:ugcPost:7500968336650866689)
+3 reactions · 2 comments[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:ugcPost:7500968336650866689)
 
 Personal Story
 
@@ -269,7 +307,7 @@ We now have four girls. I'm building them a replica playhouse of our mid-century
 
 So if you're in the patient stretch, the part before the things you're working toward have shown up, just keep going. As it turns out, there aren't many finish lines in life -- just more adventures ahead.
 
-11 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7498392590682075137)
+13 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7498392590682075137)
 
 Personal Story
 
@@ -499,7 +537,7 @@ Here's what I mostly want to say, though. None of these trips happen without Sky
 
 Been meaning to say it out loud instead of just thinking it: she's the reason our kids get to see the world. I get to carry Dyl, take photos, eat sushi, etc. But she's the real one who made these days exist.
 
-24 reactions · 6 comments[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7493687831890907136)
+25 reactions · 6 comments[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7493687831890907136)
 
 Personal Story
 

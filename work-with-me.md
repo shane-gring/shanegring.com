@@ -50,6 +50,21 @@ come up often enough to be worth putting on the page.
 
 - You want the diagnosis, but you do not intend to act on it
 
+A different lane
+
+## Maybe you just want a site, handled.
+
+The eight above are for a business with an operation to run. If what
+you need is smaller than that — one good page, live, watched
+every week, and never your problem again — that is a different
+product at a different price. It is called Handled.
+
+I build the site and I keep it running. Changes go by email. You own
+the code and you can take it with you.
+**$300 to build, $200 a month to keep it handled.**
+
+[See how Handled works →](https://shanegring.com/handled)
+
 ## Or just talk to me.
 
 **Twenty minutes.**

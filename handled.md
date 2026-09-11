@@ -43,14 +43,16 @@ the freelancer, without the weekend.
 
 - **Analytics and search, set up right.** Google Analytics and Search Console, configured and quietly working, so your site is measured instead of guessed at.
 
-- **Code you own.** It's built on clean, standard code — yours to keep. Stay because it's handled, not because you're trapped.
+- **Everything in your name, from day one.** The code, the design files, the Google Analytics and Search Console accounts, and the domain — which I buy for you, up to $15 — all yours, not borrowed from me. Ask and I hand the lot over. Stay because it's handled, not because you're trapped.
 
 ## How it works
 
 ### 1. We spin you up
 
 Quick conversation about who you are and what the site needs to
-do. I handle the domain, the design, the words, the images.
+do. I handle the design, the words, the images, and the domain
+— I'll buy it for you, up to $15, and register it in your
+name, not mine.
 
 ### 2. You go live in days
 
@@ -123,9 +125,10 @@ Green home certification. greenstarhomes.org
 
 ## $300 to build. $200/month to keep it handled.
 
-Six-month minimum, because good management is a relationship, not a
-transaction — and cancel anytime after. When you go, you take your
-site with you: I hand over the repo, no hostage situation.
+**Month to month. Cancel any time.** No minimum, no notice
+period, no exit fee, and nothing to talk me out of — one email
+ends it. If I'm worth keeping, that should show up in the work, not in
+a contract you can't get out of.
 
 That's it. No plan tiers to decode, no upsells buried in a dashboard, no
 surprise renewal. Want more than the base? The upgrades below are the
@@ -149,7 +152,7 @@ A second page, built to the same standard and folded into the
 same weekly watch. An about page, a services page, a page for the
 thing you launch next.
 
-**Pricing at launch**
+**$99 per page**
 
 ### A block of hours
 
@@ -164,7 +167,7 @@ say what it goes toward.
 A signup form on your site and a clean place to send from.
 Your list is yours, same as your code.
 
-**Pricing at launch**
+**$49 one-time**
 
 ### A lean CMS
 
@@ -198,9 +201,9 @@ it. The CMS is what lets you skip the ask.
 **[Add the lean CMS — $200 one-time](https://checkout.shanegring.com/b/00w8wO1DddAs7fw5Mffbq07)**
 
 **The hour blocks and the lean CMS are live in checkout**
-— the links are right on the cards. Another page and the
-newsletter still price at launch: mention them when you get in line
-and I'll fold them into your build.
+— the links are right on the cards. Extra pages are $99 each and
+the newsletter is $49: mention either when you get in line and I'll
+fold it into your build.
 
 ## Founding cohort — first 10 only
 
@@ -231,9 +234,52 @@ every month, not grinding out code by hand. The build is quick by
 design. The *handling* is where a person shows up, and that's
 what you're paying for.
 
-**What if I want to leave?** After the six months, cancel
-whenever. You keep the site — I hand you the repo and you can take
-it anywhere. No lock-in, no drama.
+**What do you need from me to get started?** A conversation, and whatever you already have. I handle the domain, the
+design, the words and the images — that's the point of it. If you
+have a logo, photos or copy you like, send them and I'll use them. If
+you don't, that's not a task I hand back to you.
+
+**How long until it's live?** Days, not weeks. We talk, I build, you review, we tighten, it ships. The
+build is quick by design — the *handling* is the part that
+runs for as long as you want it to.
+
+**What counts as a change I can just email you?** A headline, a photo, a rewritten line, a new price, a link that needs
+fixing. Send it and it gets done — no ticket, no portal, no
+“please allow 5–7 business days.” Bigger jobs are the
+exception: a run of posts or listings isn't email-sized work, so it
+comes out of a block of hours, or you add the lean CMS and publish
+those yourself.
+
+**What actually happens in the weekly check?** I check how the site is performing, catch bugs before you run into them,
+and send you a short read on how it's doing and what I'd improve.
+Google Analytics and Search Console are set up and quietly working
+underneath that, so your site is measured instead of guessed at.
+
+**What if I need more than one page later?** You add one. Extra pages are **$99 each**, built to the same
+standard and folded into the same weekly watch. A newsletter wired in
+is $49, a lean CMS is $200 one-time, and blocks of hours are $300 for
+two or $500 for five. None of it is required, and none of it is
+bundled in ahead of time. The upgrades are all here.
+
+**How is this different from the Autopilot?** The [Autopilot](https://shanegring.com/autopilot) is $899 a month and runs on a site
+you already have, as part of a wider operating engagement. Handled is
+smaller and starts earlier: it includes building the site in the first
+place, then keeps one page sharp for $200 a month. If you already have
+a site worth tending, the Autopilot is the better fit.
+
+**Why make it this easy to cancel?** Because a site you can't leave is worth less
+than one you can. Lock-ins exist to hold on to clients whose work
+stopped being worth paying for — I'd rather find that out and
+fix it. Everything is in your name from the start, so leaving is a
+transfer, not a negotiation.
+
+**What if I want to leave?** Whenever you want. No minimum, no notice
+period, no exit fee — send one email and it stops at the end of
+that month. You keep everything, because it was always yours: the
+code, the design files, the Google Analytics and Search Console
+accounts, and the domain, which is registered in your name from day
+one. Anything I'm administering, I transfer wherever you want it, at
+no charge, and I don't make you ask twice.
 
 **Who is this not for?** If you love tinkering with your
 own site, or you've got more time than money, Squarespace is genuinely
@@ -246,6 +292,8 @@ Stop paying for tools you have to operate yourself. Stop hiring people who
 vanish. Get a site that's built well and stays that way.
 
 **Handled. $300 to build, $200/month** to keep it running.
+Month to month, cancel any time, and everything is in your name from
+day one.
 
 [Claim a founding spot →](https://checkout.shanegring.com/b/5kQ6oG0z98g86bsdeHfbq03)
 **Checkout is open.** $300 build today, $200/month after — founding spots included.

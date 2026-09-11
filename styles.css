@@ -231,6 +231,16 @@ nav .nav-cta:hover { background: #000; color: var(--bg); }
   padding: 0;
 }
 
+/* The desktop row starts at 769px, and adding "Handled" as a fifth top-level
+   item pushed what the row needs past that: logo + items + the base 2rem gaps
+   measure 776px, so between 769px and ~780px the CTA overflowed the container.
+   Tightening the gap in that band buys 32px of headroom and changes nothing
+   at the widths where the row already had room. Measured, not guessed --
+   re-measure before adding a sixth item, because there is no slack left. */
+@media (min-width: 769px) and (max-width: 900px) {
+  #nav-menu { gap: 1.5rem; }
+}
+
 /* Work-with-me dropdown: the five rungs */
 .nav-drop { position: relative; }
 
