@@ -1,4 +1,4 @@
-Notes · 62 of them
+Notes · 63 of them
 
 # What I'm working through, most weekdays.
 
@@ -10,6 +10,24 @@ businesses, what broke, what I'd do differently.
 on the way there.** Also on
 [LinkedIn](https://www.linkedin.com/in/shanegring/),
 which is where they start.
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 11, 2026
+
+Here's a test for whether your website has an owner: how long would it take to fix a typo on it today?
+
+If the honest answer is "I'd have to find who has the login, then wait on someone," your site is between owners. It probably has been for a while.
+
+That gap costs more than it looks like. The small fixes that never ship are the ones customers notice. The wrong price. The dead contact form. The page about a service you stopped offering last year. None of it needs a rebuild. It needs a person whose job is the site, on a rhythm, so a fix takes days instead of a committee.
+
+That's a service I run now. You keep the site you have, wherever it lives, and I own the upkeep -- requests by voice note if that's easiest, fixes shipped within days, a site that stays true to the business as it changes.
+
+If the typo test stung a little, details are in the comments.
+
+2 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7504199585108533249)
+
+Website OfferUse Case
 
 Shane Gring
 Fractional COO · operations for expert-led businesses
@@ -45,7 +63,7 @@ It's a lot of work, honestly. But it's all worth it. Taking a beat to actually c
 
 Sky's eye and creativity are just a few more things that make her special. And I'm grateful I get to watch, help, and enjoy these little time-lapse photos of all my girls.
 
-12 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503814567140007936)
+16 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503814567140007936)
 
 Personal Story
 
@@ -355,7 +373,7 @@ Often, it's a small fix: leave the app an app, and move the pages that earn buye
 
 Worth a read if you've got a good-looking site that isn't pulling its weight: [shanegring.com/guides/move-content-into-html](https://shanegring.com/guides/move-content-into-html)
 
-[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7497714374619320321)
+1 reaction[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7497714374619320321)
 
 EducationTipsWebsite Offer
 

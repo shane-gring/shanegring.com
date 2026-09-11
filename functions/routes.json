@@ -350,6 +350,7 @@
     "/tests/handled-presign.test.mjs",
     "/tests/html-to-markdown.test.mjs",
     "/tests/negotiation.test.mjs",
+    "/tests/stripe-handled.test.mjs",
     "/tools/build-blog.mjs",
     "/tools/build-markdown.mjs",
     "/tools/build-notes.mjs",
