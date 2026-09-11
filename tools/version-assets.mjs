@@ -36,18 +36,62 @@ function shortHash(file) {
   return createHash('sha256').update(readFileSync(file)).digest('hex').slice(0, 8);
 }
 
+let touched = 0;
+const stale = [];
+
 const versions = new Map();
 for (const asset of ASSETS) {
   const path = resolve(ROOT, asset);
   if (existsSync(path)) versions.set(asset, shortHash(path));
 }
 
+// ---------------------------------------------------------------------------
+// The Handled intake module graph.
+//
+// Same cache problem, one level deeper. /handled-intake loads an ES module,
+// which imports its config (questions.js, templates.js, uploads.js) by a
+// relative path the loop above never sees. The whole point of that config is
+// that Chris and Shane edit it without touching code — so a four-hour stale
+// copy would mean a reworded question silently not appearing, which is worse
+// than the stylesheet bug this tool was written for.
+//
+// Order matters: stamp the leaf imports inside app.js first, then hash app.js
+// (its contents just changed), then let the loop above stamp app.js in the
+// HTML. Only the browser-side import sites are touched — the Pages Functions
+// import the same config by relative path and are bundled at build time, where
+// a ?v= query would break resolution.
+// ---------------------------------------------------------------------------
+
+const HANDLED_DIR = 'assets/handled';
+const HANDLED_APP = `${HANDLED_DIR}/app.js`;
+const HANDLED_CONFIG = ['questions.js', 'templates.js', 'uploads.js'];
+
+const appPath = resolve(ROOT, HANDLED_APP);
+if (existsSync(appPath)) {
+  const before = readFileSync(appPath, 'utf8');
+  let after = before;
+
+  for (const mod of HANDLED_CONFIG) {
+    const modPath = resolve(ROOT, HANDLED_DIR, mod);
+    if (!existsSync(modPath)) continue;
+    const hash = shortHash(modPath);
+    const re = new RegExp(`(from\\s+['"]\\./)${mod.replace(/\./g, '\\.')}(?:\\?v=[a-f0-9]+)?(['"])`, 'g');
+    after = after.replace(re, `$1${mod}?v=${hash}$2`);
+    console.log(`  ${HANDLED_DIR}/${mod} -> ?v=${hash}`);
+  }
+
+  if (after !== before) {
+    stale.push(relative(ROOT, appPath));
+    if (!CHECK) writeFileSync(appPath, after);
+    touched += 1;
+  }
+}
+
+if (existsSync(appPath)) versions.set(HANDLED_APP, shortHash(appPath));
+
 const pages = globSync('**/*.html', { cwd: ROOT })
   .filter((p) => !p.startsWith('node_modules/') && !p.includes('/node_modules/'))
   .map((p) => resolve(ROOT, p));
-
-let touched = 0;
-const stale = [];
 
 for (const page of pages) {
   const before = readFileSync(page, 'utf8');
@@ -56,7 +100,7 @@ for (const page of pages) {
   for (const [asset, hash] of versions) {
     // Matches /asset, /asset?v=anything — anchored on the quote so a longer
     // filename sharing a prefix cannot be caught by accident.
-    const re = new RegExp(`(["'])/${asset.replace('.', '\\.')}(?:\\?v=[a-f0-9]+)?\\1`, 'g');
+    const re = new RegExp(`(["'])/${asset.replace(/\./g, '\\.')}(?:\\?v=[a-f0-9]+)?\\1`, 'g');
     after = after.replace(re, `$1/${asset}?v=${hash}$1`);
   }
 
