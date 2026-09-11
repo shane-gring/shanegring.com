@@ -417,6 +417,9 @@ civic-infrastructure-by-the-water world.
    > and cable network faintly visible beneath the pavement,
 
 2. **`/done-for-you`** — a crew owns the work while the owner stands off it
+   (**renamed `handled-hero.png` on 2026-09-11**: /done-for-you became a 301 to
+   /work-with-me, orphaning this art, and /handled needed exactly this scene.
+   See section 19.)
    > a ship in a dry dock with a full crew at work on its hull from scaffolding, the
    > owner watching from the quayside with his hands in his pockets, harbor town rising
    > behind,
@@ -616,77 +619,84 @@ rationale in that folder's `README.md`. Bake-off before adoption: regenerate
 `map-hero` + one guide card via the trained LoRA and compare against the MJ
 versions.
 
-## 9. `/handled` — the Handled hero ⏳ TO GENERATE (`handled-hero.png`)
+## 19. `/handled` — the Handled hero ⬜ TO GENERATE (`handled-hero.png`)
 
-**Idea to carry:** one small thing, kept — actively maintained by someone else
-while its owner walks away and gets on with their work. The neighbours show
-what happens when nobody tends it, which is the page's whole argument
-("it rots" / "you get on with your work").
+Full-bleed band, so `--ar 21:9` like the three way-in pages, not 16:9. Export
+~3000px wide.
 
-**Composition constraint, and it matters here:** this hero is centred copy over
-a radial white scrim, so the middle third of the frame gets washed out to near
-white. Put the subject left of centre and the walking figure at the right,
-and leave the centre as open sky and ground. Art that piles everything into
-the middle disappears behind the headline. Bright morning light, not dusk —
-a dark image under a white scrim goes muddy.
+**Standing in right now:** `done-for-you-hero.png`, renamed to
+`handled-hero.png` on 2026-09-11 when /handled was rebuilt — /done-for-you had
+become a 301 to /work-with-me, so its art was orphaned, and the dry dock says
+what this page says. Section 15 records its prompt and why it was picked. It is
+a stand-in only because it was written for a different page's aspect and
+subject placement, not because it is wrong.
 
-Currently standing in: `done-for-you-hero.png`, renamed to `handled-hero.png`
-when /done-for-you became a redirect. A ship in dry dock with a crew on it and
-the owner watching from the quay — right metaphor, wrong page originally.
-Swap the file and the hero changes; nothing else to touch.
+**Scenes already spent, and this one has to avoid all of them:** the funicular
+(`/work-with-me`), the facade inspection (`/read`), the crane and modules
+(`/site`), the split-flap board (`/partner`), the pegboard workshop
+(`/install`), the lighthouse (`/scan`), the central station (`/approach`), the
+utility locator (`/find-out`), the dry dock (`/done-for-you`), the pilot cutter
+(`what-is-a-fractional-coo`) — and above all **the canal lock**, which is
+`/do-it-yourself` and is this page's exact inverse: there, the owner works the
+gate and the keeper stands back. Section 11 also declared the harbor and rail
+motifs used up, which rules out the obvious bridge-keeper answer.
 
-**Option A — the one kept shopfront** (preferred)
+**Idea to carry:** the thing a town depends on, kept up by someone else, while
+everyone who relies on it gets on with their day and never thinks about it.
 
-> a single immaculate small storefront on a street of shuttered weathered
-> buildings, freshly painted and swept, awning crisp, a caretaker on a short
-> wooden ladder polishing its hanging sign, the shop sitting left of centre,
-> the owner walking away down the empty pavement to the right with a coffee,
-> unhurried, hands in pockets, wide open sky through the middle of the frame,
-> clear morning light, [style suffix] --ar 21:9
+1. **Option A — the water tower** (preferred: one simple standing structure,
+   which is what a one-page site is)
+   > a small-town water tower with a maintenance crew at work on its catwalk,
+   > the streets below going about their day,
 
-**Option B — the one tended sign**
+2. **Option B — the clock tower**
+   > a tower keeper winding the great clock movement inside a town clock tower,
+   > the square below going about its day,
 
-> a tall roadside sign tower beside a quiet highway, its panels clean and lit,
-> a technician on a small maintenance gantry halfway up tightening a fitting,
-> two older sign towers further down the road peeling and blank, the lit tower
-> left of centre, a driver walking back to a parked car at the right, wide open
-> sky and empty road through the middle, clear morning light,
-> [style suffix] --ar 21:9
+   Weigh this one against `/partner`'s split-flap board before generating. Both
+   are "somebody keeps the public face true," and two pages saying that with
+   the same idea in different housings is worse than one.
 
-Note on `--sref`: both reference URLs were checked on 2026-09-11 and return
-`content-type: image/png`, not the 200-plus-HTML that Cloudflare Pages serves
-for a missing file. Re-check before blaming Midjourney if the style drifts.
+**Composition.** Section 15's note holds — subject about a third in from the
+left — but the reason changes, so read this before framing. The way-in bands
+are left-aligned copy with a left-to-right scrim, so their right side stays
+quiet. **This hero centres its copy over a radial scrim**, which means the
+middle third of the frame washes out to near white, and the left and right
+edges are the parts that survive. So: structure a third in from the left, open
+sky through the centre, and something quiet but present at the right edge.
+Bright daytime — a dark frame under a white scrim goes muddy.
 
-### 9b. The moving version (`handled-hero.mp4`)
+**`--sref` check (2026-09-11).** Both reference URLs were fetched and return
+`content-type: image/png`, so the 2026-08-01 trap in section 15 is not live
+today. Re-check before blaming Midjourney if the style drifts: Cloudflare Pages
+answers a missing asset with 200 and an HTML body, so a status-code check
+passes while the reference silently fails.
 
-The hero takes a looping video as well as the still. The page is already wired
-for it: drop `/images/handled-hero.mp4` in and the hero moves; take it away and
-the hero is a still again. No other edit either way. The `<img>` stays the LCP
-element and the permanent fallback, and the loop fades in only once it can
-play — so a missing file, a slow connection, Save-Data, or
-`prefers-reduced-motion: reduce` all quietly leave the still in place. Verified
-both ways on 2026-09-11.
+### 19b. The moving version (`handled-hero.mp4`)
 
-Workflow: generate the still from the Option A prompt above, then animate that
-image in Midjourney. Motion prompt:
+The hero takes a loop as well as a still, and the page is already wired for it:
+drop `/images/handled-hero.mp4` in and the hero moves, take it away and it is a
+still again, no other edit either way. The `<img>` stays the LCP element and the
+permanent fallback; the loop fades in only once it can play, so a missing file,
+Save-Data, a 2g connection or `prefers-reduced-motion: reduce` all leave the
+still in place. Both paths verified in the browser on 2026-09-11.
 
-> the caretaker polishes the sign in slow strokes, the awning stirs in a light
-> breeze, clouds drift slowly across the sky, the owner walks unhurried away
-> down the pavement, everything else still, locked-off camera, no pan, no zoom
+Generate the still first, then animate that image. Motion prompt, kept to one
+action the same way the stills are:
 
-Four things that decide whether this works on the page:
+> the crew works on slowly and the clouds drift, everything else still,
+> locked-off camera
 
-- **Low motion, and a locked-off camera.** Copy sits on top of this. A pan or
-  a push behind fixed text reads as the page sliding, and it drags the scrim's
-  opaque oval across a moving subject.
-- **Ambient motion only.** Nothing should cross the centre third — that is
-  where the white scrim is strongest, and a subject that walks into it vanishes.
-  Keep the action left (the caretaker) and right (the owner leaving).
-- **It has to loop.** Midjourney will not hand back a seamless one. Either keep
+- **Locked-off camera, low motion.** Copy sits on this. A pan behind fixed text
+  reads as the page sliding, and it drags the scrim's washed-out centre across a
+  moving subject.
+- **Nothing crosses the centre third.** That is where the wash is strongest; a
+  subject that walks into it disappears. Keep the movement at the edges.
+- **It has to loop.** Midjourney will not return a seamless one — either keep
   the motion ambient enough that a hard cut is invisible, or crossfade the tail
   into the head afterwards.
-- **Budget it like an ad asset.** Aim under ~2 MB. It is a background on a page
-  bought with click money, and it downloads after the still either way:
+- **Budget it like an ad asset**, under ~2 MB, since this page is bought with
+  click money:
   `ffmpeg -i in.mp4 -an -c:v libx264 -crf 30 -preset slow -pix_fmt yuv420p -r 12 -movflags +faststart handled-hero.mp4`
-  Strip the audio (`-an`) — the element is muted and the track is dead weight.
-  12 fps suits pixel art and roughly halves the file against 24.
+  `-an` because the element is muted and the audio track is dead weight; 12 fps
+  suits pixel art and roughly halves the file against 24.
