@@ -1,10 +1,15 @@
 /**
  * Handled intake — Apps Script web app.
  *
- * Receives the POST that functions/api/handled/submit.js makes to
- * HANDLED_SHEET_URL when a client finishes their intake, and does three
- * things: appends a row to the sheet, emails Shane the brief, and emails the
- * client a short confirmation.
+ * Receives the POSTs the site makes to HANDLED_SHEET_URL, at both ends of the
+ * job:
+ *
+ *   kind: "handled-paid"    from functions/api/stripe-handled.js when Stripe
+ *                           says someone bought. Files the purchase and emails
+ *                           Shane the intake link to send on.
+ *   kind: "handled-intake"  from functions/api/handled/submit.js when they
+ *                           finish the form. Appends a row, emails Shane the
+ *                           brief, and emails the client a short confirmation.
  *
  * This mirrors scan-lead-appsscript.gs. Same pattern, same account, same
  * reason: the site has no transactional mail provider, and MailApp is free,
@@ -31,6 +36,7 @@
 
 var SHANE = 'shane@shanegring.com';
 var SHEET_NAME = 'Handled intake';
+var PAID_SHEET_NAME = 'Handled paid';
 
 // ---------- entry point ----------
 
@@ -40,6 +46,16 @@ function doPost(e) {
 
     // The same web app URL could be pointed at by something else one day.
     // Refuse anything that is not ours rather than filing it wrongly.
+    //
+    // Two kinds arrive here, at the two ends of the job: 'handled-paid' when
+    // Stripe says someone bought, and 'handled-intake' when they finish the
+    // form. Same script because it is the same client and the same inbox.
+    if (d.kind === 'handled-paid') {
+      appendPaidRow_(d);
+      notifyShanePaid_(d);
+      return json_({ ok: true });
+    }
+
     if (d.kind !== 'handled-intake') {
       return json_({ ok: false, error: 'unexpected kind: ' + d.kind });
     }
@@ -99,6 +115,48 @@ function countFiles_(uploads) {
 function mmss_(s) {
   if (!s && s !== 0) return '';
   return Math.floor(s / 60) + ':' + ('0' + Math.round(s % 60)).slice(-2);
+}
+
+// ---------- someone paid ----------
+
+function appendPaidRow_(d) {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName(PAID_SHEET_NAME) || ss.insertSheet(PAID_SHEET_NAME);
+
+  if (sheet.getLastRow() === 0) {
+    sheet.appendRow(['Paid', 'Name', 'Email', 'Amount', 'Intake link', 'Sent', 'Stripe session']);
+    sheet.setFrozenRows(1);
+  }
+
+  // The link goes in the sheet as well as the email because the email is the
+  // thing most likely to be lost, and the token cannot be read back out of
+  // storage — it is stored hashed. Losing both means re-issuing.
+  sheet.appendRow([
+    d.paidAt || new Date().toISOString(),
+    d.name || '',
+    d.email || '',
+    d.amount || '',
+    d.url || '',
+    '',
+    d.session || '',
+  ]);
+}
+
+function notifyShanePaid_(d) {
+  var who = d.name || d.email || 'Someone';
+  var subject = 'Handled: ' + who + ' paid — send them their intake link';
+
+  var body =
+    who + ' just bought Handled' + (d.amount ? ' (' + d.amount + ')' : '') + '.\n\n' +
+    'Send them this link. It is the only copy — the token is stored hashed, so\n' +
+    'it cannot be recovered if it is lost. Re-issue instead.\n\n' +
+    d.url + '\n\n' +
+    '────────────────────────────────\n' +
+    'Name   ' + (d.name || '—') + '\n' +
+    'Email  ' + (d.email || '—') + '\n' +
+    'Paid   ' + (d.paidAt || '—') + '\n';
+
+  MailApp.sendEmail({ to: SHANE, subject: subject, body: body });
 }
 
 // ---------- Shane's brief ----------
