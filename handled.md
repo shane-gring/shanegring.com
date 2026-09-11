@@ -11,14 +11,9 @@ weekend to spend becoming a web designer. So here's the deal:
 **I build your site, and I keep it running.** You never open a
 dashboard.
 
-$300 to build
-·
-$200 a month to keep it running
-Founding rate — first 10
-
 [Claim a founding spot →](https://checkout.shanegring.com/b/5kQ6oG0z98g86bsdeHfbq03)
 
-**Checkout is open.** The ten founding spots go in order of who's in first, and that rate never moves after.
+Starts at $300.
 
 - Month to month
 
@@ -60,6 +55,32 @@ Each one fails exactly where the other wins.
 **I do both.** A site built for you — and kept sharp,
 watched and handled every week after. For less than the freelancer,
 without the weekend.
+
+## One fee to build it. One to keep it running.
+
+Two numbers, and they do different jobs. The first you pay once, at the
+start. The second is every month, and it stops the month you say so.
+
+First, once
+$300
+
+### The build
+
+A clean single-page site, built to your specs. Your domain, bought
+for you up to $15 and registered in your name. Analytics and Search
+Console set up. Live in days.
+
+Then, every month
+$200/month
+
+### The handling
+
+Watched every week, reported on and improved, and any change you
+email gets made. Month to month — no minimum, no notice
+period, no exit fee.
+
+That is the whole of it. Nothing else is required, and the upgrades
+further down are optional and priced in the open.
 
 ## What $200 a month actually buys
 

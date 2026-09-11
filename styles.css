@@ -4739,6 +4739,13 @@ body[class*="offer-"] .om-hero .section-eyebrow { color: var(--offer-deep, var(-
    script adds .vsl-has-video to <body> once VSL_EMBED is set. */
 .vsl-has-video .vsl-no-video { display: none; }
 
+/* Under the button the price is one short line, not the three-part row it is
+   in the close, so it loses the big top margin and drops to body scale. */
+.hd-cta .hd-pricetag {
+  margin-top: 0.15rem;
+  font-size: 1.05rem;
+}
+
 /* ── Calls to action ─────────────────────────────────────────────── */
 .vsl-cta {
   margin-top: 2.25rem;
@@ -4868,6 +4875,30 @@ body[class*="offer-"] .om-hero .section-eyebrow { color: var(--offer-deep, var(-
    white or the art — so the eye lands on the price. */
 body.offer-handled { --offer: #1f7a4d; --offer-deep: #145736; }
 
+/* ── The floating header ─────────────────────────────────────────
+   No bar and no rule on this page: the art runs to the very top of the
+   viewport and the cloud sits on the sky, which is what the cloud is a
+   picture of. Taken out of flow rather than made transparent, so the hero
+   starts at the document top instead of 60px down it — the hero then pays
+   that height back as padding so the eyebrow clears the cloud.
+
+   Scoped to .hd-page: /get-the-read has no hero art to float over, and its
+   white bar is doing real work there. */
+.hd-page .vsl-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  background: none;
+  border-bottom: 0;
+}
+
+/* "Just the cloud floating." The price note has nothing to sit on out here
+   — grey on mid-blue sky is a smudge — and the price is said four times
+   below anyway. */
+.hd-page .vsl-header-note { display: none; }
+
 /* ── The hero band ───────────────────────────────────────────────
    Full-bleed: the band cancels the container's gutter so the art
    runs edge to edge, while the copy inside stays on the 880px
@@ -4877,8 +4908,8 @@ body.offer-handled { --offer: #1f7a4d; --offer-deep: #145736; }
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  padding: 3.5rem 0 4rem;
-  min-height: 600px;
+  padding: 6.5rem 0 4rem;
+  min-height: 620px;
   display: flex;
   align-items: center;
   text-align: center;
@@ -5028,6 +5059,13 @@ body.offer-handled { --offer: #1f7a4d; --offer-deep: #145736; }
   color: var(--offer-deep);
 }
 
+/* Under the button the price is one short line, not the three-part row it is
+   in the close, so it loses the big top margin and drops to body scale. */
+.hd-cta .hd-pricetag {
+  margin-top: 0.15rem;
+  font-size: 1.05rem;
+}
+
 /* ── Calls to action ─────────────────────────────────────────────── */
 .hd-cta {
   display: flex;
@@ -5173,6 +5211,85 @@ body.offer-handled { --offer: #1f7a4d; --offer-deep: #145736; }
 }
 
 .hd-resolve strong { color: var(--fg); }
+
+/* ── How it costs ────────────────────────────────────────────────
+   A sequence, not a comparison. The two are numbered and labelled "first,
+   once" and "then, every month", because the thing a reader gets wrong
+   about this offer is thinking $300 is the whole of it or that $200 is
+   instead of it. Deliberately not shaped like .hd-figure in the dark band
+   further down: that one is the buy zone and states the numbers, this one
+   explains what each buys. */
+.hd-terms {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: hd-term;
+}
+
+.hd-terms li {
+  counter-increment: hd-term;
+  padding: 1.5rem 1.6rem 1.6rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+/* The second card is the one that recurs, so it is the one that carries the
+   accent rule. The first is a single event and reads quieter on purpose. */
+.hd-terms li + li {
+  border-color: var(--border-strong);
+  box-shadow: inset 3px 0 0 var(--offer);
+}
+
+.hd-terms-when {
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.hd-terms li + li .hd-terms-when { color: var(--offer-deep); }
+
+.hd-terms-amount {
+  display: block;
+  margin: 0.35rem 0 0.15rem;
+  font-size: clamp(1.9rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  color: var(--fg);
+}
+
+.hd-terms-per {
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--dim);
+}
+
+.hd-terms h3 {
+  margin: 0.55rem 0 0.4rem;
+  font-size: 1.02rem;
+  letter-spacing: -0.01em;
+}
+
+.hd-terms p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--mid);
+}
+
+.hd-terms-foot {
+  margin-top: 1.6rem;
+  margin-bottom: 0;
+  font-size: 0.97rem;
+}
 
 /* ── What you get ────────────────────────────────────────────────
    Ticked, not bulleted. On a sales page the list is the spec sheet,
@@ -5476,7 +5593,7 @@ a.hd-shot:hover { border-color: var(--fg); transform: translateY(-2px); }
      as texture behind the headline rather than as a picture. */
   .hd-hero {
     min-height: 0;
-    padding: 2.5rem 0 3rem;
+    padding: 5.25rem 0 3rem;
   }
   /* Cover scales to height here and keeps only ~40% of the width, so the
      choice is which slice sits behind the copy. Framing the tower put its
@@ -5497,6 +5614,7 @@ a.hd-shot:hover { border-color: var(--fg); transform: translateY(-2px); }
   .hd-hook { max-width: none; }
   .hd-cta .btn-primary { width: 100%; justify-content: center; }
   .hd-versus { grid-template-columns: 1fr; }
+  .hd-terms { grid-template-columns: 1fr; }
   .hd-shots { grid-template-columns: 1fr; }
   .hd-gets { grid-template-columns: 1fr; }
   .hd-steps { grid-template-columns: 1fr; }

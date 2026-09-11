@@ -41,7 +41,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="twitter:description" content="A clean single-page site, built to your specs and watched every week after. $300 to build, $200 a month to keep it handled.">
 <meta name="twitter:image" content="https://shanegring.com/images/handled-hero.png">
 
-<link rel="stylesheet" href="/styles.css?v=da87f43b">
+<link rel="stylesheet" href="/styles.css?v=a437b940">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"Service","@id":"https://shanegring.com/handled#service","name":"Handled","serviceType":"Website build and ongoing management","provider":{"@id":"https://shanegring.com/#person"},"areaServed":{"@type":"Country","name":"United States"},"audience":{"@type":"BusinessAudience","name":"Founders and independent professionals"},"description":"A clean, single-page website built to the client's specs, then watched, reported on, and improved every week after. Changes are made by email, with no dashboard, tickets, or portal. Includes Google Analytics and Search Console set up, and the client owns the code, the design files, the analytics and Search Console accounts, and the domain, which is registered in their name. The domain is bought for them up to $15. $300 to build and $200 per month to keep it handled, month to month with no minimum, no notice period and no exit fee.","offers":[{"@type":"Offer","name":"Site build","price":"300","priceCurrency":"USD","url":"https://shanegring.com/handled"},{"@type":"Offer","name":"Monthly handling","price":"200","priceCurrency":"USD","url":"https://shanegring.com/handled","priceSpecification":{"@type":"UnitPriceSpecification","price":"200","priceCurrency":"USD","billingDuration":1,"billingIncrement":1,"unitText":"MONTH"}},{"@type":"Offer","name":"Lean CMS (optional upgrade)","description":"Sanity CMS added to the site and configured, one-time","price":"200","priceCurrency":"USD","url":"https://shanegring.com/handled#upgrades"},{"@type":"Offer","name":"Block of hours \u2014 2 hours (optional upgrade)","price":"300","priceCurrency":"USD","url":"https://shanegring.com/handled#upgrades"},{"@type":"Offer","name":"Block of hours \u2014 5 hours (optional upgrade)","price":"500","priceCurrency":"USD","url":"https://shanegring.com/handled#upgrades"},{"@type":"Offer","name":"Another page (optional upgrade)","description":"An additional page built to the same standard and folded into the same weekly watch, per page","price":"99","priceCurrency":"USD","url":"https://shanegring.com/handled#upgrades"},{"@type":"Offer","name":"Newsletter integration (optional upgrade)","description":"A signup form on the site and a place to send from, wired in, one-time","price":"49","priceCurrency":"USD","url":"https://shanegring.com/handled#upgrades"}]},
@@ -169,18 +169,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         dashboard.
       </p>
 
-      <p class="hd-pricetag">
-        <span>$300 to build</span>
-        <span class="hd-pricetag-sep" aria-hidden="true">&middot;</span>
-        <span>$200 a month to keep it running</span>
-        <span class="hd-pricetag-sub">Founding rate &mdash; first 10</span>
-      </p>
-
       <div class="hd-cta">
         <a class="btn-primary" data-hd-cta="hero" href="https://checkout.shanegring.com/b/5kQ6oG0z98g86bsdeHfbq03">
           Claim a founding spot <span class="btn-arrow">&rarr;</span>
         </a>
-        <p class="hd-cta-note"><strong>Checkout is open.</strong> The ten founding spots go in order of who's in first, and that rate never moves after.</p>
+        <p class="hd-pricetag">Starts at $300.</p>
+        <!-- Empty by design. This is where a buyer coming back from Stripe
+             gets told it worked -- they land at the top of the page, so the
+             confirmation has to be here and not at the CTA they bought from.
+             The script at the bottom fills it and unhides it. -->
+        <p class="hd-cta-note" id="hd-confirm" hidden></p>
         <ul class="hd-assure">
           <li>Month to month</li>
           <li>Cancel any time</li>
@@ -251,6 +249,49 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <strong>I do both.</strong> A site built for you &mdash; and kept sharp,
         watched and handled every week after. For less than the freelancer,
         without the weekend.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── How it costs ──────────────────────────────────────────────────────
+       Straight after the problem, because the hero now says only "Starts at
+       $300" and a reader has to learn there is a monthly before they get to
+       the buy zone. Sequence, not a menu: one fee to build, one to keep it
+       running. -->
+  <section class="hd-section" id="pricing">
+    <div class="container">
+      <h2 class="hd-title">One fee to build it. One to keep it running.</h2>
+      <p class="hd-sub">
+        Two numbers, and they do different jobs. The first you pay once, at the
+        start. The second is every month, and it stops the month you say so.
+      </p>
+
+      <ol class="hd-terms">
+        <li>
+          <span class="hd-terms-when">First, once</span>
+          <span class="hd-terms-amount">$300</span>
+          <h3>The build</h3>
+          <p>
+            A clean single-page site, built to your specs. Your domain, bought
+            for you up to $15 and registered in your name. Analytics and Search
+            Console set up. Live in days.
+          </p>
+        </li>
+        <li>
+          <span class="hd-terms-when">Then, every month</span>
+          <span class="hd-terms-amount">$200<span class="hd-terms-per">/month</span></span>
+          <h3>The handling</h3>
+          <p>
+            Watched every week, reported on and improved, and any change you
+            email gets made. Month to month &mdash; no minimum, no notice
+            period, no exit fee.
+          </p>
+        </li>
+      </ol>
+
+      <p class="hd-sub hd-terms-foot">
+        That is the whole of it. Nothing else is required, and the upgrades
+        further down are optional and priced in the open.
       </p>
     </div>
   </section>
@@ -759,8 +800,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      the param into a confirmation line in the hero, then clean the URL so a
      refresh or a shared link doesn't claim a purchase that didn't happen. */
   if (new URLSearchParams(location.search).get('checkout') === 'success') {
-    var note = document.querySelector('.hd-cta-note');
-    if (note) note.innerHTML = "<strong>You're in.</strong> Payment went through &mdash; watch your inbox for the receipt and next steps.";
+    var note = document.getElementById('hd-confirm');
+    if (note) {
+      note.innerHTML = "<strong>You're in.</strong> Payment went through &mdash; watch your inbox for the receipt and next steps.";
+      note.hidden = false;
+    }
     history.replaceState(null, '', location.pathname);
   }
 
