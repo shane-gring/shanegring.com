@@ -4901,6 +4901,34 @@ body.offer-handled { --offer: #1f7a4d; --offer-deep: #145736; }
   z-index: 0;
 }
 
+/* The moving version of the same frame, layered over the still. It is not in
+   the markup's critical path: the <img> above stays the LCP element and the
+   permanent fallback, and the video only fades in once it can actually play.
+   If /images/handled-hero.mp4 is missing, canplay never fires and the still
+   simply stays -- which also covers the Cloudflare Pages behaviour of
+   answering a missing asset with 200 and an HTML body. */
+.hd-hero-vid {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 62%;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+}
+
+.hd-hero-vid.is-playing { opacity: 1; }
+
+/* Nobody who asked for less motion gets a looping background. The script
+   checks the same query before it ever sets a src, so this is belt and
+   braces for a preference changed after load. */
+@media (prefers-reduced-motion: reduce) {
+  .hd-hero-vid { display: none; }
+}
+
 /* Two washes in one layer. The radial keeps an opaque oval under the
    centred copy — a left-to-right scrim like .track-hero's would only
    protect one side of a centred headline. The linear closes the bottom

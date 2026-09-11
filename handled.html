@@ -41,7 +41,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="twitter:description" content="A clean single-page site, built to your specs and watched every week after. $300 to build, $200 a month to keep it handled.">
 <meta name="twitter:image" content="https://shanegring.com/images/handled-hero.png">
 
-<link rel="stylesheet" href="/styles.css?v=5a2735f7">
+<link rel="stylesheet" href="/styles.css?v=1a90e568">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"Service","@id":"https://shanegring.com/handled#service","name":"Handled","serviceType":"Website build and ongoing management","provider":{"@id":"https://shanegring.com/#person"},"areaServed":{"@type":"Country","name":"United States"},"audience":{"@type":"BusinessAudience","name":"Founders and independent professionals"},"description":"A clean, single-page website built to the client's specs, then watched, reported on, and improved every week after. Changes are made by email, with no dashboard, tickets, or portal. Includes Google Analytics and Search Console set up, and the client owns the code, the design files, the analytics and Search Console accounts, and the domain, which is registered in their name. The domain is bought for them up to $15. $300 to build and $200 per month to keep it handled, month to month with no minimum, no notice period and no exit fee.","offers":[{"@type":"Offer","name":"Site build","price":"300","priceCurrency":"USD","url":"https://shanegring.com/handled"},{"@type":"Offer","name":"Monthly handling","price":"200","priceCurrency":"USD","url":"https://shanegring.com/handled","priceSpecification":{"@type":"UnitPriceSpecification","price":"200","priceCurrency":"USD","billingDuration":1,"billingIncrement":1,"unitText":"MONTH"}},{"@type":"Offer","name":"Lean CMS (optional upgrade)","description":"Sanity CMS added to the site and configured, one-time","price":"200","priceCurrency":"USD","url":"https://shanegring.com/handled#upgrades"},{"@type":"Offer","name":"Block of hours \u2014 2 hours (optional upgrade)","price":"300","priceCurrency":"USD","url":"https://shanegring.com/handled#upgrades"},{"@type":"Offer","name":"Block of hours \u2014 5 hours (optional upgrade)","price":"500","priceCurrency":"USD","url":"https://shanegring.com/handled#upgrades"},{"@type":"Offer","name":"Another page (optional upgrade)","description":"An additional page built to the same standard and folded into the same weekly watch, per page","price":"99","priceCurrency":"USD","url":"https://shanegring.com/handled#upgrades"},{"@type":"Offer","name":"Newsletter integration (optional upgrade)","description":"A signup form on the site and a place to send from, wired in, one-time","price":"49","priceCurrency":"USD","url":"https://shanegring.com/handled#upgrades"}]},
@@ -131,51 +131,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   ════════════════════════════════════════════════════════════════════════════
 -->
 
-<nav class="site-nav" aria-label="Site">
+<!-- Stripped header, the same one /get-the-read uses: the cloud, and nothing
+     else. Every other link is a leak on traffic you paid for, and the mega
+     menu was eight ways off this page. tools/sync-nav.mjs reports a page with
+     no <nav class="site-nav"> and leaves it alone, which is the behaviour we
+     want here -- do not let it put the menu back. -->
+<header class="vsl-header">
   <div class="container">
     <a class="logo" href="/" aria-label="Shane Gring, home"><img class="logo-cloud" src="/images/cloud-1.svg" alt="Shane Gring" width="224" height="80"><img class="logo-bolt" src="/images/cloud-bolt.svg" alt="" width="32" height="48" aria-hidden="true"></a>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="var m=document.getElementById('nav-menu');this.setAttribute('aria-expanded',m.classList.toggle('open'))">&#9776;</button>
-    <ul id="nav-menu">
-      <li class="nav-drop nav-drop-mega">
-        <a href="/work-with-me">Work with me <span class="nav-caret">&#9662;</span></a>
-        <ul class="nav-dropdown nav-mega nav-mega-two">
-          <li class="nav-mega-col"><a class="nav-mega-head" href="/work-with-me#help"><span class="nav-drop-text"><span class="nav-drop-name">What do you need someone for?</span><span class="nav-drop-desc">Getting started, through to your whole operation</span></span></a>
-            <ul class="nav-mega-list">
-              <li><a href="/session"><img class="nav-drop-icon" src="/images/icons/session.png" alt="" width="22" height="22"><span class="nav-drop-text"><span class="nav-drop-name">getting started</span><span class="nav-drop-desc">The Session</span></span></a></li>
-              <li><a href="/install"><img class="nav-drop-icon" src="/images/icons/install.png" alt="" width="22" height="22"><span class="nav-drop-text"><span class="nav-drop-name">building your system</span><span class="nav-drop-desc">The Install</span></span></a></li>
-              <li><a href="/autopilot"><img class="nav-drop-icon" src="/images/icons/autopilot.png" alt="" width="22" height="22"><span class="nav-drop-text"><span class="nav-drop-name">maintaining your site</span><span class="nav-drop-desc">The Autopilot</span></span></a></li>
-              <li><a href="/seat"><img class="nav-drop-icon" src="/images/icons/seat.png" alt="" width="22" height="22"><span class="nav-drop-text"><span class="nav-drop-name">enhancing your operations</span><span class="nav-drop-desc">The Seat</span></span></a></li>
-            </ul>
-          </li>
-          <li class="nav-mega-col"><a class="nav-mega-head" href="/work-with-me#programs"><span class="nav-drop-text"><span class="nav-drop-name">What do you want to walk away with?</span><span class="nav-drop-desc">A score, an opinion, a plan, the build</span></span></a>
-            <ul class="nav-mega-list">
-              <li><a href="/scan"><img class="nav-drop-icon" src="/images/icons/scan.png" alt="" width="22" height="22"><span class="nav-drop-text"><span class="nav-drop-name">a score</span><span class="nav-drop-desc">The Scan</span></span></a></li>
-              <li><a href="/read"><img class="nav-drop-icon" src="/images/icons/read.png" alt="" width="22" height="22"><span class="nav-drop-text"><span class="nav-drop-name">an opinion</span><span class="nav-drop-desc">The Read</span></span></a></li>
-              <li><a href="/map"><img class="nav-drop-icon" src="/images/icons/map.png" alt="" width="22" height="22"><span class="nav-drop-text"><span class="nav-drop-name">a plan</span><span class="nav-drop-desc">The Map</span></span></a></li>
-              <li><a href="/site"><img class="nav-drop-icon" src="/images/icons/site.png" alt="" width="22" height="22"><span class="nav-drop-text"><span class="nav-drop-name">the thing built</span><span class="nav-drop-desc">The Site</span></span></a></li>
-            </ul>
-          </li>
-          <li class="nav-mega-foot">
-            <a href="/work-with-me">All eight, side by side</a>
-            <a href="/approach">Why this works</a>
-          </li>
-        </ul>
-      </li>
-      <li class="nav-mobile-only"><a href="/approach">Approach</a></li>
-      <li><a href="/work/">Recent work</a></li>
-      <li><a href="/handled">Handled</a></li>
-      <li class="nav-drop">
-        <a href="/guides/">Content <span class="nav-caret">&#9662;</span></a>
-        <ul class="nav-dropdown">
-          <li><a href="/guides/"><span class="nav-drop-text"><span class="nav-drop-name">Guides</span><span class="nav-drop-desc">Worked answers, step by step</span></span></a></li>
-          <li><a href="/notes/"><span class="nav-drop-text"><span class="nav-drop-name">Notes</span><span class="nav-drop-desc">Short posts, most weekdays</span></span></a></li>
-          <li><a href="/blog/"><span class="nav-drop-text"><span class="nav-drop-name">Newsletter</span><span class="nav-drop-desc">Seeking Certainty, every issue</span></span></a></li>
-        </ul>
-      </li>
-      <li><a class="nav-cta" href="/scan">Run the free Scan</a></li>
-    </ul>
+    <span class="vsl-header-note">Handled &middot; $300 + $200/mo</span>
   </div>
-</nav>
+</header>
 
 <main>
   <!-- ── The hero ──────────────────────────────────────────────────────────
@@ -186,6 +152,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <img class="hd-hero-bg" src="/images/handled-hero.png"
          alt="A ship in dry dock with a crew working on it while its owner watches from the quay"
          width="1680" height="720" fetchpriority="high">
+    <video class="hd-hero-vid" id="hd-hero-vid" muted loop playsinline preload="none"
+           aria-hidden="true" tabindex="-1"></video>
     <div class="container">
       <span class="section-eyebrow">Your site, handled</span>
 
@@ -745,7 +713,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </footer>
 
-<script src="/nav.js?v=1e5b0bad" defer></script>
 <script src="/track.js?v=e6beb16e" defer></script>
 <script src="/subscribe.js?v=4971fc05" defer></script>
 <script>
@@ -756,6 +723,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    ══════════════════════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
+
+  /* ── 0. THE MOVING HERO ──────────────────────────────────────────
+     The still is the LCP element and the permanent fallback; the loop is an
+     upgrade that has to earn its place. It is skipped entirely when the
+     visitor asked for less motion, when the browser reports a saving-data
+     or slow connection, and — by doing nothing — whenever the file is not
+     there, because canplay never fires and .is-playing is never added.
+
+     Drop /images/handled-hero.mp4 in and the hero moves. Remove it and the
+     hero is a still again. No other edit either way. */
+  var HERO_LOOP = '/images/handled-hero.mp4';
+
+  var vid = document.getElementById('hd-hero-vid');
+  var slowConn = (navigator.connection || {});
+  var wantsStill =
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+    slowConn.saveData === true ||
+    /2g/.test(slowConn.effectiveType || '');
+
+  if (vid && HERO_LOOP && !wantsStill) {
+    vid.addEventListener('canplay', function () {
+      vid.classList.add('is-playing');
+      var play = vid.play();
+      /* Safari rejects the promise if the tab is backgrounded. Not an error
+         worth surfacing — the still is already on screen. */
+      if (play && play.catch) play.catch(function () {});
+    }, { once: true });
+    vid.src = HERO_LOOP;
+    vid.load();
+  }
 
   /* ── 1. BACK FROM CHECKOUT ───────────────────────────────────────────────
      Stripe Payment Links return buyers to /handled?checkout=success. Turn

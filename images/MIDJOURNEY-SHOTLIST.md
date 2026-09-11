@@ -615,3 +615,78 @@ originals were never archived, so this is the corpus. Details and exclusion
 rationale in that folder's `README.md`. Bake-off before adoption: regenerate
 `map-hero` + one guide card via the trained LoRA and compare against the MJ
 versions.
+
+## 9. `/handled` — the Handled hero ⏳ TO GENERATE (`handled-hero.png`)
+
+**Idea to carry:** one small thing, kept — actively maintained by someone else
+while its owner walks away and gets on with their work. The neighbours show
+what happens when nobody tends it, which is the page's whole argument
+("it rots" / "you get on with your work").
+
+**Composition constraint, and it matters here:** this hero is centred copy over
+a radial white scrim, so the middle third of the frame gets washed out to near
+white. Put the subject left of centre and the walking figure at the right,
+and leave the centre as open sky and ground. Art that piles everything into
+the middle disappears behind the headline. Bright morning light, not dusk —
+a dark image under a white scrim goes muddy.
+
+Currently standing in: `done-for-you-hero.png`, renamed to `handled-hero.png`
+when /done-for-you became a redirect. A ship in dry dock with a crew on it and
+the owner watching from the quay — right metaphor, wrong page originally.
+Swap the file and the hero changes; nothing else to touch.
+
+**Option A — the one kept shopfront** (preferred)
+
+> a single immaculate small storefront on a street of shuttered weathered
+> buildings, freshly painted and swept, awning crisp, a caretaker on a short
+> wooden ladder polishing its hanging sign, the shop sitting left of centre,
+> the owner walking away down the empty pavement to the right with a coffee,
+> unhurried, hands in pockets, wide open sky through the middle of the frame,
+> clear morning light, [style suffix] --ar 21:9
+
+**Option B — the one tended sign**
+
+> a tall roadside sign tower beside a quiet highway, its panels clean and lit,
+> a technician on a small maintenance gantry halfway up tightening a fitting,
+> two older sign towers further down the road peeling and blank, the lit tower
+> left of centre, a driver walking back to a parked car at the right, wide open
+> sky and empty road through the middle, clear morning light,
+> [style suffix] --ar 21:9
+
+Note on `--sref`: both reference URLs were checked on 2026-09-11 and return
+`content-type: image/png`, not the 200-plus-HTML that Cloudflare Pages serves
+for a missing file. Re-check before blaming Midjourney if the style drifts.
+
+### 9b. The moving version (`handled-hero.mp4`)
+
+The hero takes a looping video as well as the still. The page is already wired
+for it: drop `/images/handled-hero.mp4` in and the hero moves; take it away and
+the hero is a still again. No other edit either way. The `<img>` stays the LCP
+element and the permanent fallback, and the loop fades in only once it can
+play — so a missing file, a slow connection, Save-Data, or
+`prefers-reduced-motion: reduce` all quietly leave the still in place. Verified
+both ways on 2026-09-11.
+
+Workflow: generate the still from the Option A prompt above, then animate that
+image in Midjourney. Motion prompt:
+
+> the caretaker polishes the sign in slow strokes, the awning stirs in a light
+> breeze, clouds drift slowly across the sky, the owner walks unhurried away
+> down the pavement, everything else still, locked-off camera, no pan, no zoom
+
+Four things that decide whether this works on the page:
+
+- **Low motion, and a locked-off camera.** Copy sits on top of this. A pan or
+  a push behind fixed text reads as the page sliding, and it drags the scrim's
+  opaque oval across a moving subject.
+- **Ambient motion only.** Nothing should cross the centre third — that is
+  where the white scrim is strongest, and a subject that walks into it vanishes.
+  Keep the action left (the caretaker) and right (the owner leaving).
+- **It has to loop.** Midjourney will not hand back a seamless one. Either keep
+  the motion ambient enough that a hard cut is invisible, or crossfade the tail
+  into the head afterwards.
+- **Budget it like an ad asset.** Aim under ~2 MB. It is a background on a page
+  bought with click money, and it downloads after the still either way:
+  `ffmpeg -i in.mp4 -an -c:v libx264 -crf 30 -preset slow -pix_fmt yuv420p -r 12 -movflags +faststart handled-hero.mp4`
+  Strip the audio (`-an`) — the element is muted and the track is dead weight.
+  12 fps suits pixel art and roughly halves the file against 24.
