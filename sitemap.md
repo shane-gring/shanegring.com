@@ -208,6 +208,12 @@ The terms for using this site
 [Cookies](https://shanegring.com/cookies)
 Which cookies the site sets, and how to turn them off
 
+[Now](https://shanegring.com/now)
+What Shane is focused on at this point in his life
+
+[Friends](https://shanegring.com/friends)
+Sites by people Shane actually knows
+
 ---
 
 [View this page on shanegring.com](https://shanegring.com/sitemap)
