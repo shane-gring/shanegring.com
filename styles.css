@@ -4875,6 +4875,11 @@ body[class*="offer-"] .om-hero .section-eyebrow { color: var(--offer-deep, var(-
    white or the art — so the eye lands on the price. */
 body.offer-handled { --offer: #1f7a4d; --offer-deep: #145736; }
 
+/* The intake has no hero art to float over, so its stripped header keeps
+   its place in the flow -- but not the rule under it. A form the reader is
+   part-way through does not need a line drawn across the top of it. */
+.hi-body .vsl-header { border-bottom: 0; }
+
 /* ── The floating header ─────────────────────────────────────────
    No bar and no rule on this page: the art runs to the very top of the
    viewport and the cloud sits on the sky, which is what the cloud is a
