@@ -13,8 +13,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Handled: I build your site, and I keep it running | Shane Gring</title>
-<meta name="description" content="A clean single-page site, built to your specs and watched every week after. $300 to build, $200 a month to keep it handled. Change anything by email. Founding cohort of ten at a locked rate.">
+<title>Handled: I build your site and keep it running | $300 + $200/month</title>
+<meta name="description" content="A clean single-page site, built to your specs and watched every week after. $300 to build, $200 a month to keep it handled. Change anything by email. Month to month, everything in your name. Founding cohort of ten at a locked rate.">
 <meta name="author" content="Shane Gring">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://shanegring.com/handled">
@@ -24,17 +24,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#ffffff">
 
+<!-- The hero art is the largest paint on the page and the first thing paid
+     traffic sees, so it preloads rather than waiting on layout. -->
+<link rel="preload" as="image" href="/images/handled-hero.png" fetchpriority="high">
+
 <meta property="og:type" content="website">
-<meta property="og:title" content="Handled: I build your site, and I keep it running">
+<meta property="og:title" content="Handled: I build your site and keep it running">
 <meta property="og:description" content="A clean single-page site, built to your specs and watched every week after. $300 to build, $200 a month to keep it handled. Change anything by email.">
 <meta property="og:url" content="https://shanegring.com/handled">
 <meta property="og:site_name" content="Shane Gring">
+<meta property="og:image" content="https://shanegring.com/images/handled-hero.png">
+<meta property="og:image:alt" content="A small-town water tower with a maintenance crew at work on its catwalk, the town's rooftops along the horizon, and open sky between">
 
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Handled: I build your site, and I keep it running">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Handled: I build your site and keep it running">
 <meta name="twitter:description" content="A clean single-page site, built to your specs and watched every week after. $300 to build, $200 a month to keep it handled.">
+<meta name="twitter:image" content="https://shanegring.com/images/handled-hero.png">
 
-<link rel="stylesheet" href="/styles.css?v=0b77d378">
+<link rel="stylesheet" href="/styles.css?v=8bb86ee7">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"Service","@id":"https://shanegring.com/handled#service","name":"Handled","serviceType":"Website build and ongoing management","provider":{"@id":"https://shanegring.com/#person"},"areaServed":{"@type":"Country","name":"United States"},"audience":{"@type":"BusinessAudience","name":"Founders and independent professionals"},"description":"A clean, single-page website built to the client's specs, then watched, reported on, and improved every week after. Changes are made by email, with no dashboard, tickets, or portal. Includes Google Analytics and Search Console set up, and the client owns the code, the design files, the analytics and Search Console accounts, and the domain, which is registered in their name. The domain is bought for them up to $15. $300 to build and $200 per month to keep it handled, month to month with no minimum, no notice period and no exit fee.","offers":[{"@type":"Offer","name":"Site build","price":"300","priceCurrency":"USD","url":"https://shanegring.com/handled"},{"@type":"Offer","name":"Monthly handling","price":"200","priceCurrency":"USD","url":"https://shanegring.com/handled","priceSpecification":{"@type":"UnitPriceSpecification","price":"200","priceCurrency":"USD","billingDuration":1,"billingIncrement":1,"unitText":"MONTH"}},{"@type":"Offer","name":"Lean CMS (optional upgrade)","description":"Sanity CMS added to the site and configured, one-time","price":"200","priceCurrency":"USD","url":"https://shanegring.com/handled#upgrades"},{"@type":"Offer","name":"Block of hours \u2014 2 hours (optional upgrade)","price":"300","priceCurrency":"USD","url":"https://shanegring.com/handled#upgrades"},{"@type":"Offer","name":"Block of hours \u2014 5 hours (optional upgrade)","price":"500","priceCurrency":"USD","url":"https://shanegring.com/handled#upgrades"},{"@type":"Offer","name":"Another page (optional upgrade)","description":"An additional page built to the same standard and folded into the same weekly watch, per page","price":"99","priceCurrency":"USD","url":"https://shanegring.com/handled#upgrades"},{"@type":"Offer","name":"Newsletter integration (optional upgrade)","description":"A signup form on the site and a place to send from, wired in, one-time","price":"49","priceCurrency":"USD","url":"https://shanegring.com/handled#upgrades"}]},
@@ -55,7 +62,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 </head>
 
-<body class="offer-handled">
+<body class="offer-handled hd-page">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHSTF58T"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -63,313 +70,397 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!--
   ════════════════════════════════════════════════════════════════════════════
-  HANDLED:
-    1. CHECKOUT IS WIRED (2026-09-01) with Stripe Payment Links, created
-       2026-09-01 in the SOEN Stripe account and served from the account's
-       custom domain, checkout.shanegring.com. The links live OUTSIDE this
-       repo in Stripe; only their URLs are committed here. The build link
-       ($300 one-time) chains into the founding monthly link ($200/mo) on
-       completion, and the monthly link returns to /handled?checkout=success
-       (the small script at the bottom of this page turns that param into a
-       confirmation line). Upgrade links: 2-hour and 5-hour blocks and the
-       lean CMS ($200 one-time, Sanity add + configure). "Another page" is
-       priced ($99/page, 2026-09-10) and "A newsletter, wired in" is priced
-       ($49 one-time, 2026-09-10), but NEITHER has a payment link yet -- both
-       cards show a price with no button, and the closing paragraph tells
-       buyers to mention them when they get in line. Both need Stripe links.
-    1b. THE 4TH CARD - the "Keep It Handled" retainer ($750 month 1, $600
-       month 2, then $400/mo) is still in Doc's PR and is NOT wired here.
-       When it lands it needs its own links: Stripe has no declining-price
-       subscription, so one Payment Link or Checkout Session cannot express
-       the step-down. Likely shape: a $750 month-1 one-time link chaining
-       into a $400/mo link, with month 2 handled by coupon or manually -
-       decide with Shane when the card PR gets wired.
-    2. Inner Assembly's example card is deliberately NOT linked: the site is
-       password-gated, and we don't send visitors into a password wall. Link
-       it once the gate comes down.
-    3. UPGRADE PRICING IS COMPLETE (2026-09-10). Every upgrade now carries a
-       number; no card says "Pricing at launch" any more. History: Shane set
-       two upgrades: the lean CMS ($200 one-time -
-       CORRECTED 2026-09-01 per Shane: "onetime cms is 200 to add and
-       configure", Sanity on its free plan; the 8/30 $200/mo recurring
-       wiring was wrong, and its Stripe price and payment link were
-       deactivated, not deleted) and the hour blocks ($300 for 2h, $500
-       for 5h). Those are on the cards and in the
-       schema. "Another page" ($99 per page) and "A newsletter, wired in"
-       ($49 one-time) followed on 2026-09-10 and are on their cards and in
-       the schema. Every price change here needs the card, the Service
-       schema Offer, the closing paragraph under the grid, and llms.txt
-       updated together, then handled.md regenerated in the same pass.
-    4. THE LEAN CMS "what you get" LIST (2026-08-30) sits in its own full-width
-       card under the upgrade grid, because four bullets inside a 250px grid
-       column leave the three sibling cards half-empty. The bullets were
-       drafted from what this page already promises (weekly watch, email
-       changes, code you own) — Shane's own wording, if he supplies it,
-       replaces them wholesale. The closing "without it" line (.om-contrast)
-       is the selling point Shane asked for: it must stay consistent with the
-       base plan above, which DOES include email changes — the contrast is
-       self-publishing and hour blocks, not email support.
+  HANDLED — the sales page.
+
+  SHAPE (rebuilt 2026-09-11). This page takes paid traffic and organic, so it
+  keeps the nav and the footer but drops the shared .om-* offer layout for its
+  own .hd-* system in styles.css ("/handled — THE SALES PAGE"). Centred hero
+  over the art, proof high up, one inverted band where the price and the buy
+  live, objections collapsed, and a mobile buy bar borrowed from /get-the-read.
+  There is deliberately NO announce bar: it links to /handled, which is this
+  page. tools/sync-announce.mjs reports a page with no bar and leaves it alone,
+  which is the behaviour we want here — do not add one back.
+
+  1. CHECKOUT IS WIRED (2026-09-01) with Stripe Payment Links, created
+     2026-09-01 in the SOEN Stripe account and served from the account's
+     custom domain, checkout.shanegring.com. The links live OUTSIDE this
+     repo in Stripe; only their URLs are committed here. The build link
+     ($300 one-time) chains into the founding monthly link ($200/mo) on
+     completion, and the monthly link returns to /handled?checkout=success
+     (the script at the bottom of this page turns that param into a
+     confirmation line). Upgrade links: 2-hour and 5-hour blocks and the
+     lean CMS ($200 one-time, Sanity add + configure). "Another page" is
+     priced ($99/page, 2026-09-10) and "A newsletter, wired in" is priced
+     ($49 one-time, 2026-09-10), but NEITHER has a payment link yet -- both
+     cards show a price with no button, and the closing paragraph tells
+     buyers to mention them when they get in line. Both need Stripe links.
+  1b. THE 4TH CARD - the "Keep It Handled" retainer ($750 month 1, $600
+     month 2, then $400/mo) is still in Doc's PR and is NOT wired here.
+     When it lands it needs its own links: Stripe has no declining-price
+     subscription, so one Payment Link or Checkout Session cannot express
+     the step-down. Likely shape: a $750 month-1 one-time link chaining
+     into a $400/mo link, with month 2 handled by coupon or manually -
+     decide with Shane when the card PR gets wired.
+  2. Inner Assembly is OFF the proof grid (2026-09-11). It was the one card
+     that could not be clicked -- the site is behind the client's password
+     gate, and we do not send paid traffic into a password wall -- and as the
+     thirteenth card it orphaned a row of one. Put it back as a real link
+     once the gate comes down; the shot is still at
+     /images/handled/inner-assembly.webp.
+  3. UPGRADE PRICING IS COMPLETE (2026-09-10). Every upgrade carries a
+     number; no card says "Pricing at launch" any more. History: the lean CMS
+     is $200 one-time (CORRECTED 2026-09-01 per Shane: "onetime cms is 200 to
+     add and configure", Sanity on its free plan; the 8/30 $200/mo recurring
+     wiring was wrong, and its Stripe price and payment link were deactivated,
+     not deleted) and the hour blocks are $300 for 2h, $500 for 5h. "Another
+     page" ($99 per page) and "A newsletter, wired in" ($49 one-time) followed
+     on 2026-09-10. Every price change here needs FOUR places updated
+     together: the upgrade card, the Service schema Offer in <head>, the
+     closing paragraph under the upgrade grid, and llms.txt — then
+     handled.md regenerated in the same pass (node tools/build-markdown.mjs).
+     The headline price ($300/$200) additionally appears in the hero
+     .hd-pricetag, the .hd-figure pair in the dark band, the close, and the
+     .vsl-sticky-price label.
+  4. AD ATTRIBUTION. The script at the bottom copies utm_source /
+     utm_campaign / utm_content (falling back to gclid or fbclid) onto every
+     Stripe link as client_reference_id, the same way /get-the-read does, so
+     a sale that came from an ad is still identifiable in Stripe after the
+     buyer leaves the site. Any new checkout link added to this page picks
+     that up for free as long as it points at checkout.shanegring.com or
+     buy.stripe.com.
   ════════════════════════════════════════════════════════════════════════════
 -->
 
-<a class="announce-bar" href="/handled">
-  <span class="announce-tag">New</span>
-  <span class="announce-text">Handled &mdash; a site built for $300, kept running for $200 a month.</span>
-  <span class="announce-arrow btn-arrow">&rarr;</span>
-</a>
-
-<nav class="site-nav" aria-label="Site">
+<!-- Stripped header, the same one /get-the-read uses: the cloud, and nothing
+     else. Every other link is a leak on traffic you paid for, and the mega
+     menu was eight ways off this page. tools/sync-nav.mjs reports a page with
+     no <nav class="site-nav"> and leaves it alone, which is the behaviour we
+     want here -- do not let it put the menu back. -->
+<header class="vsl-header">
   <div class="container">
     <a class="logo" href="/" aria-label="Shane Gring, home"><img class="logo-cloud" src="/images/cloud-1.svg" alt="Shane Gring" width="224" height="80"><img class="logo-bolt" src="/images/cloud-bolt.svg" alt="" width="32" height="48" aria-hidden="true"></a>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="var m=document.getElementById('nav-menu');this.setAttribute('aria-expanded',m.classList.toggle('open'))">&#9776;</button>
-    <ul id="nav-menu">
-      <li class="nav-drop nav-drop-mega">
-        <a href="/work-with-me">Work with me <span class="nav-caret">&#9662;</span></a>
-        <ul class="nav-dropdown nav-mega nav-mega-two">
-          <li class="nav-mega-col"><a class="nav-mega-head" href="/work-with-me#help"><span class="nav-drop-text"><span class="nav-drop-name">What do you need someone for?</span><span class="nav-drop-desc">Getting started, through to your whole operation</span></span></a>
-            <ul class="nav-mega-list">
-              <li><a href="/session"><img class="nav-drop-icon" src="/images/icons/session.png" alt="" width="22" height="22"><span class="nav-drop-text"><span class="nav-drop-name">getting started</span><span class="nav-drop-desc">The Session</span></span></a></li>
-              <li><a href="/install"><img class="nav-drop-icon" src="/images/icons/install.png" alt="" width="22" height="22"><span class="nav-drop-text"><span class="nav-drop-name">building your system</span><span class="nav-drop-desc">The Install</span></span></a></li>
-              <li><a href="/autopilot"><img class="nav-drop-icon" src="/images/icons/autopilot.png" alt="" width="22" height="22"><span class="nav-drop-text"><span class="nav-drop-name">maintaining your site</span><span class="nav-drop-desc">The Autopilot</span></span></a></li>
-              <li><a href="/seat"><img class="nav-drop-icon" src="/images/icons/seat.png" alt="" width="22" height="22"><span class="nav-drop-text"><span class="nav-drop-name">enhancing your operations</span><span class="nav-drop-desc">The Seat</span></span></a></li>
-            </ul>
-          </li>
-          <li class="nav-mega-col"><a class="nav-mega-head" href="/work-with-me#programs"><span class="nav-drop-text"><span class="nav-drop-name">What do you want to walk away with?</span><span class="nav-drop-desc">A score, an opinion, a plan, the build</span></span></a>
-            <ul class="nav-mega-list">
-              <li><a href="/scan"><img class="nav-drop-icon" src="/images/icons/scan.png" alt="" width="22" height="22"><span class="nav-drop-text"><span class="nav-drop-name">a score</span><span class="nav-drop-desc">The Scan</span></span></a></li>
-              <li><a href="/read"><img class="nav-drop-icon" src="/images/icons/read.png" alt="" width="22" height="22"><span class="nav-drop-text"><span class="nav-drop-name">an opinion</span><span class="nav-drop-desc">The Read</span></span></a></li>
-              <li><a href="/map"><img class="nav-drop-icon" src="/images/icons/map.png" alt="" width="22" height="22"><span class="nav-drop-text"><span class="nav-drop-name">a plan</span><span class="nav-drop-desc">The Map</span></span></a></li>
-              <li><a href="/site"><img class="nav-drop-icon" src="/images/icons/site.png" alt="" width="22" height="22"><span class="nav-drop-text"><span class="nav-drop-name">the thing built</span><span class="nav-drop-desc">The Site</span></span></a></li>
-            </ul>
-          </li>
-          <li class="nav-mega-foot">
-            <a href="/work-with-me">All eight, side by side</a>
-            <a href="/approach">Why this works</a>
-          </li>
-        </ul>
-      </li>
-      <li class="nav-mobile-only"><a href="/approach">Approach</a></li>
-      <li><a href="/work/">Recent work</a></li>
-      <li><a href="/handled">Handled</a></li>
-      <li class="nav-drop">
-        <a href="/guides/">Content <span class="nav-caret">&#9662;</span></a>
-        <ul class="nav-dropdown">
-          <li><a href="/guides/"><span class="nav-drop-text"><span class="nav-drop-name">Guides</span><span class="nav-drop-desc">Worked answers, step by step</span></span></a></li>
-          <li><a href="/notes/"><span class="nav-drop-text"><span class="nav-drop-name">Notes</span><span class="nav-drop-desc">Short posts, most weekdays</span></span></a></li>
-          <li><a href="/blog/"><span class="nav-drop-text"><span class="nav-drop-name">Newsletter</span><span class="nav-drop-desc">Seeking Certainty, every issue</span></span></a></li>
-        </ul>
-      </li>
-      <li><a class="nav-cta" href="/scan">Run the free Scan</a></li>
-    </ul>
+    <span class="vsl-header-note">Handled &middot; $300 + $200/mo</span>
   </div>
-</nav>
+</header>
 
 <main>
-  <section class="om-hero">
+  <!-- ── The hero ──────────────────────────────────────────────────────────
+       Centred, over the art. The band carries the four things ad traffic
+       decides on before it scrolls: what this is, what it costs, what it
+       costs to leave, and a button. -->
+  <section class="hd-hero">
+    <img class="hd-hero-bg" src="/images/handled-hero.png"
+         alt="A small-town water tower with a maintenance crew at work on its catwalk, the town's rooftops along the horizon, and open sky between"
+         width="1680" height="720" fetchpriority="high">
+    <video class="hd-hero-vid" id="hd-hero-vid" muted loop playsinline preload="none"
+           aria-hidden="true" tabindex="-1"></video>
     <div class="container">
-      <a href="/work-with-me" class="cs-back"><span class="btn-arrow">&larr;</span> Work with me</a>
-
+      <img class="offer-mark" src="/images/icons/handled.png" alt="" width="48" height="48" aria-hidden="true">
       <span class="section-eyebrow">Your site, handled</span>
-      <h1 class="cs-hook">You didn't want a website builder. <span class="hero-u">You wanted a website.</span></h1>
 
-      <p class="om-lede">
-        You've got a business reason to have a site &mdash; clients to win, credibility
-        to hold, inbound to catch. What you don't have is a free weekend to become a
-        web designer, or the appetite to babysit a page for the rest of its life.
-        So here's the deal: <strong>I build your site, and I keep it running. You
-        never open a dashboard again.</strong>
+      <h1 class="hd-hook">
+        You didn't want a website builder.
+        <span class="hd-hook-turn">You wanted a website.</span>
+      </h1>
+
+      <p class="hd-lede">
+        Clients to win, credibility to hold, inbound to catch &mdash; and no free
+        weekend to spend becoming a web designer. So here's the deal:
+        <strong>I build your site, and I keep it running.</strong> You never open a
+        dashboard.
       </p>
 
-      <div class="om-cta-row">
-        <a class="btn-primary" href="https://checkout.shanegring.com/b/5kQ6oG0z98g86bsdeHfbq03">
+      <div class="hd-cta">
+        <a class="btn-primary" data-hd-cta="hero" href="https://checkout.shanegring.com/b/5kQ6oG0z98g86bsdeHfbq03">
           Claim a founding spot <span class="btn-arrow">&rarr;</span>
         </a>
-        <span class="om-cta-note"><strong>Checkout is open.</strong> $300 to build, then $200/month &mdash; founding rate locks for the first ten.</span>
+        <p class="hd-pricetag">Starts at $300.</p>
+        <!-- Empty by design. This is where a buyer coming back from Stripe
+             gets told it worked -- they land at the top of the page, so the
+             confirmation has to be here and not at the CTA they bought from.
+             The script at the bottom fills it and unhides it. -->
+        <p class="hd-cta-note" id="hd-confirm" hidden></p>
+        <ul class="hd-assure">
+          <li>Month to month</li>
+          <li>Cancel any time</li>
+          <li>Everything in your name</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <section class="om-section">
+  <!-- Borrowed authority, immediately. A $300 offer from a stranger is a
+       risk; the same work for these names is the reason it isn't. -->
+  <section class="trusted" aria-label="Organizations Shane has worked with">
     <div class="container">
-      <h2 class="cs-section-title">The two ways this usually goes &mdash; and why both leave you stuck</h2>
+      <div class="trusted-label">Fifteen years of this work, trusted by</div>
+      <div class="trusted-grid">
+        <div class="trusted-item">
+          <img src="/logos/teambuildr.svg" alt="TeamBuildr" onerror="this.remove()">
+          <span class="trusted-wordmark">TeamBuildr</span>
+        </div>
+        <div class="trusted-item">
+          <img src="/logos/iwbi.svg" alt="International WELL Building Institute" onerror="this.remove()">
+          <span class="trusted-wordmark">IWBI</span>
+        </div>
+        <div class="trusted-item">
+          <img src="/logos/usgbc.png" alt="U.S. Green Building Council" onerror="this.remove()">
+          <span class="trusted-wordmark">USGBC</span>
+        </div>
+        <div class="trusted-item">
+          <img src="/logos/seam.svg" alt="SEAM Certification" onerror="this.remove()">
+          <span class="trusted-wordmark">SEAM Certification</span>
+        </div>
+        <div class="trusted-item">
+          <img src="/logos/drvn-golf.svg" alt="DRVN Golf" onerror="this.remove()">
+          <span class="trusted-wordmark">DRVN Golf</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <p>
-        You end up on <strong>Squarespace</strong>, paying for a plan and a domain,
-        and then it hands you the tools and a weekend of homework. Weeks later you've
-        got a half-finished page you're a little embarrassed by and a subscription
-        you're paying anyway.
-      </p>
-      <p>
-        Or you <strong>hire a freelancer</strong>, drop a couple thousand on a build
-        &mdash; and then they vanish. The site's live, but the moment anything needs
-        to change, or breaks, or falls behind, you're on your own. It rots. Fixing it
-        means starting the hunt over.
-      </p>
-      <p>
-        Each one fails exactly where the other wins. Nobody does both.
-      </p>
-      <p>
-        <strong>I do both.</strong> Agency-quality site, built for you &mdash;
-        <em>and</em> kept sharp, watched, and handled every week after. For less than
-        the freelancer, without the weekend.
+  <!-- ── The two dead ends ─────────────────────────────────────────────── -->
+  <section class="hd-section">
+    <div class="container">
+      <h2 class="hd-title">Two ways this usually goes. Both leave you stuck.</h2>
+
+      <div class="hd-versus">
+        <div class="hd-versus-card">
+          <h3>You build it yourself</h3>
+          <p>
+            You pay for a plan and a domain, and the tool hands you the work.
+            Weeks later there's a half-finished page you're a little embarrassed
+            by &mdash; and the subscription bills either way.
+          </p>
+          <span class="hd-versus-cost">Costs you the weekend you didn't have.</span>
+        </div>
+        <div class="hd-versus-card">
+          <h3>You hire a freelancer</h3>
+          <p>
+            A couple of thousand for a build, and then they're gone. The site's
+            live, but the moment it needs a change, or breaks, or falls behind,
+            you're on your own. It rots.
+          </p>
+          <span class="hd-versus-cost">Costs you again the day it needs anything.</span>
+        </div>
+      </div>
+
+      <p class="hd-resolve">
+        Each one fails exactly where the other wins.
+        <strong>I do both.</strong> A site built for you &mdash; and kept sharp,
+        watched and handled every week after. For less than the freelancer,
+        without the weekend.
       </p>
     </div>
   </section>
 
-  <section class="om-section">
+  <!-- ── How it costs ──────────────────────────────────────────────────────
+       Straight after the problem, because the hero now says only "Starts at
+       $300" and a reader has to learn there is a monthly before they get to
+       the buy zone. Sequence, not a menu: one fee to build, one to keep it
+       running. -->
+  <section class="hd-section" id="pricing">
     <div class="container">
-      <h2 class="cs-section-title">What you get</h2>
+      <h2 class="hd-title">One fee to build it. One to keep it running.</h2>
+      <p class="hd-sub">
+        Two numbers, and they do different jobs. The first you pay once, at the
+        start. The second is every month, and it stops the month you say so.
+      </p>
 
-      <ul class="cs-bullets">
-        <li><strong>A clean, single-page site, built to your specs.</strong> Your domain, your design direction, your copy, your images. Live in days, not weeks.</li>
-        <li><strong>A real person watching it every week.</strong> That's me &mdash; Shane. I check performance, catch bugs before you do, and send you a short read on how it's doing and what I'd improve.</li>
-        <li><strong>An email that reaches me.</strong> Want a headline changed, a photo swapped, a line rewritten? Send it. It gets done. No tickets, no portal, no "please allow 5&ndash;7 business days."</li>
-        <li><strong>Analytics and search, set up right.</strong> Google Analytics and Search Console, configured and quietly working, so your site is measured instead of guessed at.</li>
-        <li><strong>Everything in your name, from day one.</strong> The code, the design files, the Google Analytics and Search Console accounts, and the domain &mdash; which I buy for you, up to $15 &mdash; all yours, not borrowed from me. Ask and I hand the lot over. Stay because it's handled, not because you're trapped.</li>
+      <ol class="hd-terms">
+        <li>
+          <span class="hd-terms-when">First, once</span>
+          <span class="hd-terms-amount">$300</span>
+          <h3>The build</h3>
+          <p>
+            A clean single-page site, built to your specs. Your domain, bought
+            for you up to $15 and registered in your name. Analytics and Search
+            Console set up. Live in days.
+          </p>
+        </li>
+        <li>
+          <span class="hd-terms-when">Then, every month</span>
+          <span class="hd-terms-amount">$200<span class="hd-terms-per">/month</span></span>
+          <h3>The handling</h3>
+          <p>
+            Watched every week, reported on and improved, and any change you
+            email gets made. Month to month &mdash; no minimum, no notice
+            period, no exit fee.
+          </p>
+        </li>
+      </ol>
+
+      <p class="hd-sub hd-terms-foot">
+        That is the whole of it. Nothing else is required, and the upgrades
+        further down are optional and priced in the open.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── What you get ──────────────────────────────────────────────────── -->
+  <section class="hd-section">
+    <div class="container">
+      <h2 class="hd-title">What $200 a month actually buys</h2>
+      <p class="hd-sub">
+        The build is quick by design. The handling is the part a person shows up
+        for, every week, for as long as you want it.
+      </p>
+
+      <ul class="hd-gets">
+        <li><strong>A clean, single-page site, built to your specs.</strong> Your domain, your design direction, your words, your images. Live in days, not weeks.</li>
+        <li><strong>A real person watching it every week.</strong> That's me. I check how it's performing, catch bugs before you run into them, and send you a short read on what I'd improve.</li>
+        <li><strong>An email that reaches me.</strong> Headline changed, photo swapped, a line rewritten, a price updated. Send it, it gets done. No tickets, no portal, no five-to-seven business days.</li>
+        <li><strong>Analytics and search, set up right.</strong> Google Analytics and Search Console, configured and quietly working, so the site is measured instead of guessed at.</li>
+        <li><strong>Everything in your name, from day one.</strong> The code, the design files, the analytics accounts, and the domain &mdash; which I buy for you, up to $15. Ask and I hand the lot over.</li>
       </ul>
     </div>
   </section>
 
-  <section class="om-section">
+  <!-- ── How it works ──────────────────────────────────────────────────── -->
+  <section class="hd-section">
     <div class="container">
-      <h2 class="cs-section-title">How it works</h2>
+      <h2 class="hd-title">Four steps, and three of them are mine</h2>
 
-      <div class="om-cards">
-        <div class="om-card">
-          <h3>1. We spin you up</h3>
-          <p>Quick conversation about who you are and what the site needs to
-          do. I handle the design, the words, the images, and the domain
-          &mdash; I'll buy it for you, up to $15, and register it in your
-          name, not mine.</p>
-        </div>
-        <div class="om-card">
-          <h3>2. You go live in days</h3>
+      <ol class="hd-steps">
+        <li>
+          <h3>We spin you up</h3>
+          <p>A quick conversation about who you are and what the site has to do.
+          I handle the design, the words, the images and the domain &mdash;
+          registered in your name, not mine.</p>
+        </li>
+        <li>
+          <h3>You go live in days</h3>
           <p>You review, we tighten, it ships.</p>
-        </div>
-        <div class="om-card">
-          <h3>3. I keep it running</h3>
-          <p>Every week I'm watching, reporting, and improving. Any change
-          you want, you email &mdash; and it's handled.</p>
-        </div>
-        <div class="om-card">
-          <h3>4. You get on with your work</h3>
+        </li>
+        <li>
+          <h3>I keep it running</h3>
+          <p>Every week I'm watching, reporting and improving. Any change you
+          want, you email &mdash; and it's handled.</p>
+        </li>
+        <li>
+          <h3>You get on with your work</h3>
           <p>Which was the whole point.</p>
-        </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ── Proof ─────────────────────────────────────────────────────────────
+       High on the page on purpose: on paid traffic nobody scrolls to the
+       bottom to find out whether the work is any good. -->
+  <section class="hd-section" id="examples">
+    <div class="container">
+      <h2 class="hd-title">Sites built and handled the same way yours will be</h2>
+      <p class="hd-sub">Real sites, live right now. Click any of them.</p>
+
+      <div class="hd-shots">
+        <a class="hd-shot" href="https://tedgonder.co" target="_blank" rel="noopener">
+          <img src="/images/handled/tedgonder.webp" alt="Homepage of tedgonder.co" width="1200" height="750" loading="lazy">
+          <span class="hd-shot-meta"><span class="hd-shot-name">Ted Gonder</span><span class="hd-shot-what">Private strategic advisory &middot; tedgonder.co</span></span>
+        </a>
+        <a class="hd-shot" href="https://skylergring.com" target="_blank" rel="noopener">
+          <img src="/images/handled/skylergring.webp" alt="Homepage of skylergring.com" width="1200" height="750" loading="lazy">
+          <span class="hd-shot-meta"><span class="hd-shot-name">Skyler Gring</span><span class="hd-shot-what">Travel agent, Dreamers Do Travels &middot; skylergring.com</span></span>
+        </a>
+        <a class="hd-shot" href="https://earthlight.app" target="_blank" rel="noopener">
+          <img src="/images/handled/earthlight.webp" alt="Homepage of earthlight.app" width="1200" height="750" loading="lazy">
+          <span class="hd-shot-meta"><span class="hd-shot-name">Earthlight</span><span class="hd-shot-what">Circadian lighting ROI &middot; earthlight.app</span></span>
+        </a>
+        <a class="hd-shot" href="https://buckheadrestaurantweek.com" target="_blank" rel="noopener">
+          <img src="/images/handled/1-buckhead-restaurant-week.png" alt="Homepage of buckheadrestaurantweek.com" width="1280" height="713" loading="lazy">
+          <span class="hd-shot-meta"><span class="hd-shot-name">Buckhead Restaurant Week</span><span class="hd-shot-what">Atlanta dining week &middot; buckheadrestaurantweek.com</span></span>
+        </a>
+        <a class="hd-shot" href="https://westmidtownrestaurantweek.com" target="_blank" rel="noopener">
+          <img src="/images/handled/2-west-midtown-restaurant-week.png" alt="Homepage of westmidtownrestaurantweek.com" width="1280" height="713" loading="lazy">
+          <span class="hd-shot-meta"><span class="hd-shot-name">West Midtown Restaurant Week</span><span class="hd-shot-what">Atlanta dining week &middot; westmidtownrestaurantweek.com</span></span>
+        </a>
+        <a class="hd-shot" href="https://seamcertification.com" target="_blank" rel="noopener">
+          <img src="/images/handled/3-seam.png" alt="Homepage of seamcertification.com" width="1280" height="713" loading="lazy">
+          <span class="hd-shot-meta"><span class="hd-shot-name">SEAM</span><span class="hd-shot-what">Social equity certification &middot; seamcertification.com</span></span>
+        </a>
+        <a class="hd-shot" href="https://theforjgroup.com" target="_blank" rel="noopener">
+          <img src="/images/handled/4-forj.png" alt="Homepage of theforjgroup.com" width="1280" height="713" loading="lazy">
+          <span class="hd-shot-meta"><span class="hd-shot-name">FORJ Sports</span><span class="hd-shot-what">Building sports companies &middot; theforjgroup.com</span></span>
+        </a>
+        <a class="hd-shot" href="https://biggerfasterstronger.com" target="_blank" rel="noopener">
+          <img src="/images/handled/5-bfs.png" alt="Homepage of biggerfasterstronger.com" width="1280" height="713" loading="lazy">
+          <span class="hd-shot-meta"><span class="hd-shot-name">BFS</span><span class="hd-shot-what">Weight rooms and leadership &middot; biggerfasterstronger.com</span></span>
+        </a>
+        <a class="hd-shot" href="https://exceltrainingdesigns.com" target="_blank" rel="noopener">
+          <img src="/images/handled/6-excel-training-designs.png" alt="Homepage of exceltrainingdesigns.com" width="1280" height="713" loading="lazy">
+          <span class="hd-shot-meta"><span class="hd-shot-name">Excel Training Designs</span><span class="hd-shot-what">Templates for strength coaches &middot; exceltrainingdesigns.com</span></span>
+        </a>
+        <a class="hd-shot" href="https://drvngolf.com" target="_blank" rel="noopener">
+          <img src="/images/handled/7-drvn.png" alt="Homepage of drvngolf.com" width="1280" height="713" loading="lazy">
+          <span class="hd-shot-meta"><span class="hd-shot-name">DRVN</span><span class="hd-shot-what">The golf performance system &middot; drvngolf.com</span></span>
+        </a>
+        <a class="hd-shot" href="https://albizhubi.com" target="_blank" rel="noopener">
+          <img src="/images/handled/1-albizhubi.png" alt="Homepage of albizhubi.com" width="1280" height="713" loading="lazy">
+          <span class="hd-shot-meta"><span class="hd-shot-name">Albi Zhubi</span><span class="hd-shot-what">Brooklyn and NYC real estate &middot; albizhubi.com</span></span>
+        </a>
+        <a class="hd-shot" href="https://greenstarhomes.org" target="_blank" rel="noopener">
+          <img src="/images/handled/greenstar.webp" alt="Homepage of greenstarhomes.org" width="1200" height="750" loading="lazy">
+          <span class="hd-shot-meta"><span class="hd-shot-name">GreenStar Homes</span><span class="hd-shot-what">Green home certification &middot; greenstarhomes.org</span></span>
+        </a>
       </div>
     </div>
   </section>
 
-  <section class="om-section" id="examples">
+  <!-- ── The offer ─────────────────────────────────────────────────────────
+       The one inverted band on the page, and the only place the whole
+       decision sits together: price, term, exit, and the button. -->
+  <section class="hd-section hd-band" id="price">
     <div class="container">
-      <h2 class="cs-section-title">Sites like these</h2>
+      <h2 class="hd-title">$300 to build. $200&nbsp;a&nbsp;month to keep it handled.</h2>
 
-      <p>
-        Real sites, built and handled the same way yours will be.
-      </p>
-
-      <div class="om-cards">
-        <div class="om-card">
-          <img class="om-shot" src="/images/handled/tedgonder.webp" alt="Homepage of tedgonder.co" width="1200" height="750" loading="lazy">
-          <h3><a href="https://tedgonder.co" target="_blank" rel="noopener">Ted Gonder</a></h3>
-          <p>Private strategic advisory. tedgonder.co</p>
+      <div class="hd-figure">
+        <div class="hd-figure-half">
+          <span class="hd-figure-num">$300</span>
+          <span class="hd-figure-what">Once, to build it. Domain bought for you, up to $15.</span>
         </div>
-        <div class="om-card">
-          <img class="om-shot" src="/images/handled/skylergring.webp" alt="Homepage of skylergring.com" width="1200" height="750" loading="lazy">
-          <h3><a href="https://skylergring.com" target="_blank" rel="noopener">Skyler Gring</a></h3>
-          <p>Travel agent, Dreamers Do Travels. skylergring.com</p>
-        </div>
-        <div class="om-card">
-          <img class="om-shot" src="/images/handled/earthlight.webp" alt="Homepage of earthlight.app" width="1200" height="750" loading="lazy">
-          <h3><a href="https://earthlight.app" target="_blank" rel="noopener">Earthlight</a></h3>
-          <p>Circadian lighting ROI. earthlight.app</p>
-        </div>
-        <div class="om-card">
-          <img class="om-shot" src="/images/handled/inner-assembly.webp" alt="Homepage of Inner Assembly" width="1200" height="750" loading="lazy">
-          <h3>Inner Assembly</h3>
-          <p>In a private preview while the client finishes their launch.</p>
-        </div>
-        <div class="om-card">
-          <img class="om-shot" src="/images/handled/1-buckhead-restaurant-week.png" alt="Homepage of buckheadrestaurantweek.com" width="1280" height="713" loading="lazy">
-          <h3><a href="https://buckheadrestaurantweek.com" target="_blank" rel="noopener">Buckhead Restaurant Week</a></h3>
-          <p>Atlanta dining week in Buckhead. buckheadrestaurantweek.com</p>
-        </div>
-        <div class="om-card">
-          <img class="om-shot" src="/images/handled/2-west-midtown-restaurant-week.png" alt="Homepage of westmidtownrestaurantweek.com" width="1280" height="713" loading="lazy">
-          <h3><a href="https://westmidtownrestaurantweek.com" target="_blank" rel="noopener">West Midtown Restaurant Week</a></h3>
-          <p>Atlanta dining week in West Midtown. westmidtownrestaurantweek.com</p>
-        </div>
-        <div class="om-card">
-          <img class="om-shot" src="/images/handled/3-seam.png" alt="Homepage of seamcertification.com" width="1280" height="713" loading="lazy">
-          <h3><a href="https://seamcertification.com" target="_blank" rel="noopener">SEAM</a></h3>
-          <p>Social equity certification for the built environment. seamcertification.com</p>
-        </div>
-        <div class="om-card">
-          <img class="om-shot" src="/images/handled/4-forj.png" alt="Homepage of theforjgroup.com" width="1280" height="713" loading="lazy">
-          <h3><a href="https://theforjgroup.com" target="_blank" rel="noopener">FORJ Sports</a></h3>
-          <p>Building sports companies in North America. theforjgroup.com</p>
-        </div>
-        <div class="om-card">
-          <img class="om-shot" src="/images/handled/5-bfs.png" alt="Homepage of biggerfasterstronger.com" width="1280" height="713" loading="lazy">
-          <h3><a href="https://biggerfasterstronger.com" target="_blank" rel="noopener">BFS</a></h3>
-          <p>Weight rooms, programs, and leadership development. biggerfasterstronger.com</p>
-        </div>
-        <div class="om-card">
-          <img class="om-shot" src="/images/handled/6-excel-training-designs.png" alt="Homepage of exceltrainingdesigns.com" width="1280" height="713" loading="lazy">
-          <h3><a href="https://exceltrainingdesigns.com" target="_blank" rel="noopener">Excel Training Designs</a></h3>
-          <p>Free Excel templates for strength coaches. exceltrainingdesigns.com</p>
-        </div>
-        <div class="om-card">
-          <img class="om-shot" src="/images/handled/7-drvn.png" alt="Homepage of drvngolf.com" width="1280" height="713" loading="lazy">
-          <h3><a href="https://drvngolf.com" target="_blank" rel="noopener">DRVN</a></h3>
-          <p>The golf performance system. drvngolf.com</p>
-        </div>
-        <div class="om-card">
-          <img class="om-shot" src="/images/handled/1-albizhubi.png" alt="Homepage of albizhubi.com" width="1280" height="713" loading="lazy">
-          <h3><a href="https://albizhubi.com" target="_blank" rel="noopener">Albi Zhubi</a></h3>
-          <p>Brooklyn and NYC real estate. albizhubi.com</p>
-        </div>
-        <div class="om-card">
-          <img class="om-shot" src="/images/handled/greenstar.webp" alt="Homepage of greenstarhomes.org" width="1200" height="750" loading="lazy">
-          <h3><a href="https://greenstarhomes.org" target="_blank" rel="noopener">GreenStar Homes</a></h3>
-          <p>Green home certification. greenstarhomes.org</p>
+        <div class="hd-figure-half">
+          <span class="hd-figure-num">$200<span class="hd-figure-per">/month</span></span>
+          <span class="hd-figure-what">To watch it, report on it, improve it, and make any change you email.</span>
         </div>
       </div>
+
+      <p class="hd-sub">
+        That's the whole price. No tiers to decode, no upsells buried in a
+        dashboard, no surprise renewal. <strong>Month to month, cancel any
+        time</strong> &mdash; no minimum, no notice period, no exit fee. One
+        email ends it. If I'm worth keeping, that should show up in the work and
+        not in a contract you can't get out of.
+      </p>
+
+      <div class="hd-cta">
+        <a class="btn-primary" data-hd-cta="band" href="https://checkout.shanegring.com/b/5kQ6oG0z98g86bsdeHfbq03">
+          Claim a founding spot <span class="btn-arrow">&rarr;</span>
+        </a>
+        <ul class="hd-assure">
+          <li>Live in days</li>
+          <li>Changes by email</li>
+          <li>Yours to take with you</li>
+        </ul>
+      </div>
+
+      <p class="hd-founding">
+        <strong>Founding cohort &mdash; first 10 only.</strong> The first ten
+        clients hold $200 a month, guaranteed, even when the price goes up for
+        everyone after. You get in early, I get to build something worth
+        referring, and your rate never moves. When the ten are full, this
+        is gone.
+      </p>
     </div>
   </section>
 
-  <section class="om-section">
+  <!-- ── Upgrades ──────────────────────────────────────────────────────── -->
+  <section class="hd-section" id="upgrades">
     <div class="container">
-      <h2 class="cs-section-title">$300 to build. $200/month to keep it handled.</h2>
-
-      <p>
-        <strong>Month to month. Cancel any time.</strong> No minimum, no notice
-        period, no exit fee, and nothing to talk me out of &mdash; one email
-        ends it. If I'm worth keeping, that should show up in the work, not in
-        a contract you can't get out of.
-      </p>
-      <p>
-        That's it. No plan tiers to decode, no upsells buried in a dashboard, no
-        surprise renewal. Want more than the base? The upgrades below are the
-        whole list, out in the open &mdash; none of them required.
-      </p>
-      <p>
-        Compared to the alternatives you already know:
-      </p>
-      <ul class="cs-bullets">
-        <li><strong>Cheaper than the freelancer</strong> &mdash; and unlike the freelancer, I don't disappear the day it launches.</li>
-        <li><strong>A fraction of the time Squarespace costs you</strong> &mdash; because the time isn't yours. It's mine.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="om-section" id="upgrades">
-    <div class="container">
-      <h2 class="cs-section-title">Optional upgrades</h2>
-
-      <p>
-        The base covers most people. When you want more, add it when there's a
-        reason &mdash; and whatever we add gets watched and handled the same
-        as the rest of your site. The $200/month already covers that.
+      <h2 class="hd-title">Optional upgrades, priced in the open</h2>
+      <p class="hd-sub">
+        The base covers most people. Add these when there's a reason &mdash; and
+        whatever we add gets watched and handled the same as the rest of your
+        site. The $200 a month already covers that. None of it is required.
       </p>
 
       <div class="om-cards">
@@ -423,150 +514,160 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p><strong><a href="https://checkout.shanegring.com/b/00w8wO1DddAs7fw5Mffbq07">Add the lean CMS &mdash; $200 one-time</a></strong></p>
       </div>
 
-      <p>
+      <p class="hd-sub" style="margin-top:1.6rem">
         <strong>The hour blocks and the lean CMS are live in checkout</strong>
-        &mdash; the links are right on the cards. Extra pages are $99 each and
-        the newsletter is $49: mention either when you get in line and I'll
-        fold it into your build.
+        &mdash; the links are on the cards. Extra pages are $99 each and the
+        newsletter is $49: mention either when you get in line and I'll fold it
+        into your build.
       </p>
     </div>
   </section>
 
-  <section class="om-section" id="founding">
+  <!-- ── Objections ────────────────────────────────────────────────────────
+       Closed by default. Twelve answers open at once is a page nobody
+       finishes; the question line alone does most of the reassuring, and
+       the answers are still in the DOM for the FAQ schema and for agents. -->
+  <section class="hd-section">
     <div class="container">
-      <h2 class="cs-section-title">Founding cohort &mdash; first 10 only</h2>
+      <h2 class="hd-title">A few honest answers</h2>
 
-      <p>
-        I'm taking my first ten clients at <strong>a locked-in rate of $200/month,
-        guaranteed even when the price goes up for everyone after.</strong> You get
-        in early, I get to build something worth referring, and your rate never
-        moves. When these ten are full, this offer's gone.
-      </p>
-
-      <div class="om-cta-row">
-        <a class="btn-primary" href="https://checkout.shanegring.com/b/5kQ6oG0z98g86bsdeHfbq03">
-          Claim a founding spot <span class="btn-arrow">&rarr;</span>
-        </a>
-        <span class="om-cta-note"><strong>Checkout is open.</strong> The ten spots go in order of who's in first.</span>
+      <div class="hd-qa">
+        <details>
+          <summary>Is this really just for a one-page site?</summary>
+          <p>Yes &mdash; and on purpose. Most people don't need more; they need
+          one page that's sharp, credible and actually maintained. Want more
+          later? We scale the budget and do more. Start simple, grow when
+          there's a reason to.</p>
+        </details>
+        <details>
+          <summary>Who's actually behind this?</summary>
+          <p>Me. Shane Gring &mdash; a fractional operator who's spent 15 years
+          running websites, analytics and digital operations for founders and
+          companies. This is the same machinery I run for clients, pointed at
+          your site. When you email, you're emailing me.</p>
+        </details>
+        <details>
+          <summary>What do you need from me to get started?</summary>
+          <p>A conversation, and whatever you already have. I handle the domain,
+          the design, the words and the images &mdash; that's the point of it.
+          If you have a logo, photos or copy you like, send them and I'll use
+          them. If you don't, that's not a task I hand back to you.</p>
+        </details>
+        <details>
+          <summary>How long until it's live?</summary>
+          <p>Days, not weeks. We talk, I build, you review, we tighten, it
+          ships. The build is quick by design &mdash; the handling is the part
+          that runs for as long as you want it to.</p>
+        </details>
+        <details>
+          <summary>What counts as a change I can just email you?</summary>
+          <p>A headline, a photo, a rewritten line, a new price, a link that
+          needs fixing. Send it and it gets done &mdash; no ticket, no portal,
+          no &ldquo;please allow 5&ndash;7 business days.&rdquo; Bigger jobs are
+          the exception: a run of posts or listings isn't email-sized work, so
+          it comes out of a block of hours, or you add the lean CMS and publish
+          those yourself.</p>
+        </details>
+        <details>
+          <summary>What actually happens in the weekly check?</summary>
+          <p>I check how the site is performing, catch bugs before you run into
+          them, and send you a short read on how it's doing and what I'd
+          improve. Google Analytics and Search Console are set up and quietly
+          working underneath that, so your site is measured instead of guessed
+          at.</p>
+        </details>
+        <details>
+          <summary>What do you use to build it?</summary>
+          <p>Good tools, used fast &mdash; so my actual time goes into managing
+          and improving your site every month, not grinding out code by hand.
+          The build is quick by design. The handling is where a person shows up,
+          and that's what you're paying for.</p>
+        </details>
+        <details>
+          <summary>What if I need more than one page later?</summary>
+          <p>You add one. Extra pages are $99 each, built to the same standard
+          and folded into the same weekly watch. A newsletter wired in is $49, a
+          lean CMS is $200 one-time, and blocks of hours are $300 for two or
+          $500 for five. None of it is required, and none of it is bundled in
+          ahead of time. <a href="#upgrades">The upgrades are all here</a>.</p>
+        </details>
+        <details>
+          <summary>How is this different from the Autopilot?</summary>
+          <p>The <a href="/autopilot">Autopilot</a> is $899 a month and runs on
+          a site you already have, as part of a wider operating engagement.
+          Handled is smaller and starts earlier: it includes building the site
+          in the first place, then keeps one page sharp for $200 a month. If you
+          already have a site worth tending, the Autopilot is the better fit.</p>
+        </details>
+        <details>
+          <summary>Why make it this easy to cancel?</summary>
+          <p>Because a site you can't leave is worth less than one you can.
+          Lock-ins exist to hold on to clients whose work stopped being worth
+          paying for &mdash; I'd rather find that out and fix it. Everything is
+          in your name from the start, so leaving is a transfer, not a
+          negotiation.</p>
+        </details>
+        <details>
+          <summary>What if I want to leave?</summary>
+          <p>Whenever you want. No minimum, no notice period, no exit fee
+          &mdash; send one email and it stops at the end of that month. You keep
+          everything, because it was always yours: the code, the design files,
+          the Google Analytics and Search Console accounts, and the domain,
+          which is registered in your name from day one. Anything I'm
+          administering, I transfer wherever you want it, at no charge, and I
+          don't make you ask twice.</p>
+        </details>
+        <details>
+          <summary>Who is this not for?</summary>
+          <p>If you love tinkering with your own site, or you've got more time
+          than money, Squarespace is genuinely the right call. This is for the
+          opposite person: time-poor, allergic to homework, wants it handled by
+          someone who knows what they're doing.</p>
+        </details>
       </div>
     </div>
   </section>
 
-  <section class="om-section">
+  <!-- ── Close ─────────────────────────────────────────────────────────── -->
+  <section class="hd-final" id="hd-final">
     <div class="container">
-      <h2 class="cs-section-title">A few honest answers</h2>
-
-      <ul class="cs-bullets cs-bullets-rich">
-        <li>
-          <strong>Is this really just for a one-page site?</strong> Yes &mdash; and
-          on purpose. Most people don't need more; they need <em>one</em> page
-          that's sharp, credible, and actually maintained. Want more later? We
-          scale the budget and do more. Start simple, grow when there's a reason to.
-        </li>
-        <li>
-          <strong>Who's actually behind this?</strong> Me. Shane Gring &mdash; a
-          fractional operator who's spent 15 years running websites, analytics, and
-          digital operations for founders and companies. This is the same machinery
-          I run for clients, pointed at your personal site. When you email, you're
-          emailing me.
-        </li>
-        <li>
-          <strong>What do you use to build it?</strong> Good tools, used fast
-          &mdash; so my actual time goes into managing and improving your site
-          every month, not grinding out code by hand. The build is quick by
-          design. The <em>handling</em> is where a person shows up, and that's
-          what you're paying for.
-        </li>
-        <li>
-          <strong>What do you need from me to get started?</strong> A conversation, and whatever you already have. I handle the domain, the
-          design, the words and the images &mdash; that's the point of it. If you
-          have a logo, photos or copy you like, send them and I'll use them. If
-          you don't, that's not a task I hand back to you.
-        </li>
-        <li>
-          <strong>How long until it's live?</strong> Days, not weeks. We talk, I build, you review, we tighten, it ships. The
-          build is quick by design &mdash; the <em>handling</em> is the part that
-          runs for as long as you want it to.
-        </li>
-        <li>
-          <strong>What counts as a change I can just email you?</strong> A headline, a photo, a rewritten line, a new price, a link that needs
-          fixing. Send it and it gets done &mdash; no ticket, no portal, no
-          &ldquo;please allow 5&ndash;7 business days.&rdquo; Bigger jobs are the
-          exception: a run of posts or listings isn't email-sized work, so it
-          comes out of a block of hours, or you add the lean CMS and publish
-          those yourself.
-        </li>
-        <li>
-          <strong>What actually happens in the weekly check?</strong> I check how the site is performing, catch bugs before you run into them,
-          and send you a short read on how it's doing and what I'd improve.
-          Google Analytics and Search Console are set up and quietly working
-          underneath that, so your site is measured instead of guessed at.
-        </li>
-        <li>
-          <strong>What if I need more than one page later?</strong> You add one. Extra pages are <strong>$99 each</strong>, built to the same
-          standard and folded into the same weekly watch. A newsletter wired in
-          is $49, a lean CMS is $200 one-time, and blocks of hours are $300 for
-          two or $500 for five. None of it is required, and none of it is
-          bundled in ahead of time. <a href="#upgrades">The upgrades are all
-          here</a>.
-        </li>
-        <li>
-          <strong>How is this different from the Autopilot?</strong> The <a href="/autopilot">Autopilot</a> is $899 a month and runs on a site
-          you already have, as part of a wider operating engagement. Handled is
-          smaller and starts earlier: it includes building the site in the first
-          place, then keeps one page sharp for $200 a month. If you already have
-          a site worth tending, the Autopilot is the better fit.
-        </li>
-        <li>
-          <strong>Why make it this easy to cancel?</strong> Because a site you can't leave is worth less
-          than one you can. Lock-ins exist to hold on to clients whose work
-          stopped being worth paying for &mdash; I'd rather find that out and
-          fix it. Everything is in your name from the start, so leaving is a
-          transfer, not a negotiation.
-        </li>
-        <li>
-          <strong>What if I want to leave?</strong> Whenever you want. No minimum, no notice
-          period, no exit fee &mdash; send one email and it stops at the end of
-          that month. You keep everything, because it was always yours: the
-          code, the design files, the Google Analytics and Search Console
-          accounts, and the domain, which is registered in your name from day
-          one. Anything I'm administering, I transfer wherever you want it, at
-          no charge, and I don't make you ask twice.
-        </li>
-        <li>
-          <strong>Who is this not for?</strong> If you love tinkering with your
-          own site, or you've got more time than money, Squarespace is genuinely
-          the right call. This is for the opposite person: time-poor, allergic to
-          homework, wants it handled by someone who knows what they're doing.
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="om-section om-investment" id="get-started">
-    <div class="container">
-      <h2 class="cs-section-title">Your site, handled &mdash; for good.</h2>
-
-      <p>
-        Stop paying for tools you have to operate yourself. Stop hiring people who
-        vanish. Get a site that's built well and stays that way.
+      <h2 class="hd-title">Your site, handled &mdash; for good.</h2>
+      <p class="hd-sub">
+        Stop paying for tools you have to operate yourself. Stop hiring people
+        who vanish. Get a site that's built well and stays that way.
       </p>
 
-      <p class="om-price-line">
-        <strong>Handled. $300 to build, $200/month</strong> to keep it running.
-        Month to month, cancel any time, and everything is in your name from
-        day one.
+      <p class="hd-pricetag">
+        <span>$300 to build</span>
+        <span class="hd-pricetag-sep" aria-hidden="true">&middot;</span>
+        <span>$200 a month to keep it running</span>
       </p>
 
-      <div class="om-cta-row">
-        <a class="btn-primary" href="https://checkout.shanegring.com/b/5kQ6oG0z98g86bsdeHfbq03">
+      <div class="hd-cta">
+        <a class="btn-primary" data-hd-cta="final" href="https://checkout.shanegring.com/b/5kQ6oG0z98g86bsdeHfbq03">
           Claim a founding spot <span class="btn-arrow">&rarr;</span>
         </a>
-        <span class="om-cta-note"><strong>Checkout is open.</strong> $300 build today, $200/month after &mdash; founding spots included.</span>
+        <p class="hd-cta-note"><strong>Checkout is open.</strong> $300 today, $200 a month after &mdash; founding rate locked for the first ten.</p>
+        <ul class="hd-assure">
+          <li>Month to month</li>
+          <li>Cancel any time</li>
+          <li>Everything in your name</li>
+        </ul>
       </div>
     </div>
   </section>
 </main>
+
+<!-- Mobile buy bar. Borrows .vsl-sticky from /get-the-read rather than
+     re-implementing it, so the two paid pages cannot drift apart. -->
+<div class="vsl-sticky" id="hd-sticky" aria-hidden="true">
+  <div class="vsl-sticky-inner">
+    <span class="vsl-sticky-price">Handled &middot; $300 + $200/mo</span>
+    <a class="btn-primary" data-hd-cta="sticky" href="https://checkout.shanegring.com/b/5kQ6oG0z98g86bsdeHfbq03" tabindex="-1">
+      Claim a spot <span class="btn-arrow">&rarr;</span>
+    </a>
+  </div>
+</div>
 
 <footer>
   <img class="footer-city" src="/images/footer-city.png" alt="" width="2176" height="544" loading="lazy" aria-hidden="true">
@@ -654,17 +755,152 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </footer>
 
-<script src="/nav.js?v=1e5b0bad" defer></script>
 <script src="/track.js?v=e6beb16e" defer></script>
 <script src="/subscribe.js?v=4971fc05" defer></script>
 <script>
-// Stripe Payment Links return buyers to /handled?checkout=success. Turn the
-// param into a confirmation line in the first CTA note, then clean the URL.
+/* ══════════════════════════════════════════════════════════════════════════
+   /handled page behaviour. Four jobs: the post-checkout confirmation, the
+   mobile buy bar, scroll depth, and carrying ad attribution across to
+   Stripe. Everything degrades to a working page with JS off.
+   ══════════════════════════════════════════════════════════════════════════ */
 (function () {
-  if (new URLSearchParams(location.search).get('checkout') !== 'success') return;
-  var note = document.querySelector('.om-cta-note');
-  if (note) note.innerHTML = "<strong>You're in.</strong> Payment went through &mdash; watch your inbox for the receipt and next steps.";
-  history.replaceState(null, '', location.pathname);
+  'use strict';
+
+  /* ── 0. THE MOVING HERO ──────────────────────────────────────────
+     The still is the LCP element and the permanent fallback; the loop is an
+     upgrade that has to earn its place. It is skipped entirely when the
+     visitor asked for less motion, when the browser reports a saving-data
+     or slow connection, and — by doing nothing — whenever the file is not
+     there, because canplay never fires and .is-playing is never added.
+
+     Drop /images/handled-hero.mp4 in and the hero moves. Remove it and the
+     hero is a still again. No other edit either way. */
+  var HERO_LOOP = '/images/handled-hero.mp4';
+
+  var vid = document.getElementById('hd-hero-vid');
+  var slowConn = (navigator.connection || {});
+  var wantsStill =
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+    slowConn.saveData === true ||
+    /2g/.test(slowConn.effectiveType || '');
+
+  if (vid && HERO_LOOP && !wantsStill) {
+    vid.addEventListener('canplay', function () {
+      vid.classList.add('is-playing');
+      var play = vid.play();
+      /* Safari rejects the promise if the tab is backgrounded. Not an error
+         worth surfacing — the still is already on screen. */
+      if (play && play.catch) play.catch(function () {});
+    }, { once: true });
+    vid.src = HERO_LOOP;
+    vid.load();
+  }
+
+  /* ── 1. BACK FROM CHECKOUT ───────────────────────────────────────────────
+     Stripe Payment Links return buyers to /handled?checkout=success. Turn
+     the param into a confirmation line in the hero, then clean the URL so a
+     refresh or a shared link doesn't claim a purchase that didn't happen. */
+  if (new URLSearchParams(location.search).get('checkout') === 'success') {
+    var note = document.getElementById('hd-confirm');
+    if (note) {
+      note.innerHTML = "<strong>You're in.</strong> Payment went through &mdash; watch your inbox for the receipt and next steps.";
+      note.hidden = false;
+    }
+    history.replaceState(null, '', location.pathname);
+  }
+
+  /* ── 2. THE STICKY BAR ───────────────────────────────────────────────────
+     Visible between the end of the hero and the start of the final CTA.
+     Hidden from assistive tech and from tab order while off-screen, so it
+     never becomes a focus trap at the bottom of the page. */
+  var sticky = document.getElementById('hd-sticky');
+  var hero = document.querySelector('.hd-hero');
+  var final = document.getElementById('hd-final');
+
+  if (sticky && hero && final && 'IntersectionObserver' in window) {
+    var heroGone = false;
+    var finalHere = false;
+
+    function paint() {
+      var show = heroGone && !finalHere;
+      sticky.classList.toggle('is-visible', show);
+      sticky.setAttribute('aria-hidden', show ? 'false' : 'true');
+      var link = sticky.querySelector('a');
+      if (link) link.setAttribute('tabindex', show ? '0' : '-1');
+    }
+
+    new IntersectionObserver(function (entries) {
+      heroGone = !entries[0].isIntersecting;
+      paint();
+    }, { rootMargin: '0px' }).observe(hero);
+
+    new IntersectionObserver(function (entries) {
+      finalHere = entries[0].isIntersecting;
+      paint();
+    }, { rootMargin: '0px 0px -20% 0px' }).observe(final);
+  }
+
+  /* ── 3. SCROLL DEPTH ─────────────────────────────────────────────────────
+     On a long page bought with ad money, how far people get is the fastest
+     read on whether the traffic matches the offer. Same event name as
+     /get-the-read on purpose — one GTM trigger covers both. */
+  var marks = [25, 50, 75, 90];
+  var hit = {};
+  var ticking = false;
+
+  function depth() {
+    ticking = false;
+    var doc = document.documentElement;
+    var scrollable = doc.scrollHeight - window.innerHeight;
+    if (scrollable <= 0) return;
+    var pct = ((window.pageYOffset || doc.scrollTop) / scrollable) * 100;
+    for (var i = 0; i < marks.length; i++) {
+      var m = marks[i];
+      if (pct >= m && !hit[m]) {
+        hit[m] = true;
+        if (window.sgTrack) window.sgTrack('scroll_depth', { percent_scrolled: m });
+      }
+    }
+  }
+
+  window.addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(depth);
+  }, { passive: true });
+
+  /* ── 4. ATTRIBUTION THROUGH TO STRIPE ────────────────────────────────────
+     Stripe Payment Links accept client_reference_id, and it comes back on
+     the checkout.session.completed event. Without it a sale from an ad is
+     indistinguishable from a sale from the newsletter once the buyer leaves
+     the site. Stripe restricts the value to letters, numbers, hyphen and
+     underscore, max 200 characters, so everything gets scrubbed.
+
+     track.js already fires begin_checkout on these same links, so nothing
+     here needs to touch analytics — this only rewrites the href. */
+  function param(name) {
+    var m = new RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+    return m ? decodeURIComponent(m[1].replace(/\+/g, ' ')) : '';
+  }
+
+  function clean(s) {
+    return String(s).replace(/[^A-Za-z0-9_-]/g, '').slice(0, 40);
+  }
+
+  var ref = [
+    clean(param('utm_source') || 'direct'),
+    clean(param('utm_campaign') || 'none'),
+    clean(param('utm_content') || param('gclid') || param('fbclid') || 'x')
+  ].join('__').slice(0, 200);
+
+  var links = document.querySelectorAll('a[href*="buy.stripe.com"], a[href*="checkout.shanegring.com"]');
+  for (var j = 0; j < links.length; j++) {
+    var href = links[j].getAttribute('href');
+    links[j].setAttribute(
+      'href',
+      href + (href.indexOf('?') > -1 ? '&' : '?') + 'client_reference_id=' + encodeURIComponent(ref)
+    );
+  }
 })();
 </script>
 </body>

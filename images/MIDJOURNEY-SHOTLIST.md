@@ -417,6 +417,9 @@ civic-infrastructure-by-the-water world.
    > and cable network faintly visible beneath the pavement,
 
 2. **`/done-for-you`** — a crew owns the work while the owner stands off it
+   (**renamed `handled-hero.png` on 2026-09-11**: /done-for-you became a 301 to
+   /work-with-me, orphaning this art, and /handled needed exactly this scene.
+   See section 19.)
    > a ship in a dry dock with a full crew at work on its hull from scaffolding, the
    > owner watching from the quayside with his hands in his pockets, harbor town rising
    > behind,
@@ -615,3 +618,189 @@ originals were never archived, so this is the corpus. Details and exclusion
 rationale in that folder's `README.md`. Bake-off before adoption: regenerate
 `map-hero` + one guide card via the trained LoRA and compare against the MJ
 versions.
+
+## 19. `/handled` — the Handled hero ✅ DONE (`handled-hero.png`, 2026-09-11)
+
+Full-bleed band, so `--ar 21:9` like the three way-in pages, not 16:9. Export
+~3000px wide.
+
+**Shipped: Option A, the water tower**, first generation, no retries. The
+prompt as sent:
+
+```
+a small-town water tower at the far left and the town's low rooftops at the
+far right, a maintenance crew at work on the tower catwalk, low horizon under
+a tall open sky, [style suffix] --ar 21:9
+```
+
+Four clauses, against section 15's warning that the third one gets dropped —
+it held all four. Worth knowing: the clauses that survived are the ones that
+describe *where things sit*, which suggests placement language is stickier
+than action language.
+
+1680x720 out of Midjourney, quantised to a 256-colour PNG with
+`pngquant --quality=70-98 --speed 1 256`, 1.0 MB down to 383K, which puts it
+level with its siblings (scan 308K, work-with-me 421K, site 493K). The sky
+gradient bands very slightly at 256 and it does not show at render size.
+
+**Superseded:** `done-for-you-hero.png` stood in here from 2026-09-11 until
+this landed — /done-for-you had become a 301 to /work-with-me, orphaning its
+dry dock. That file is now unused. Section 15 records its prompt.
+
+**Scenes already spent, and this one has to avoid all of them:** the funicular
+(`/work-with-me`), the facade inspection (`/read`), the crane and modules
+(`/site`), the split-flap board (`/partner`), the pegboard workshop
+(`/install`), the lighthouse (`/scan`), the central station (`/approach`), the
+utility locator (`/find-out`), the dry dock (`/done-for-you`), the pilot cutter
+(`what-is-a-fractional-coo`) — and above all **the canal lock**, which is
+`/do-it-yourself` and is this page's exact inverse: there, the owner works the
+gate and the keeper stands back. Section 11 also declared the harbor and rail
+motifs used up, which rules out the obvious bridge-keeper answer.
+
+**Idea to carry:** the thing a town depends on, kept up by someone else, while
+everyone who relies on it gets on with their day and never thinks about it.
+
+1. **Option A — the water tower** (preferred: one simple standing structure,
+   which is what a one-page site is)
+   > a small-town water tower with a maintenance crew at work on its catwalk,
+   > the streets below going about their day,
+
+2. **Option B — the clock tower**
+   > a tower keeper winding the great clock movement inside a town clock tower,
+   > the square below going about its day,
+
+   Weigh this one against `/partner`'s split-flap board before generating. Both
+   are "somebody keeps the public face true," and two pages saying that with
+   the same idea in different housings is worse than one.
+
+**Composition — and this is the part that worked.** Pushing the art to the
+sides is what let the centred copy land. Midjourney ignores "leave the middle
+empty" as an instruction, but it honours a described horizon, so the reliable
+recipe is: name what sits at each edge, put the horizon low, and let the tall
+sky be the void. Both edges came back occupied and the middle came back as
+cloud, first try.
+
+The page then had to stop washing it away. Two scrim changes went with this
+art: the bottom close-out to white was starting at 80%, which erased the
+rooftop line and the foot of the tower — the whole reason the frame is
+composed this way — so it holds off until 87%. And the radial under the copy
+came in from 58% to 54% wide, which hands the edges back about 56px each side.
+
+On a phone, cover scales to height and keeps only ~40% of the width, so the
+question becomes which slice sits behind the copy. Framing the tower
+(`object-position: 16%`) put its legs directly behind the headline as a
+vertical smear. The cloud mass at `72%` reads as texture and leaves the
+rooftops along the bottom, which is what shipped.
+
+Section 15's note holds — subject about a third in from the
+left — but the reason changes, so read this before framing. The way-in bands
+are left-aligned copy with a left-to-right scrim, so their right side stays
+quiet. **This hero centres its copy over a radial scrim**, which means the
+middle third of the frame washes out to near white, and the left and right
+edges are the parts that survive. So: structure a third in from the left, open
+sky through the centre, and something quiet but present at the right edge.
+Bright daytime — a dark frame under a white scrim goes muddy.
+
+**`--sref` check (2026-09-11).** Both reference URLs were fetched and return
+`content-type: image/png`, so the 2026-08-01 trap in section 15 is not live
+today. Re-check before blaming Midjourney if the style drifts: Cloudflare Pages
+answers a missing asset with 200 and an HTML body, so a status-code check
+passes while the reference silently fails.
+
+### 19b. The moving version (`handled-hero.mp4`)
+
+The hero takes a loop as well as a still, and the page is already wired for it:
+drop `/images/handled-hero.mp4` in and the hero moves, take it away and it is a
+still again, no other edit either way. The `<img>` stays the LCP element and the
+permanent fallback; the loop fades in only once it can play, so a missing file,
+Save-Data, a 2g connection or `prefers-reduced-motion: reduce` all leave the
+still in place. Both paths verified in the browser on 2026-09-11.
+
+Generate the still first, then animate that image. Motion prompt, kept to one
+action the same way the stills are:
+
+> the crew works on slowly and the clouds drift, everything else still,
+> locked-off camera
+
+- **Locked-off camera, low motion.** Copy sits on this. A pan behind fixed text
+  reads as the page sliding, and it drags the scrim's washed-out centre across a
+  moving subject.
+- **Nothing crosses the centre third.** That is where the wash is strongest; a
+  subject that walks into it disappears. Keep the movement at the edges.
+- **It has to loop.** Midjourney will not return a seamless one — either keep
+  the motion ambient enough that a hard cut is invisible, or crossfade the tail
+  into the head afterwards.
+- **Budget it like an ad asset**, under ~2 MB, since this page is bought with
+  click money:
+  `ffmpeg -i in.mp4 -an -c:v libx264 -crf 30 -preset slow -pix_fmt yuv420p -r 12 -movflags +faststart handled-hero.mp4`
+  `-an` because the element is muted and the audio track is dead weight; 12 fps
+  suits pixel art and roughly halves the file against 24.
+
+## 20. Handled's icon — the hand ✅ DONE (`icons/handled.png`, 2026-09-11)
+
+Same recipe as sections 6 and 14: flat, front-facing, one colour, `--stylize 50`,
+then processed through the identical pipeline at the foot of section 14 —
+floodfill from the four corners, trim, 104px long side, centred on a 112×112
+transparent canvas.
+
+**Hue.** Taken across the eight offers and the three tracks: 9°, 23°, 27°, 48°,
+95°, 150°, 176°, 178°, 214°, 226°, 292°. The gaps left are 292→9 (77° wide,
+midpoint ~330), 226→292 (66°, midpoint ~259) and 48→95 (47°, midpoint ~71).
+Note that the page's own accent green is ~155°, which is 5° off the Install's
+forest green — unusable here, whatever it does on the page.
+
+1. **Pick — muted rose, ~330°.** The widest gap on the wheel, 38° from Map's
+   purple and 39° from Partner's brick red. Section 14 rejected a burgundy at
+   ~350° as "mush next to Partner's 9° at icon size"; 330° is ten degrees
+   further off and reads pink rather than red, which is what separates it.
+
+   ```
+   a single open hand held up palm forward with the fingers slightly apart, simple pixel art icon, chunky 16x16-style pixel sprite, thick blocky pixels, flat muted rose palette (#9c2f5e, #bc4a79, #d4759a) on a plain white background, single centered object, retro videogame inventory icon, no text, no border --ar 1:1 --stylize 50
+   ```
+
+2. **Alternative — slate, no hue at all.** Handled is outside the eight: llms.txt
+   says so, it does not follow the "The" plus one noun rule, and it does not
+   credit forward. An argument says it should not compete in the rung wheel,
+   and should carry the house blue-grey instead. Guaranteed never to collide,
+   at the cost of punch.
+
+   ```
+   a single open hand held up palm forward with the fingers slightly apart, simple pixel art icon, chunky 16x16-style pixel sprite, thick blocky pixels, flat slate blue-grey palette (#4a5f73, #63798f, #8ba0b3) on a plain white background, single centered object, retro videogame inventory icon, no text, no border --ar 1:1 --stylize 50
+   ```
+
+**The shape risk, and it is real.** Section 14's lesson was that two objects
+cannot both survive at 22px and the meaning has to live on the outer
+silhouette. A hand is one object but five fingers, and at 16 pixels wide the
+fingers are one pixel each with nothing between them — the most likely failure
+is a mitten. Palm forward and fingers apart is the framing that gives them the
+best chance, and it is why the prompt says both.
+
+If every variant comes back as a mitten, do what the Install did: hand-draw it.
+`icons/install-sprite.py` is the working precedent — a 16×16 `GRID` you edit and
+re-run, point-upscaled to 1024 and then put through the same downscale as the
+other seven so the edge softening matches. A hand is an easier sprite than a
+plug: four fingers as alternating lit and dark columns with a thumb breaking the
+left silhouette will read where a generated one will not.
+
+### Delivered 2026-09-11
+
+Job `d2682574-b8d8-42ea-b765-5db9643bb66b`, **index 2**, option 1 (the rose).
+First generation, no retries.
+
+**The mitten did not happen.** Four fingers came back as separate columns with
+dark rose separators, and the thumb breaks the right silhouette, which is what
+makes it read as a hand rather than a blob. Checked at 22px against the Install,
+the Map and the Seat before installing: the fingers survive the downscale and
+the hue sits clear of all three. No hand-drawn fallback needed — the note above
+stays for whoever needs the next one.
+
+Processed through section 14's pipeline unchanged. It sits marginally less
+saturated than its neighbours, which have heavier dark outlines; not enough to
+act on.
+
+**Where it went.** `offer-mark` at the top of the /handled hero,
+centred like the rest of that hero and at 56px rather than the 48px the boxed
+offer heroes use — with the nav bar gone it is the first thing on the page and
+has the top of the frame to itself. It is also the only warm thing in a blue
+and cream picture, which is what makes it read as a mark rather than part of
+the scenery. The footer and nav still list Handled as text only.
