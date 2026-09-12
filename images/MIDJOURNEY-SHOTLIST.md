@@ -736,7 +736,7 @@ action the same way the stills are:
   `-an` because the element is muted and the audio track is dead weight; 12 fps
   suits pixel art and roughly halves the file against 24.
 
-## 20. Handled's icon — the hand ⬜ TO GENERATE (`icons/handled.png`)
+## 20. Handled's icon — the hand ✅ DONE (`icons/handled.png`, 2026-09-11)
 
 Same recipe as sections 6 and 14: flat, front-facing, one colour, `--stylize 50`,
 then processed through the identical pipeline at the foot of section 14 —
@@ -782,8 +782,25 @@ other seven so the edge softening matches. A hand is an easier sprite than a
 plug: four fingers as alternating lit and dark columns with a thumb breaking the
 left silhouette will read where a generated one will not.
 
-**Where it goes once it exists.** `offer-mark` in the /handled hero is the
-obvious slot, the same way /seat, /install and /session carry theirs — though
-note this hero is currently centred art with no mark, so check it earns its
-place rather than adding it by default. The footer and nav list Handled as
-text only.
+### Delivered 2026-09-11
+
+Job `d2682574-b8d8-42ea-b765-5db9643bb66b`, **index 2**, option 1 (the rose).
+First generation, no retries.
+
+**The mitten did not happen.** Four fingers came back as separate columns with
+dark rose separators, and the thumb breaks the right silhouette, which is what
+makes it read as a hand rather than a blob. Checked at 22px against the Install,
+the Map and the Seat before installing: the fingers survive the downscale and
+the hue sits clear of all three. No hand-drawn fallback needed — the note above
+stays for whoever needs the next one.
+
+Processed through section 14's pipeline unchanged. It sits marginally less
+saturated than its neighbours, which have heavier dark outlines; not enough to
+act on.
+
+**Where it went.** `offer-mark` at the top of the /handled hero,
+centred like the rest of that hero and at 56px rather than the 48px the boxed
+offer heroes use — with the nav bar gone it is the first thing on the page and
+has the top of the frame to itself. It is also the only warm thing in a blue
+and cream picture, which is what makes it read as a mark rather than part of
+the scenery. The footer and nav still list Handled as text only.

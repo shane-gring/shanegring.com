@@ -5004,6 +5004,15 @@ body.offer-handled { --offer: #1f7a4d; --offer-deep: #145736; }
 
 .hd-hero .section-eyebrow { color: var(--offer-deep); }
 
+/* The mark centres like the rest of the hero, and sits a little larger than
+   the 48px the boxed offer heroes use -- it is the first thing above the
+   fold here, with no nav bar left to share the top of the page with. */
+.hd-hero .offer-mark {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 0.9rem;
+}
+
 /* Bigger than .cs-hook and capped in characters rather than pixels:
    a centred headline reads as a shape, and the shape falls apart past
    about three lines. */
