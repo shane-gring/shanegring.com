@@ -133,7 +133,6 @@
   },
   "assets": [
     "/.gitignore",
-    "/.worktrees/ga4-lead-completions/",
     "/404.md",
     "/HANDLED-INTAKE-SETUP.md",
     "/HANDLED-R2-SETUP-FOR-AGENT.md",
