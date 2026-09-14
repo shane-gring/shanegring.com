@@ -27,7 +27,7 @@ The solution starts with watching your site get read both ways at once, by someo
 
 I run this as a recorded walkthrough. What's in it is in the first comment.
 
-[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505325789190647809)
+2 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505325789190647809)
 
 Website OfferUse Case
 
@@ -45,7 +45,7 @@ Funny thing looking back: two kids felt like a handful then. We could still pair
 
 Mostly I'm glad we didn't wait for a smoother season. The smoother season is always a couple years out. Say yes, take the trip, and figure the rest out on the way.
 
-1 reaction[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505264110599622657)
+4 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505264110599622657)
 
 Personal Story
 
