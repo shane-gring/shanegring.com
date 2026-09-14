@@ -45,6 +45,12 @@
 /partner              /autopilot              301
 /operating-partner    /autopilot              301
 
+# /managed never existed in this repo, but something out there links or
+# sends people to it: GA4 recorded landing sessions on the 404 for weeks
+# (4 the week of Aug 29, 1 the week of Sep 5). /handled is the service
+# page that fits the name, so the trailing traffic goes there.
+/managed              /handled                301
+
 # 2-handled and 3-handled were never real pages: they were accidental
 # duplicate copies of /handled committed in d6d9c75, most likely a shell
 # mishap. They were served for a week and are older, thinner snapshots of
