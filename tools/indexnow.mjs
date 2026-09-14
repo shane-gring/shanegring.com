@@ -53,8 +53,28 @@ function findKey() {
  */
 function pathToUrl(file) {
   if (!file.endsWith('.html')) return null;
+  if (isNoindex(file)) return null;
   let p = file.replace(/index\.html$/, '').replace(/\.html$/, '');
   return `${SITE}/${p}`.replace(/([^:])\/\/+/g, '$1/');
+}
+
+/**
+ * A page that tells search engines not to index it must not then be announced
+ * to them. Two pages on this site are noindex — the Read intake and the Handled
+ * intake — and both are private, token-reached pages whose URLs have no
+ * business being pushed to Bing the moment a stylesheet hash changes them.
+ *
+ * Read from disk rather than kept as a list, so a page added later is covered
+ * by writing the same meta tag it would need anyway.
+ */
+function isNoindex(file) {
+  try {
+    const html = readFileSync(resolve(ROOT, file), 'utf8').slice(0, 4000);
+    return /<meta[^>]+name=["']robots["'][^>]+noindex/i.test(html);
+  } catch {
+    // Deleted in this commit, most likely. Nothing to submit either way.
+    return true;
+  }
 }
 
 function fromGit() {

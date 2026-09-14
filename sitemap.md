@@ -52,6 +52,9 @@ Your website rebuilt as an operating surface
 [The Seat](https://shanegring.com/seat)
 An operator in the seat a few days a month
 
+[Handled](https://shanegring.com/handled)
+Your site built and kept running, $300 then $200 a month
+
 [Fractional COO rates](https://shanegring.com/fractional-coo-rates)
 What the role costs, and how the pricing compares
 
@@ -140,6 +143,8 @@ Seeking Certainty. What I'm working on, what broke, and how I fixed it.
 [All issues](https://shanegring.com/blog/)
 The full archive
 
+[The Slingshot: No roof and no plan](https://shanegring.com/blog/the-slingshot-no-roof-and-no-plan)
+
 [Why does the biz only work when you're in the room?](https://shanegring.com/blog/why-does-the-biz-only-work-when-you-re-in-the-room)
 
 [Seeking Certainty is changing](https://shanegring.com/blog/seeking-certainty-is-changing)
@@ -202,6 +207,12 @@ The terms for using this site
 
 [Cookies](https://shanegring.com/cookies)
 Which cookies the site sets, and how to turn them off
+
+[Now](https://shanegring.com/now)
+What Shane is focused on at this point in his life
+
+[Friends](https://shanegring.com/friends)
+Sites by people Shane actually knows
 
 ---
 

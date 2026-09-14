@@ -30,3 +30,8 @@ docs/
 
 # Wrangler local dev secrets (same contents as .env)
 .dev.vars
+
+# Git worktrees for branch work. The deploy is `wrangler pages deploy .`,
+# which uploads everything not gitignored — an unignored worktree would ship
+# a full copy of a branch site publicly and pollute functions/routes.json.
+.worktrees/

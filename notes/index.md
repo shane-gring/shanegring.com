@@ -1,4 +1,4 @@
-Notes · 56 of them
+Notes · 65 of them
 
 # What I'm working through, most weekdays.
 
@@ -10,6 +10,176 @@ businesses, what broke, what I'd do differently.
 on the way there.** Also on
 [LinkedIn](https://www.linkedin.com/in/shanegring/),
 which is where they start.
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 14, 2026
+
+Every visitor to your website is now one of two things: a person deciding whether to trust you, or a machine deciding what to say about you.
+
+Most sites were written for a third audience -- the company itself. Insider language, offers organized the way the org chart thinks, the real story still in the founder's head where neither reader can reach it.
+
+So both readers fill the gaps on their own. The person bounces. The machine guesses, and its guess becomes the answer your next prospect hears.
+
+Try this sometime: ask an AI engine the questions your prospects ask. What does this firm do. Who is it for. What does it cost. The answers tend to come back a mix of right, guessed, and missing -- and you can't fix the ones you haven't seen.
+
+The solution starts with watching your site get read both ways at once, by someone who can tell you which of the two readers you're losing to. The fixes are usually smaller than people fear. Seeing them is the hard part.
+
+I run this as a recorded walkthrough. What's in it is in the first comment.
+
+[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505325789190647809)
+
+Website OfferUse Case
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 14, 2026
+
+Some trips you can't say no to.
+
+This was one of ours. Two little kids, a long flight, and every practical reason to wait until they were older. We went anyway.
+
+It was a lot to juggle. Naps happened in carriers, snacks did a lot of heavy lifting, and Dylan hauled a little mermaid purse across the whole country like it held her passport. And around all of that, days like this one.
+
+Funny thing looking back: two kids felt like a handful then. We could still pair off, one parent per girl. Now, with four girls in tow, a trip like this one looks downright calm.
+
+Mostly I'm glad we didn't wait for a smoother season. The smoother season is always a couple years out. Say yes, take the trip, and figure the rest out on the way.
+
+1 reaction[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505264110599622657)
+
+Personal Story
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 11, 2026
+
+Here's a test for whether your website has an owner: how long would it take to fix a typo on it today?
+
+If the honest answer is "I'd have to find who has the login, then wait on someone," your site is between owners. It probably has been for a while.
+
+That gap costs more than it looks like. The small fixes that never ship are the ones customers notice. The wrong price. The dead contact form. The page about a service you stopped offering last year. None of it needs a rebuild. It needs a person whose job is the site, on a rhythm, so a fix takes days instead of a committee.
+
+That's a service I run now. You keep the site you have, wherever it lives, and I own the upkeep -- requests by voice note if that's easiest, fixes shipped within days, a site that stays true to the business as it changes.
+
+If the typo test stung a little, details are in the comments.
+
+2 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7504199585108533249)
+
+Website OfferUse Case
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 10, 2026
+
+When most small teams launch a campaign, the first week disappears into asset-making: landing page copy, ad variations, building a gated resource, tagline testing.
+
+The campaign hasn't started, and the week's gone.
+
+Most of that week is rewriting things you've already said. The offer, the positioning, the proof, the way you describe the problem -- if that lives on your site in a form tools can read, the assets come off it fast.
+
+Landing pages that match the campaign. Ad angles to test. A resource built from what's already there.
+
+The campaign starts from a foundation instead of a blank page.
+
+If a launch always seems to take weeks of setup before anything ships, the setup is usually the tell. The pieces you keep rebuilding are the ones worth building into the foundation once and for all.
+
+[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503835944895315969)
+
+Tips
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 10, 2026
+
+Every month for the first year, Skyler builds a ring of flowers around each of our girls and takes their picture.
+
+This one's the twins at eleven months. The flowers come from a neighbor of ours who grows them in her backyard and turns it into these arrangements -- she runs a little business doing it. Sky lays the whole circle out by hand, then we get maybe thirty seconds before someone starts grabbing at a rose.
+
+She's done this for all four of the girls. Parker and Dylan get in on it now too, half helping, half supervising.
+
+It's a lot of work, honestly. But it's all worth it. Taking a beat to actually capture a moment, instead of letting the month blur past, turns a random Tuesday into something the girls will have forever.
+
+Sky's eye and creativity are just a few more things that make her special. And I'm grateful I get to watch, help, and enjoy these little time-lapse photos of all my girls.
+
+22 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503814567140007936)
+
+Personal Story
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 9, 2026
+
+There are two ways people usually get a website, and both leave them stuck.
+
+Road one is the website builder. You pay for a plan and a domain, and then it hands you the tools and a weekend of homework. Weeks later you've got a half-finished page you're a little embarrassed by, and the subscription's still billing.
+
+Road two is the freelancer. Good build, real money -- and then they vanish. The site's live, but the first time something needs to change or breaks, you're on your own, and fixing it means starting the hunt over.
+
+Each one fails exactly where the other wins. The builder never leaves but makes you do the work. The freelancer does the work but leaves.
+
+The fix, from what I've seen, is one person doing both jobs. Build it well, then stay: watching it every week, fixing what breaks, changing what you ask them to change.
+
+I've set up a service that works exactly that way. Details in the comments.
+
+2 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503481141102788609)
+
+Website OfferTips
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 9, 2026
+
+There's a gap I keep running into: people who've read everything about AI and set up almost none of it.
+
+You use Claude in a browser tab and suspect you're using 5% of its actual capability. You've nodded along to "just put your site in GitHub." You've got three tasks a week that are obviously automatable, and they're still done by hand.
+
+You've done the reading. The setup is still waiting.
+
+What closes the gap, from what I've seen, is one day where the thing gets set up and working with your hands on the keyboard. Install the tools, connect them to your real work, ship one real change, build one agent on a task you actually have. Small, concrete, done by dinner.
+
+The unlock is doing it once. After you've shipped one change yourself, you believe you can do it again. Everything after that is repetition.
+
+I run these as full working days now, at your place, on your machine. Details in the comments.
+
+4 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503438318030860289)
+
+Website OfferUse Case
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 8, 2026
+
+Referral businesses hide their website problems better than anyone.
+
+Work keeps arriving through relationships and reputation, so the quiet site reads as harmless. And the costs stay invisible by design. No report shows the strangers who checked the site and moved on. Nobody mentions the stale services page they read on the way to replying to your intro.
+
+That second one is the part worth sitting with. Even the warm intro looks you up before writing back. The best pipeline you have still crosses the surface you stopped maintaining.
+
+Worth an honest check this week: where did your last ten clients actually come from? If every answer is a referral, your site has been grading itself on an absence of complaints -- and absence of complaints is the one grade a quiet page always gets.
+
+Wrote up where these leaks usually hide, and five checks you can run yourself to find yours. Link's in the comments.
+
+3 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503116200646840321)
+
+Tips
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 8, 2026
+
+A tea ceremony sounds like the touristy thing you do in Japan. Went in half expecting that.
+
+What happened instead surprised me. A guide invited us into his home to follow his practice, a ritual older than the country I come from, and somewhere in the middle of it a calm settled over the whole room. I'm usually a little cynical about that stuff. It got me anyway.
+
+Being served like that was its own kind of beautiful. Someone with decades in a practice, walking the curious through it step by step, sharing a tradition because sharing it is the point.
+
+Mostly, though, it was the feeling of being led for a change. Letting somebody else set the pace. Following without needing to figure anything out, and finding how much quiet there is in that.
+
+Still think about that room.
+
+17 reactions · 4 comments[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503093566563303425)
+
+Personal Story
 
 Shane Gring
 Fractional COO · operations for expert-led businesses
@@ -45,7 +215,7 @@ Get that right and the posts, the pages, the ads all pull from one source and so
 
 So, before you spend a dollar on a rebuild, here are the questions to ask whoever builds or runs your site. The answers tell you whether you're buying a foundation for your business or just a passing snapshot of how it stands today.
 
-[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:ugcPost:7501298018747465728)
+2 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:ugcPost:7501298018747465728)
 
 Shane Gring
 Fractional COO · operations for expert-led businesses
@@ -65,7 +235,7 @@ The Institute has since transitioned. The movement wave crested and fell, the ne
 
 But the premise held up. I still think a business is one of the best tools there is for taking care of people. Most of what I do today runs on some version of that idea.
 
-2 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:ugcPost:7500968336650866689)
+3 reactions · 2 comments[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:ugcPost:7500968336650866689)
 
 Personal Story
 
@@ -193,7 +363,7 @@ We now have four girls. I'm building them a replica playhouse of our mid-century
 
 So if you're in the patient stretch, the part before the things you're working toward have shown up, just keep going. As it turns out, there aren't many finish lines in life -- just more adventures ahead.
 
-9 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7498392590682075137)
+14 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7498392590682075137)
 
 Personal Story
 
@@ -241,7 +411,7 @@ Often, it's a small fix: leave the app an app, and move the pages that earn buye
 
 Worth a read if you've got a good-looking site that isn't pulling its weight: [shanegring.com/guides/move-content-into-html](https://shanegring.com/guides/move-content-into-html)
 
-[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7497714374619320321)
+1 reaction[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7497714374619320321)
 
 EducationTipsWebsite Offer
 
@@ -343,7 +513,7 @@ It isn't always tidy. Sometimes calls run late or clients reach out with an urge
 
 Moving outside of the standard corporate setting was a trade I made, and it was a good one. I still get to do the work I love, and enough room around it to be there for the people who matter most.
 
-65 reactions · 4 comments[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7495506105066774528)
+66 reactions · 4 comments[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7495506105066774528)
 
 Personal Story
 
@@ -423,7 +593,7 @@ Here's what I mostly want to say, though. None of these trips happen without Sky
 
 Been meaning to say it out loud instead of just thinking it: she's the reason our kids get to see the world. I get to carry Dyl, take photos, eat sushi, etc. But she's the real one who made these days exist.
 
-24 reactions · 6 comments[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7493687831890907136)
+25 reactions · 6 comments[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7493687831890907136)
 
 Personal Story
 
