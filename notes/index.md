@@ -1,4 +1,4 @@
-Notes · 63 of them
+Notes · 65 of them
 
 # What I'm working through, most weekdays.
 
@@ -10,6 +10,44 @@ businesses, what broke, what I'd do differently.
 on the way there.** Also on
 [LinkedIn](https://www.linkedin.com/in/shanegring/),
 which is where they start.
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 14, 2026
+
+Every visitor to your website is now one of two things: a person deciding whether to trust you, or a machine deciding what to say about you.
+
+Most sites were written for a third audience -- the company itself. Insider language, offers organized the way the org chart thinks, the real story still in the founder's head where neither reader can reach it.
+
+So both readers fill the gaps on their own. The person bounces. The machine guesses, and its guess becomes the answer your next prospect hears.
+
+Try this sometime: ask an AI engine the questions your prospects ask. What does this firm do. Who is it for. What does it cost. The answers tend to come back a mix of right, guessed, and missing -- and you can't fix the ones you haven't seen.
+
+The solution starts with watching your site get read both ways at once, by someone who can tell you which of the two readers you're losing to. The fixes are usually smaller than people fear. Seeing them is the hard part.
+
+I run this as a recorded walkthrough. What's in it is in the first comment.
+
+[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505325789190647809)
+
+Website OfferUse Case
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 14, 2026
+
+Some trips you can't say no to.
+
+This was one of ours. Two little kids, a long flight, and every practical reason to wait until they were older. We went anyway.
+
+It was a lot to juggle. Naps happened in carriers, snacks did a lot of heavy lifting, and Dylan hauled a little mermaid purse across the whole country like it held her passport. And around all of that, days like this one.
+
+Funny thing looking back: two kids felt like a handful then. We could still pair off, one parent per girl. Now, with four girls in tow, a trip like this one looks downright calm.
+
+Mostly I'm glad we didn't wait for a smoother season. The smoother season is always a couple years out. Say yes, take the trip, and figure the rest out on the way.
+
+1 reaction[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505264110599622657)
+
+Personal Story
 
 Shane Gring
 Fractional COO · operations for expert-led businesses
@@ -139,7 +177,7 @@ Mostly, though, it was the feeling of being led for a change. Letting somebody e
 
 Still think about that room.
 
-18 reactions · 4 comments[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503093566563303425)
+17 reactions · 4 comments[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503093566563303425)
 
 Personal Story
 
@@ -325,7 +363,7 @@ We now have four girls. I'm building them a replica playhouse of our mid-century
 
 So if you're in the patient stretch, the part before the things you're working toward have shown up, just keep going. As it turns out, there aren't many finish lines in life -- just more adventures ahead.
 
-13 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7498392590682075137)
+14 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7498392590682075137)
 
 Personal Story
 
