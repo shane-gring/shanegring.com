@@ -27,7 +27,7 @@ Answer fully, is my advice. Holding back for the sales call has it backwards -- 
 
 More on building this in the comments.
 
-1 reaction · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505679361736413184)
+2 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505679361736413184)
 
 Education
 
