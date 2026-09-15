@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Signal — Handled template</title>
+<meta name="description" content="A Handled site template for a business with one strong idea to land: a service, a method, a thesis the market has not caught up with.">
+<meta name="robots" content="noindex, nofollow">
+
+<!--
+  HANDLED TEMPLATE — "The Signal"
+  ───────────────────────────────────────────────────────────────────────────
+  For a business whose problem is that nobody has understood the idea yet. A
+  method, a category, a thesis. The job of the page is to land one argument so
+  hard that the reader repeats it to someone else. Abstracted from the
+  Earthlight build.
+
+  The idea it is built around: an abstract light source instead of a
+  photograph. A business selling an idea has nothing to photograph — stock
+  imagery actively hurts it, because a generic picture says "generic company".
+  A luminous mark says "there is a single thing here", which is the argument.
+
+  The accent colour is used exactly three times: the orb, one word in the
+  headline, and the primary button. A fourth use and it stops meaning anything.
+
+  REPLACE: every {BRACKETED} string, and --signal if the client has a brand
+  colour worth keeping.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ground:  #FDFAF6;
+  --ground-2:#F5EEE5;
+  --ink:     #1A1512;
+  --ink-2:   #5C5148;
+  --ink-3:   #70635A;   /* 5.57:1 on --ground. Carries eyebrows and captions. */
+  --signal:  #D9620A;   /* the orb and the one headline word — large text only */
+  --signal-deep: #B84E05; /* anything with text ON it: white needs 4.5:1 and
+                             --signal only manages 3.68 */
+  --signal-2:#F5A623;
+  --line:    #E4DACF;
+
+  --display: 'Fraunces', Georgia, serif;
+  --body:    'Karla', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--ground); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+h1, h2, h3 { font-family: var(--display); margin: 0; font-weight: 600; letter-spacing: -0.02em; }
+h1 { font-size: clamp(2.5rem, 6.4vw, 4.4rem); line-height: 1.02; }
+h2 { font-size: clamp(1.8rem, 3.6vw, 2.7rem); line-height: 1.12; }
+h3 { font-size: 1.15rem; line-height: 1.3; font-weight: 600; }
+p { margin: 0 0 1.1rem; }
+
+/* Accent use #1 of 3. */
+.hl { color: var(--signal); }
+
+.eyebrow { font-size: 0.76rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 1.3rem; font-weight: 600; }
+
+.nav { padding: 1.5rem 0; }
+.nav .wrap { display: flex; align-items: center; gap: 2rem; }
+.brand { font-family: var(--display); font-size: 1.2rem; font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 0.6rem; }
+.brand-dot { width: 20px; height: 20px; border-radius: 50%; background: radial-gradient(circle at 34% 30%, var(--signal-2), var(--signal) 68%); }
+.nav-links { margin-left: auto; display: flex; gap: 1.7rem; list-style: none; padding: 0; margin-right: 0; font-size: 0.93rem; }
+.nav-links a { text-decoration: none; color: var(--ink-2); }
+.nav-links a:hover { color: var(--ink); }
+.nav-cta { border: 1px solid var(--ink); border-radius: 999px; padding: 0.5rem 1.15rem; text-decoration: none; font-size: 0.9rem; font-weight: 500; white-space: nowrap; }
+.nav-cta:hover { background: var(--ink); color: var(--ground); }
+
+/* ── Hero ───────────────────────────────────────────────────────────────── */
+.hero { padding: 3rem 0 4.5rem; }
+.hero .wrap { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
+.hero-lede { font-size: clamp(1.02rem, 1.5vw, 1.14rem); color: var(--ink-2); max-width: 33rem; margin: 1.6rem 0 1rem; }
+.hero-kicker { font-size: 1.02rem; margin-bottom: 2rem; }
+.hero-kicker strong { font-weight: 600; }
+
+/* THE SIGNATURE. Accent use #2 of 3. A light source, not a photograph — a
+   business selling an idea has nothing to photograph, and stock imagery
+   actively says "generic company". */
+.orb-stage { position: relative; display: grid; place-items: center; min-height: 300px; }
+.orb-bloom { position: absolute; width: 420px; height: 420px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(245,166,35,0.30) 0%, rgba(217,98,10,0.10) 42%, transparent 70%); }
+.orb { position: relative; width: min(250px, 62vw); aspect-ratio: 1; border-radius: 50%;
+  background: conic-gradient(from 210deg, var(--signal-2), var(--signal) 42%, #B84E05 62%, var(--signal-2));
+  -webkit-mask: radial-gradient(circle, transparent 47%, #000 48%);
+          mask: radial-gradient(circle, transparent 47%, #000 48%); }
+
+.cta-row { display: flex; flex-wrap: wrap; gap: 0.7rem; align-items: center; }
+.btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.6rem; border-radius: 999px; text-decoration: none; font-size: 0.97rem; font-weight: 500; }
+/* Accent use #3 of 3. */
+.btn-primary { background: var(--signal-deep); color: #fff; }
+.btn-primary:hover { background: #9C4204; }
+.btn-text { color: var(--ink-2); text-decoration: underline; text-underline-offset: 4px; padding: 0.85rem 0.4rem; }
+.btn-text:hover { color: var(--ink); }
+
+/* ── Stats ──────────────────────────────────────────────────────────────── */
+.stats { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--ground-2); }
+.stats .wrap { display: grid; grid-template-columns: 1fr; }
+.stat { padding: 1.8rem 0; }
+.stat + .stat { border-top: 1px solid var(--line); }
+.stat-n { font-family: var(--display); font-size: clamp(1.9rem, 3.6vw, 2.5rem); font-weight: 700; line-height: 1; }
+.stat p { margin: 0.5rem 0 0; color: var(--ink-2); font-size: 0.93rem; }
+
+section { padding: 4.5rem 0; }
+.section-head { max-width: 40rem; margin-bottom: 2.6rem; }
+.section-head p { color: var(--ink-2); margin-top: 1rem; }
+
+.cards { display: grid; gap: 1.2rem; }
+.card { border: 1px solid var(--line); border-radius: 14px; padding: 1.6rem; background: #fff; }
+.card h3 { margin-bottom: 0.5rem; }
+.card p { margin: 0; color: var(--ink-2); font-size: 0.95rem; }
+
+.split { display: grid; gap: 2.4rem; align-items: center; }
+.quote { border-left: 2px solid var(--signal); padding-left: 1.4rem; }
+.quote p { font-family: var(--display); font-size: clamp(1.2rem, 2.4vw, 1.6rem); line-height: 1.35; margin-bottom: 1rem; }
+.quote cite { font-style: normal; color: var(--ink-3); font-size: 0.9rem; }
+
+.faq details { border-top: 1px solid var(--line); padding: 1.15rem 0; }
+.faq details:last-of-type { border-bottom: 1px solid var(--line); }
+.faq summary { cursor: pointer; font-family: var(--display); font-weight: 600; font-size: 1.1rem; list-style: none; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: '↓'; float: right; color: var(--ink-3); }
+.faq details[open] summary::after { content: '↑'; }
+.faq p { color: var(--ink-2); margin: 0.7rem 0 0; max-width: 46rem; }
+
+.closer { background: var(--ink); color: var(--ground); text-align: center; border-radius: 20px; padding: 3.5rem 1.5rem; }
+.closer h2 { color: var(--ground); }
+.closer p { color: #C8BDB2; max-width: 34rem; margin: 1rem auto 2rem; }
+
+footer { padding: 2.4rem 0 3rem; font-size: 0.9rem; color: var(--ink-3); }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 0.8rem 2rem; }
+footer a { text-decoration: none; }
+.footer-end { margin-left: auto; }
+
+:focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; }
+
+@media (min-width: 880px) {
+  .hero { padding: 4rem 0 6rem; }
+  .hero .wrap { grid-template-columns: 1.1fr 0.9fr; gap: 3.5rem; }
+  .stats .wrap { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+  .stat + .stat { border-top: 0; }
+  .cards { grid-template-columns: repeat(3, 1fr); }
+  .split { grid-template-columns: 1fr 1fr; gap: 4rem; }
+}
+@media (max-width: 879px) { .nav-links { display: none; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#"><span class="brand-dot"></span>{Business}</a>
+    <ul class="nav-links">
+      <li><a href="#problem">{The problem}</a></li>
+      <li><a href="#how">{How it works}</a></li>
+      <li><a href="#proof">{Proof}</a></li>
+      <li><a href="#faq">{Questions}</a></li>
+    </ul>
+    <a class="nav-cta" href="#start">{Talk to us}</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">{THE CATEGORY YOU ARE CLAIMING}</p>
+      <h1>{The sentence that reframes their problem. One word in <span class="hl">colour</span>.}</h1>
+      <p class="hero-lede">{Two or three lines turning the claim into something concrete. What you actually do, for whom, and what changes as a result.}</p>
+      <p class="hero-kicker">{The urgency line} <strong>{— the cost of not acting, stated plainly.}</strong></p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#start">{Talk to us} &rarr;</a>
+        <a class="btn btn-text" href="#how">{See how it works}</a>
+      </div>
+    </div>
+    <div class="orb-stage">
+      <div class="orb-bloom"></div>
+      <div class="orb"></div>
+    </div>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><div class="stat-n">{00%}</div><p>{What the number means, in one line.}</p></div>
+    <div class="stat"><div class="stat-n">{00x}</div><p>{What the number means, in one line.}</p></div>
+    <div class="stat"><div class="stat-n">{$00m}</div><p>{What the number means, in one line.}</p></div>
+  </div>
+</div>
+
+<section id="problem">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">{The problem}</p>
+      <h2>{Name the thing everybody works around and nobody fixes.}</h2>
+      <p>{Two sentences describing it from inside their day, not from your side of the table.}</p>
+    </div>
+    <div class="cards">
+      <div class="card"><h3>{Symptom one}</h3><p>{What it looks like when this goes wrong.}</p></div>
+      <div class="card"><h3>{Symptom two}</h3><p>{What it looks like when this goes wrong.}</p></div>
+      <div class="card"><h3>{Symptom three}</h3><p>{What it looks like when this goes wrong.}</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">{How it works}</p>
+      <h2>{The method, in three moves.}</h2>
+    </div>
+    <div class="cards">
+      <div class="card"><h3>{First}</h3><p>{What happens, and what they get out of it.}</p></div>
+      <div class="card"><h3>{Then}</h3><p>{What happens, and what they get out of it.}</p></div>
+      <div class="card"><h3>{Finally}</h3><p>{What happens, and what they get out of it.}</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="proof">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <p class="eyebrow">{Proof}</p>
+        <h2>{The case that makes it real.}</h2>
+        <p style="color:var(--ink-2)">{What the situation was, what you did, what changed. Numbers if you have them; specifics if you do not.}</p>
+      </div>
+      <!-- Replace with a real quote from a real client, attributed. Leave this
+           out entirely rather than inventing one — a fabricated testimonial is
+           the fastest way to lose the reader you were trying to convince. -->
+      <div class="quote">
+        <p>{A sentence in their words, not yours.}</p>
+        <cite>{Name, role, company}</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">{Questions}</p>
+      <h2>{What people ask before they commit.}</h2>
+    </div>
+    <details open><summary>{How long before we see something?}</summary><p>{A real answer with a real number.}</p></details>
+    <details><summary>{What does it cost?}</summary><p>{Say it, or say exactly what it depends on.}</p></details>
+    <details><summary>{What do you need from us?}</summary><p>{Be honest about the effort on their side.}</p></details>
+    <details><summary>{What if it does not work?}</summary><p>{What happens then.}</p></details>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="closer" id="start">
+      <h2>{The one action, restated.}</h2>
+      <p>{What happens when they take it, and how soon. Remove the fear of a sales process.}</p>
+      <a class="btn btn-primary" href="mailto:{email}">{Talk to us} &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; {YEAR} {Business}</span>
+    <a href="mailto:{email}">{email}</a>
+    <span class="footer-end">{City}</span>
+  </div>
+</footer>
+
+</body>
+</html>

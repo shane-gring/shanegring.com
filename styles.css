@@ -7946,3 +7946,21 @@ footer .footer-nav ul,
   border-radius: 6px;
   padding: 0.4rem 0.6rem;
 }
+
+/* Template card + its "see it full size" sibling. The card is the choice; the
+   link is a separate action, so it sits outside the button rather than inside
+   it — a nested anchor is invalid and eats one of the two. */
+.hi-template-cell { display: flex; flex-direction: column; gap: 0.4rem; }
+.hi-template-cell .hi-template { height: 100%; }
+.hi-template-view {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  align-self: flex-start;
+  font-size: 0.82rem;
+  color: var(--dim);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding: 0.5rem 0.2rem;      /* a real target on a phone, not a 12px link */
+  min-height: 40px;
+}
+.hi-template-view:hover { color: var(--fg); }
+.hi-template-arrow { font-size: 0.9em; }

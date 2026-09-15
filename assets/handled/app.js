@@ -17,7 +17,7 @@
  */
 
 import { SECTIONS, WELCOME, CONFIRMATION, questionById, allQuestions, RECORDING_FIELD } from './questions.js?v=614da2d8';
-import { TEMPLATES, PLACEHOLDER_PREVIEW, templateBlurb, templateById } from './templates.js?v=cf35bf53';
+import { TEMPLATES, PLACEHOLDER_PREVIEW, templateBlurb, templateById } from './templates.js?v=2b9b8a2c';
 import { acceptAttr, formatBytes, validateUpload, GROUPS, canRecord, pickRecordType,
          extensionForType, RECORD_BITRATE, RECORD_MAX_SECONDS } from './uploads.js?v=5f553a01';
 
@@ -692,6 +692,11 @@ function templatePicker(q) {
   grid.setAttribute('aria-label', q.label);
 
   for (const t of TEMPLATES) {
+    // The card is the choice; the link is a sibling, not a child. An anchor
+    // nested inside a button is invalid and swallows one of the two actions —
+    // and these genuinely are two actions: pick this one, or go and look at it.
+    const cell = el('div', 'hi-template-cell');
+
     const card = el('button', 'hi-template');
     card.type = 'button';
     card.setAttribute('role', 'radio');
@@ -704,7 +709,7 @@ function templatePicker(q) {
     img.alt = '';
     img.loading = 'lazy';
     img.width = 320; img.height = 240;
-    // A preview Chris hasn't produced yet must not render as a broken image.
+    // A preview that hasn't been shot yet must not render as a broken image.
     img.addEventListener('error', () => { img.src = PLACEHOLDER_PREVIEW; }, { once: true });
     card.append(img);
 
@@ -713,7 +718,23 @@ function templatePicker(q) {
     if (blurb) card.append(el('span', 'hi-template-desc', blurb));
 
     card.addEventListener('click', () => { setValue(q, t.id); render(); });
-    grid.append(card);
+    cell.append(card);
+
+    if (t.viewUrl) {
+      const view = el('a', 'hi-template-view');
+      view.href = t.viewUrl;
+      // New tab, always. Losing a half-finished intake to go and look at a
+      // demo would be the worst trade this page could make — and the answers
+      // are saved, but the interruption is not worth it.
+      view.target = '_blank';
+      view.rel = 'noopener';
+      view.append(document.createTextNode('See it full size'));
+      view.append(el('span', 'hi-template-arrow', '↗'));
+      view.setAttribute('aria-label', `See the ${t.name} template full size, opens in a new tab`);
+      cell.append(view);
+    }
+
+    grid.append(cell);
   }
   return grid;
 }
