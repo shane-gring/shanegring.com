@@ -14,6 +14,9 @@ Or find me at:
 [Google Business Profile](https://share.google/3QZGA2ZCmibHZQKqt)
 [Email shane@shanegring.com](mailto:shane@shanegring.com)
 
+Office
+650 Washington Rd, Suite 205 · Mt. Lebanon (Pittsburgh), PA 15228
+
 ---
 
 [View this page on shanegring.com](https://shanegring.com/contact)
