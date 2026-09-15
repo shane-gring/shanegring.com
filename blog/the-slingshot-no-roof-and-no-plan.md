@@ -53,7 +53,7 @@ fixed it.
 Want the same eye on your own site? Start with the
 [free Scan](https://shanegring.com/scan).
 
-[Why does the biz only work when you're in the room? →](https://shanegring.com/blog/why-does-the-biz-only-work-when-you-re-in-the-room)
+[← Nobody complains about a quiet website](https://shanegring.com/blog/nobody-complains-about-a-quiet-website) · [Why does the biz only work when you're in the room? →](https://shanegring.com/blog/why-does-the-biz-only-work-when-you-re-in-the-room)
 
 ---
 

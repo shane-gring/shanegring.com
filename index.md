@@ -179,11 +179,11 @@ Not ready to talk? Start here. The guides answer the questions expert-led busine
 
 [Read Seeking Certainty →](https://shanegring.com/blog/)
 
+[September 15, 2026 Nobody complains about a quiet website Three checks you can run on your own site this week](https://shanegring.com/blog/nobody-complains-about-a-quiet-website)
+
 [September 8, 2026 The Slingshot: No roof and no plan There were no rental cars left.My brother Kyle and I flew out for a wedding in Colorado, went to grab our car, and there was nothing. Sold…](https://shanegring.com/blog/the-slingshot-no-roof-and-no-plan)
 
 [August 20, 2026 Why does the biz only work when you're in the room? Three years ago, a playground and I had a disagreement. The playground won.We were halfway through an eight-hour drive to the Outer Banks,…](https://shanegring.com/blog/why-does-the-biz-only-work-when-you-re-in-the-room)
-
-[August 12, 2026 Seeking Certainty is changing Quick housekeeping note, then back to your day.](https://shanegring.com/blog/seeking-certainty-is-changing)
 
 Lately
 

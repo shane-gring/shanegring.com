@@ -143,6 +143,9 @@ Seeking Certainty. What I'm working on, what broke, and how I fixed it.
 [All issues](https://shanegring.com/blog/)
 The full archive
 
+[Nobody complains about a quiet website](https://shanegring.com/blog/nobody-complains-about-a-quiet-website)
+Three checks you can run on your own site this week
+
 [The Slingshot: No roof and no plan](https://shanegring.com/blog/the-slingshot-no-roof-and-no-plan)
 
 [Why does the biz only work when you're in the room?](https://shanegring.com/blog/why-does-the-biz-only-work-when-you-re-in-the-room)
