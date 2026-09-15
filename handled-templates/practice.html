@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Practice — Handled template</title>
+<meta name="description" content="A Handled site template for one person whose work is judgement: advisors, coaches, consultants, counsel.">
+<meta name="robots" content="noindex, nofollow">
+
+<!--
+  HANDLED TEMPLATE — "The Practice"
+  ───────────────────────────────────────────────────────────────────────────
+  For one person whose product is judgement: an advisor, a coach, a
+  consultant, counsel. Low volume, high trust, referred rather than found.
+  Abstracted from the Ted Gonder build.
+
+  The idea it is built around: restraint IS the credential. A page for someone
+  who charges a lot for a small number of engagements should look like it has
+  nothing to prove. So there is no accent colour, no cards, no icons, and the
+  measure stays narrow enough to read like a letter rather than a pitch.
+  The risk is deliberate — quiet is the whole argument.
+
+  One typeface at several sizes, because a second family would be one more
+  voice in a room that works better with one.
+
+  REPLACE: every {BRACKETED} string. If the client insists on a brand colour,
+  put it ONLY on --mark and leave the rest alone.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* ── Palette ────────────────────────────────────────────────────────────────
+   A cool grey-green paper, not a warm cream. Warm cream plus a serif plus a
+   terracotta accent is the house style of every "premium" template on the
+   internet; this reads closer to good stationery, which is the point. There
+   is no accent colour at all. --mark is a hairline, not a highlight. */
+:root {
+  --paper:  #EDECE6;
+  --paper-2:#E4E3DB;
+  --ink:    #1B1B18;
+  --ink-2:  #55554E;
+  --ink-3:  #63635A;   /* 5.12:1 on --paper. Do not lighten: this carries body text. */
+  --mark:   #A9A99D;
+  --serif:  'EB Garamond', Georgia, 'Times New Roman', serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+/* A narrow measure everywhere. Long lines read as marketing; short lines
+   read as correspondence. */
+.wrap { max-width: 660px; margin: 0 auto; padding: 0 1.5rem; }
+.wrap-wide { max-width: 880px; margin: 0 auto; padding: 0 1.5rem; }
+
+h1, h2, h3 { font-weight: 500; margin: 0; letter-spacing: -0.005em; }
+h1 { font-size: clamp(2.6rem, 7vw, 4rem); line-height: 1.08; }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.25; }
+h3 { font-size: 1.15rem; line-height: 1.35; }
+p  { margin: 0 0 1.2rem; }
+
+.eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0 0 1.6rem;
+}
+
+/* ── The ornament — the one piece of decoration on the page ─────────────── */
+.ornament { display: flex; align-items: center; justify-content: center; gap: 0.9rem; margin: 2rem 0; }
+.ornament::before, .ornament::after { content: ''; height: 1px; width: 84px; background: var(--mark); }
+.ornament span { width: 4px; height: 4px; border-radius: 50%; background: var(--mark); }
+
+/* ── Hero ───────────────────────────────────────────────────────────────── */
+.hero { text-align: center; padding: 6rem 0 4rem; }
+.hero-role { font-style: italic; color: var(--ink-2); font-size: 1.15rem; margin: 0.6rem 0 0; }
+.hero-thesis { font-size: clamp(1.2rem, 2.4vw, 1.5rem); line-height: 1.5; margin: 0 auto 1.6rem; max-width: 34rem; }
+.hero-for { color: var(--ink-3); font-size: 0.98rem; max-width: 30rem; margin: 0 auto 2.4rem; }
+
+.btn {
+  display: inline-block;
+  background: var(--ink); color: var(--paper);
+  padding: 0.9rem 2rem;
+  text-decoration: none;
+  font-size: 0.82rem; letter-spacing: 0.18em; text-transform: uppercase;
+}
+.btn:hover { background: #000; }
+.btn-quiet {
+  background: none; color: var(--ink-2);
+  border-bottom: 1px solid var(--mark);
+  padding: 0.2rem 0; letter-spacing: 0.04em; text-transform: none; font-size: 1rem;
+}
+.btn-quiet:hover { color: var(--ink); border-color: var(--ink); }
+
+/* ── Sections ───────────────────────────────────────────────────────────── */
+section { padding: 3.6rem 0; }
+.rule-top { border-top: 1px solid var(--mark); }
+.sec-label { font-size: 0.74rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 1.6rem; }
+
+.about { display: grid; gap: 2rem; align-items: start; }
+.about-portrait { width: 100%; aspect-ratio: 4/5; object-fit: cover; background: var(--paper-2); filter: grayscale(1) contrast(1.05); }
+.portrait-slot {
+  width: 100%; aspect-ratio: 4/5; background: var(--paper-2);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink-3); font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase;
+  border: 1px solid var(--mark);
+}
+
+/* Numbered only where the order is real. These are stages of an engagement;
+   you cannot do the second before the first. */
+.stages { counter-reset: stage; }
+.stage { padding: 1.5rem 0; border-top: 1px solid var(--mark); }
+.stage:first-child { border-top: 0; }
+.stage-n { counter-increment: stage; font-size: 0.78rem; letter-spacing: 0.2em; color: var(--ink-3); }
+.stage-n::before { content: counter(stage, decimal-leading-zero); }
+.stage h3 { margin: 0.5rem 0 0.4rem; }
+.stage p { color: var(--ink-2); margin: 0; }
+
+.terms { border: 1px solid var(--mark); padding: 2rem; text-align: center; }
+.terms-fee { font-size: clamp(1.8rem, 4vw, 2.4rem); }
+.terms-note { color: var(--ink-2); font-size: 0.98rem; margin: 0.6rem auto 0; max-width: 30rem; }
+
+.qa { padding: 1.4rem 0; border-top: 1px solid var(--mark); }
+.qa h3 { margin: 0 0 0.5rem; }
+.qa p { color: var(--ink-2); margin: 0; }
+
+.closer { text-align: center; padding: 5rem 0; }
+.closer h2 { max-width: 26rem; margin: 0 auto 1.2rem; }
+.closer p { color: var(--ink-2); max-width: 30rem; margin: 0 auto 2rem; }
+
+footer { border-top: 1px solid var(--mark); padding: 2.4rem 0 3rem; text-align: center; color: var(--ink-3); font-size: 0.92rem; }
+footer a { text-decoration: none; border-bottom: 1px solid var(--mark); }
+footer p { margin: 0.4rem 0; }
+
+:focus-visible { outline: 1px solid var(--ink); outline-offset: 4px; }
+
+@media (min-width: 760px) {
+  .hero { padding: 8rem 0 5rem; }
+  .about { grid-template-columns: 0.72fr 1fr; gap: 3rem; }
+  section { padding: 4.4rem 0; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">{PRIVATE STRATEGIC ADVISORY}</p>
+    <h1>{Your Name}</h1>
+    <p class="hero-role">{The one line that says who this is for}</p>
+
+    <div class="ornament"><span></span></div>
+
+    <p class="hero-thesis">
+      {The paragraph that makes someone feel recognised. Not what you do —
+      what they are currently carrying. Three sentences at most.}
+    </p>
+    <p class="hero-for">
+      {For whom, specifically. Name the situation, not the job title.}
+    </p>
+
+    <a class="btn" href="#start">{Work with me}</a>
+  </div>
+</header>
+
+<section class="rule-top">
+  <div class="wrap">
+    <p class="sec-label">About</p>
+    <div class="about">
+      <!-- Swap this block for: <img class="about-portrait" src="portrait.jpg" alt="{Your name}"> -->
+      <div class="portrait-slot">{Portrait}</div>
+      <div>
+        <p>{Open with the sentence only you could write — the specific thing you know how to sit with.}</p>
+        <p>{Then the record. Where you have worked, what you have run, who you have advised. Plainly, without adjectives; the reader is deciding whether you have seen their situation before.}</p>
+        <p>{Close with why you do this particular work now.}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rule-top">
+  <div class="wrap">
+    <p class="sec-label">How the work goes</p>
+    <div class="stages">
+      <div class="stage"><div class="stage-n"></div><h3>{A conversation}</h3><p>{What happens first, how long it takes, and what it costs — which should be nothing.}</p></div>
+      <div class="stage"><div class="stage-n"></div><h3>{The engagement}</h3><p>{The shape of the work itself. Cadence, duration, what is expected of them.}</p></div>
+      <div class="stage"><div class="stage-n"></div><h3>{After}</h3><p>{What continues, or how it ends cleanly. Saying how it ends is a trust signal, not a weakness.}</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="rule-top">
+  <div class="wrap">
+    <p class="sec-label">Terms</p>
+    <div class="terms">
+      <div class="terms-fee">{$0,000}</div>
+      <p class="terms-note">{What that covers and over what period. If the fee varies, say what it depends on rather than hiding it behind "contact us" — the people you want are not price-shopping, and the people who are will disqualify themselves.}</p>
+    </div>
+  </div>
+</section>
+
+<section class="rule-top">
+  <div class="wrap">
+    <p class="sec-label">Questions</p>
+    <div class="qa"><h3>{Am I the right fit?}</h3><p>{Answer honestly, including who is not.}</p></div>
+    <div class="qa"><h3>{How is this different from therapy or coaching?}</h3><p>{Draw the line clearly. Being precise about what you are not is how people trust what you are.}</p></div>
+    <div class="qa"><h3>{Is this confidential?}</h3><p>{Say exactly what that means in practice.}</p></div>
+  </div>
+</section>
+
+<section class="closer rule-top" id="start">
+  <div class="wrap">
+    <h2>{The invitation, in one sentence.}</h2>
+    <p>{What happens when they write, and how quickly. Remove the fear of being sold to.}</p>
+    <a class="btn" href="mailto:{email}">{Write to me}</a>
+    <div class="ornament"><span></span></div>
+    <a class="btn-quiet" href="tel:{phone}">{Or call — number}</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>{Your Name}</p>
+    <p><a href="mailto:{email}">{email}</a></p>
+    <p style="color:var(--ink-3);font-size:0.84rem">&copy; {YEAR} · {City}</p>
+  </div>
+</footer>
+
+</body>
+</html>
