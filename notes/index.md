@@ -1,4 +1,4 @@
-Notes · 65 of them
+Notes · 67 of them
 
 # What I'm working through, most weekdays.
 
@@ -10,6 +10,44 @@ businesses, what broke, what I'd do differently.
 on the way there.** Also on
 [LinkedIn](https://www.linkedin.com/in/shanegring/),
 which is where they start.
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 15, 2026
+
+The first twenty minutes of every sales call, you answer the same questions. Brilliantly, by now -- you've refined those answers across dozens of conversations. Then the call ends, and the answers evaporate.
+
+That's the quiet waste in most expert businesses. You're already producing your best content, one prospect at a time, in private, where it can't compound.
+
+Meanwhile the same questions get typed into search bars and AI chats at 6am by people who've never heard of you. They don't know your category exists. They just have the problem. And whoever wrote the answer down is the one who gets found.
+
+The move is smaller than a content strategy. Write down the last five questions prospects asked you. Those are pages. One question each, phrased the way the buyer phrases it, answered completely with the judgment you'd give on the call.
+
+Answer fully, is my advice. Holding back for the sales call has it backwards -- the person who reads a complete answer and still calls is exactly the buyer you want.
+
+More on building this in the comments.
+
+1 reaction · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505679361736413184)
+
+Education
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 15, 2026
+
+Something I notice a fair bit is that a company's site says one thing, but its social says something else.
+
+Often, they've just drifted apart. Two authors wrote them, months apart, with no shared source.
+
+That gap is expensive. A prospect reads a post, likes it, clicks to the site, and lands somewhere that sounds like a different company.
+
+When the posts come from the same foundation the site is built on, that stops happening: same voice, same positioning, same way of describing the work, whether someone meets you in the feed or on the homepage.
+
+Worth checking sometime: read your last ten posts, then your homepage, back to back. If they sound like two different businesses, that's something to address.
+
+1 reaction[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505645357666680834)
+
+Education
 
 Shane Gring
 Fractional COO · operations for expert-led businesses
@@ -45,7 +83,7 @@ Funny thing looking back: two kids felt like a handful then. We could still pair
 
 Mostly I'm glad we didn't wait for a smoother season. The smoother season is always a couple years out. Say yes, take the trip, and figure the rest out on the way.
 
-4 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505264110599622657)
+5 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505264110599622657)
 
 Personal Story
 
@@ -101,7 +139,7 @@ It's a lot of work, honestly. But it's all worth it. Taking a beat to actually c
 
 Sky's eye and creativity are just a few more things that make her special. And I'm grateful I get to watch, help, and enjoy these little time-lapse photos of all my girls.
 
-22 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503814567140007936)
+23 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503814567140007936)
 
 Personal Story
 
@@ -235,7 +273,7 @@ The Institute has since transitioned. The movement wave crested and fell, the ne
 
 But the premise held up. I still think a business is one of the best tools there is for taking care of people. Most of what I do today runs on some version of that idea.
 
-3 reactions · 2 comments[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:ugcPost:7500968336650866689)
+3 reactions · 3 comments[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:ugcPost:7500968336650866689)
 
 Personal Story
 
