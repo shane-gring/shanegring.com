@@ -15,7 +15,7 @@ Or find me at:
 [Email shane@shanegring.com](mailto:shane@shanegring.com)
 
 Office
-650 Washington Rd, Suite 205 · Mt. Lebanon (Pittsburgh), PA 15228
+650 Washington Rd, Suite 205 · Pittsburgh (Mt. Lebanon), PA 15228
 
 ---
 
