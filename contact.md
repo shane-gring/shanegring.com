@@ -11,6 +11,7 @@ Or find me at:
 
 [LinkedIn /in/shanegring](https://linkedin.com/in/shanegring)
 [Certainly certainly.coop](https://certainly.coop)
+[Google Business Profile](https://share.google/3QZGA2ZCmibHZQKqt)
 [Email shane@shanegring.com](mailto:shane@shanegring.com)
 
 ---
