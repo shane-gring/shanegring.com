@@ -136,7 +136,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 500; margin: 0; line-heig
   width: var(--s); height: var(--s);
   border-radius: 50%;
   background: var(--cream);
-  opacity: var(--o);
+  opacity: var(--o);   /* the still value, used under prefers-reduced-motion */
   filter: blur(var(--b));
   animation: drift var(--dur) ease-in-out var(--delay) infinite alternate;
   will-change: transform;
@@ -144,10 +144,24 @@ h1, h2, h3 { font-family: var(--display); font-weight: 500; margin: 0; line-heig
 
 /* alternate, not a loop back to the start: a linear loop snaps at the seam
    and the eye catches it every cycle, which is exactly the sort of small
-   repeating movement that gets irritating on a page somebody is reading. */
+   repeating movement that gets irritating on a page somebody is reading.
+
+   Translation ALONE does not read. The first version drifted these about
+   70px over 26 seconds, which measures as motion and is invisible: a 45px
+   blur on a 220px circle has no edge sharp enough for 3px/sec to register
+   against. Brightness is what the eye actually catches at this scale, so the
+   motes now breathe between 40% and 100% of their opacity as well as moving,
+   and they move about twice as far. The opacity is the part you notice; the
+   travel is what stops it looking like a blinking light.
+
+   The blur came down by half for the same reason. Opacity cannot go up — 0.18
+   is a hard contrast ceiling, see the palette note — so definition is the only
+   lever left. At a blur of a quarter of its own diameter a mote has no edge
+   anywhere and reads as a faint gradient that happens to be somewhere; at an
+   eighth it is a soft disc, and a soft disc moving is something you can see. */
 @keyframes drift {
-  from { transform: translate3d(0, 0, 0); }
-  to   { transform: translate3d(var(--dx), var(--dy), 0); }
+  from { transform: translate3d(0, 0, 0) scale(0.92); opacity: calc(var(--o) * 0.4); }
+  to   { transform: translate3d(var(--dx), var(--dy), 0) scale(1.06); opacity: var(--o); }
 }
 
 /* ── The pause control ─────────────────────────────────────────────────────
@@ -250,20 +264,20 @@ footer .mark { font-size: 1.1rem; color: var(--ink); margin-right: auto; }
     <input class="motion-check" type="checkbox" id="pause-motion">
 
     <div class="field" aria-hidden="true">
-      <span class="mote" style="--x:6%;  --y:14%; --s:220px; --o:0.09; --b:45px; --dur:26s; --delay:0s;   --dx:70px;  --dy:-40px"></span>
-      <span class="mote" style="--x:24%; --y:62%; --s:150px; --o:0.12; --b:34px; --dur:31s; --delay:-4s;  --dx:-55px; --dy:-70px"></span>
-      <span class="mote" style="--x:42%; --y:22%; --s:90px;  --o:0.14; --b:22px; --dur:22s; --delay:-9s;  --dx:40px;  --dy:60px"></span>
-      <span class="mote" style="--x:58%; --y:70%; --s:260px; --o:0.07; --b:58px; --dur:38s; --delay:-2s;  --dx:-80px; --dy:-30px"></span>
-      <span class="mote" style="--x:76%; --y:30%; --s:130px; --o:0.11; --b:30px; --dur:28s; --delay:-14s; --dx:50px;  --dy:55px"></span>
-      <span class="mote" style="--x:88%; --y:64%; --s:180px; --o:0.08; --b:40px; --dur:34s; --delay:-6s;  --dx:-45px; --dy:-65px"></span>
-      <span class="mote" style="--x:14%; --y:82%; --s:70px;  --o:0.16; --b:16px; --dur:19s; --delay:-11s; --dx:60px;  --dy:-45px"></span>
-      <span class="mote" style="--x:34%; --y:8%;  --s:110px; --o:0.10; --b:26px; --dur:29s; --delay:-17s; --dx:-40px; --dy:70px"></span>
-      <span class="mote" style="--x:66%; --y:12%; --s:60px;  --o:0.15; --b:14px; --dur:24s; --delay:-3s;  --dx:35px;  --dy:50px"></span>
-      <span class="mote" style="--x:50%; --y:44%; --s:200px; --o:0.06; --b:50px; --dur:41s; --delay:-20s; --dx:-65px; --dy:35px"></span>
-      <span class="mote" style="--x:92%; --y:8%;  --s:100px; --o:0.09; --b:24px; --dur:27s; --delay:-8s;  --dx:-50px; --dy:60px"></span>
-      <span class="mote" style="--x:4%;  --y:46%; --s:80px;  --o:0.13; --b:18px; --dur:21s; --delay:-15s; --dx:55px;  --dy:40px"></span>
-      <span class="mote" style="--x:72%; --y:88%; --s:140px; --o:0.08; --b:32px; --dur:36s; --delay:-12s; --dx:-60px; --dy:-50px"></span>
-      <span class="mote" style="--x:46%; --y:90%; --s:95px;  --o:0.12; --b:22px; --dur:25s; --delay:-5s;  --dx:45px;  --dy:-60px"></span>
+      <span class="mote" style="--x:6%;  --y:14%; --s:220px; --o:0.09; --b:22px; --dur:26s; --delay:0s;   --dx:154px; --dy:-88px"></span>
+      <span class="mote" style="--x:24%; --y:62%; --s:150px; --o:0.12; --b:17px; --dur:31s; --delay:-4s;  --dx:-121px; --dy:-154px"></span>
+      <span class="mote" style="--x:42%; --y:22%; --s:90px;  --o:0.14; --b:11px; --dur:22s; --delay:-9s;  --dx:88px; --dy:132px"></span>
+      <span class="mote" style="--x:58%; --y:70%; --s:260px; --o:0.07; --b:29px; --dur:38s; --delay:-2s;  --dx:-176px; --dy:-66px"></span>
+      <span class="mote" style="--x:76%; --y:30%; --s:130px; --o:0.11; --b:15px; --dur:28s; --delay:-14s; --dx:110px; --dy:121px"></span>
+      <span class="mote" style="--x:88%; --y:64%; --s:180px; --o:0.08; --b:20px; --dur:34s; --delay:-6s;  --dx:-99px; --dy:-143px"></span>
+      <span class="mote" style="--x:14%; --y:82%; --s:70px;  --o:0.16; --b:8px; --dur:19s; --delay:-11s; --dx:132px; --dy:-99px"></span>
+      <span class="mote" style="--x:34%; --y:8%;  --s:110px; --o:0.10; --b:13px; --dur:29s; --delay:-17s; --dx:-88px; --dy:154px"></span>
+      <span class="mote" style="--x:66%; --y:12%; --s:60px;  --o:0.15; --b:8px; --dur:24s; --delay:-3s;  --dx:77px; --dy:110px"></span>
+      <span class="mote" style="--x:50%; --y:44%; --s:200px; --o:0.06; --b:25px; --dur:41s; --delay:-20s; --dx:-143px; --dy:77px"></span>
+      <span class="mote" style="--x:92%; --y:8%;  --s:100px; --o:0.09; --b:12px; --dur:27s; --delay:-8s;  --dx:-110px; --dy:132px"></span>
+      <span class="mote" style="--x:4%;  --y:46%; --s:80px;  --o:0.13; --b:9px; --dur:21s; --delay:-15s; --dx:121px; --dy:88px"></span>
+      <span class="mote" style="--x:72%; --y:88%; --s:140px; --o:0.08; --b:16px; --dur:36s; --delay:-12s; --dx:-132px; --dy:-110px"></span>
+      <span class="mote" style="--x:46%; --y:90%; --s:95px;  --o:0.12; --b:11px; --dur:25s; --delay:-5s;  --dx:99px; --dy:-132px"></span>
     </div>
 
     <label class="motion-btn" for="pause-motion">
