@@ -41,6 +41,13 @@ export const TEMPLATES = [
     viewUrl: '/handled-templates/signal',
   },
   {
+    id: 'template-counter',
+    name: 'The Counter',
+    description: 'For a place people walk into. Cafés, restaurants, bakeries, bars, food trucks.',
+    previewImage: '/images/handled/templates/counter.jpg',
+    viewUrl: '/handled-templates/counter',
+  },
+  {
     id: 'template-field',
     name: 'The Field',
     description: 'For physical work you can photograph — trades, contractors, installers. Phone first.',
