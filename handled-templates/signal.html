@@ -104,7 +104,12 @@ p { margin: 0 0 1.1rem; }
    business selling an idea has nothing to photograph, and stock imagery
    actively says "generic company". */
 .orb-stage { position: relative; display: grid; place-items: center; min-height: 300px; }
-.orb-bloom { position: absolute; width: 420px; height: 420px; border-radius: 50%;
+/* The bloom has to scale with the orb. It was a flat 420px while .orb below
+   is min(250px, 62vw), so on a 390px phone the glow was 420px wide inside a
+   358px column and pushed 15px of horizontal page scroll — the whole page
+   slid sideways under the thumb. Capped at 88vw it stays comfortably inside
+   the viewport at every width and keeps its proportion to the orb. */
+.orb-bloom { position: absolute; width: min(420px, 88vw); aspect-ratio: 1; border-radius: 50%;
   background: radial-gradient(circle, rgba(245,166,35,0.30) 0%, rgba(217,98,10,0.10) 42%, transparent 70%); }
 .orb { position: relative; width: min(250px, 62vw); aspect-ratio: 1; border-radius: 50%;
   background: conic-gradient(from 210deg, var(--signal-2), var(--signal) 42%, #B84E05 62%, var(--signal-2));
