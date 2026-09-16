@@ -48,6 +48,13 @@ export const TEMPLATES = [
     viewUrl: '/handled-templates/marquee',
   },
   {
+    id: 'template-rooms',
+    name: 'The Rooms',
+    description: 'For a practice people visit by appointment, run by more than one person. Clinics, studios, salons, chambers.',
+    previewImage: '/images/handled/templates/rooms.jpg',
+    viewUrl: '/handled-templates/rooms',
+  },
+  {
     id: 'template-field',
     name: 'The Field',
     description: 'For physical work you can photograph — trades, contractors, installers. Phone first.',
