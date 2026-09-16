@@ -1,4 +1,4 @@
-Notes · 67 of them
+Notes · 68 of them
 
 # What I'm working through, most weekdays.
 
@@ -10,6 +10,24 @@ businesses, what broke, what I'd do differently.
 on the way there.** Also on
 [LinkedIn](https://www.linkedin.com/in/shanegring/),
 which is where they start.
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 16, 2026
+
+A pattern I keep seeing: a business knows the site's gone stale, gets a quote for a rebuild, sees the number, and flinches. Then nothing happens for another year.
+
+Fair reaction, honestly. A full rebuild is a big swing, and often the site doesn't need one. The offers are still right. The story's mostly current. What fell away is the upkeep -- and rebuilding the whole thing to fix an ownership gap aims a lot of money at the wrong target.
+
+The smaller move: someone takes the site you've got and owns it. Stops the decay first, ships the fixes that have been waiting, then keeps it moving -- a page added here, copy trued up there, month after month. It starts on what you already have, this week, and the site gets better instead of waiting on a someday project.
+
+Some sites genuinely do need the rebuild. A lot need an owner. Worth knowing which one you're looking at before the next quote.
+
+That ownership piece is a thing I offer now. The details are in the comments.
+
+2 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505995174171516928)
+
+Website OfferEducation
 
 Shane Gring
 Fractional COO · operations for expert-led businesses
@@ -27,7 +45,7 @@ Answer fully, is my advice. Holding back for the sales call has it backwards -- 
 
 More on building this in the comments.
 
-2 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505679361736413184)
+3 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505679361736413184)
 
 Education
 
@@ -83,7 +101,7 @@ Funny thing looking back: two kids felt like a handful then. We could still pair
 
 Mostly I'm glad we didn't wait for a smoother season. The smoother season is always a couple years out. Say yes, take the trip, and figure the rest out on the way.
 
-5 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505264110599622657)
+7 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505264110599622657)
 
 Personal Story
 
@@ -139,7 +157,7 @@ It's a lot of work, honestly. But it's all worth it. Taking a beat to actually c
 
 Sky's eye and creativity are just a few more things that make her special. And I'm grateful I get to watch, help, and enjoy these little time-lapse photos of all my girls.
 
-23 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503814567140007936)
+25 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503814567140007936)
 
 Personal Story
 
@@ -273,7 +291,7 @@ The Institute has since transitioned. The movement wave crested and fell, the ne
 
 But the premise held up. I still think a business is one of the best tools there is for taking care of people. Most of what I do today runs on some version of that idea.
 
-3 reactions · 3 comments[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:ugcPost:7500968336650866689)
+3 reactions · 5 comments[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:ugcPost:7500968336650866689)
 
 Personal Story
 
