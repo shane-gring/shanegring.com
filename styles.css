@@ -5429,7 +5429,15 @@ a.hd-shot:hover { border-color: var(--fg); transform: translateY(-2px); }
   border-bottom: 1px solid var(--border);
 }
 
+/* display:block is load-bearing, not tidiness. This is a <span>, so it
+   defaults to inline, and an inline box's horizontal padding does nothing
+   for its block-level children — .hd-shot-name and .hd-shot-what were
+   laying out at the full card width, flush to the border, with the 1rem
+   below declared but never applied. The portfolio's captions are short
+   enough that no line ever reached the edge to show it; the longer
+   template descriptions in .hd-looks did. */
 .hd-shot-meta {
+  display: block;
   padding: 0.85rem 1rem 1rem;
 }
 
