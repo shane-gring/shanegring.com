@@ -5162,6 +5162,18 @@ body.offer-handled { --offer: #1f7a4d; --offer-deep: #145736; }
   text-wrap: balance;
 }
 
+/* Under the CTA's reassurance list: what the next five minutes look
+   like, for somebody with a card in their hand. Deliberately quieter
+   than .hd-assure — it answers a question rather than making a claim. */
+.hd-next {
+  max-width: 50ch;
+  margin: 1.15rem auto 0;
+  text-align: center;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--dim);
+}
+
 .hd-sub {
   max-width: 56ch;
   margin: 0 auto 2.4rem;
@@ -5441,6 +5453,38 @@ a.hd-shot:hover { border-color: var(--fg); transform: translateY(-2px); }
   a.hd-shot:hover { transform: none; }
 }
 
+/* ── The four looks ─────────────────────────────────
+   Two across, not four. These are full-page screenshots and the whole
+   job of the section is letting somebody tell them apart; at four
+   across in a 1000px container each one is ~235px and they all read
+   as the same grey rectangle. Reuses .hd-shot for the card itself, so
+   the previews and the portfolio below stay visually identical. */
+.hd-looks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+
+/* The lede and the paragraph under it are one thought, so they sit
+   closer together than a .hd-sub normally would before a grid. */
+/* 16/9, not the portfolio's 16/10. These previews are 1459x812, and a
+   16/10 card cropped 11% off the sides, which is enough to slice the
+   first word off a template headline. Same fix as .hi-template-img in
+   the intake picker: match the card to the source and nothing crops. */
+.hd-looks .hd-shot img { aspect-ratio: 16 / 9; }
+
+.hd-looks-lede { margin-bottom: 1.05rem; }
+
+.hd-looks-note {
+  max-width: 56ch;
+  margin: 1.4rem auto 0;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-style: italic;
+  color: var(--dim);
+}
+
 /* ── The inverted band ───────────────────────────────────────────
    The buy zone. Rather than restyling every child, the band swaps
    the tokens the components already read, so .btn-primary, borders
@@ -5630,6 +5674,7 @@ a.hd-shot:hover { border-color: var(--fg); transform: translateY(-2px); }
   .hd-versus { grid-template-columns: 1fr; }
   .hd-terms { grid-template-columns: 1fr; }
   .hd-shots { grid-template-columns: 1fr; }
+  .hd-looks { grid-template-columns: 1fr; }
   .hd-gets { grid-template-columns: 1fr; }
   .hd-steps { grid-template-columns: 1fr; }
   .hd-section { padding: 3.25rem 0; }

@@ -99,24 +99,47 @@ for, every week, for as long as you want it.
 
 ## Four steps, and three of them are mine
 
-### We spin you up
+### You tell me about the business
 
-A quick conversation about who you are and what the site has to do.
-I handle the design, the words, the images and the domain —
-registered in your name, not mine.
+After you claim your spot, a link lands in your inbox. Answer a few
+questions and talk through who you are and what you do, about five
+minutes of it. Add your logo and photos, send along any inspiration
+you have, and we'll take it from there.
 
-### You go live in days
+### I build it, and you're live in days
 
-You review, we tighten, it ships.
+Design, words, images, and the domain, registered in your name. You
+review, we tighten, it ships. Nothing comes back to you as
+homework.
 
 ### I keep it running
 
 Every week I'm watching, reporting and improving. Any change you
-want, you email — and it's handled.
+want, you email, and it's handled.
 
 ### You get on with your work
 
 Which was the whole point.
+
+## Four looks. Pick one and we’re off.
+
+Every site starts from one of four
+designs. All of them are clean, fast, and built to hold up on a phone,
+which is where most people will see you.
+
+You pick the one that feels closest to right, and I
+tailor it from there: your words, your images, your colors. You’re
+not choosing a template and living with it. You’re choosing a
+starting point so we skip the part where a designer asks what you had
+in mind and you say you’re not sure.
+
+[The StandardFor work that somebody else verifies. Certification, inspection, accreditation.](https://shanegring.com/handled-templates/standard)
+[The PracticeFor one person whose work is judgement. Quiet, personal, no sales noise.](https://shanegring.com/handled-templates/practice)
+[The SignalFor an idea the market hasn’t caught up with yet. Built to land one argument.](https://shanegring.com/handled-templates/signal)
+[The FieldFor physical work you can photograph. Trades, contractors, installers, phone first.](https://shanegring.com/handled-templates/field)
+
+Not sure which? Pick anything. It’s the
+easiest thing to change.
 
 ## Sites built and handled the same way yours will be
 
@@ -156,6 +179,10 @@ not in a contract you can't get out of.
 - Changes by email
 
 - Yours to take with you
+
+What happens next: a link lands in your inbox with a
+few questions and a place to send me your stuff. About fifteen minutes
+on your end, then I build.
 
 **Founding cohort — first 10 only.** The first ten
 clients hold $200 a month, guaranteed, even when the price goes up for
@@ -246,10 +273,28 @@ your site. When you email, you're emailing me.
 
 What do you need from me to get started?
 
-A conversation, and whatever you already have. I handle the domain,
-the design, the words and the images — that's the point of it.
-If you have a logo, photos or copy you like, send them and I'll use
-them. If you don't, that's not a task I hand back to you.
+About fifteen minutes, and whatever you already have lying around.
+
+You'll get a link as soon as you claim a spot. It walks you through
+a handful of questions, asks for about five minutes of you talking
+through who you help and what you do for them, and gives you somewhere
+to upload a logo, photos, or any copy you already like. Then you pick
+one of four looks.
+
+If you don't have a logo, or photos, or copy, say so and I'll work
+without them. That isn't a task I hand back to you.
+
+Do I have to record myself?
+
+It's audio only, no camera, and it's the fastest way through.
+Talking beats typing, and hearing how you describe your own work is
+what makes the site sound like you instead of like a template. Five
+minutes, and you can do it from your phone.
+
+What if I get halfway through and get pulled away?
+
+It saves as you go. Come back to the same link whenever, and pick
+up where you stopped.
 
 How long until it's live?
 
