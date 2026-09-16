@@ -1,4 +1,4 @@
-Notes · 68 of them
+Notes · 69 of them
 
 # What I'm working through, most weekdays.
 
@@ -10,6 +10,32 @@ businesses, what broke, what I'd do differently.
 on the way there.** Also on
 [LinkedIn](https://www.linkedin.com/in/shanegring/),
 which is where they start.
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 16, 2026
+
+If you grew up in the Midwest and did high school sports, you probably remember Bigger Faster Stronger.
+
+Posters on the weight room wall, training programs, safety courses. For a lot of us, it was the first real explanation of how our bodies work and how to develop them. They've been at it since 1976, so this year makes fifty.
+
+Got the chance to work with @[Hewitt Tomlin](urn:li:person:-Ep61bfBjZ) and the team at @[TeamBuildr](urn:li:organization:2727702) on breathing some new life into the brand for the 50th. It's live now.
+
+It's built around what a coach actually has to do. Build the room, with equipment, design help, and on-site consultation. Run the program, with the Total Program and the 8-week offseason, in-season, and conditioning blocks. Develop the leaders, with weight room safety certification, Be An 11, clinics and mini courses.
+
+https://biggerfasterstronger.com/
+
+@[Clayton Young](urn:li:person:dPyP1WPqUD) led the way with some exceptional design work on this one. Fifty years in and the brand still knows exactly who it's talking to.
+
+The piece I'd start with is free. The Weight Room Report Card walks the same 11 pillars BFS consultants use when they evaluate a room, takes about a minute, and gives you a letter grade plus a prioritized list of what to fix first.
+
+https://biggerfasterstronger.com/build/report-card
+
+And if your high school gym or athletic program needs a strength partner, book a call with John. He's excited to help shepherd the next phase of your program.
+
+[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506049313169608704)
+
+Use Case
 
 Shane Gring
 Fractional COO · operations for expert-led businesses
