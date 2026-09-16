@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Drift — Handled template</title>
+<meta name="description" content="A Handled site template for work with nothing to photograph: remote services, advisers, tutors, agencies.">
+<meta name="robots" content="noindex, nofollow">
+
+<!-- Open Graph. These pages are noindex, which keeps them out of search and has
+     nothing to do with link previews — they get shared by hand, in a message to
+     a client choosing between them, and a bare URL tells that person nothing.
+     get-the-read.html is noindex and carries these for the same reason.
+     The image is the same screenshot the intake picker uses, so the preview and
+     the card cannot drift apart. Re-shoot one and both update. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Drift — a Handled site template">
+<meta property="og:description" content="A Handled site template for work with nothing to photograph: remote services, advisers, tutors, agencies.">
+<meta property="og:url" content="https://shanegring.com/handled-templates/drift">
+<meta property="og:site_name" content="Shane Gring">
+<meta property="og:image" content="https://shanegring.com/images/handled/templates/drift.jpg">
+<meta property="og:image:alt" content="A screenshot of the The Drift template.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Drift — a Handled site template">
+<meta name="twitter:description" content="A Handled site template for work with nothing to photograph: remote services, advisers, tutors, agencies.">
+<meta name="twitter:image" content="https://shanegring.com/images/handled/templates/drift.jpg">
+
+<!--
+  HANDLED TEMPLATE — "The Drift"
+  ───────────────────────────────────────────────────────────────────────────
+  For work with nothing to photograph. A remote service, an adviser, a tutor,
+  a broker, an agency, anyone whose job happens on a call and leaves no
+  picture behind.
+
+  This is the gap the other templates leave. The Marquee, The Rooms, The
+  Column and The Field all rest on real photography and say so; a business
+  with no pictures fills them with stock and the stock is the first thing
+  anybody notices. Here there is no photograph anywhere on the page, by
+  design, and nothing is missing. The art direction is one deep colour, one
+  pale one, and a very slow drift of light across the hero.
+
+  The move it is built on: the hero is a colour field that is quietly alive.
+  Fourteen soft motes, different sizes, drifting on different clocks so the
+  pattern never repeats visibly. It is pure CSS — no library, no canvas, no
+  JavaScript at all in this file.
+
+  THE PAUSE BUTTON IS NOT OPTIONAL. Anything that animates for more than five
+  seconds needs a way to stop it (WCAG 2.2.2, Pause Stop Hide), and "it is
+  only subtle" is not an exemption — motion sensitivity is not about taste.
+  The control is a real checkbox with a real label, so it works by keyboard
+  and by screen reader, and it costs no script. prefers-reduced-motion is
+  honoured separately and stops the drift before it ever starts. If you remove
+  the animation, remove the button. If you keep the animation, keep the button.
+
+  REPLACE: every {BRACKETED} string. There is no image to swap, which is the
+  whole point, so this template lives or dies on the words.
+
+  DELETE WHAT DOES NOT APPLY. The cards take any number, and the quotes band
+  comes out cleanly.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Petrona:wght@400;500;600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+<style>
+/* ── Palette ────────────────────────────────────────────────────────────────
+   Computed, not eyeballed. This template is a colour pairing and very little
+   else, so the pairing had to be a strong one: cream on night is 14.42:1,
+   which is most of why the hero reads as confident rather than murky.
+
+     cream  on night   14.42:1     night on cream  14.42:1
+     mist   on night    8.55:1     ink   on paper  14.49:1
+     mute   on paper     5.63:1
+
+   THE MOTE CEILING IS 0.18. The motes sit behind the text and lighten the
+   ground wherever they pass. Measured with one sitting directly under a line:
+   at 0.18 the mist-coloured body copy is still 5.09:1, and at 0.24 it drops
+   to 4.18:1 and fails. The values below run 0.05 to 0.16. Raise them past
+   0.18 and the hero starts failing intermittently, as the motes drift, which
+   is the worst kind of failure to debug. */
+:root {
+  --night: #1A1B3A;  /* the field                                   */
+  --cream: #F4EFD9;  /* on night 14.42:1                            */
+  --mist:  #B9B7D4;  /* secondary on night 8.55:1                   */
+  --paper: #F2EFE8;  /* the light half of the page                  */
+  --ink:   #1A1B3A;  /* on paper 14.49:1                            */
+  --mute:  #5E5C72;  /* secondary on paper 5.63:1                   */
+  --rule:  rgba(26, 27, 58, 0.16);
+  --rule-i: rgba(244, 239, 217, 0.24);
+
+  --display: 'Petrona', Georgia, serif;
+  --body:    'DM Sans', system-ui, -apple-system, sans-serif;
+
+  --pad: clamp(1.15rem, 4vw, 3.25rem);
+  --max: 1220px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--body);
+  font-size: 1.04rem; line-height: 1.62;
+  color: var(--ink); background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--display); font-weight: 500; margin: 0; line-height: 1.04; letter-spacing: -0.018em; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding-inline: var(--pad); }
+[id] { scroll-margin-top: 80px; }
+
+.chip {
+  display: inline-block;
+  font-family: var(--body); font-weight: 500; font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  padding: 0.4rem 0.9rem; border-radius: 999px;
+  background: rgba(26, 27, 58, 0.07); color: var(--mute);
+  margin-bottom: 1.2rem;
+}
+
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--body); font-weight: 500; font-size: 0.96rem;
+  padding: 0.85rem 1.5rem; border-radius: 999px;
+  border: 1px solid var(--ink); color: var(--ink); background: transparent;
+  text-decoration: none; transition: background-color 0.15s ease, color 0.15s ease;
+}
+.btn:hover { background: var(--ink); color: var(--paper); }
+.btn-fill { background: var(--cream); border-color: var(--cream); color: var(--night); }
+.btn-fill:hover { background: transparent; color: var(--cream); }
+.btn-line { border-color: var(--rule-i); color: var(--cream); }
+.btn-line:hover { background: var(--cream); color: var(--night); border-color: var(--cream); }
+
+/* ── The hero field ────────────────────────────────────────────────────────*/
+.hero {
+  position: relative; overflow: hidden;
+  background: var(--night); color: var(--cream);
+  min-height: min(88svh, 800px);
+  display: flex; flex-direction: column;
+}
+
+/* The motes. Absolutely positioned, blurred, drifting on their own clocks.
+   Each one carries its geometry as inline custom properties so the whole
+   effect can be retuned in the markup without touching this rule. */
+.field { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.mote {
+  position: absolute;
+  top: var(--y); left: var(--x);
+  width: var(--s); height: var(--s);
+  border-radius: 50%;
+  background: var(--cream);
+  opacity: var(--o);   /* the still value, used under prefers-reduced-motion */
+  filter: blur(var(--b));
+  animation: drift var(--dur) ease-in-out var(--delay) infinite alternate;
+  will-change: transform;
+}
+
+/* alternate, not a loop back to the start: a linear loop snaps at the seam
+   and the eye catches it every cycle, which is exactly the sort of small
+   repeating movement that gets irritating on a page somebody is reading.
+
+   Translation ALONE does not read. The first version drifted these about
+   70px over 26 seconds, which measures as motion and is invisible: a 45px
+   blur on a 220px circle has no edge sharp enough for 3px/sec to register
+   against. Brightness is what the eye actually catches at this scale, so the
+   motes now breathe between 40% and 100% of their opacity as well as moving,
+   and they move about twice as far. The opacity is the part you notice; the
+   travel is what stops it looking like a blinking light.
+
+   The blur came down by half for the same reason. Opacity cannot go up — 0.18
+   is a hard contrast ceiling, see the palette note — so definition is the only
+   lever left. At a blur of a quarter of its own diameter a mote has no edge
+   anywhere and reads as a faint gradient that happens to be somewhere; at an
+   eighth it is a soft disc, and a soft disc moving is something you can see. */
+@keyframes drift {
+  from { transform: translate3d(0, 0, 0) scale(0.92); opacity: calc(var(--o) * 0.4); }
+  to   { transform: translate3d(var(--dx), var(--dy), 0) scale(1.06); opacity: var(--o); }
+}
+
+/* ── The pause control ─────────────────────────────────────────────────────
+   A checkbox and its label, no script. The checkbox is visually hidden but
+   still focusable and still announced; the label is the button you see. */
+.motion-check { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.motion-btn {
+  position: absolute; z-index: 3; right: var(--pad); bottom: 1.1rem;
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  font-family: var(--body); font-size: 0.8rem; font-weight: 500;
+  padding: 0.45rem 0.85rem; border-radius: 999px;
+  border: 1px solid var(--rule-i); color: var(--cream);
+  cursor: pointer; background: rgba(26, 27, 58, 0.55);
+}
+.motion-btn:hover { border-color: var(--cream); }
+/* A visible focus ring on the LABEL when the hidden checkbox has focus,
+   otherwise keyboard users get no feedback at all. */
+.motion-check:focus-visible ~ .motion-btn { outline: 2px solid var(--cream); outline-offset: 2px; }
+.motion-btn .on { display: none; }
+.motion-check:checked ~ .motion-btn .on { display: inline; }
+.motion-check:checked ~ .motion-btn .off { display: none; }
+.motion-check:checked ~ .field .mote { animation-play-state: paused; }
+
+/* The field is decoration. If somebody has asked their system for less
+   motion, it does not move at all — and the button then has nothing to do,
+   so it takes itself off the page rather than lying about what it controls. */
+@media (prefers-reduced-motion: reduce) {
+  .mote { animation: none; }
+  .motion-btn { display: none; }
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+}
+
+/* ── Hero contents ─────────────────────────────────────────────────────────*/
+.hero-nav { position: relative; z-index: 2; border-bottom: 1px solid var(--rule-i); }
+.hero-nav-in { max-width: var(--max); margin: 0 auto; padding: 1.15rem var(--pad); display: flex; align-items: center; gap: 1.75rem; }
+.mark { font-family: var(--display); font-weight: 500; font-size: 1.35rem; text-decoration: none; margin-right: auto; }
+.nav-links { display: flex; gap: 1.5rem; }
+.nav-links a { font-size: 0.94rem; text-decoration: none; color: var(--mist); }
+.nav-links a:hover { color: var(--cream); }
+.hero-nav .btn { padding: 0.55rem 1.1rem; font-size: 0.89rem; }
+
+.hero-body { position: relative; z-index: 2; margin-top: auto; padding-block: clamp(2.5rem, 6vw, 4.5rem) clamp(3.5rem, 7vw, 5.5rem); }
+.hero h1 { font-size: clamp(2.6rem, 7vw, 5.4rem); max-width: 15ch; }
+.hero-tail { display: flex; flex-wrap: wrap; gap: 1.75rem 3rem; align-items: end; justify-content: space-between; margin-top: clamp(1.75rem, 4vw, 3rem); }
+.hero-tail p { margin: 0; max-width: 46ch; color: var(--mist); }
+
+/* ── Light sections ────────────────────────────────────────────────────────*/
+.sec { padding: clamp(3.25rem, 7vw, 6rem) 0; }
+.sec-line { border-top: 1px solid var(--rule); }
+.sec-dark { background: var(--night); color: var(--cream); }
+
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2.5vw, 1.75rem); }
+.card { border: 1px solid var(--rule); border-radius: 14px; padding: clamp(1.4rem, 2.5vw, 2rem); display: flex; flex-direction: column; }
+.card h3 { font-size: 1.45rem; margin-bottom: 0.7rem; }
+.card p { margin: 0 0 1.5rem; color: var(--mute); font-size: 0.99rem; }
+.card .btn { margin-top: auto; align-self: flex-start; }
+
+/* The centred statement. One sentence, large, nothing else in the section —
+   it is a breath between two dense blocks, and filling it defeats it. */
+.statement { text-align: center; }
+.statement h2 { font-size: clamp(1.9rem, 4.6vw, 3.4rem); max-width: 22ch; margin: 0 auto; }
+.statement p { max-width: 54ch; margin: 1.4rem auto 0; color: var(--mute); }
+
+.quotes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.5rem, 4vw, 3.5rem); }
+.quotes blockquote { margin: 0; font-family: var(--display); font-size: clamp(1.2rem, 2vw, 1.6rem); line-height: 1.32; }
+.quotes cite { display: block; margin-top: 0.95rem; font-family: var(--body); font-style: normal; font-size: 0.9rem; color: var(--mist); }
+.sec-dark .chip { background: rgba(244, 239, 217, 0.14); color: var(--mist); }
+
+.close { text-align: center; }
+.close h2 { font-size: clamp(2rem, 5.5vw, 3.8rem); max-width: 18ch; margin: 0 auto 1.3rem; }
+.close p { max-width: 46ch; margin: 0 auto 2rem; color: var(--mute); }
+
+footer { border-top: 1px solid var(--rule); padding: 2rem 0 2.75rem; font-size: 0.9rem; color: var(--mute); }
+.foot-in { display: flex; flex-wrap: wrap; gap: 0.8rem 2rem; align-items: center; }
+footer .mark { font-size: 1.1rem; color: var(--ink); margin-right: auto; }
+
+/* ── Narrow ────────────────────────────────────────────────────────────────*/
+@media (max-width: 900px) {
+  .cards { grid-template-columns: 1fr; }
+  .quotes { grid-template-columns: 1fr; }
+}
+@media (max-width: 620px) {
+  .nav-links { display: none; }
+  .hero { min-height: min(80svh, 640px); }
+  .hero-tail { align-items: start; }
+  /* Fewer, larger motes on a phone: fourteen blurred circles across 390px
+     reads as noise rather than as light. */
+  .mote:nth-child(n+8) { display: none; }
+}
+</style>
+</head>
+<body>
+
+<main id="top">
+
+  <section class="hero">
+    <!-- The checkbox must precede .field and .motion-btn: the rules that pause
+         the drift and swap the label both use the ~ sibling combinator. -->
+    <input class="motion-check" type="checkbox" id="pause-motion">
+
+    <div class="field" aria-hidden="true">
+      <span class="mote" style="--x:6%;  --y:14%; --s:220px; --o:0.09; --b:22px; --dur:26s; --delay:0s;   --dx:154px; --dy:-88px"></span>
+      <span class="mote" style="--x:24%; --y:62%; --s:150px; --o:0.12; --b:17px; --dur:31s; --delay:-4s;  --dx:-121px; --dy:-154px"></span>
+      <span class="mote" style="--x:42%; --y:22%; --s:90px;  --o:0.14; --b:11px; --dur:22s; --delay:-9s;  --dx:88px; --dy:132px"></span>
+      <span class="mote" style="--x:58%; --y:70%; --s:260px; --o:0.07; --b:29px; --dur:38s; --delay:-2s;  --dx:-176px; --dy:-66px"></span>
+      <span class="mote" style="--x:76%; --y:30%; --s:130px; --o:0.11; --b:15px; --dur:28s; --delay:-14s; --dx:110px; --dy:121px"></span>
+      <span class="mote" style="--x:88%; --y:64%; --s:180px; --o:0.08; --b:20px; --dur:34s; --delay:-6s;  --dx:-99px; --dy:-143px"></span>
+      <span class="mote" style="--x:14%; --y:82%; --s:70px;  --o:0.16; --b:8px; --dur:19s; --delay:-11s; --dx:132px; --dy:-99px"></span>
+      <span class="mote" style="--x:34%; --y:8%;  --s:110px; --o:0.10; --b:13px; --dur:29s; --delay:-17s; --dx:-88px; --dy:154px"></span>
+      <span class="mote" style="--x:66%; --y:12%; --s:60px;  --o:0.15; --b:8px; --dur:24s; --delay:-3s;  --dx:77px; --dy:110px"></span>
+      <span class="mote" style="--x:50%; --y:44%; --s:200px; --o:0.06; --b:25px; --dur:41s; --delay:-20s; --dx:-143px; --dy:77px"></span>
+      <span class="mote" style="--x:92%; --y:8%;  --s:100px; --o:0.09; --b:12px; --dur:27s; --delay:-8s;  --dx:-110px; --dy:132px"></span>
+      <span class="mote" style="--x:4%;  --y:46%; --s:80px;  --o:0.13; --b:9px; --dur:21s; --delay:-15s; --dx:121px; --dy:88px"></span>
+      <span class="mote" style="--x:72%; --y:88%; --s:140px; --o:0.08; --b:16px; --dur:36s; --delay:-12s; --dx:-132px; --dy:-110px"></span>
+      <span class="mote" style="--x:46%; --y:90%; --s:95px;  --o:0.12; --b:11px; --dur:25s; --delay:-5s;  --dx:99px; --dy:-132px"></span>
+    </div>
+
+    <label class="motion-btn" for="pause-motion">
+      <span class="off">&#9612;&#9612; Pause the motion</span>
+      <span class="on">&#9654; Play the motion</span>
+    </label>
+
+    <header class="hero-nav">
+      <div class="hero-nav-in">
+        <a class="mark" href="#top">{Name}</a>
+        <nav class="nav-links">
+          <a href="#what">{What we do}</a>
+          <a href="#why">{Why us}</a>
+          <a href="#said">{What people say}</a>
+        </nav>
+        <a class="btn btn-line" href="{LINK: the one action that matters}">{Primary action}</a>
+      </div>
+    </header>
+
+    <!-- ══ Hero ═══════════════════════════════════════════════════════════════
+         One sentence. Say what you do for whom, in the words they would use.
+         There is no photograph to carry any of the meaning here, so the line
+         has to do all of it — which is a constraint worth having. -->
+    <div class="wrap hero-body">
+      <h1>{One sentence saying what you do and who it is for.}</h1>
+      <div class="hero-tail">
+        <p>{Two or three sentences of plain prose. What somebody gets, how it
+        works, and what makes it different from the obvious alternative.}</p>
+        <a class="btn btn-fill" href="{LINK: the one action that matters}">{Primary action}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ What we do ═════════════════════════════════════════════════════════
+       Three, or however many you actually have. Each card ends in its own
+       action, because on a page with no pictures the cards are the page and
+       a dead end in one of them is felt. -->
+  <section class="sec" id="what">
+    <div class="wrap">
+      <div class="cards">
+        <article class="card">
+          <h3>{The thing you do}</h3>
+          <p>{Three or four sentences. What it is, who it suits, and what
+          somebody walks away with. Write it the way you would explain it on a
+          first call.}</p>
+          <a class="btn" href="{LINK}">{Explore this}</a>
+        </article>
+        <article class="card">
+          <h3>{The thing you do}</h3>
+          <p>{Three or four sentences. What it is, who it suits, and what
+          somebody walks away with.}</p>
+          <a class="btn" href="{LINK}">{Explore this}</a>
+        </article>
+        <article class="card">
+          <h3>{The thing you do}</h3>
+          <p>{Three or four sentences. What it is, who it suits, and what
+          somebody walks away with.}</p>
+          <a class="btn" href="{LINK}">{Explore this}</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ Why us ═════════════════════════════════════════════════════════════
+       One sentence, large, centred, with air around it. This is a breath
+       between two dense blocks — adding a paragraph and three stats to it
+       defeats the entire purpose of the section. -->
+  <section class="sec sec-line statement" id="why">
+    <div class="wrap">
+      <p class="chip">{Why {Name}}</p>
+      <h2>{The single claim you would make if you only got one.}</h2>
+      <p>{One supporting line, if it genuinely needs one. It usually does not.}</p>
+    </div>
+  </section>
+
+  <!-- ══ What people say ════════════════════════════════════════════════════
+       REAL ONES OR DELETE THE SECTION. Two specific ones beat six warm ones,
+       and on a page with no photography the quotes are carrying more weight
+       than usual, so pick the ones that name something concrete. -->
+  <section class="sec sec-dark" id="said">
+    <div class="wrap">
+      <p class="chip">{What people say}</p>
+      <div class="quotes" style="margin-top: clamp(1.25rem, 3vw, 2rem)">
+        <blockquote>{A real quote, exactly as it was said. Pick one that names
+        a specific outcome rather than one that is simply kind.}<cite>{Name}, {what they do}</cite></blockquote>
+        <blockquote>{A real quote, exactly as it was said.}<cite>{Name}, {what they do}</cite></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec close">
+    <div class="wrap">
+      <h2>{The plainest possible ask.}</h2>
+      <p>{One line with the practical detail that matters most: what it costs,
+      how long it takes, or what happens after they get in touch.}</p>
+      <a class="btn" href="{LINK: the one action that matters}">{Primary action}</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <a class="mark" href="#top">{Name}</a>
+    <a href="mailto:{hello@example.com}">{hello@example.com}</a>
+    <a href="tel:{+00000000000}">{Phone}</a>
+    <span>&copy; {YEAR} {Registered name}</span>
+  </div>
+</footer>
+
+</body>
+</html>
