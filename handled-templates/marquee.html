@@ -3,21 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Counter — Handled template</title>
-<meta name="description" content="A Handled site template for a place people walk into: cafés, restaurants, bakeries, bars, food trucks.">
+<title>The Marquee — Handled template</title>
+<meta name="description" content="A Handled site template for a place or a product people come to see: shops, studios, venues, makers.">
 <meta name="robots" content="noindex, nofollow">
 
 <!--
-  HANDLED TEMPLATE — "The Counter"
+  HANDLED TEMPLATE — "The Marquee"
   ───────────────────────────────────────────────────────────────────────────
-  For a business whose product is a room and a menu: a café, a restaurant, a
-  bakery, a bar, a food truck. The others on the shelf sell judgement, proof,
-  an idea, or a job done at your house. This one sells somewhere to go.
+  For a place or a product people come to see: a shop, a studio, a venue, a
+  gym, a café, a maker. The split from The Field matters and is easy to get
+  wrong — The Field photographs the WORK, a job site, an install, and drives a
+  phone call. The Marquee photographs the THING, a room, a product, a class,
+  and drives a visit or a booking.
 
-  The idea it is built around: appetite, and then an address. Somebody looking
-  at this has one of two questions — "do I want that" and "can I get there
-  today" — so the page answers them in that order and does not put anything
-  between them. Hours and the map are a section, not a footer afterthought.
+  The idea it is built around: say one thing enormously. Everything here is
+  sized around a headline that runs nearly the full width, so the page works
+  for a business confident enough to lead with three words and let a
+  photograph carry the rest. A business whose case needs a paragraph before it
+  lands should take The Signal instead.
 
   The move it is built on: the headline is enormous, and the photograph comes
   up UNDERNEATH it rather than sitting in a box beside it. Type on top, image
@@ -25,9 +28,13 @@
   where it is; that number is load-bearing, not taste.
 
   REPLACE: every {BRACKETED} string and every .ph placeholder with a real
-  photograph. Food photography is the entire argument here — if there are no
-  photographs of the actual food and the actual room, this is the wrong
-  template. Stock pictures of someone else's croissant read as exactly that.
+  photograph. The pictures are the argument here — if there are none of the
+  actual place, the actual product or the actual people, this is the wrong
+  template. Stock reads as stock at this size.
+
+  DELETE WHAT DOES NOT APPLY. The hours block, the address and the reviews are
+  each written to be removed cleanly. A business with no premises should not
+  ship a site with an empty "where" section on it.
 -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -138,7 +145,14 @@ a { color: inherit; }
 .nav .btn { padding: 0.6rem 1.15rem; font-size: 0.92rem; }
 
 /* ── Hero ──────────────────────────────────────────────────────────────────*/
-.hero { background: var(--pine); color: var(--paper); padding-top: clamp(2rem, 5vw, 3.75rem); overflow: hidden; }
+/* Both paddings stated. The bottom one was missing and the CTA row ended up
+   at exactly 0px from the section below, so the buttons read as belonging to
+   the band rather than to the hero. */
+.hero {
+  background: var(--pine); color: var(--paper); overflow: hidden;
+  padding-top: clamp(2rem, 5vw, 3.75rem);
+  padding-bottom: clamp(3rem, 6.5vw, 5.5rem);
+}
 
 .eyebrow {
   font-family: var(--display); font-weight: 700;
@@ -178,7 +192,7 @@ a { color: inherit; }
   font-size: clamp(3.1rem, 12.5vw, 10.5rem);  /* matches h1, so em == cap scale */
   position: relative; z-index: 1;
   margin-top: calc(var(--lift) * -1);
-  padding-bottom: clamp(2rem, 5vw, 4rem);
+  padding-bottom: clamp(1.5rem, 3.5vw, 2.75rem);
 }
 .hero-art .ellipse {
   width: min(80%, 820px); margin: 0 auto;
@@ -349,84 +363,84 @@ footer .mark { font-size: 1.1rem; margin-right: auto; }
   <div class="nav-in">
     <a class="mark" href="#top">{NAME}</a>
     <nav class="nav-links">
-      <a href="#menu">{Menu}</a>
+      <a href="#what">{What we do}</a>
       <a href="#story">{Our story}</a>
       <a href="#find">{Find us}</a>
     </nav>
-    <a class="btn btn-hot" href="{LINK: booking, ordering, or tel:}">{ORDER}</a>
+    <a class="btn btn-hot" href="{LINK: the one action that matters}">{PRIMARY ACTION}</a>
   </div>
 </header>
 
 <main id="top">
 
   <!-- ══ Hero ═══════════════════════════════════════════════════════════════
-       The headline wants THREE OR FOUR WORDS, in caps, that say what this
-       place is about rather than what it is called — the wordmark already
-       said the name. "BREAKFAST ALL DAY" beats "WELCOME TO OUR CAFÉ".
-       Short is not a style note here: the whole effect depends on the line
-       running nearly the full width, and a long one drops to 10vw and stops
-       being enormous. -->
+       THREE OR FOUR WORDS, in caps, saying what this is about rather than what
+       it is called — the wordmark already said the name.
+
+       Short is not a style note. The whole effect depends on the line running
+       nearly the full width; a long one drops to 10vw and stops being
+       enormous. If you cannot get it under about five words, the business
+       probably wants a different template. -->
   <section class="hero">
     <div class="wrap">
-      <p class="eyebrow">{NEIGHBOURHOOD} &middot; {WHAT YOU SERVE}</p>
+      <p class="eyebrow">{WHERE YOU ARE} &middot; {WHAT YOU DO}</p>
       <h1>{THREE BIG WORDS}</h1>
     </div>
 
     <div class="hero-art">
       <div class="ellipse">
         <!-- Replace this whole .ph div with: <img src="…" alt="…"> -->
-        <div class="ph">{THE ONE PHOTO THAT MAKES SOMEONE HUNGRY}</div>
+        <div class="ph">{THE ONE PHOTO THAT DOES THE MOST WORK}</div>
       </div>
     </div>
 
     <div class="wrap">
-      <p class="hero-say">{Two sentences. What you serve, and what the room is
-      like. Write it the way you would say it to somebody standing in the
-      doorway deciding whether to come in.}</p>
+      <p class="hero-say">{Two sentences. What you do and who it is for. Write
+      it the way you would say it out loud to somebody who just walked in.}</p>
       <div class="hero-cta">
-        <a class="btn" href="#menu">{See the menu}</a>
-        <a class="btn btn-ghost" href="#find">{Hours &amp; directions}</a>
+        <a class="btn" href="#what">{See what we do}</a>
+        <a class="btn btn-ghost" href="#find">{Find us}</a>
       </div>
     </div>
   </section>
 
   <!-- ══ The line ═══════════════════════════════════════════════════════════
-       One sentence, the thing you would want somebody to repeat to a friend.
+       One sentence: the thing you would want somebody to repeat to a friend.
        Wrap the half that matters in <span> to throw it into pine. -->
   <section class="line">
     <div class="wrap">
-      <p>{The one sentence about this place} <span>{that somebody would repeat to a friend.}</span></p>
+      <p>{The one sentence about this} <span>{that somebody would repeat to a friend.}</span></p>
     </div>
   </section>
 
-  <!-- ══ Menu ═══════════════════════════════════════════════════════════════
-       Three things, not the whole menu. This is a taster that makes somebody
-       want the real one, so pick the three you are known for. Add a fourth
-       card and the grid takes it without a change. -->
-  <section class="sec" id="menu">
+  <!-- ══ What we do ═════════════════════════════════════════════════════════
+       Three things, not everything. Pick the three you are known for. The
+       price line is optional — delete the <p class="price"> if you do not
+       publish prices. A fourth card needs no CSS change. -->
+  <section class="sec" id="what">
     <div class="wrap">
       <div class="sec-head">
         <h2>{WHAT YOU'LL FIND}</h2>
-        <p>{One line setting the three up. What the kitchen is actually good at.}</p>
+        <p>{One line setting the three up. What you are actually good at.}</p>
       </div>
 
       <div class="cards">
         <article class="card">
-          <div class="card-art"><div class="ph">{PHOTO OF THIS DISH}</div></div>
-          <h3>{Dish or drink}</h3>
-          <p>{One line. What is in it, or why people order it.}</p>
+          <div class="card-art"><div class="ph">{PHOTO}</div></div>
+          <h3>{The thing}</h3>
+          <p>{One line. What it is, or why people choose it.}</p>
           <p class="price">{$00}</p>
         </article>
         <article class="card">
-          <div class="card-art"><div class="ph">{PHOTO OF THIS DISH}</div></div>
-          <h3>{Dish or drink}</h3>
-          <p>{One line. What is in it, or why people order it.}</p>
+          <div class="card-art"><div class="ph">{PHOTO}</div></div>
+          <h3>{The thing}</h3>
+          <p>{One line. What it is, or why people choose it.}</p>
           <p class="price">{$00}</p>
         </article>
         <article class="card">
-          <div class="card-art"><div class="ph">{PHOTO OF THIS DISH}</div></div>
-          <h3>{Dish or drink}</h3>
-          <p>{One line. What is in it, or why people order it.}</p>
+          <div class="card-art"><div class="ph">{PHOTO}</div></div>
+          <h3>{The thing}</h3>
+          <p>{One line. What it is, or why people choose it.}</p>
           <p class="price">{$00}</p>
         </article>
       </div>
@@ -434,27 +448,49 @@ footer .mark { font-size: 1.1rem; margin-right: auto; }
   </section>
 
   <!-- ══ Story ══════════════════════════════════════════════════════════════
-       The mirrored layering. Keep this one shorter than you want to: it is
-       the part everybody writes too much of, and nobody reads a paragraph
-       about passion before they have eaten anything. -->
+       The layering again, mirrored: art left, headline biting in from the
+       right. Once on the page, on purpose — a page that overlaps in every
+       section stops having a hero.
+
+       Keep this shorter than you want to. It is the part everybody overwrites
+       and the part nobody reads before they know what you sell. -->
   <section class="split" id="story">
     <div class="wrap split-in">
       <div class="split-art">
-        <div class="ph">{PHOTO OF THE ROOM, OR THE PEOPLE IN IT}</div>
+        <div class="ph">{PHOTO OF THE PLACE, OR THE PEOPLE IN IT}</div>
       </div>
       <div class="split-type">
         <h2>{WHO'S BEHIND IT}</h2>
         <p>{Three or four sentences. Who started it, when, and what you were
-        trying to do that nowhere else nearby was doing. Names help. A year
-        helps. "Passionate about quality ingredients" does not.}</p>
+        trying to do that nobody nearby was doing. Names help. A year helps.
+        "Passionate about quality" does not.}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ Proof ══════════════════════════════════════════════════════════════
+       REAL ONES OR DELETE THE WHOLE SECTION. Quote them exactly, from wherever
+       they actually live, and name the person as they named themselves. An
+       invented review is worse than no reviews and it is the easiest thing on
+       a page to get caught doing. -->
+  <section class="says">
+    <div class="wrap">
+      <div class="says-grid">
+        <blockquote>{A real review, quoted exactly.}<cite>{Name}, {where they left it}</cite></blockquote>
+        <blockquote>{A real review, quoted exactly.}<cite>{Name}, {where they left it}</cite></blockquote>
+        <blockquote>{A real review, quoted exactly.}<cite>{Name}, {where they left it}</cite></blockquote>
       </div>
     </div>
   </section>
 
   <!-- ══ Find us ════════════════════════════════════════════════════════════
-       Do not move this below the reviews. Somebody who has decided they want
-       to come is the most valuable reader on the page and they are looking
-       for exactly two things: are you open, and where are you. -->
+       Both halves are optional and both delete cleanly.
+
+       No premises? Delete the {Where} column and the .thumb directions button;
+       the grid drops to one column on its own. No fixed hours? Delete the
+       {Hours} column. Three rows here rather than seven on purpose — most
+       businesses repeat five weekdays and it reads faster. Split them out if
+       your days genuinely differ. -->
   <section class="find" id="find">
     <div class="wrap find-grid">
       <div>
@@ -466,35 +502,16 @@ footer .mark { font-size: 1.1rem; margin-right: auto; }
         </address>
         <div class="find-actions">
           <a class="btn" href="{LINK: Google Maps directions}">{Get directions}</a>
-          <a class="btn btn-hot" href="{LINK: booking or ordering}">{Book a table}</a>
+          <a class="btn btn-hot" href="{LINK: the one action that matters}">{Primary action}</a>
         </div>
       </div>
       <div>
         <h3>{Hours}</h3>
         <table class="hours">
-          <tr><th>{Monday}</th>    <td>{Closed}</td></tr>
-          <tr><th>{Tuesday}</th>   <td>{00:00 – 00:00}</td></tr>
-          <tr><th>{Wednesday}</th> <td>{00:00 – 00:00}</td></tr>
-          <tr><th>{Thursday}</th>  <td>{00:00 – 00:00}</td></tr>
-          <tr><th>{Friday}</th>    <td>{00:00 – 00:00}</td></tr>
-          <tr><th>{Saturday}</th>  <td>{00:00 – 00:00}</td></tr>
-          <tr><th>{Sunday}</th>    <td>{00:00 – 00:00}</td></tr>
+          <tr><th>{Monday to Friday}</th> <td>{00:00 – 00:00}</td></tr>
+          <tr><th>{Saturday}</th>         <td>{00:00 – 00:00}</td></tr>
+          <tr><th>{Sunday}</th>           <td>{Closed}</td></tr>
         </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ Reviews ════════════════════════════════════════════════════════════
-       REAL ONES OR DELETE THE WHOLE SECTION. Pull them from Google or wherever
-       they actually live, quote them exactly, and name the person as they
-       named themselves. In hospitality this is the first thing anybody checks
-       and the easiest thing to catch you inventing. -->
-  <section class="says">
-    <div class="wrap">
-      <div class="says-grid">
-        <blockquote>{A real review, quoted exactly.}<cite>{Name}, {where they left it}</cite></blockquote>
-        <blockquote>{A real review, quoted exactly.}<cite>{Name}, {where they left it}</cite></blockquote>
-        <blockquote>{A real review, quoted exactly.}<cite>{Name}, {where they left it}</cite></blockquote>
       </div>
     </div>
   </section>
@@ -503,7 +520,7 @@ footer .mark { font-size: 1.1rem; margin-right: auto; }
     <div class="wrap">
       <h2>{SEE YOU SOON}</h2>
       <div class="hero-cta">
-        <a class="btn btn-hot" href="{LINK: booking or ordering}">{Book a table}</a>
+        <a class="btn btn-hot" href="{LINK: the one action that matters}">{Primary action}</a>
         <a class="btn btn-ghost" href="{LINK: Google Maps directions}">{Get directions}</a>
       </div>
     </div>
@@ -520,9 +537,11 @@ footer .mark { font-size: 1.1rem; margin-right: auto; }
   </div>
 </footer>
 
+<!-- Phones only. The two things worth a permanent thumb-reach slot. Delete the
+     directions button for a business with no premises. -->
 <div class="thumb">
   <a class="btn" href="tel:{+00000000000}">{Call}</a>
-  <a class="btn btn-hot" href="{LINK: Google Maps directions}">{Directions}</a>
+  <a class="btn btn-hot" href="{LINK: the one action that matters}">{Primary action}</a>
 </div>
 
 </body>

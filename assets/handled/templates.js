@@ -41,11 +41,11 @@ export const TEMPLATES = [
     viewUrl: '/handled-templates/signal',
   },
   {
-    id: 'template-counter',
-    name: 'The Counter',
-    description: 'For a place people walk into. Cafés, restaurants, bakeries, bars, food trucks.',
-    previewImage: '/images/handled/templates/counter.jpg',
-    viewUrl: '/handled-templates/counter',
+    id: 'template-marquee',
+    name: 'The Marquee',
+    description: 'For a place or a product people come to see. Shops, studios, venues, makers.',
+    previewImage: '/images/handled/templates/marquee.jpg',
+    viewUrl: '/handled-templates/marquee',
   },
   {
     id: 'template-field',
