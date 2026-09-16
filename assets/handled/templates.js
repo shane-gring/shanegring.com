@@ -62,6 +62,13 @@ export const TEMPLATES = [
     viewUrl: '/handled-templates/column',
   },
   {
+    id: 'template-drift',
+    name: 'The Drift',
+    description: 'For work with nothing to photograph. Remote services, advisers, tutors, agencies.',
+    previewImage: '/images/handled/templates/drift.jpg',
+    viewUrl: '/handled-templates/drift',
+  },
+  {
     id: 'template-field',
     name: 'The Field',
     description: 'For physical work you can photograph — trades, contractors, installers. Phone first.',
