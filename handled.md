@@ -121,26 +121,6 @@ want, you email, and it's handled.
 
 Which was the whole point.
 
-## Four looks. Pick one and we’re off.
-
-Every site starts from one of four
-designs. All of them are clean, fast, and built to hold up on a phone,
-which is where most people will see you.
-
-You pick the one that feels closest to right, and I
-tailor it from there: your words, your images, your colors. You’re
-not choosing a template and living with it. You’re choosing a
-starting point so we skip the part where a designer asks what you had
-in mind and you say you’re not sure.
-
-[The StandardFor work that somebody else verifies. Certification, inspection, accreditation.](https://shanegring.com/handled-templates/standard)
-[The PracticeFor one person whose work is judgement. Quiet, personal, no sales noise.](https://shanegring.com/handled-templates/practice)
-[The SignalFor an idea the market hasn’t caught up with yet. Built to land one argument.](https://shanegring.com/handled-templates/signal)
-[The FieldFor physical work you can photograph. Trades, contractors, installers, phone first.](https://shanegring.com/handled-templates/field)
-
-Not sure which? Pick anything. It’s the
-easiest thing to change.
-
 ## Sites built and handled the same way yours will be
 
 Real sites, live right now. Click any of them.

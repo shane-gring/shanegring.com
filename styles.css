@@ -5427,7 +5427,7 @@ a.hd-shot:hover { border-color: var(--fg); transform: translateY(-2px); }
    the majority means those eight crop not at all, and the four 16/10 ones
    lose 11% off the BOTTOM instead — the least load-bearing strip of a
    homepage screenshot, and what object-position: top is here to choose.
-   Re-shoot at 1279x712 and even that goes away. */
+   Re-shoot those four at 1279x712 and even that goes away. */
 .hd-shot img {
   display: block;
   width: 100%;
@@ -5442,9 +5442,9 @@ a.hd-shot:hover { border-color: var(--fg); transform: translateY(-2px); }
    defaults to inline, and an inline box's horizontal padding does nothing
    for its block-level children — .hd-shot-name and .hd-shot-what were
    laying out at the full card width, flush to the border, with the 1rem
-   below declared but never applied. The portfolio's captions are short
-   enough that no line ever reached the edge to show it; the longer
-   template descriptions in .hd-looks did. */
+   below declared but never applied. The portfolio's captions are each one
+   short line, so none ever reached the edge to show it. Found with a
+   longer two-line caption; it is a real bug at any length. */
 .hd-shot-meta {
   display: block;
   padding: 0.85rem 1rem 1rem;
@@ -5468,32 +5468,6 @@ a.hd-shot:hover { border-color: var(--fg); transform: translateY(-2px); }
 
 @media (prefers-reduced-motion: reduce) {
   a.hd-shot:hover { transform: none; }
-}
-
-/* ── The four looks ─────────────────────────────────
-   Two across, not four. These are full-page screenshots and the whole
-   job of the section is letting somebody tell them apart; at four
-   across in a 1000px container each one is ~235px and they all read
-   as the same grey rectangle. Reuses .hd-shot for the card itself, so
-   the previews and the portfolio below stay visually identical. */
-.hd-looks {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.1rem;
-}
-
-/* The lede and the paragraph under it are one thought, so they sit
-   closer together than a .hd-sub normally would before a grid. */
-.hd-looks-lede { margin-bottom: 1.05rem; }
-
-.hd-looks-note {
-  max-width: 56ch;
-  margin: 1.4rem auto 0;
-  text-align: center;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  font-style: italic;
-  color: var(--dim);
 }
 
 /* ── The inverted band ───────────────────────────────────────────
@@ -5685,7 +5659,6 @@ a.hd-shot:hover { border-color: var(--fg); transform: translateY(-2px); }
   .hd-versus { grid-template-columns: 1fr; }
   .hd-terms { grid-template-columns: 1fr; }
   .hd-shots { grid-template-columns: 1fr; }
-  .hd-looks { grid-template-columns: 1fr; }
   .hd-gets { grid-template-columns: 1fr; }
   .hd-steps { grid-template-columns: 1fr; }
   .hd-section { padding: 3.25rem 0; }
