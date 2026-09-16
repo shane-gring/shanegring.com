@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Column — Handled template</title>
+<meta name="description" content="A Handled site template for work that takes a paragraph to explain: one big photograph and room to set out the method.">
+<meta name="robots" content="noindex, nofollow">
+
+<!-- Open Graph. These pages are noindex, which keeps them out of search and has
+     nothing to do with link previews — they get shared by hand, in a message to
+     a client choosing between them, and a bare URL tells that person nothing.
+     get-the-read.html is noindex and carries these for the same reason.
+     The image is the same screenshot the intake picker uses, so the preview and
+     the card cannot drift apart. Re-shoot one and both update. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Column — a Handled site template">
+<meta property="og:description" content="A Handled site template for work that takes a paragraph to explain: one big photograph and room to set out the method.">
+<meta property="og:url" content="https://shanegring.com/handled-templates/column">
+<meta property="og:site_name" content="Shane Gring">
+<meta property="og:image" content="https://shanegring.com/images/handled/templates/column.jpg">
+<meta property="og:image:alt" content="A screenshot of the The Column template.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Column — a Handled site template">
+<meta name="twitter:description" content="A Handled site template for work that takes a paragraph to explain: one big photograph and room to set out the method.">
+<meta name="twitter:image" content="https://shanegring.com/images/handled/templates/column.jpg">
+
+<!--
+  HANDLED TEMPLATE — "The Column"
+  ───────────────────────────────────────────────────────────────────────────
+  For work that has to be explained before anybody buys it. Not a list of
+  services — a method, a way of going about it, a reason this is done the way
+  it is done. Studios, schools, consultancies, workshops, anyone whose answer
+  to "what do you actually do" is a paragraph rather than a price.
+
+  TWO NEIGHBOURS, and it is worth knowing which you want.
+
+  The Signal lands ONE argument and gets out. If the case fits on a poster,
+  take that one. The Column is for when it does not: it gives the method room
+  and sets it out as a numbered sequence you can read straight down.
+
+  The Practice is also quiet, also serif, also restrained — but it is ONE
+  person, and its restraint IS the argument. The Column is a business with
+  a method, a team and photography, and its restraint is just good manners.
+  If the template is going to be judged on the portrait, take The Practice.
+
+  The two things it is built on:
+
+  1. One photograph, full-bleed, enormous, doing the work that ten small
+     images do badly. It gets its own band under the hero and appears nowhere
+     else. Adding a second gallery would undo it.
+
+  2. A ruled numeral grid for the method. Numeral, then the name of the step,
+     then the explanation — read down the left and you have the shape of the
+     thing in five seconds; read across and you have the detail. Hairlines,
+     not cards, because cards make five steps look like five products.
+
+  REPLACE: every {BRACKETED} string and every .ph placeholder. This template
+  is mostly words, so the words have to be real — it is the one on the shelf
+  that fails hardest if it is filled in carelessly.
+
+  DELETE WHAT DOES NOT APPLY. The method grid takes any number of steps; three
+  is thin and eight is a manual. The team row and the quotes both come out
+  cleanly.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Spectral:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ── Palette ────────────────────────────────────────────────────────────────
+   Computed, not eyeballed. There is deliberately no accent colour: every
+   other template on the shelf has one, and this one's identity is the grid
+   and the photograph. Adding a brand colour here is the fastest way to make
+   it look like everything else.
+
+   ONE MUTED GREY, not two. The obvious warm grey for this palette is #7C756A
+   and it comes out at 4.29:1 on paper — close enough to pass a glance and
+   close enough to fail. --mute is #6F675C at 5.24:1, which is safe at every
+   size, so there is no rule to remember about where it may be used. On the
+   dark band, muted text is paper at 0.70 (8.65:1) instead; --mute is far too
+   dark there. */
+:root {
+  --paper: #FAF8F2;  /* ground                                     */
+  --ink:   #1A1815;  /* on paper 16.68:1                           */
+  --mute:  #6F675C;  /* on paper  5.24:1, safe at any size          */
+  --rule:  rgba(26, 24, 21, 0.15);
+  --rule-i: rgba(250, 248, 242, 0.22);
+
+  --display: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --body:    'Spectral', Georgia, serif;
+
+  --pad: clamp(1.15rem, 4vw, 3.25rem);
+  --max: 1280px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--body); font-weight: 300;
+  font-size: 1.06rem; line-height: 1.62;
+  color: var(--ink); background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; margin: 0; line-height: 1.06; letter-spacing: -0.01em; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding-inline: var(--pad); }
+[id] { scroll-margin-top: 78px; }
+
+/* Outlined, never filled. A solid button in a page this quiet reads as an
+   advertisement dropped into an essay. */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--body); font-weight: 500; font-size: 0.95rem;
+  padding: 0.72rem 1.35rem; border-radius: 999px;
+  border: 1px solid var(--ink); color: var(--ink);
+  text-decoration: none; background: transparent;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.btn:hover { background: var(--ink); color: var(--paper); }
+.btn-i { border-color: var(--paper); color: var(--paper); }
+.btn-i:hover { background: var(--paper); color: var(--ink); }
+
+/* ── Nav ───────────────────────────────────────────────────────────────────*/
+.nav { border-bottom: 1px solid var(--rule); background: var(--paper); position: sticky; top: 0; z-index: 40; }
+.nav-in { max-width: var(--max); margin: 0 auto; padding: 1rem var(--pad); display: flex; align-items: center; gap: 2rem; }
+.mark { font-family: var(--display); font-size: 1.45rem; text-decoration: none; margin-right: auto; }
+.nav-links { display: flex; gap: 2rem; }
+.nav-links a { font-size: 0.96rem; text-decoration: none; color: var(--mute); }
+.nav-links a:hover { color: var(--ink); }
+
+/* ── Hero ──────────────────────────────────────────────────────────────────
+   Type only, offset to the right, on bare paper. The photograph comes after
+   it rather than under it — that separation is the whole reason the picture
+   lands as hard as it does, so resist putting the two in one section. */
+.hero { padding: clamp(3.5rem, 9vw, 8rem) 0 clamp(3rem, 7vw, 6rem); }
+.hero-in { max-width: 62ch; margin-left: auto; }
+.hero h1 { font-size: clamp(2.2rem, 5.4vw, 4.3rem); }
+/* The second clause, set in --mute. Two tones, one sentence: the statement
+   lands and the qualification recedes without needing a smaller size. */
+.hero h1 .quiet { color: var(--mute); }
+.hero p { max-width: 54ch; margin: 1.6rem 0 2rem; color: var(--mute); font-size: clamp(1.02rem, 1.4vw, 1.18rem); }
+
+/* ── The photograph ────────────────────────────────────────────────────────
+   Full-bleed, tall, and the only image of its kind on the page. 21/9 on a
+   wide screen, squarer on a phone so a person in it is still a person and not
+   a letterbox of foreheads. */
+.figure { width: 100%; aspect-ratio: 21 / 9; overflow: hidden; background: var(--ink); }
+.figure img { width: 100%; height: 100%; object-fit: cover; }
+.figure-note { max-width: var(--max); margin: 0.85rem auto 0; padding-inline: var(--pad); color: var(--mute); font-size: 0.9rem; }
+
+/* ── Placeholder ───────────────────────────────────────────────────────────
+   A div, never an <img> with a fake src: a broken-image icon is worse than an
+   obvious placeholder, and clients open these files too. */
+.ph {
+  width: 100%; height: 100%; min-height: 150px;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  padding: 1.25rem;
+  font-family: var(--body); font-weight: 500;
+  font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(26, 24, 21, 0.5);
+  background: repeating-linear-gradient(135deg, #EFEBE1 0 14px, #E9E4D9 14px 28px);
+}
+.figure .ph { color: rgba(250, 248, 242, 0.75); background: repeating-linear-gradient(135deg, #6E6B66 0 22px, #66635E 22px 44px); }
+
+/* ── Sections ──────────────────────────────────────────────────────────────*/
+.sec { padding: clamp(3.25rem, 7vw, 6rem) 0; border-top: 1px solid var(--rule); }
+.sec-dark { background: var(--ink); color: var(--paper); border-top: 0; }
+.sec-dark .btn { border-color: var(--paper); color: var(--paper); }
+.sec-label {
+  font-family: var(--body); font-weight: 500;
+  font-size: 0.76rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--mute); margin: 0 0 1.6rem;
+}
+.sec-dark .sec-label { color: rgba(250, 248, 242, 0.70); }
+.sec-head h2 { font-size: clamp(1.9rem, 4.2vw, 3rem); max-width: 22ch; }
+.sec-head p { max-width: 58ch; margin: 1.1rem 0 0; color: var(--mute); }
+.sec-dark .sec-head p { color: rgba(250, 248, 242, 0.70); }
+
+/* ── The method ────────────────────────────────────────────────────────────
+   Hairlines, not cards. Cards would make five steps look like five products
+   you pick between, and this is a sequence: it happens in this order and the
+   order is the point.
+
+   Four columns on a wide screen — numeral, name, then the explanation split
+   in two so no line of text runs past about 50 characters. Read down the
+   numerals for the shape, read across one row for the detail. */
+.steps { border-bottom: 1px solid var(--rule); }
+.step {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 15rem) minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1rem 2.5rem;
+  padding: 2.25rem 0;
+  border-top: 1px solid var(--rule);
+}
+.step-num { font-family: var(--display); font-size: 1.15rem; color: var(--mute); }
+.step h3 { font-size: 1.5rem; }
+.step p { margin: 0 0 0.9rem; }
+.step p:last-child { margin-bottom: 0; }
+.step .aside { color: var(--mute); }
+
+/* ── Team ──────────────────────────────────────────────────────────────────*/
+.people { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.25rem, 3vw, 2.25rem); }
+.person-art { aspect-ratio: 4 / 5; overflow: hidden; background: #EFEBE1; }
+.person-art img { width: 100%; height: 100%; object-fit: cover; }
+.person h3 { font-family: var(--body); font-weight: 500; font-size: 1.05rem; margin: 0.9rem 0 0.1rem; }
+.person p { margin: 0; color: var(--mute); font-size: 0.95rem; }
+
+/* ── Quotes ────────────────────────────────────────────────────────────────
+   Real ones or delete the section. Two, not six: a wall of praise reads as
+   marketing, and two specific ones read as evidence. */
+.quotes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.5rem, 4vw, 3.5rem); }
+.quotes blockquote { margin: 0; font-family: var(--display); font-size: clamp(1.25rem, 2vw, 1.65rem); line-height: 1.3; }
+.quotes cite { display: block; margin-top: 1rem; font-family: var(--body); font-style: normal; font-weight: 400; font-size: 0.92rem; color: rgba(250, 248, 242, 0.70); }
+
+/* ── Close ─────────────────────────────────────────────────────────────────*/
+.close h2 { font-size: clamp(2rem, 5vw, 3.6rem); max-width: 20ch; }
+.close p { max-width: 50ch; color: var(--mute); margin: 1.2rem 0 2rem; }
+
+footer { border-top: 1px solid var(--rule); padding: 2.25rem 0 3rem; font-size: 0.92rem; color: var(--mute); }
+.foot-in { display: flex; flex-wrap: wrap; gap: 0.8rem 2rem; align-items: center; }
+footer .mark { font-size: 1.15rem; color: var(--ink); margin-right: auto; }
+
+/* ── Narrow ────────────────────────────────────────────────────────────────*/
+@media (max-width: 1000px) {
+  .step { grid-template-columns: 3rem minmax(0, 1fr); gap: 0.6rem 1.5rem; }
+  .step h3 { grid-column: 2; }
+  .step p { grid-column: 2; }
+}
+@media (max-width: 760px) {
+  .nav-links { display: none; }
+  .hero-in { margin-left: 0; }
+  /* Squarer on a phone: 21/9 across 390px is 167px tall, which turns a
+     photograph of a person into a band of foreheads. */
+  .figure { aspect-ratio: 4 / 3; }
+  .people, .quotes { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="mark" href="#top">{Name}</a>
+    <nav class="nav-links">
+      <a href="#how">{How it works}</a>
+      <a href="#who">{Who does it}</a>
+      <a href="#said">{What people say}</a>
+    </nav>
+    <a class="btn" href="{LINK: the one action that matters}">{Primary action}</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ══ Hero ═══════════════════════════════════════════════════════════════
+       One sentence, in two tones. Put the flat statement first and wrap the
+       qualifying half in <span class="quiet">.
+
+       "{We are Name.} {And this is the unusual way we do it.}" is the shape.
+       It is a sentence, not a slogan — this template is for a business that
+       has something to explain, and the hero should already sound like the
+       start of an explanation. -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-in">
+        <h1>{The plain statement of what you are.} <span class="quiet">{The half that says what makes it different.}</span></h1>
+        <p>{Two sentences of plain prose. Who this is for, and what they get
+        that they would not get elsewhere. No adjectives you would not say out
+        loud to somebody's face.}</p>
+        <a class="btn" href="{LINK: the one action that matters}">{Primary action}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ The photograph ═════════════════════════════════════════════════════
+       ONE image, and it has to be a good one. Landscape, at least 2400px
+       wide. A real photograph of the real work, the real room or the real
+       people — at this size stock is unmistakable and it will be the first
+       thing anybody sees.
+
+       Replace the .ph div with: <img src="…" alt="…">
+       Delete .figure-note if the picture does not need a caption. -->
+  <figure class="figure" style="margin:0">
+    <div class="ph">One big photograph goes here. Full bleed, at least 2400px wide.</div>
+  </figure>
+  <p class="figure-note">{An optional caption. Where it was taken, or who is in
+  it. Delete this line if it has nothing to add.}</p>
+
+  <!-- ══ How it works ═══════════════════════════════════════════════════════
+       The numeral grid. Any number of steps — but three reads as thin and
+       eight reads as a manual, so four to six.
+
+       Each row: the numeral, the name of the step, then the explanation in
+       two parts. The first paragraph is what happens. The second, in .aside,
+       is why it is done that way — that is the part that separates this from
+       a list of services, and it is the part everybody skips writing. -->
+  <section class="sec" id="how">
+    <div class="wrap">
+      <p class="sec-label">{How it works}</p>
+      <div class="sec-head">
+        <h2>{A plain heading naming the method.}</h2>
+        <p>{One or two lines setting up the sequence below, and saying how long
+        the whole thing usually takes.}</p>
+      </div>
+
+      <div class="steps" style="margin-top: clamp(2rem, 5vw, 3.5rem)">
+        <div class="step">
+          <span class="step-num">I.</span>
+          <h3>{The name of this step}</h3>
+          <p>{What actually happens at this stage, in plain words. What you do,
+          what they do, and roughly how long it takes.}</p>
+          <p class="aside">{Why it is done this way. This is the paragraph
+          almost nobody writes and the one that makes the method look like a
+          method rather than a habit.}</p>
+        </div>
+        <div class="step">
+          <span class="step-num">II.</span>
+          <h3>{The name of this step}</h3>
+          <p>{What actually happens at this stage, in plain words.}</p>
+          <p class="aside">{Why it is done this way.}</p>
+        </div>
+        <div class="step">
+          <span class="step-num">III.</span>
+          <h3>{The name of this step}</h3>
+          <p>{What actually happens at this stage, in plain words.}</p>
+          <p class="aside">{Why it is done this way.}</p>
+        </div>
+        <div class="step">
+          <span class="step-num">IV.</span>
+          <h3>{The name of this step}</h3>
+          <p>{What actually happens at this stage, in plain words.}</p>
+          <p class="aside">{Why it is done this way.}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ Who does it ════════════════════════════════════════════════════════
+       Real people who actually do the work. Any number; the grid takes them.
+       One concrete detail each — years at it, what they are the one to ask
+       about, a qualification if the trade has one. -->
+  <section class="sec" id="who">
+    <div class="wrap">
+      <p class="sec-label">{Who does it}</p>
+      <div class="sec-head">
+        <h2>{The people who will actually do the work.}</h2>
+      </div>
+
+      <div class="people" style="margin-top: clamp(2rem, 5vw, 3.5rem)">
+        <div class="person">
+          <div class="person-art"><div class="ph">{PORTRAIT}</div></div>
+          <h3>{Name}</h3>
+          <p>{Role} &middot; {The one concrete detail}</p>
+        </div>
+        <div class="person">
+          <div class="person-art"><div class="ph">{PORTRAIT}</div></div>
+          <h3>{Name}</h3>
+          <p>{Role} &middot; {The one concrete detail}</p>
+        </div>
+        <div class="person">
+          <div class="person-art"><div class="ph">{PORTRAIT}</div></div>
+          <h3>{Name}</h3>
+          <p>{Role} &middot; {The one concrete detail}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ What people say ════════════════════════════════════════════════════
+       REAL ONES OR DELETE THE SECTION. Two, deliberately. Pick the two that
+       say something specific — a wall of "great to work with" is worth less
+       than one person explaining what changed. -->
+  <section class="sec sec-dark" id="said">
+    <div class="wrap">
+      <p class="sec-label">{What people say}</p>
+      <div class="quotes" style="margin-top: clamp(1.5rem, 4vw, 2.5rem)">
+        <blockquote>{A real quote, exactly as it was said. Pick one that names
+        something specific rather than one that is simply warm.}<cite>{Name}, {what they do}</cite></blockquote>
+        <blockquote>{A real quote, exactly as it was said.}<cite>{Name}, {what they do}</cite></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec close">
+    <div class="wrap">
+      <h2>{The plainest possible ask.}</h2>
+      <p>{One line with the practical detail that matters most: what it costs,
+      how long it takes, or what happens when they get in touch.}</p>
+      <a class="btn" href="{LINK: the one action that matters}">{Primary action}</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <a class="mark" href="#top">{Name}</a>
+    <a href="mailto:{hello@example.com}">{hello@example.com}</a>
+    <a href="tel:{+00000000000}">{Phone}</a>
+    <span>&copy; {YEAR} {Registered name}</span>
+  </div>
+</footer>
+
+</body>
+</html>
