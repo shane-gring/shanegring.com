@@ -6,6 +6,8 @@
 
 [{Book}]({LINK: booking system, or tel:})
 
+Full-bleed photograph goes here
+
 {TOWN} · {WHAT YOU DO}
 
 # {One sentence saying what you do and who for.}

@@ -166,9 +166,10 @@ h1, h2, h3 {
      Landscape, at least 2000px wide, and pick one with somewhere calm in the
      lower left for the headline to sit.
 
-     Until then this mid-tone stand-in stays. It is deliberately not dark: a
-     placeholder darker than the scrim would make the hero look finished and
-     hide whether the scrim is doing anything. */
+     Until then this mid-tone stand-in stays, labelled by .hero-slot just
+     below. It is deliberately not dark: a placeholder darker than the scrim
+     would make the hero look finished and hide whether the scrim is doing
+     anything. Replacing the image and deleting the label are one job. */
   background-image: repeating-linear-gradient(135deg, #717D84 0 24px, #68747C 24px 48px);
   color: var(--chalk);
   overflow: hidden;
@@ -195,6 +196,38 @@ h1, h2, h3 {
     rgba(34, 48, 58, 0.38) 52%,
     rgba(34, 48, 58, 0.82) 100%     /* headline zone — 6.6:1 worst case */
   );
+}
+
+/* The hero placeholder label.
+   The stand-in below is a striped mid-tone field, and without a label it is
+   ambiguous — it could be read as a texture somebody chose rather than a slot
+   somebody has to fill. This says what belongs there.
+
+   Solid --deep rather than a translucent chip on purpose: it sits over the
+   lightest part of the scrim, so a see-through label would be the one piece
+   of text on the page that fails against a pale photograph. On --deep it is
+   12.20:1 and it cannot break.
+
+   DELETE THIS WHOLE ELEMENT when the photograph goes in. It is the only thing
+   in the file that is scaffolding rather than site. */
+.hero-slot {
+  position: absolute; z-index: 3;
+  top: 5.5rem; right: var(--pad);
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  padding: 0.55rem 0.9rem;
+  background: var(--deep);
+  border: 1px dashed rgba(245, 243, 238, 0.45);
+  border-radius: 3px;
+  font-family: var(--body); font-weight: 600;
+  font-size: 0.7rem; letter-spacing: 0.13em; text-transform: uppercase;
+  color: var(--chalk);
+}
+.hero-slot::before {
+  content: ''; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--ochre); flex: none;
+}
+@media (max-width: 620px) {
+  .hero-slot { top: 4.5rem; left: var(--pad); right: var(--pad); justify-content: center; }
 }
 
 .hero-in { position: relative; z-index: 2; width: 100%; padding-block: clamp(3rem, 8vw, 6rem); }
@@ -346,6 +379,9 @@ footer a { opacity: 0.84; }
         <a class="btn btn-light" href="{LINK: booking system, or tel:}">{Book}</a>
       </div>
     </header>
+
+    <!-- DELETE this element once the real photograph is in place. -->
+    <p class="hero-slot">Full-bleed photograph goes here</p>
 
     <div class="wrap hero-in">
       <p class="eyebrow">{TOWN} &middot; {WHAT YOU DO}</p>
