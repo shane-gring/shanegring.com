@@ -55,6 +55,13 @@ export const TEMPLATES = [
     viewUrl: '/handled-templates/rooms',
   },
   {
+    id: 'template-column',
+    name: 'The Column',
+    description: 'For work that takes a paragraph to explain. One big photograph and room to set out how you do it.',
+    previewImage: '/images/handled/templates/column.jpg',
+    viewUrl: '/handled-templates/column',
+  },
+  {
     id: 'template-field',
     name: 'The Field',
     description: 'For physical work you can photograph — trades, contractors, installers. Phone first.',
