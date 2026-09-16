@@ -5162,6 +5162,18 @@ body.offer-handled { --offer: #1f7a4d; --offer-deep: #145736; }
   text-wrap: balance;
 }
 
+/* Under the CTA's reassurance list: what the next five minutes look
+   like, for somebody with a card in their hand. Deliberately quieter
+   than .hd-assure — it answers a question rather than making a claim. */
+.hd-next {
+  max-width: 50ch;
+  margin: 1.15rem auto 0;
+  text-align: center;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--dim);
+}
+
 .hd-sub {
   max-width: 56ch;
   margin: 0 auto 2.4rem;
@@ -5407,17 +5419,34 @@ body.offer-handled { --offer: #1f7a4d; --offer-deep: #145736; }
 a.hd-shot { display: block; text-decoration: none; }
 a.hd-shot:hover { border-color: var(--fg); transform: translateY(-2px); }
 
+/* 16/9 because that is what the screenshots are. Eight of the twelve are
+   1279x712 and the four older ones are 1200x750; a 16/10 card matched the
+   four and cropped 11% off each SIDE of the eight, which is enough to eat
+   the first letter of a headline: Buckhead read "A week at the table" with
+   its B gone, FORJ read "uilding the world's best". Matching the card to
+   the majority means those eight crop not at all, and the four 16/10 ones
+   lose 11% off the BOTTOM instead — the least load-bearing strip of a
+   homepage screenshot, and what object-position: top is here to choose.
+   Re-shoot those four at 1279x712 and even that goes away. */
 .hd-shot img {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   object-position: top;
   border-bottom: 1px solid var(--border);
 }
 
+/* display:block is load-bearing, not tidiness. This is a <span>, so it
+   defaults to inline, and an inline box's horizontal padding does nothing
+   for its block-level children — .hd-shot-name and .hd-shot-what were
+   laying out at the full card width, flush to the border, with the 1rem
+   below declared but never applied. The portfolio's captions are each one
+   short line, so none ever reached the edge to show it. Found with a
+   longer two-line caption; it is a real bug at any length. */
 .hd-shot-meta {
+  display: block;
   padding: 0.85rem 1rem 1rem;
 }
 

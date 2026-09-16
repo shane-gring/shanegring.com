@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Rooms — Handled template</title>
+<meta name="description" content="A Handled site template for a business people come to by appointment, with more than one person on the team.">
+<meta name="robots" content="noindex, nofollow">
+
+<!-- Open Graph. These pages are noindex, which keeps them out of search and has
+     nothing to do with link previews — they get shared by hand, in a message to
+     a client choosing between them, and a bare URL tells that person nothing.
+     get-the-read.html is noindex and carries these for the same reason.
+     The image is the same screenshot the intake picker uses, so the preview and
+     the card cannot drift apart. Re-shoot one and both update. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Rooms — a Handled site template">
+<meta property="og:description" content="A Handled site template for a business people come to by appointment, with more than one person on the team.">
+<meta property="og:url" content="https://shanegring.com/handled-templates/rooms">
+<meta property="og:site_name" content="Shane Gring">
+<meta property="og:image" content="https://shanegring.com/images/handled/templates/rooms.jpg">
+<meta property="og:image:alt" content="A screenshot of the The Rooms template.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Rooms — a Handled site template">
+<meta name="twitter:description" content="A Handled site template for a business people come to by appointment, with more than one person on the team.">
+<meta name="twitter:image" content="https://shanegring.com/images/handled/templates/rooms.jpg">
+
+<!--
+  HANDLED TEMPLATE — "The Rooms"
+  ───────────────────────────────────────────────────────────────────────────
+  For a business people come to by appointment, staffed by more than one
+  person. A studio, a salon, a clinic, a workshop, a firm with an office, a
+  school with a timetable. If somebody has to turn up somewhere at a time, and
+  there is a choice of who they see, this is the shape.
+
+  The split from The Practice is the one to watch, because the words are
+  nearly the same. The Practice is ONE person, and its whole argument is
+  restraint — no team, no premises, no accent colour, because the credential
+  is the person. The Rooms is a TEAM and a FRONT DOOR. Somebody arriving here
+  wants to know who they will see, what it costs, where to park and what
+  happens the first time. Those are questions of fact, so the page answers
+  them plainly and in that order.
+
+  It is the least stylish template on the shelf on purpose. It is built for
+  the reader who has already decided to come and now needs the details, and
+  nobody in that state is won over by a characterful website.
+
+  The move it is built on: a full-bleed photograph behind the hero, with a
+  double scrim over it. The scrim is NOT decoration — see the comment on
+  .hero::after. It is the only thing standing between a legible headline and
+  whatever photograph the client uploads.
+
+  REPLACE: every {BRACKETED} string, the hero background image, every .ph
+  placeholder, and the map embed. The team photos should be real people who
+  actually work there. Stock portraits on a "who you'll see" page are the
+  fastest way to lose somebody who was about to call.
+
+  DELETE WHAT DOES NOT APPLY. The team grid takes any number. The price
+  column, the quotes band and the access block each come out cleanly. A
+  business with no premises should take another template rather than ship this
+  one with the find section emptied out.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ── Palette ────────────────────────────────────────────────────────────────
+   Computed, not eyeballed. Ratios are against the stated ground; 4.5:1 is the
+   floor for body text, 3:1 for display text above roughly 24px.
+
+   THE ONE RULE: --ochre never carries SMALL text, and an eyebrow is small
+   text. At 3.24:1 on chalk and 3.76:1 on deep it is legal only for fills,
+   rules, and display type above roughly 24px. Everything else that wants to
+   look like the accent uses --label (#875D26, 5.23:1 on chalk), which is the
+   same hue taken down until it is readable. On a dark band, small accent text
+   uses chalk at 0.68 instead (6.53:1) — --label is far too dark there.
+
+   This was caught by an automated pass over every text node on the page, not
+   by looking at it. The five labels in the find section were ochre, looked
+   completely fine, and failed. An ochre button takes an INK label (4.60:1)
+   and never a chalk one (3.24:1).
+
+   That is the third template in a row where the warm accent fails with white
+   on it and passes with black. If you are adding a fifth palette, assume that
+   is where it will break and check that pair first.
+
+   Primary buttons deliberately avoid the question: deep-on-chalk is 12.20:1
+   and chalk-on-deep is 12.20:1, so the button that matters is bulletproof on
+   either ground and ochre stays a secondary. */
+:root {
+  --deep:   #22303A;  /* dark bands, hero scrim, primary button on chalk      */
+  --chalk:  #F5F3EE;  /* ground; on deep 12.20:1                              */
+  --ink:    #172026;  /* body on chalk 14.90:1                                */
+  --muted:  #56656E;  /* secondary body on chalk 5.44:1                       */
+  --ochre:  #B07D3B;  /* FILLS, RULES AND LARGE TEXT ONLY. 3.24:1 on chalk.  */
+  --label:  #875D26;  /* the same accent, dark enough to be read: 5.23:1     */
+  --hair:   rgba(23, 32, 38, 0.14);
+  --hair-i: rgba(245, 243, 238, 0.18);
+
+  --display: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --body:    'Public Sans', system-ui, -apple-system, sans-serif;
+
+  --pad: clamp(1.15rem, 4vw, 3.25rem);
+  --max: 1180px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--chalk);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+h1, h2, h3 {
+  font-family: var(--display); font-weight: 500;
+  margin: 0; line-height: 1.08; letter-spacing: -0.015em;
+}
+
+.wrap { max-width: var(--max); margin: 0 auto; padding-inline: var(--pad); }
+[id] { scroll-margin-top: 80px; }
+
+.eyebrow {
+  font-family: var(--body); font-weight: 600;
+  font-size: 0.76rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--label); margin: 0 0 0.9rem;
+}
+/* .sec-head p sets a colour and outranks .eyebrow on specificity, so an
+   eyebrow inside a section head was silently rendering as --muted. Named
+   explicitly rather than reordered, so it cannot come back. */
+.sec-head .eyebrow { color: var(--label); }
+.sec-dark .eyebrow, .sec-dark .sec-head .eyebrow { color: rgba(245, 243, 238, 0.68); }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--body); font-weight: 600; font-size: 0.97rem;
+  padding: 0.9rem 1.5rem; border-radius: 3px;
+  border: 1px solid transparent; text-decoration: none;
+  transition: opacity 0.14s ease;
+}
+.btn:hover { opacity: 0.88; }
+.btn-dark  { background: var(--deep);  color: var(--chalk); }   /* 12.20:1 */
+.btn-light { background: var(--chalk); color: var(--ink); }     /* 14.90:1 */
+.btn-ochre { background: var(--ochre); color: var(--ink); }     /*  4.60:1 */
+.btn-line  { background: transparent; color: var(--chalk); border-color: var(--hair-i); }
+.btn-line:hover { border-color: var(--chalk); opacity: 1; }
+
+/* ── Nav ───────────────────────────────────────────────────────────────────
+   Sits over the photograph rather than above it. It is legible because the
+   scrim below is heaviest at the very top — see .hero::after. */
+.nav { position: absolute; inset: 0 0 auto; z-index: 10; }
+.nav-in {
+  max-width: var(--max); margin: 0 auto; padding: 1.25rem var(--pad);
+  display: flex; align-items: center; gap: 1.75rem;
+}
+.mark {
+  font-family: var(--display); font-weight: 500; font-size: 1.4rem;
+  letter-spacing: -0.02em; color: var(--chalk); text-decoration: none;
+  margin-right: auto;
+}
+.nav-links { display: flex; gap: 1.5rem; }
+.nav-links a { font-size: 0.94rem; color: var(--chalk); text-decoration: none; opacity: 0.9; }
+.nav-links a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 5px; }
+.nav .btn { padding: 0.6rem 1.15rem; font-size: 0.9rem; }
+
+/* ── Hero ──────────────────────────────────────────────────────────────────*/
+.hero {
+  position: relative;
+  min-height: min(86svh, 780px);
+  display: flex; align-items: flex-end;
+  background: var(--deep) center / cover no-repeat;
+  /* REPLACE with the photograph:
+       background-image: url('path/to/hero.jpg');
+     Landscape, at least 2000px wide, and pick one with somewhere calm in the
+     lower left for the headline to sit.
+
+     Until then this mid-tone stand-in stays, labelled by .hero-slot just
+     below. It is deliberately not dark: a placeholder darker than the scrim
+     would make the hero look finished and hide whether the scrim is doing
+     anything. Replacing the image and deleting the label are one job. */
+  background-image: repeating-linear-gradient(135deg, #717D84 0 24px, #68747C 24px 48px);
+  color: var(--chalk);
+  overflow: hidden;
+}
+
+/* THE SCRIM. Load-bearing, not styling.
+   The background is a photograph nobody has seen at build time, so it could
+   be a white-walled waiting room. Measured against a PURE WHITE photo, chalk
+   text needs the scrim at 0.70 alpha to clear 4.5:1 — at 0.50 it is 2.64:1
+   and the headline is gone.
+
+   So it is a double scrim rather than a flat one: heavy at the very top so
+   the nav clears, light through the middle so the photograph is actually
+   visible and the section does not look like a dark rectangle, heavy again at
+   the bottom where the headline and the subline sit.
+
+   You may retune the middle freely. Do not take either END below 0.70. */
+.hero::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(34, 48, 58, 0.78) 0%,      /* nav zone      — 6.0:1 worst case */
+    rgba(34, 48, 58, 0.32) 22%,     /* photograph                       */
+    rgba(34, 48, 58, 0.38) 52%,
+    rgba(34, 48, 58, 0.82) 100%     /* headline zone — 6.6:1 worst case */
+  );
+}
+
+/* The hero placeholder label.
+   The stand-in below is a striped mid-tone field, and without a label it is
+   ambiguous — it could be read as a texture somebody chose rather than a slot
+   somebody has to fill. This says what belongs there.
+
+   Solid --deep rather than a translucent chip on purpose: it sits over the
+   lightest part of the scrim, so a see-through label would be the one piece
+   of text on the page that fails against a pale photograph. On --deep it is
+   12.20:1 and it cannot break.
+
+   DELETE THIS WHOLE ELEMENT when the photograph goes in. It is the only thing
+   in the file that is scaffolding rather than site. */
+.hero-slot {
+  position: absolute; z-index: 3;
+  top: 5.5rem; right: var(--pad);
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  padding: 0.55rem 0.9rem;
+  background: var(--deep);
+  border: 1px dashed rgba(245, 243, 238, 0.45);
+  border-radius: 3px;
+  font-family: var(--body); font-weight: 600;
+  font-size: 0.7rem; letter-spacing: 0.13em; text-transform: uppercase;
+  color: var(--chalk);
+}
+.hero-slot::before {
+  content: ''; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--ochre); flex: none;
+}
+@media (max-width: 620px) {
+  .hero-slot { top: 4.5rem; left: var(--pad); right: var(--pad); justify-content: center; }
+}
+
+.hero-in { position: relative; z-index: 2; width: 100%; padding-block: clamp(3rem, 8vw, 6rem); }
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4.6rem);
+  max-width: 16ch; margin-bottom: 1.1rem; text-wrap: balance;
+}
+.hero p { max-width: 48ch; margin: 0 0 1.9rem; font-size: clamp(1.02rem, 1.5vw, 1.2rem); }
+.hero .eyebrow { color: var(--chalk); opacity: 0.82; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+
+/* ── Placeholder ───────────────────────────────────────────────────────────
+   Replace the whole .ph element with an <img src alt>, or with the map iframe.
+   Deliberately a div and not an <img> with a fake src: a broken-image icon is
+   the one thing worse than an obvious placeholder, and a template gets opened
+   by clients as often as by whoever is filling it in. */
+.ph {
+  width: 100%; height: 100%; min-height: 150px;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 1.25rem;
+  font-family: var(--body); font-weight: 600;
+  font-size: 0.72rem; letter-spacing: 0.13em; text-transform: uppercase;
+  color: rgba(23, 32, 38, 0.45);
+  background: repeating-linear-gradient(135deg, #E7E3DA 0 14px, #E1DCD2 14px 28px);
+}
+.sec-dark .ph {
+  color: rgba(245, 243, 238, 0.5);
+  background: repeating-linear-gradient(135deg, #2A3843 0 14px, #2F3E49 14px 28px);
+}
+
+/* ── Sections ──────────────────────────────────────────────────────────────*/
+.sec { padding: clamp(3.25rem, 7vw, 5.75rem) 0; }
+.sec-dark { background: var(--deep); color: var(--chalk); }
+.sec-head { max-width: 40ch; margin-bottom: clamp(1.9rem, 4vw, 3rem); }
+.sec-head h2 { font-size: clamp(1.9rem, 4.4vw, 3.1rem); }
+.sec-head p { margin: 0.85rem 0 0; color: var(--muted); }
+.sec-dark .sec-head p { color: rgba(245, 243, 238, 0.8); }
+
+/* ── What we help with ─────────────────────────────────────────────────────
+   A plain ruled list, not cards and not icons. The reader is scanning for
+   their own problem in a list of problems, and a grid of illustrated tiles
+   makes that slower, not friendlier. */
+.services { border-top: 1px solid var(--hair); }
+.service {
+  display: grid; grid-template-columns: minmax(0, 20ch) minmax(0, 1fr) auto;
+  gap: 1rem 2rem; align-items: baseline;
+  padding: 1.35rem 0; border-bottom: 1px solid var(--hair);
+}
+.service h3 { font-size: 1.28rem; }
+.service p { margin: 0; color: var(--muted); font-size: 0.99rem; }
+.service .fee { font-weight: 600; white-space: nowrap; color: var(--ink); }
+
+/* ── Team ──────────────────────────────────────────────────────────────────*/
+.team { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1rem, 2.5vw, 1.75rem); }
+.person-art { aspect-ratio: 4 / 5; overflow: hidden; background: rgba(245,243,238,0.08); border-radius: 3px; }
+.person-art img { width: 100%; height: 100%; object-fit: cover; }
+.person h3 { font-size: 1.15rem; margin: 0.85rem 0 0.15rem; }
+.person p { margin: 0; font-size: 0.92rem; color: rgba(245, 243, 238, 0.72); }
+
+/* ── Where to find us ──────────────────────────────────────────────────────
+   The section this template exists for. Somebody who has decided to come is
+   the most valuable reader on the page, and they want an address, a set of
+   hours and an answer about parking — not a paragraph about the business's
+   values. Map on the right, facts on the left, nothing between them. */
+.find-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(1.75rem, 4vw, 3.25rem); align-items: start; }
+/* Sticky, because the facts column is roughly twice the map's height and a
+   4:3 map left a column of empty chalk beside "Access" and "Contact". Sticking
+   it also means the map is still on screen while somebody reads the parking
+   paragraph, which is when they want it. Released at 900px, where the grid
+   goes to one column and sticky would pin it over the text. */
+.map {
+  aspect-ratio: 4 / 3; border-radius: 3px; overflow: hidden;
+  border: 1px solid var(--hair);
+  position: sticky; top: 90px;
+}
+.map iframe, .map img { width: 100%; height: 100%; border: 0; display: block; }
+.fact { padding: 1.05rem 0; border-bottom: 1px solid var(--hair); }
+.fact:first-of-type { border-top: 1px solid var(--hair); }
+.fact h3 { font-family: var(--body); font-size: 0.76rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--label); margin-bottom: 0.4rem; }
+.fact p, .fact address { margin: 0; font-style: normal; line-height: 1.65; }
+.hours { width: 100%; border-collapse: collapse; }
+.hours th { text-align: left; font-weight: 400; padding: 0.15rem 0; }
+.hours td { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; padding: 0.15rem 0; }
+
+/* ── How it works ──────────────────────────────────────────────────────────*/
+.steps { counter-reset: s; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.25rem, 3vw, 2.5rem); }
+.step { counter-increment: s; border-top: 2px solid var(--ochre); padding-top: 1.1rem; }
+.step::before { content: counter(s, decimal-leading-zero); display: block; font-family: var(--display); font-size: 1.05rem; color: var(--label); margin-bottom: 0.4rem; }
+.sec-dark .step::before { color: rgba(245, 243, 238, 0.68); }
+.step h3 { font-size: 1.22rem; margin-bottom: 0.35rem; }
+.step p { margin: 0; color: var(--muted); font-size: 0.97rem; }
+
+/* ── Quotes ────────────────────────────────────────────────────────────────
+   Real ones or delete the section. A few trades restrict what may be
+   published as a testimonial — worth checking before, not after. */
+.quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.25rem, 3vw, 2.5rem); }
+.quotes blockquote { margin: 0; font-family: var(--display); font-size: 1.15rem; line-height: 1.45; }
+.quotes cite { display: block; margin-top: 0.7rem; font-family: var(--body); font-style: normal; font-size: 0.88rem; color: var(--muted); }
+/* --muted is a dark grey tuned for chalk. On --deep it is 2.24:1 and the
+   attribution all but disappeared, which is the worst line to lose: an
+   unattributed quote reads as invented. Chalk at 0.68 gives 6.53:1 and still
+   sits back from the quote itself. Any --muted text that ends up inside a
+   .sec-dark needs the same treatment. */
+.sec-dark .quotes cite,
+.sec-dark .service p,
+.sec-dark .step p { color: rgba(245, 243, 238, 0.68); }
+
+/* ── Close ─────────────────────────────────────────────────────────────────*/
+.close { background: var(--deep); color: var(--chalk); padding: clamp(3.5rem, 8vw, 6rem) 0; }
+.close h2 { font-size: clamp(2rem, 5.5vw, 3.6rem); max-width: 18ch; margin-bottom: 1.4rem; }
+.close p { max-width: 46ch; color: rgba(245, 243, 238, 0.82); margin: 0 0 1.9rem; }
+
+footer { background: var(--deep); color: var(--chalk); border-top: 1px solid var(--hair-i); padding: 2rem 0 2.5rem; font-size: 0.9rem; }
+.foot-in { display: flex; flex-wrap: wrap; gap: 0.85rem 2rem; align-items: center; }
+footer .mark { font-size: 1.1rem; margin-right: auto; }
+footer a { opacity: 0.84; }
+
+/* ── Narrow ────────────────────────────────────────────────────────────────*/
+@media (max-width: 900px) {
+  .team { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .find-grid, .steps, .quotes { grid-template-columns: 1fr; }
+  .map { position: static; }
+  .service { grid-template-columns: 1fr auto; }
+  .service p { grid-column: 1 / -1; }
+}
+@media (max-width: 620px) {
+  .nav-links { display: none; }
+  .hero { min-height: min(78svh, 620px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<main id="top">
+
+  <section class="hero">
+    <header class="nav">
+      <div class="nav-in">
+        <a class="mark" href="#top">{Name}</a>
+        <nav class="nav-links">
+          <a href="#services">{What we help with}</a>
+          <a href="#team">{Who you'll see}</a>
+          <a href="#find">{Find us}</a>
+        </nav>
+        <a class="btn btn-light" href="{LINK: booking system, or tel:}">{Book}</a>
+      </div>
+    </header>
+
+    <!-- DELETE this element once the real photograph is in place. -->
+    <p class="hero-slot">Full-bleed photograph goes here</p>
+
+    <div class="wrap hero-in">
+      <p class="eyebrow">{TOWN} &middot; {WHAT YOU DO}</p>
+      <h1>{One sentence saying what you do and who for.}</h1>
+      <p>{A second sentence with the practical bit: who you work with, how
+      somebody gets started, and how soon they could be booked in.}</p>
+      <div class="hero-cta">
+        <a class="btn btn-light" href="{LINK: booking system}">{Book an appointment}</a>
+        <a class="btn btn-line" href="#find">{Where to find us}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ What we help with ══════════════════════════════════════════════════
+       Name the thing the reader would name. People search for the problem
+       they have, not the category you file it under, so "{Blocked drains}"
+       beats "{Drainage solutions}" and "{Cutting and colour}" beats
+       "{Styling services}".
+
+       The price column is optional and does more work than anything else on
+       the page. Publishing prices is rare enough in service businesses that
+       it reads as confidence, and it is the single thing most likely to get
+       somebody to call. Delete the <span class="fee"> if you truly cannot. -->
+  <section class="sec" id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">{WHAT WE HELP WITH}</p>
+        <h2>{A plain heading. Not a clever one.}</h2>
+        <p>{One line. Who you see, and anything somebody needs to know before
+        they pick from this list.}</p>
+      </div>
+
+      <div class="services">
+        <div class="service">
+          <h3>{The thing people came for}</h3>
+          <p>{One line in their words, not yours.}</p>
+          <span class="fee">{$00}</span>
+        </div>
+        <div class="service">
+          <h3>{The thing people came for}</h3>
+          <p>{One line in their words, not yours.}</p>
+          <span class="fee">{$00}</span>
+        </div>
+        <div class="service">
+          <h3>{The thing people came for}</h3>
+          <p>{One line in their words, not yours.}</p>
+          <span class="fee">{$00}</span>
+        </div>
+        <div class="service">
+          <h3>{The thing people came for}</h3>
+          <p>{One line in their words, not yours.}</p>
+          <span class="fee">{From $00}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ Who you'll see ═════════════════════════════════════════════════════
+       Real photos of the people who actually work there. Any number of cards;
+       the grid takes them. Give each person one concrete detail under their
+       name — a qualification, years in the job, the thing they are the one to
+       ask about. It is the cheapest credibility on the page, and it costs a
+       line. -->
+  <section class="sec sec-dark" id="team">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">{WHO YOU'LL SEE}</p>
+        <h2>{The people you will actually be dealing with.}</h2>
+      </div>
+
+      <div class="team">
+        <div class="person">
+          <div class="person-art"><div class="ph">{HEADSHOT}</div></div>
+          <h3>{Name}</h3>
+          <p>{Role} &middot; {The one concrete detail}</p>
+        </div>
+        <div class="person">
+          <div class="person-art"><div class="ph">{HEADSHOT}</div></div>
+          <h3>{Name}</h3>
+          <p>{Role} &middot; {The one concrete detail}</p>
+        </div>
+        <div class="person">
+          <div class="person-art"><div class="ph">{HEADSHOT}</div></div>
+          <h3>{Name}</h3>
+          <p>{Role} &middot; {The one concrete detail}</p>
+        </div>
+        <div class="person">
+          <div class="person-art"><div class="ph">{HEADSHOT}</div></div>
+          <h3>{Name}</h3>
+          <p>{Role} &middot; {The one concrete detail}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ Where to find us ═══════════════════════════════════════════════════
+       THE MAP: open Google Maps, find the address, Share → Embed a map →
+       Copy HTML, and paste the <iframe> inside .map in place of the .ph div.
+       Add loading="lazy" and a title attribute to the iframe. Do not ship the
+       placeholder, and do not ship a map pointing at the wrong branch. -->
+  <section class="sec" id="find">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">{WHERE TO FIND US}</p>
+        <h2>{Address, hours, and how to get in.}</h2>
+      </div>
+
+      <div class="find-grid">
+        <div>
+          <div class="fact">
+            <h3>Address</h3>
+            <address>{Street}<br>{Town}<br>{Postcode}</address>
+          </div>
+          <div class="fact">
+            <h3>Hours</h3>
+            <table class="hours">
+              <tr><th>{Monday to Friday}</th> <td>{00:00 – 00:00}</td></tr>
+              <tr><th>{Saturday}</th>         <td>{00:00 – 00:00}</td></tr>
+              <tr><th>{Sunday}</th>           <td>{Closed}</td></tr>
+            </table>
+          </div>
+          <div class="fact">
+            <h3>Getting here</h3>
+            <p>{Parking, the nearest station or stop, and which door to use.
+            This is the paragraph that stops somebody circling the block, and
+            almost nobody writes it.}</p>
+          </div>
+          <div class="fact">
+            <h3>Access</h3>
+            <p>{Step-free or not, lift or stairs, accessible toilet, hearing
+            loop, assistance animals. Say what is true. "Please contact us"
+            is not an access statement.}</p>
+          </div>
+          <div class="fact">
+            <h3>Contact</h3>
+            <p><a href="tel:{+00000000000}">{Phone}</a><br>
+            <a href="mailto:{hello@example.com}">{hello@example.com}</a></p>
+          </div>
+        </div>
+
+        <div class="map">
+          <div class="ph">{PASTE THE GOOGLE MAPS EMBED IFRAME HERE}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ How it works ═══════════════════════════════════════════════════════
+       Three steps, ending at what happens AFTER the first appointment. The
+       anxiety somebody is managing is usually about the unknown bit, not the
+       booking bit. -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">{HOW IT WORKS}</p>
+        <h2>{What happens, start to finish.}</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>{Getting booked in}</h3>
+          <p>{How somebody books, what you need from them up front, and how
+          long the wait usually is. A real number beats "soon".}</p>
+        </div>
+        <div class="step">
+          <h3>{The first visit}</h3>
+          <p>{How long it takes, what to bring, what you will actually do on
+          the day, and whether anything is finished there and then.}</p>
+        </div>
+        <div class="step">
+          <h3>{Afterwards}</h3>
+          <p>{What happens next, what they leave with, and who to contact if
+          something changes.}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ Quotes ═════════════════════════════════════════════════════════════
+       REAL ONES OR DELETE THE SECTION. A few trades restrict what may be
+       published as a testimonial — check before rather than after. -->
+  <section class="sec sec-dark">
+    <div class="wrap">
+      <div class="quotes">
+        <blockquote>{A real thing a real customer said.}<cite>{Name or initials}, {year}</cite></blockquote>
+        <blockquote>{A real thing a real customer said.}<cite>{Name or initials}, {year}</cite></blockquote>
+        <blockquote>{A real thing a real customer said.}<cite>{Name or initials}, {year}</cite></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="close">
+    <div class="wrap">
+      <h2>{The plainest possible ask.}</h2>
+      <p>{One line repeating whichever practical detail matters most: the
+      wait, the price, or how easy it is to get started.}</p>
+      <div class="hero-cta">
+        <a class="btn btn-light" href="{LINK: booking system}">{Book an appointment}</a>
+        <a class="btn btn-line" href="tel:{+00000000000}">{Or call {Phone}}</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <a class="mark" href="#top">{Name}</a>
+    <a href="#find">{Address}</a>
+    <a href="tel:{+00000000000}">{Phone}</a>
+    <span>&copy; {YEAR} {Registered name}. {Company number, if you have one.}</span>
+  </div>
+</footer>
+
+</body>
+</html>

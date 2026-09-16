@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Marquee — Handled template</title>
+<meta name="description" content="A Handled site template for a place or a product people come to see: shops, studios, venues, makers.">
+<meta name="robots" content="noindex, nofollow">
+
+<!-- Open Graph. These pages are noindex, which keeps them out of search and has
+     nothing to do with link previews — they get shared by hand, in a message to
+     a client choosing between them, and a bare URL tells that person nothing.
+     get-the-read.html is noindex and carries these for the same reason.
+     The image is the same screenshot the intake picker uses, so the preview and
+     the card cannot drift apart. Re-shoot one and both update. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Marquee — a Handled site template">
+<meta property="og:description" content="A Handled site template for a place or a product people come to see: shops, studios, venues, makers.">
+<meta property="og:url" content="https://shanegring.com/handled-templates/marquee">
+<meta property="og:site_name" content="Shane Gring">
+<meta property="og:image" content="https://shanegring.com/images/handled/templates/marquee.jpg">
+<meta property="og:image:alt" content="A screenshot of the The Marquee template.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Marquee — a Handled site template">
+<meta name="twitter:description" content="A Handled site template for a place or a product people come to see: shops, studios, venues, makers.">
+<meta name="twitter:image" content="https://shanegring.com/images/handled/templates/marquee.jpg">
+
+<!--
+  HANDLED TEMPLATE — "The Marquee"
+  ───────────────────────────────────────────────────────────────────────────
+  For a place or a product people come to see: a shop, a studio, a venue, a
+  gym, a café, a maker. The split from The Field matters and is easy to get
+  wrong — The Field photographs the WORK, a job site, an install, and drives a
+  phone call. The Marquee photographs the THING, a room, a product, a class,
+  and drives a visit or a booking.
+
+  The idea it is built around: say one thing enormously. Everything here is
+  sized around a headline that runs nearly the full width, so the page works
+  for a business confident enough to lead with three words and let a
+  photograph carry the rest. A business whose case needs a paragraph before it
+  lands should take The Signal instead.
+
+  The move it is built on: the headline is enormous, and the photograph comes
+  up UNDERNEATH it rather than sitting in a box beside it. Type on top, image
+  behind, overlapping. See the comment on --lift for why the overlap is capped
+  where it is; that number is load-bearing, not taste.
+
+  REPLACE: every {BRACKETED} string and every .ph placeholder with a real
+  photograph. The pictures are the argument here — if there are none of the
+  actual place, the actual product or the actual people, this is the wrong
+  template. Stock reads as stock at this size.
+
+  DELETE WHAT DOES NOT APPLY. The hours block, the address and the reviews are
+  each written to be removed cleanly. A business with no premises should not
+  ship a site with an empty "where" section on it.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800;900&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ── Palette ────────────────────────────────────────────────────────────────
+   Every pair below was computed, not eyeballed. The numbers are the WCAG
+   contrast ratios against the stated ground; 4.5:1 is the floor for body text
+   and 3:1 for display text above roughly 24px bold.
+
+   TWO THINGS YOU MUST NOT DO, both of which look fine on screen and fail:
+
+   1. --tomato is a FILL, never a text colour on --pine. It comes out at
+      2.63:1, which fails at every size. Tomato is for button grounds, rules
+      and dots. If you want a warm text accent on pine, use --honey (5.78:1).
+
+   2. A --tomato button takes an INK label, never a paper one. Paper on tomato
+      is 3.42:1 and fails for body text; ink on tomato is 5.14:1 and passes.
+      Darkening the tomato until it takes white would cost it the appetite,
+      which is the only reason it is here. Same trap as The Field's orange.
+
+   Swapping the palette wholesale is fine and expected — swap it and re-run
+   the numbers, do not assume a new pair inherits these. */
+:root {
+  --pine:     #1A4D3A;  /* the flood colour                                  */
+  --pine-dip: #143D2E;  /* one step down, for wells and placeholder grounds  */
+  --honey:    #F2C14E;  /* display type on pine  5.78:1                      */
+  --tomato:   #E4572E;  /* fills only, see note 1                            */
+  --paper:    #FBF6EC;  /* light ground                                      */
+  --ink:      #14100C;  /* on paper 17.58:1, on honey 11.28:1                */
+  --ink-soft: #4A4238;  /* muted body on paper 9.16:1                        */
+  --rule:     rgba(251, 246, 236, 0.22);
+
+  --display: 'Outfit', system-ui, -apple-system, sans-serif;
+  --body:    'Work Sans', system-ui, -apple-system, sans-serif;
+
+  --pad: clamp(1.15rem, 4vw, 3.5rem);
+  --max: 1240px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+h1, h2, h3 { font-family: var(--display); margin: 0; line-height: 0.92; letter-spacing: -0.03em; }
+
+a { color: inherit; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding-inline: var(--pad); }
+
+/* Anything that lands from a nav link clears the sticky bar. */
+[id] { scroll-margin-top: 92px; }
+
+/* ── Buttons ───────────────────────────────────────────────────────────────
+   Both grounds take an ink label. See palette note 2 before changing either. */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  font-family: var(--display); font-weight: 800; font-size: 1.02rem;
+  letter-spacing: -0.01em;
+  padding: 0.95rem 1.6rem;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--honey);
+  transition: transform 0.14s ease, background-color 0.14s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-hot { background: var(--tomato); }
+.btn-ghost { background: transparent; color: var(--paper); border-color: var(--rule); }
+.btn-ghost:hover { border-color: var(--paper); }
+
+/* ── Nav ───────────────────────────────────────────────────────────────────*/
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--pine);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-in {
+  max-width: var(--max); margin: 0 auto; padding: 0.85rem var(--pad);
+  display: flex; align-items: center; gap: 1.5rem;
+}
+.mark {
+  font-family: var(--display); font-weight: 900; font-size: 1.35rem;
+  letter-spacing: -0.04em; color: var(--honey); text-decoration: none;
+  margin-right: auto;
+}
+.nav-links { display: flex; gap: 1.6rem; }
+.nav-links a {
+  font-size: 0.95rem; font-weight: 500; color: var(--paper);
+  text-decoration: none; opacity: 0.86;
+}
+.nav-links a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
+.nav .btn { padding: 0.6rem 1.15rem; font-size: 0.92rem; }
+
+/* ── Hero ──────────────────────────────────────────────────────────────────*/
+/* Both paddings stated. The bottom one was missing and the CTA row ended up
+   at exactly 0px from the section below, so the buttons read as belonging to
+   the band rather than to the hero. */
+.hero {
+  background: var(--pine); color: var(--paper); overflow: hidden;
+  padding-top: clamp(2rem, 5vw, 3.75rem);
+  padding-bottom: clamp(3rem, 6.5vw, 5.5rem);
+}
+
+.eyebrow {
+  font-family: var(--display); font-weight: 700;
+  font-size: 0.82rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--honey); margin: 0 0 1.1rem;
+}
+
+.hero h1 {
+  font-weight: 900;
+  font-size: clamp(3.1rem, 12.5vw, 10.5rem);
+  text-transform: uppercase;
+  color: var(--honey);
+  position: relative;
+  z-index: 2;              /* the type wins every overlap */
+  text-wrap: balance;
+}
+
+/* THE MOVE.
+   The art rises into the headline by --lift, expressed as a fraction of the
+   headline's own size so the overlap holds identically at 360px and 1600px.
+
+   0.26em is a ceiling, not a preference. The image is a CLIENT'S photograph,
+   so its brightness is unknowable at build time and no scrim can be tuned for
+   it in advance. At 0.26em the art crosses the descenders and the last sliver
+   of the cap height, leaving the top three-quarters of every letter standing
+   on flat pine — the word stays readable against a photo of anything. Push it
+   to 0.5em and the image runs through the middle of the letterforms, where a
+   pale photo will erase honey type completely.
+
+   The ellipse does the other half of the work: because the top of an ellipse
+   is a narrow arc, a full-width line of type only meets the image across the
+   middle third. The first and last letters never leave the flat colour. Swap
+   the ellipse for a rectangle and you lose that protection — if you want a
+   rectangle, drop --lift to 0. */
+.hero-art {
+  --lift: 0.26em;
+  font-size: clamp(3.1rem, 12.5vw, 10.5rem);  /* matches h1, so em == cap scale */
+  position: relative; z-index: 1;
+  margin-top: calc(var(--lift) * -1);
+  padding-bottom: clamp(1.5rem, 3.5vw, 2.75rem);
+}
+.hero-art .ellipse {
+  width: min(80%, 820px); margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.hero-art img { width: 100%; height: 100%; object-fit: cover; }
+
+.hero-say {
+  max-width: 46ch;
+  margin: 1.4rem 0 1.9rem;
+  font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+  line-height: 1.55;
+  color: var(--paper);
+}
+.hero-cta { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+/* ── Placeholder ───────────────────────────────────────────────────────────
+   Replace the whole .ph element with an <img src alt>. It keeps its parent's
+   shape, so it works inside the ellipse and inside a square card alike. */
+.ph {
+  width: 100%; height: 100%; min-height: 160px;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 1.5rem;
+  font-family: var(--display); font-weight: 700;
+  font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(251, 246, 236, 0.5);
+  background:
+    repeating-linear-gradient(135deg, var(--pine-dip) 0 16px, #174534 16px 32px);
+}
+.ph-light {
+  color: var(--ink-soft);
+  background:
+    repeating-linear-gradient(135deg, #F2EADA 0 16px, #EDE3D0 16px 32px);
+}
+
+/* ── The line ──────────────────────────────────────────────────────────────*/
+.line { background: var(--honey); color: var(--ink); padding: clamp(2.5rem, 6vw, 4.5rem) 0; }
+.line p {
+  margin: 0; max-width: 24ch;
+  font-family: var(--display); font-weight: 800;
+  font-size: clamp(1.9rem, 5.2vw, 3.6rem); line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+.line span { color: var(--pine); }
+
+/* ── What you'll find ──────────────────────────────────────────────────────*/
+.sec { padding: clamp(3.25rem, 7vw, 6rem) 0; }
+.sec-head { margin-bottom: clamp(1.75rem, 4vw, 3rem); }
+.sec-head h2 {
+  font-weight: 900; text-transform: uppercase;
+  font-size: clamp(2.2rem, 6.5vw, 4.75rem);
+  color: var(--pine);
+}
+.sec-head p { margin: 0.9rem 0 0; max-width: 52ch; color: var(--ink-soft); }
+
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2.5vw, 1.75rem); }
+.card { display: flex; flex-direction: column; }
+.card-art { aspect-ratio: 4 / 5; border-radius: 14px; overflow: hidden; background: var(--pine-dip); }
+.card-art img { width: 100%; height: 100%; object-fit: cover; }
+.card h3 {
+  font-weight: 800; font-size: 1.32rem; margin: 1rem 0 0.35rem;
+  letter-spacing: -0.02em; color: var(--pine);
+}
+.card p { margin: 0; color: var(--ink-soft); font-size: 0.97rem; }
+.card .price { margin-top: 0.5rem; font-family: var(--display); font-weight: 800; color: var(--ink); }
+
+/* ── Second layered block, mirrored ────────────────────────────────────────
+   Same move as the hero, other way round: art anchored left, type overlapping
+   from the right. Kept to one repeat on purpose — the overlap is a gesture,
+   and a page that does it in every section stops having a hero. */
+.split { background: var(--pine); color: var(--paper); padding: clamp(3.25rem, 7vw, 6rem) 0; overflow: hidden; }
+.split-in { position: relative; display: grid; grid-template-columns: 0.85fr 1fr; align-items: center; gap: clamp(1.5rem, 4vw, 3rem); }
+/* 5/6 rather than 3/4: at 3/4 the arch ran ~800px tall next to four lines of
+   text and left a hole under them. The arch shape survives the shorter ratio;
+   a column of empty pine does not survive being 300px tall. */
+.split-art { border-radius: 999px 999px 18px 18px; overflow: hidden; aspect-ratio: 5 / 6; }
+.split-art img { width: 100%; height: 100%; object-fit: cover; }
+.split-type { position: relative; z-index: 2; }
+/* The bite. At -9rem the heading clears the 3rem gutter and crosses roughly
+   the last 15% of the picture, which is one or two letters — the same deal as
+   the hero, for the same reason. The photograph is the client's and could be
+   white, so only the letters you can lose are allowed over it. Anything past
+   a quarter of the width starts putting whole words on an unknown ground. */
+.split-type h2 {
+  font-weight: 900; text-transform: uppercase; color: var(--honey);
+  font-size: clamp(2.4rem, 7vw, 5.5rem);
+  margin-left: clamp(-9rem, -10vw, -3rem);
+}
+.split-type p { max-width: 38ch; margin: 1.2rem 0 0; color: var(--paper); }
+
+/* ── Find us ───────────────────────────────────────────────────────────────
+   The section this template exists for. Somebody who wants to come today
+   needs the address, today's hours and a phone number without hunting. */
+.find { background: var(--paper); padding: clamp(3.25rem, 7vw, 6rem) 0; }
+.find-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.75rem, 4vw, 3.5rem); align-items: start; }
+.hours { width: 100%; border-collapse: collapse; margin-top: 0.4rem; }
+.hours th, .hours td { text-align: left; padding: 0.6rem 0; border-bottom: 1px solid rgba(20, 16, 12, 0.12); font-size: 1rem; }
+.hours th { font-weight: 600; }
+.hours td { text-align: right; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.find h3 { font-weight: 800; font-size: 1.5rem; color: var(--pine); margin-bottom: 0.6rem; }
+.find address { font-style: normal; line-height: 1.7; }
+.find-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.4rem; }
+
+/* ── Reviews ───────────────────────────────────────────────────────────────
+   Real ones or delete the section. A made-up review is worse than no reviews,
+   and in hospitality it is the thing people check hardest. */
+.says { background: var(--honey); color: var(--ink); padding: clamp(3rem, 6vw, 5rem) 0; }
+.says-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 3vw, 2rem); }
+.says blockquote { margin: 0; font-size: 1.05rem; line-height: 1.55; }
+.says cite { display: block; margin-top: 0.7rem; font-style: normal; font-weight: 600; font-size: 0.92rem; color: var(--pine); }
+
+/* ── Close ─────────────────────────────────────────────────────────────────*/
+.close { background: var(--pine); color: var(--paper); padding: clamp(3.5rem, 8vw, 6.5rem) 0; text-align: center; }
+.close h2 {
+  font-weight: 900; text-transform: uppercase; color: var(--honey);
+  font-size: clamp(2.4rem, 8vw, 6rem); margin-bottom: 1.5rem;
+}
+.close .hero-cta { justify-content: center; }
+
+footer { background: var(--pine); color: var(--paper); border-top: 1px solid var(--rule); padding: 2rem 0 5.5rem; font-size: 0.9rem; }
+.foot-in { display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: center; }
+footer a { opacity: 0.86; }
+footer .mark { font-size: 1.1rem; margin-right: auto; }
+
+/* ── Sticky action bar, phones only ────────────────────────────────────────
+   For a place people visit, the two things worth a permanent thumb-reach slot
+   are "call" and "directions". No JS: it is a fixed element shown by a media
+   query, so there is nothing to initialise and nothing to break. */
+.thumb { display: none; }
+@media (max-width: 760px) {
+  .thumb {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+    padding: 0.6rem 0.75rem calc(0.6rem + env(safe-area-inset-bottom));
+    background: var(--pine); border-top: 1px solid var(--rule);
+  }
+  .thumb .btn { justify-content: center; width: 100%; padding: 0.85rem 1rem; }
+}
+
+/* ── Narrow ────────────────────────────────────────────────────────────────*/
+@media (max-width: 900px) {
+  .cards, .says-grid { grid-template-columns: 1fr 1fr; }
+  .find-grid { grid-template-columns: 1fr; }
+  .split-in { grid-template-columns: 1fr; }
+  .split-type h2 { margin-left: 0; }
+  .split-art { aspect-ratio: 4 / 3; border-radius: 18px; }
+}
+@media (max-width: 620px) {
+  .nav-links { display: none; }
+  .cards, .says-grid { grid-template-columns: 1fr; }
+  /* Less overlap on a phone. The headline wraps to three or four lines here,
+     so the art meets the LAST line only, and a deep lift would bury it. */
+  .hero-art { --lift: 0.14em; }
+  .hero-art .ellipse { width: 100%; aspect-ratio: 5 / 4; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn { transition: none; }
+  .btn:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="mark" href="#top">{NAME}</a>
+    <nav class="nav-links">
+      <a href="#what">{What we do}</a>
+      <a href="#story">{Our story}</a>
+      <a href="#find">{Find us}</a>
+    </nav>
+    <a class="btn btn-hot" href="{LINK: the one action that matters}">{PRIMARY ACTION}</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ══ Hero ═══════════════════════════════════════════════════════════════
+       THREE OR FOUR WORDS, in caps, saying what this is about rather than what
+       it is called — the wordmark already said the name.
+
+       Short is not a style note. The whole effect depends on the line running
+       nearly the full width; a long one drops to 10vw and stops being
+       enormous. If you cannot get it under about five words, the business
+       probably wants a different template. -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">{WHERE YOU ARE} &middot; {WHAT YOU DO}</p>
+      <h1>{THREE BIG WORDS}</h1>
+    </div>
+
+    <div class="hero-art">
+      <div class="ellipse">
+        <!-- Replace this whole .ph div with: <img src="…" alt="…"> -->
+        <div class="ph">{THE ONE PHOTO THAT DOES THE MOST WORK}</div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <p class="hero-say">{Two sentences. What you do and who it is for. Write
+      it the way you would say it out loud to somebody who just walked in.}</p>
+      <div class="hero-cta">
+        <a class="btn" href="#what">{See what we do}</a>
+        <a class="btn btn-ghost" href="#find">{Find us}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ The line ═══════════════════════════════════════════════════════════
+       One sentence: the thing you would want somebody to repeat to a friend.
+       Wrap the half that matters in <span> to throw it into pine. -->
+  <section class="line">
+    <div class="wrap">
+      <p>{The one sentence about this} <span>{that somebody would repeat to a friend.}</span></p>
+    </div>
+  </section>
+
+  <!-- ══ What we do ═════════════════════════════════════════════════════════
+       Three things, not everything. Pick the three you are known for. The
+       price line is optional — delete the <p class="price"> if you do not
+       publish prices. A fourth card needs no CSS change. -->
+  <section class="sec" id="what">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>{WHAT YOU'LL FIND}</h2>
+        <p>{One line setting the three up. What you are actually good at.}</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-art"><div class="ph">{PHOTO}</div></div>
+          <h3>{The thing}</h3>
+          <p>{One line. What it is, or why people choose it.}</p>
+          <p class="price">{$00}</p>
+        </article>
+        <article class="card">
+          <div class="card-art"><div class="ph">{PHOTO}</div></div>
+          <h3>{The thing}</h3>
+          <p>{One line. What it is, or why people choose it.}</p>
+          <p class="price">{$00}</p>
+        </article>
+        <article class="card">
+          <div class="card-art"><div class="ph">{PHOTO}</div></div>
+          <h3>{The thing}</h3>
+          <p>{One line. What it is, or why people choose it.}</p>
+          <p class="price">{$00}</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ Story ══════════════════════════════════════════════════════════════
+       The layering again, mirrored: art left, headline biting in from the
+       right. Once on the page, on purpose — a page that overlaps in every
+       section stops having a hero.
+
+       Keep this shorter than you want to. It is the part everybody overwrites
+       and the part nobody reads before they know what you sell. -->
+  <section class="split" id="story">
+    <div class="wrap split-in">
+      <div class="split-art">
+        <div class="ph">{PHOTO OF THE PLACE, OR THE PEOPLE IN IT}</div>
+      </div>
+      <div class="split-type">
+        <h2>{WHO'S BEHIND IT}</h2>
+        <p>{Three or four sentences. Who started it, when, and what you were
+        trying to do that nobody nearby was doing. Names help. A year helps.
+        "Passionate about quality" does not.}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ Proof ══════════════════════════════════════════════════════════════
+       REAL ONES OR DELETE THE WHOLE SECTION. Quote them exactly, from wherever
+       they actually live, and name the person as they named themselves. An
+       invented review is worse than no reviews and it is the easiest thing on
+       a page to get caught doing. -->
+  <section class="says">
+    <div class="wrap">
+      <div class="says-grid">
+        <blockquote>{A real review, quoted exactly.}<cite>{Name}, {where they left it}</cite></blockquote>
+        <blockquote>{A real review, quoted exactly.}<cite>{Name}, {where they left it}</cite></blockquote>
+        <blockquote>{A real review, quoted exactly.}<cite>{Name}, {where they left it}</cite></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ Find us ════════════════════════════════════════════════════════════
+       Both halves are optional and both delete cleanly.
+
+       No premises? Delete the {Where} column and the .thumb directions button;
+       the grid drops to one column on its own. No fixed hours? Delete the
+       {Hours} column. Three rows here rather than seven on purpose — most
+       businesses repeat five weekdays and it reads faster. Split them out if
+       your days genuinely differ. -->
+  <section class="find" id="find">
+    <div class="wrap find-grid">
+      <div>
+        <h3>{Where}</h3>
+        <address>
+          {Street address}<br>
+          {Town, postcode}<br>
+          <a href="tel:{+00000000000}">{Phone number}</a>
+        </address>
+        <div class="find-actions">
+          <a class="btn" href="{LINK: Google Maps directions}">{Get directions}</a>
+          <a class="btn btn-hot" href="{LINK: the one action that matters}">{Primary action}</a>
+        </div>
+      </div>
+      <div>
+        <h3>{Hours}</h3>
+        <table class="hours">
+          <tr><th>{Monday to Friday}</th> <td>{00:00 – 00:00}</td></tr>
+          <tr><th>{Saturday}</th>         <td>{00:00 – 00:00}</td></tr>
+          <tr><th>{Sunday}</th>           <td>{Closed}</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="close">
+    <div class="wrap">
+      <h2>{SEE YOU SOON}</h2>
+      <div class="hero-cta">
+        <a class="btn btn-hot" href="{LINK: the one action that matters}">{Primary action}</a>
+        <a class="btn btn-ghost" href="{LINK: Google Maps directions}">{Get directions}</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <a class="mark" href="#top">{NAME}</a>
+    <a href="{LINK: Instagram}">{Instagram}</a>
+    <a href="mailto:{hello@example.com}">{hello@example.com}</a>
+    <span>&copy; {YEAR} {Registered name}</span>
+  </div>
+</footer>
+
+<!-- Phones only. The two things worth a permanent thumb-reach slot. Delete the
+     directions button for a business with no premises. -->
+<div class="thumb">
+  <a class="btn" href="tel:{+00000000000}">{Call}</a>
+  <a class="btn btn-hot" href="{LINK: the one action that matters}">{Primary action}</a>
+</div>
+
+</body>
+</html>
