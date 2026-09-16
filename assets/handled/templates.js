@@ -50,7 +50,7 @@ export const TEMPLATES = [
   {
     id: 'template-rooms',
     name: 'The Rooms',
-    description: 'For a practice people visit by appointment, run by more than one person. Clinics, studios, salons, chambers.',
+    description: 'For a business people come to by appointment, with more than one person on the team. Studios, salons, clinics, workshops.',
     previewImage: '/images/handled/templates/rooms.jpg',
     viewUrl: '/handled-templates/rooms',
   },

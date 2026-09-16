@@ -1,4 +1,4 @@
-{Practice name}
+{Name}
 
 {What we help with}
 {Who you'll see}
@@ -6,14 +6,14 @@
 
 [{Book}]({LINK: booking system, or tel:})
 
-{TOWN} · {WHAT KIND OF PRACTICE}
+{TOWN} · {WHAT YOU DO}
 
 # {One sentence saying what you do and who for.}
 
-A Handled site template for a practice people visit by appointment: clinics, studios, salons, chambers, any place with a team and a front door.
+A Handled site template for a business people come to by appointment, with more than one person on the team.
 
-{A second sentence with the practical bit: who can come, whether you
-take referrals or self-referrals, and how soon somebody could be seen.}
+{A second sentence with the practical bit: who you work with, how
+somebody gets started, and how soon they could be booked in.}
 
 [{Book an appointment}]({LINK: booking system})
 {Where to find us}
@@ -29,53 +29,53 @@ they pick from this list.}
 
 {One line in their words, not yours.}
 
-{£00}
+{$00}
 
 ### {The thing people came for}
 
 {One line in their words, not yours.}
 
-{£00}
+{$00}
 
 ### {The thing people came for}
 
 {One line in their words, not yours.}
 
-{£00}
+{$00}
 
 ### {The thing people came for}
 
 {One line in their words, not yours.}
 
-{From £00}
+{From $00}
 
 {WHO YOU'LL SEE}
 
-## {The people who will actually be in the room.}
+## {The people you will actually be dealing with.}
 
 {HEADSHOT}
 
 ### {Name}
 
-{Role} · {Registration or qualification}
+{Role} · {The one concrete detail}
 
 {HEADSHOT}
 
 ### {Name}
 
-{Role} · {Registration or qualification}
+{Role} · {The one concrete detail}
 
 {HEADSHOT}
 
 ### {Name}
 
-{Role} · {Registration or qualification}
+{Role} · {The one concrete detail}
 
 {HEADSHOT}
 
 ### {Name}
 
-{Role} · {Registration or qualification}
+{Role} · {The one concrete detail}
 
 {WHERE TO FIND US}
 
@@ -119,29 +119,29 @@ is not an access statement.}
 
 ### {Getting booked in}
 
-{How somebody books, whether they need a referral, and how long
-the wait usually is. A real number beats "soon".}
+{How somebody books, what you need from them up front, and how
+long the wait usually is. A real number beats "soon".}
 
-### {The first appointment}
+### {The first visit}
 
-{How long it lasts, what to bring, what you will actually do, and
-whether they should expect treatment on the day.}
+{How long it takes, what to bring, what you will actually do on
+the day, and whether anything is finished there and then.}
 
 ### {Afterwards}
 
-{What follow-up looks like, how they get results or notes, and
-who to contact if something changes.}
+{What happens next, what they leave with, and who to contact if
+something changes.}
 
-{A real thing a real patient or client said.}{Name or initials}, {year}
+{A real thing a real customer said.}{Name or initials}, {year}
 
-{A real thing a real patient or client said.}{Name or initials}, {year}
+{A real thing a real customer said.}{Name or initials}, {year}
 
-{A real thing a real patient or client said.}{Name or initials}, {year}
+{A real thing a real customer said.}{Name or initials}, {year}
 
 ## {The plainest possible ask.}
 
-{One line repeating the practical detail that matters most: the wait,
-the price, or that they do not need a referral.}
+{One line repeating whichever practical detail matters most: the
+wait, the price, or how easy it is to get started.}
 
 [{Book an appointment}]({LINK: booking system})
 [{Or call {Phone}}](tel:{+00000000000})

@@ -4,26 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Rooms — Handled template</title>
-<meta name="description" content="A Handled site template for a practice people visit by appointment: clinics, studios, salons, chambers, any place with a team and a front door.">
+<meta name="description" content="A Handled site template for a business people come to by appointment, with more than one person on the team.">
 <meta name="robots" content="noindex, nofollow">
 
 <!--
   HANDLED TEMPLATE — "The Rooms"
   ───────────────────────────────────────────────────────────────────────────
-  For a practice people visit by appointment, run by more than one person: a
-  clinic, a therapy practice, a dental surgery, a salon, a set of chambers, a
-  veterinary practice, a studio with a timetable.
+  For a business people come to by appointment, staffed by more than one
+  person. A studio, a salon, a clinic, a workshop, a firm with an office, a
+  school with a timetable. If somebody has to turn up somewhere at a time, and
+  there is a choice of who they see, this is the shape.
 
-  The split from The Practice is the one to get right, because the words are
+  The split from The Practice is the one to watch, because the words are
   nearly the same. The Practice is ONE person, and its whole argument is
   restraint — no team, no premises, no accent colour, because the credential
   is the person. The Rooms is a TEAM and a FRONT DOOR. Somebody arriving here
-  needs to know who they will see, what it costs, where to park and what
-  happens at the first appointment. Those are questions of fact, so the page
-  answers them plainly and in that order.
+  wants to know who they will see, what it costs, where to park and what
+  happens the first time. Those are questions of fact, so the page answers
+  them plainly and in that order.
 
-  It is the least stylish template on the shelf on purpose. Nobody books a
-  smear test because the website was characterful.
+  It is the least stylish template on the shelf on purpose. It is built for
+  the reader who has already decided to come and now needs the details, and
+  nobody in that state is won over by a characterful website.
 
   The move it is built on: a full-bleed photograph behind the hero, with a
   double scrim over it. The scrim is NOT decoration — see the comment on
@@ -31,12 +33,14 @@
   whatever photograph the client uploads.
 
   REPLACE: every {BRACKETED} string, the hero background image, every .ph
-  placeholder, and the map embed. Headshots should be real people on staff.
-  Stock portraits on a "meet the team" page are the fastest way to lose
-  somebody who was about to call.
+  placeholder, and the map embed. The team photos should be real people who
+  actually work there. Stock portraits on a "who you'll see" page are the
+  fastest way to lose somebody who was about to call.
 
-  DELETE WHAT DOES NOT APPLY. The team grid takes any number. The quotes band
-  and the fees line are each written to come out cleanly.
+  DELETE WHAT DOES NOT APPLY. The team grid takes any number. The price
+  column, the quotes band and the access block each come out cleanly. A
+  business with no premises should take another template rather than ship this
+  one with the find section emptied out.
 -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -253,7 +257,7 @@ h1, h2, h3 {
 /* ── Where to find us ──────────────────────────────────────────────────────
    The section this template exists for. Somebody who has decided to come is
    the most valuable reader on the page, and they want an address, a set of
-   hours and an answer about parking — not a paragraph about the practice's
+   hours and an answer about parking — not a paragraph about the business's
    values. Map on the right, facts on the left, nothing between them. */
 .find-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(1.75rem, 4vw, 3.25rem); align-items: start; }
 /* Sticky, because the facts column is roughly twice the map's height and a
@@ -284,8 +288,8 @@ h1, h2, h3 {
 .step p { margin: 0; color: var(--muted); font-size: 0.97rem; }
 
 /* ── Quotes ────────────────────────────────────────────────────────────────
-   Real ones or delete the section. In a practice this is regulated territory
-   in some fields — check what you are allowed to publish before you do. */
+   Real ones or delete the section. A few trades restrict what may be
+   published as a testimonial — worth checking before, not after. */
 .quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.25rem, 3vw, 2.5rem); }
 .quotes blockquote { margin: 0; font-family: var(--display); font-size: 1.15rem; line-height: 1.45; }
 .quotes cite { display: block; margin-top: 0.7rem; font-family: var(--body); font-style: normal; font-size: 0.88rem; color: var(--muted); }
@@ -333,7 +337,7 @@ footer a { opacity: 0.84; }
   <section class="hero">
     <header class="nav">
       <div class="nav-in">
-        <a class="mark" href="#top">{Practice name}</a>
+        <a class="mark" href="#top">{Name}</a>
         <nav class="nav-links">
           <a href="#services">{What we help with}</a>
           <a href="#team">{Who you'll see}</a>
@@ -344,10 +348,10 @@ footer a { opacity: 0.84; }
     </header>
 
     <div class="wrap hero-in">
-      <p class="eyebrow">{TOWN} &middot; {WHAT KIND OF PRACTICE}</p>
+      <p class="eyebrow">{TOWN} &middot; {WHAT YOU DO}</p>
       <h1>{One sentence saying what you do and who for.}</h1>
-      <p>{A second sentence with the practical bit: who can come, whether you
-      take referrals or self-referrals, and how soon somebody could be seen.}</p>
+      <p>{A second sentence with the practical bit: who you work with, how
+      somebody gets started, and how soon they could be booked in.}</p>
       <div class="hero-cta">
         <a class="btn btn-light" href="{LINK: booking system}">{Book an appointment}</a>
         <a class="btn btn-line" href="#find">{Where to find us}</a>
@@ -356,13 +360,15 @@ footer a { opacity: 0.84; }
   </section>
 
   <!-- ══ What we help with ══════════════════════════════════════════════════
-       Name the thing the reader would name. People search for their symptom,
-       their problem or their procedure, not for your service category, so
-       "{Back and neck pain}" beats "{Musculoskeletal services}".
+       Name the thing the reader would name. People search for the problem
+       they have, not the category you file it under, so "{Blocked drains}"
+       beats "{Drainage solutions}" and "{Cutting and colour}" beats
+       "{Styling services}".
 
-       The fee column is optional and powerful — publishing prices is rare in
-       practice websites and it is the single thing most likely to get somebody
-       to call. Delete the <span class="fee"> if you genuinely cannot. -->
+       The price column is optional and does more work than anything else on
+       the page. Publishing prices is rare enough in service businesses that
+       it reads as confidence, and it is the single thing most likely to get
+       somebody to call. Delete the <span class="fee"> if you truly cannot. -->
   <section class="sec" id="services">
     <div class="wrap">
       <div class="sec-head">
@@ -376,65 +382,67 @@ footer a { opacity: 0.84; }
         <div class="service">
           <h3>{The thing people came for}</h3>
           <p>{One line in their words, not yours.}</p>
-          <span class="fee">{£00}</span>
+          <span class="fee">{$00}</span>
         </div>
         <div class="service">
           <h3>{The thing people came for}</h3>
           <p>{One line in their words, not yours.}</p>
-          <span class="fee">{£00}</span>
+          <span class="fee">{$00}</span>
         </div>
         <div class="service">
           <h3>{The thing people came for}</h3>
           <p>{One line in their words, not yours.}</p>
-          <span class="fee">{£00}</span>
+          <span class="fee">{$00}</span>
         </div>
         <div class="service">
           <h3>{The thing people came for}</h3>
           <p>{One line in their words, not yours.}</p>
-          <span class="fee">{From £00}</span>
+          <span class="fee">{From $00}</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ══ Who you'll see ═════════════════════════════════════════════════════
-       Real headshots of real staff. Any number of cards; the grid takes them.
-       Give each person a registration or qualification if the field has one —
-       it is the fastest credibility there is and it costs a line. -->
+       Real photos of the people who actually work there. Any number of cards;
+       the grid takes them. Give each person one concrete detail under their
+       name — a qualification, years in the job, the thing they are the one to
+       ask about. It is the cheapest credibility on the page, and it costs a
+       line. -->
   <section class="sec sec-dark" id="team">
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">{WHO YOU'LL SEE}</p>
-        <h2>{The people who will actually be in the room.}</h2>
+        <h2>{The people you will actually be dealing with.}</h2>
       </div>
 
       <div class="team">
         <div class="person">
           <div class="person-art"><div class="ph">{HEADSHOT}</div></div>
           <h3>{Name}</h3>
-          <p>{Role} &middot; {Registration or qualification}</p>
+          <p>{Role} &middot; {The one concrete detail}</p>
         </div>
         <div class="person">
           <div class="person-art"><div class="ph">{HEADSHOT}</div></div>
           <h3>{Name}</h3>
-          <p>{Role} &middot; {Registration or qualification}</p>
+          <p>{Role} &middot; {The one concrete detail}</p>
         </div>
         <div class="person">
           <div class="person-art"><div class="ph">{HEADSHOT}</div></div>
           <h3>{Name}</h3>
-          <p>{Role} &middot; {Registration or qualification}</p>
+          <p>{Role} &middot; {The one concrete detail}</p>
         </div>
         <div class="person">
           <div class="person-art"><div class="ph">{HEADSHOT}</div></div>
           <h3>{Name}</h3>
-          <p>{Role} &middot; {Registration or qualification}</p>
+          <p>{Role} &middot; {The one concrete detail}</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ══ Where to find us ═══════════════════════════════════════════════════
-       THE MAP: open Google Maps, find the practice, Share → Embed a map →
+       THE MAP: open Google Maps, find the address, Share → Embed a map →
        Copy HTML, and paste the <iframe> inside .map in place of the .ph div.
        Add loading="lazy" and a title attribute to the iframe. Do not ship the
        placeholder, and do not ship a map pointing at the wrong branch. -->
@@ -498,32 +506,32 @@ footer a { opacity: 0.84; }
       <div class="steps">
         <div class="step">
           <h3>{Getting booked in}</h3>
-          <p>{How somebody books, whether they need a referral, and how long
-          the wait usually is. A real number beats "soon".}</p>
+          <p>{How somebody books, what you need from them up front, and how
+          long the wait usually is. A real number beats "soon".}</p>
         </div>
         <div class="step">
-          <h3>{The first appointment}</h3>
-          <p>{How long it lasts, what to bring, what you will actually do, and
-          whether they should expect treatment on the day.}</p>
+          <h3>{The first visit}</h3>
+          <p>{How long it takes, what to bring, what you will actually do on
+          the day, and whether anything is finished there and then.}</p>
         </div>
         <div class="step">
           <h3>{Afterwards}</h3>
-          <p>{What follow-up looks like, how they get results or notes, and
-          who to contact if something changes.}</p>
+          <p>{What happens next, what they leave with, and who to contact if
+          something changes.}</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ══ Quotes ═════════════════════════════════════════════════════════════
-       REAL ONES OR DELETE THE SECTION. Some regulated fields restrict
-       testimonials entirely — check before publishing rather than after. -->
+       REAL ONES OR DELETE THE SECTION. A few trades restrict what may be
+       published as a testimonial — check before rather than after. -->
   <section class="sec sec-dark">
     <div class="wrap">
       <div class="quotes">
-        <blockquote>{A real thing a real patient or client said.}<cite>{Name or initials}, {year}</cite></blockquote>
-        <blockquote>{A real thing a real patient or client said.}<cite>{Name or initials}, {year}</cite></blockquote>
-        <blockquote>{A real thing a real patient or client said.}<cite>{Name or initials}, {year}</cite></blockquote>
+        <blockquote>{A real thing a real customer said.}<cite>{Name or initials}, {year}</cite></blockquote>
+        <blockquote>{A real thing a real customer said.}<cite>{Name or initials}, {year}</cite></blockquote>
+        <blockquote>{A real thing a real customer said.}<cite>{Name or initials}, {year}</cite></blockquote>
       </div>
     </div>
   </section>
@@ -531,8 +539,8 @@ footer a { opacity: 0.84; }
   <section class="close">
     <div class="wrap">
       <h2>{The plainest possible ask.}</h2>
-      <p>{One line repeating the practical detail that matters most: the wait,
-      the price, or that they do not need a referral.}</p>
+      <p>{One line repeating whichever practical detail matters most: the
+      wait, the price, or how easy it is to get started.}</p>
       <div class="hero-cta">
         <a class="btn btn-light" href="{LINK: booking system}">{Book an appointment}</a>
         <a class="btn btn-line" href="tel:{+00000000000}">{Or call {Phone}}</a>
@@ -544,10 +552,10 @@ footer a { opacity: 0.84; }
 
 <footer>
   <div class="wrap foot-in">
-    <a class="mark" href="#top">{Practice name}</a>
+    <a class="mark" href="#top">{Name}</a>
     <a href="#find">{Address}</a>
     <a href="tel:{+00000000000}">{Phone}</a>
-    <span>&copy; {YEAR} {Registered name}. {Registration or company number.}</span>
+    <span>&copy; {YEAR} {Registered name}. {Company number, if you have one.}</span>
   </div>
 </footer>
 
