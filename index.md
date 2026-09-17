@@ -90,6 +90,8 @@ years ago. It falls to you, and then it stops getting done.
 [a plan The Map](https://shanegring.com/map)
 [the thing built The Site](https://shanegring.com/site)
 
+[Small business websites Handled I build your small business website and keep it running — scanned every week, a report every month, and one prompt a month that adds the next piece. Changes by email, answered in a day. $300 to build $200/month after See how it works →](https://shanegring.com/handled)
+
 [See all →](https://shanegring.com/work-with-me)
 
 Free tool
