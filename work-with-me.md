@@ -55,15 +55,11 @@ A different lane
 ## Maybe you just want a site, handled.
 
 The eight above are for a business with an operation to run. If what
-you need is smaller than that — one good page, live, watched
+you need is smaller than that — one good page, live, scanned
 every week, and never your problem again — that is a different
-product at a different price. It is called Handled.
+product at a different price.
 
-I build the site and I keep it running. Changes go by email. You own
-the code and you can take it with you.
-**$300 to build, $200 a month to keep it handled.**
-
-[See how Handled works →](https://shanegring.com/handled)
+[Small business websites Handled I build the site and I keep it running — scanned every week, a report every month, and one prompt a month that adds the next piece. Changes go by email, answered in a day. You own the code and can take it with you. $300 to build $200/month after See how it works →](https://shanegring.com/handled)
 
 ## Or just talk to me.
 

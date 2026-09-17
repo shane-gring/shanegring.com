@@ -1399,6 +1399,135 @@ img.about-portrait {
 .approach-cta { margin-top: 1.5rem; }
 .approach-cta .btn-secondary { padding-left: 0; }
 
+/* ── The Handled promo ───────────────────────────────────────────
+   Full width under the two columns of eight, and the one card on the
+   page that carries art. The copy sits on the image, so everything
+   inside is a layer: the photo, a scrim dark enough to hold small
+   text, then the words. Light text throughout, in both themes —
+   the ground here is the photograph, not the page. */
+.handled-promo {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.4rem 2.4rem;
+  align-items: end;
+  margin-top: 2.5rem;
+  padding: 2.4rem 1.9rem 1.9rem;
+  border-radius: 14px;
+  text-decoration: none;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.handled-promo:hover {
+  box-shadow: 0 14px 34px -20px rgba(0, 0, 0, 0.45);
+  transform: translateY(-2px);
+}
+
+.handled-promo-shot {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 38%;
+}
+
+/* Darker at the left, where the sentence runs, and lifted overall so
+   the price on the right stays legible against open sky. */
+.handled-promo::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    linear-gradient(to right, rgba(8, 12, 16, 0.82) 0%, rgba(8, 12, 16, 0.66) 55%, rgba(8, 12, 16, 0.52) 100%);
+}
+
+.handled-promo-tag {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #7fe0ab;
+}
+
+.handled-promo-name {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: #ffffff;
+}
+
+.handled-promo-what {
+  display: block;
+  max-width: 46ch;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.handled-promo-side {
+  display: block;
+  text-align: right;
+}
+
+.handled-promo-price {
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: #ffffff;
+}
+
+.handled-promo-price-sm {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.handled-promo-per {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.handled-promo-go {
+  display: block;
+  margin-top: 0.8rem;
+  font-size: 0.88rem;
+  font-weight: 650;
+  color: #7fe0ab;
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .handled-promo {
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+    padding: 1.9rem 1.5rem 1.6rem;
+  }
+  .handled-promo-side { text-align: left; }
+  .handled-promo::after {
+    background: linear-gradient(to bottom, rgba(8, 12, 16, 0.72) 0%, rgba(8, 12, 16, 0.85) 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .handled-promo:hover { transform: none; }
+}
+
 /* ══════════════════════════════════════════════════════════════
    WORK CARDS (homepage)
    ══════════════════════════════════════════════════════════════ */
