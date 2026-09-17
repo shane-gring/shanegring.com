@@ -1,4 +1,4 @@
-Notes · 70 of them
+Notes · 71 of them
 
 # What I'm working through, most weekdays.
 
@@ -15,6 +15,24 @@ Shane Gring
 Fractional COO · operations for expert-led businesses
 September 17, 2026
 
+For small marketing teams and solo entrepreneurs, the real cost of paid marketing is speed.
+
+Making the creative can take so long that you have to bet on one or two angles and hope.
+
+When the source material is solid and a machine can read it, spinning up ten variations of an ad or a landing page stops being a production project. You test broadly, see what lands, and put money behind the winner.
+
+The advantage is speed to finding the right angle. You see what works while the budget's still there, instead of guessing once and living with it.
+
+This is the part of the "get your site in shape" argument that pays back fastest.
+
+Happy to talk through what that setup looks like if it's useful: [shanegring.com/work-with-me](https://shanegring.com/work-with-me)
+
+[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506410418962128896)
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 17, 2026
+
 Somewhere on your to-do list is "finish the website." It's been there a while.
 
 Here's what happened. The builder subscription made a quiet deal with you: they provide the tools, you provide the weekends. That deal works great for people who enjoy the tinkering. For everyone else it produces the same three things -- a half-built page, a monthly charge, and a low-grade guilt every time the to-do list scrolls past it.
@@ -23,7 +41,7 @@ So here's my honest advice, and it cuts both ways. If you like tinkering with yo
 
 I run a service built for exactly that second person. You never open a dashboard. Details in the comments.
 
-2 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506372656452005892)
+3 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506372656452005892)
 
 Website OfferEducation
 
