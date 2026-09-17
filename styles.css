@@ -7797,6 +7797,26 @@ footer .footer-nav ul,
 .hi-handy-title { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--dim); margin: 0 0 0.6rem; font-weight: 500; }
 .hi-handy-list { margin: 0; padding-left: 1.1rem; color: var(--mid); line-height: 1.75; font-size: 0.95rem; }
 
+/* The confetti canvas: pinned over everything, clicks pass through, gone
+   from the DOM the moment it finishes. */
+.hi-confetti {
+  position: fixed;
+  z-index: 200;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* The line under the greeting on a just-paid arrival. */
+.hi-welcome-from {
+  margin: 0 0 1.1rem;
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--offer-deep);
+}
+
 .hi-reassure { font-size: 0.92rem; color: var(--mid); line-height: 1.65; border-left: 2px solid var(--border-strong); padding-left: 0.9rem; margin: 0; }
 
 /* --- fields -------------------------------------------------------------- */

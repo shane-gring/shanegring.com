@@ -97,8 +97,13 @@ export async function onRequestPost(context) {
   // once they fill the form in.
   const label = name || email || 'Stripe purchase';
 
+  // Just the first word of what they typed into Stripe. Anything longer read
+  // back as a form letter, and a company name in the name field ("Dana Reyes
+  // Plumbing") would greet them as their own business.
+  const firstName = name.trim().split(/\s+/)[0] || '';
+
   const token = mintToken();
-  await writeRecord(env, token, newRecord({ label, ttlDays: DEFAULT_TTL_DAYS }));
+  await writeRecord(env, token, newRecord({ label, firstName, ttlDays: DEFAULT_TTL_DAYS }));
 
   // The buyer's redirect carries the Stripe session id, not the token, so
   // this pointer is how /handled-intake turns one into the other. Written

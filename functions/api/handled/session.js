@@ -150,6 +150,9 @@ async function publicView(env, record) {
 
   return {
     status: record.status,
+    // Their first name off the Stripe receipt, so the first screen can greet
+    // them. `label` stays internal — it may be a bare email address.
+    firstName: record.firstName || '',
     // Whether the client has ever saved anything. `updatedAt` cannot answer
     // this — a freshly issued record already has one — and the Welcome screen
     // exists precisely for people who have not started yet.

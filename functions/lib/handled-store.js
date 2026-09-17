@@ -49,12 +49,13 @@ export function looksLikeToken(token) {
 
 // --- record ---------------------------------------------------------------
 
-export function newRecord({ label = '', ttlDays = DEFAULT_TTL_DAYS } = {}) {
+export function newRecord({ label = '', firstName = '', ttlDays = DEFAULT_TTL_DAYS } = {}) {
   const now = new Date();
   const expires = new Date(now.getTime() + ttlDays * 86400_000);
   return {
     version: 1,
     label,                       // internal only: who we issued this to
+    firstName,                   // shown to them: "Welcome, Dana." Empty is fine.
     status: 'draft',
     issuedAt: now.toISOString(),
     expiresAt: expires.toISOString(),
