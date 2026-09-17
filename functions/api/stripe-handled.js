@@ -31,6 +31,8 @@ import { mintToken, newRecord, writeRecord, json, DEFAULT_TTL_DAYS } from '../li
 // written before the token, makes a replay a no-op. R2 is strongly consistent
 // on a single key, so the check is real rather than best-effort.
 const SEEN_PREFIX = 'stripe/events';
+// Buyer redirect → token. Read by functions/api/handled/claim.js.
+const SESSION_PREFIX = 'stripe/sessions';
 
 // Stripe's own tolerance. Anything older is a replay of a captured request
 // rather than a live delivery.
@@ -97,6 +99,18 @@ export async function onRequestPost(context) {
 
   const token = mintToken();
   await writeRecord(env, token, newRecord({ label, ttlDays: DEFAULT_TTL_DAYS }));
+
+  // The buyer's redirect carries the Stripe session id, not the token, so
+  // this pointer is how /handled-intake turns one into the other. Written
+  // before the seen-marker for the same reason the record is: a crash here
+  // replays cleanly rather than leaving a purchase with no way in.
+  if (session.id) {
+    await env.HANDLED_BUCKET.put(
+      `${SESSION_PREFIX}/${session.id}`,
+      JSON.stringify({ token, at: new Date().toISOString() }),
+      { httpMetadata: { contentType: 'application/json' } },
+    );
+  }
 
   // Written after the token so a crash between the two replays cleanly: the
   // marker's absence means the work did not finish, and a retry redoes it.
