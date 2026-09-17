@@ -53,7 +53,20 @@ const SCREENS = () => ['welcome', ...SECTIONS.map((s) => s.id), 'review', 'done'
 boot();
 
 async function boot() {
-  const token = readToken();
+  let token = readToken();
+
+  // Straight from Stripe: the success URL carries ?session=cs_…, and the
+  // token is whatever the webhook minted for it. Claiming it puts the buyer
+  // in the form instead of back on the sales page.
+  if (!token && sessionFromQuery()) {
+    token = await claimToken(sessionFromQuery());
+    if (!token) return renderFatal('not_ready');
+    // The token belongs in the fragment, which never reaches the server, and
+    // the session id has done its job — so the address bar loses the query
+    // and gains the same link the email would have sent.
+    history.replaceState(null, '', `${location.pathname}#t=${token}`);
+  }
+
   if (!token) return renderFatal('no_token');
   state.token = token;
 
@@ -88,6 +101,34 @@ async function boot() {
 function readToken() {
   const m = /[#&]t=([A-Za-z0-9_-]+)/.exec(location.hash || '');
   return m ? m[1] : '';
+}
+
+function sessionFromQuery() {
+  const id = new URLSearchParams(location.search).get('session') || '';
+  return /^cs_(live|test)_[A-Za-z0-9]{10,200}$/.test(id) ? id : '';
+}
+
+// Stripe redirects the moment the payment clears, which regularly beats its
+// own webhook to us by a second or two. So this waits rather than failing:
+// ten tries over about twenty seconds, which is far longer than the gap has
+// ever been, and a plain message if it really never arrives.
+async function claimToken(sessionId) {
+  renderClaiming();
+  for (let attempt = 0; attempt < 10; attempt += 1) {
+    try {
+      const res = await fetch(`${API}/claim?session=${encodeURIComponent(sessionId)}`);
+      if (res.ok) {
+        const body = await res.json();
+        if (body.token) return body.token;
+      } else if (res.status !== 404) {
+        return '';
+      }
+    } catch {
+      // A dropped request is the same as "not yet": keep waiting.
+    }
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+  }
+  return '';
 }
 
 // Drop someone back where the work actually is, rather than making them click
@@ -1347,6 +1388,10 @@ function renderFatal(kind) {
       title: 'This link has expired.',
       body: 'Links stay open for a few weeks. Email me and I’ll issue a new one — nothing you filled in is lost.',
     },
+    not_ready: {
+      title: 'Your payment went through.',
+      body: 'Setting up your intake is taking longer than it should. Nothing is lost and you are not charged twice — email me and I will send your link straight away.',
+    },
     offline: {
       title: 'Couldn’t reach the server.',
       body: 'Check your connection and reload. Anything you had already filled in is saved.',
@@ -1368,6 +1413,21 @@ function renderFatal(kind) {
   a.href = 'mailto:' + CONFIRMATION.contact;
   p.append(a);
   c.append(p);
+  sec.append(c);
+  root.append(sec);
+}
+
+// Shown for the second or two between Stripe's redirect and its webhook. It
+// says the money part is done, because that is the thing a buyer staring at a
+// blank page is worried about.
+function renderClaiming() {
+  root.dataset.state = 'fatal';
+  root.innerHTML = '';
+  const sec = el('section', 'om-hero');
+  const c = el('div', 'container');
+  c.append(el('span', 'section-eyebrow', 'Handled'));
+  c.append(el('h1', 'cs-hook', 'Payment received. Thank you.'));
+  c.append(el('p', 'om-lede', 'Opening your intake — this takes a moment.'));
   sec.append(c);
   root.append(sec);
 }
