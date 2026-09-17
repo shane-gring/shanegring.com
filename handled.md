@@ -8,7 +8,7 @@ Your small business website, built and kept running by
 The bots build fast and scan your site every week. I read what they find, fix what needs fixing, and answer your email.
 **You never have to open a dashboard.**
 
-[Claim the founding rate →](https://checkout.shanegring.com/b/4gM14ma9J3ZSarIcaDfbq08)
+[Get started →](https://checkout.shanegring.com/b/4gM14ma9J3ZSarIcaDfbq08)
 
 $300 to build then $200 a month
 
@@ -204,7 +204,7 @@ time** — no minimum, no notice period, no exit fee. One
 email ends it. If I'm worth keeping, that should show up in the work and
 not in a contract you can't get out of.
 
-[Claim the founding rate →](https://checkout.shanegring.com/b/4gM14ma9J3ZSarIcaDfbq08)
+[Get started →](https://checkout.shanegring.com/b/4gM14ma9J3ZSarIcaDfbq08)
 
 **What happens next:** I send a short intake you can type or speak. Your first draft arrives within five working days, you get one round of changes, and it goes live.
 
@@ -213,10 +213,6 @@ not in a contract you can't get out of.
 - Changes by email
 
 - Yours to take with you
-
-**Founding rate — through September 30.** Sign up
-by September 30 and you hold $200 a month, guaranteed, even when the
-price goes up for everyone after. Your rate never moves.
 
 ## A few honest answers
 
@@ -319,9 +315,9 @@ $300 to build
 ·
 then $200 a month to keep it running
 
-[Claim the founding rate →](https://checkout.shanegring.com/b/4gM14ma9J3ZSarIcaDfbq08)
+[Get started →](https://checkout.shanegring.com/b/4gM14ma9J3ZSarIcaDfbq08)
 
-**Checkout is open.** $300 today, then $200 a month starting 30 days later — founding rate locked if you sign up by September 30.
+**Checkout is open.** $300 today, then $200 a month starting 30 days later.
 
 - One email reaches me
 
