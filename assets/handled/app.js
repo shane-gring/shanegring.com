@@ -16,7 +16,7 @@
  * indicator that is always telling the truth.
  */
 
-import { SECTIONS, WELCOME, CONFIRMATION, questionById, allQuestions, RECORDING_FIELD } from './questions.js?v=614da2d8';
+import { SECTIONS, WELCOME, CONFIRMATION, questionById, allQuestions, RECORDING_FIELD } from './questions.js?v=67502e6c';
 import { TEMPLATES, PLACEHOLDER_PREVIEW, templateBlurb, templateById } from './templates.js?v=f8bd3fa8';
 import { acceptAttr, formatBytes, validateUpload, GROUPS, canRecord, pickRecordType,
          extensionForType, RECORD_BITRATE, RECORD_MAX_SECONDS } from './uploads.js?v=5f553a01';
@@ -44,6 +44,8 @@ const state = {
   serverMissing: [],          // what the server said was missing, if it disagreed
   lastScreen: null,           // where they left off, so a return visit resumes there
   answerMode: null,           // record | upload | type, remembered across visits
+  firstName: '',              // off the Stripe receipt, for the welcome line
+  fresh: false,               // arrived straight from checkout, not from email
 };
 
 const SCREENS = () => ['welcome', ...SECTIONS.map((s) => s.id), 'review', 'done'];
@@ -61,6 +63,7 @@ async function boot() {
   if (!token && sessionFromQuery()) {
     token = await claimToken(sessionFromQuery());
     if (!token) return renderFatal('not_ready');
+    state.fresh = true;
     // The token belongs in the fragment, which never reaches the server, and
     // the session id has done its job — so the address bar loses the query
     // and gains the same link the email would have sent.
@@ -88,11 +91,15 @@ async function boot() {
       transcript: data.transcript || null,
       lastScreen: data.lastScreen || null,
       answerMode: data.answerMode || null,
+      firstName: data.firstName || '',
     });
     // Someone returning to a finished intake gets the read-only look back,
     // not the form again.
     state.screen = data.status === 'submitted' ? 'done' : firstUnfinishedScreen();
     render();
+    // Only for someone who just paid. A return visit from the email link is
+    // not a moment, and confetti every time would wear through fast.
+    if (state.fresh && data.status !== 'submitted') celebrate();
   } catch {
     renderFatal('offline');
   }
@@ -410,7 +417,10 @@ const timeOf = (d) => d.toLocaleTimeString([], { hour: 'numeric', minute: '2-dig
 function screenWelcome() {
   const wrap = el('div', 'hi-screen');
   wrap.append(el('span', 'section-eyebrow', 'Handled'));
-  wrap.append(el('h1', 'cs-hook', WELCOME.title));
+  wrap.append(el('h1', 'cs-hook', state.firstName ? `Welcome, ${state.firstName}.` : WELCOME.title));
+  if (state.fresh) {
+    wrap.append(el('p', 'hi-welcome-from', 'You’re in, and I’m glad you’re here. — Shane'));
+  }
   wrap.append(el('p', 'om-lede', WELCOME.lede));
 
   const slot = el('div', 'hi-intro-slot');
@@ -1430,6 +1440,74 @@ function renderClaiming() {
   c.append(el('p', 'om-lede', 'Opening your intake — this takes a moment.'));
   sec.append(c);
   root.append(sec);
+}
+
+// --- confetti ---------------------------------------------------------------
+// Hand-rolled rather than a library: it is forty lines, it runs once, and a
+// CDN script for it would be the heaviest thing on the page. Paper only, no
+// sound, and nothing that moves for anyone who asked for less motion.
+
+function celebrate() {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const canvas = document.createElement('canvas');
+  canvas.className = 'hi-confetti';
+  canvas.setAttribute('aria-hidden', 'true');
+  document.body.append(canvas);
+
+  const ctx = canvas.getContext('2d');
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const w = () => canvas.width / dpr;
+  const size = () => {
+    canvas.width = window.innerWidth * dpr;
+    canvas.height = window.innerHeight * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  };
+  size();
+
+  const colors = ['#55c98c', '#7fe0ab', '#111111', '#f4c95d', '#ffffff'];
+  const pieces = Array.from({ length: 90 }, () => ({
+    x: w() * Math.random(),
+    y: -20 - Math.random() * window.innerHeight * 0.5,
+    r: 4 + Math.random() * 5,
+    tilt: Math.random() * Math.PI,
+    spin: (Math.random() - 0.5) * 0.2,
+    vy: 1.6 + Math.random() * 2.4,
+    vx: (Math.random() - 0.5) * 1.2,
+    color: colors[Math.floor(Math.random() * colors.length)],
+  }));
+
+  const started = performance.now();
+  const DURATION = 4200;
+
+  function frame(now) {
+    const elapsed = now - started;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Fade the whole thing out rather than letting pieces vanish mid-air.
+    ctx.globalAlpha = elapsed > DURATION - 900 ? Math.max(0, (DURATION - elapsed) / 900) : 1;
+
+    for (const p of pieces) {
+      p.y += p.vy;
+      p.x += p.vx + Math.sin((p.y + p.tilt * 40) / 40) * 0.6;
+      p.tilt += p.spin;
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.tilt);
+      ctx.fillStyle = p.color;
+      ctx.fillRect(-p.r / 2, -p.r, p.r, p.r * 1.6);
+      ctx.restore();
+    }
+
+    if (elapsed < DURATION) {
+      requestAnimationFrame(frame);
+    } else {
+      window.removeEventListener('resize', size);
+      canvas.remove();
+    }
+  }
+
+  window.addEventListener('resize', size);
+  requestAnimationFrame(frame);
 }
 
 // --- tiny helpers ----------------------------------------------------------

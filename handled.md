@@ -206,7 +206,7 @@ not in a contract you can't get out of.
 
 [Get started →](https://checkout.shanegring.com/b/4gM14ma9J3ZSarIcaDfbq08)
 
-**What happens next:** I send a short intake you can type or speak. Your first draft arrives within five working days, you get one round of changes, and it goes live.
+**What happens next:** I send a short intake you can type or speak. Your first draft follows in a few business days, you get one round of changes, and it goes live.
 
 - Live in days
 
@@ -245,7 +245,7 @@ shape what you send into the next piece of the site.
 
 How long until it's live?
 
-Days, not weeks. You pay, I send a short intake you can type or speak, and your first draft arrives within five working days. You get one round of changes, then it ships. The build is quick by design — the handling is the part
+Days, not weeks. You pay, I send a short intake you can type or speak, and your first draft follows in a few business days. You get one round of changes, then it ships. The build is quick by design — the handling is the part
 that runs for as long as you want it to.
 
 What counts as a change I can just email you?

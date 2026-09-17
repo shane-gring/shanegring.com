@@ -53,6 +53,7 @@ function doPost(e) {
     if (d.kind === 'handled-paid') {
       appendPaidRow_(d);
       notifyShanePaid_(d);
+      emailBuyerLink_(d);
       return json_({ ok: true });
     }
 
@@ -159,6 +160,50 @@ function notifyShanePaid_(d) {
   MailApp.sendEmail({ to: SHANE, subject: subject, body: body });
 }
 
+// ---------- the buyer's copy of their link ----------
+//
+// Checkout drops them straight into the intake, so this is not how they get
+// in — it is how they get back in. Most people will not finish in one sitting,
+// and the link is unrecoverable: the token is stored hashed, so a lost link is
+// a re-issue, not a lookup. Hence "save this email".
+//
+// Sent from Shane's own address rather than a no-reply, because a reply to it
+// should reach a person. Failure here must not fail the request: the row is
+// already written and Shane has been told, so a bounced buyer email is a thing
+// to notice in the log, not a reason for Stripe to retry the whole webhook.
+
+function emailBuyerLink_(d) {
+  if (!d.email) return;
+
+  var first = String(d.name || '').trim().split(/\s+/)[0];
+  var hello = first ? 'Hi ' + first + ',' : 'Hi,';
+
+  var body =
+    hello + '\n\n' +
+    'Thank you — you are in, and your site is on my desk.\n\n' +
+    'Here is your intake link. Save this email: it is the only copy, and it is\n' +
+    'the way back to your answers if you close the tab.\n\n' +
+    d.url + '\n\n' +
+    'It takes about fifteen minutes and it saves as you go, so you can stop and\n' +
+    'come back on your phone. Once it is in, your first draft follows in a few\n' +
+    'business days.\n\n' +
+    'Anything at all, just reply to this.\n\n' +
+    'Shane\n' +
+    'shanegring.com/handled\n';
+
+  try {
+    MailApp.sendEmail({
+      to: d.email,
+      subject: 'Your Handled intake link — save this email',
+      body: body,
+      name: 'Shane Gring',
+      replyTo: SHANE,
+    });
+  } catch (err) {
+    console.error('buyer email failed for ' + d.email + ': ' + err);
+  }
+}
+
 // ---------- Shane's brief ----------
 
 function notifyShane_(d) {
@@ -191,7 +236,7 @@ function confirmClient_(d) {
   var body =
     'Thanks' + (first ? ', ' + first : '') + ' — that\'s everything I need.\n\n' +
     'I build from your answers directly, so there\'s nothing else for you to ' +
-    'do right now. You\'ll hear from me within two business days with a first ' +
+    'do right now. You\'ll hear from me in a few business days with a first ' +
     'look at your page.\n\n' +
     'After that, changing anything is as easy as replying to that email.\n\n' +
     'Shane\n' +
