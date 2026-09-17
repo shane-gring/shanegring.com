@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Field — Handled template</title>
+<meta name="description" content="A Handled site template for businesses that do physical work: trades, contractors, installers, facilities, gyms.">
+<meta name="robots" content="noindex, nofollow">
+
+<!-- Open Graph. These pages are noindex, which keeps them out of search and has
+     nothing to do with link previews — they get shared by hand, in a message to
+     a client choosing between them, and a bare URL tells that person nothing.
+     get-the-read.html is noindex and carries these for the same reason.
+     The image is the same screenshot the intake picker uses, so the preview and
+     the card cannot drift apart. Re-shoot one and both update. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Field — a Handled site template">
+<meta property="og:description" content="A Handled site template for businesses that do physical work: trades, contractors, installers, facilities, gyms.">
+<meta property="og:url" content="https://shanegring.com/handled-templates/field">
+<meta property="og:site_name" content="Shane Gring">
+<meta property="og:image" content="https://shanegring.com/images/handled/templates/field.jpg">
+<meta property="og:image:alt" content="A screenshot of the The Field template.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Field — a Handled site template">
+<meta name="twitter:description" content="A Handled site template for businesses that do physical work: trades, contractors, installers, facilities, gyms.">
+<meta name="twitter:image" content="https://shanegring.com/images/handled/templates/field.jpg">
+
+<!--
+  HANDLED TEMPLATE — "The Field"
+  ───────────────────────────────────────────────────────────────────────────
+  For a business that does physical work and can show it: a contractor, an
+  installer, a trade, a gym, a facility. Abstracted from the BFS build.
+
+  The idea it is built around: the photographs ARE the argument. This is the
+  one template where stock imagery is not a compromise, it is a failure — the
+  whole page rests on pictures of actual work, actual sites, actual people.
+  Everything else exists to frame them: numbered capability cards, a
+  condensed headline at a size that reads from across a room, one hot accent.
+
+  It is also the template for the phone-first business. The sticky call bar is
+  not a flourish: for a trade, a call beats a form every time, and on a phone
+  the CTA has to be permanently within thumb reach.
+
+  REPLACE: every {BRACKETED} string and every .shot placeholder with a real
+  photograph. If there are no photographs yet, this is the wrong template —
+  pick another rather than filling it with stock.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black:  #0E0E0E;
+  --off:    #1A1A1A;
+  --white:  #FFFFFF;
+  --grey:   #9A9A9A;
+  --grey-2: #D4D4D4;
+  --hot:    #FF4A1C;   /* Text ON this must be --black, never white: white
+                          manages only 3.36:1. Darkening the orange instead
+                          would fix the button and break the eyebrow, which
+                          needs this brightness to read on --black. */
+  --line:   rgba(255,255,255,0.14);
+
+  --display: 'Anton', 'Arial Narrow', sans-serif;
+  --body:    'Archivo', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--black); color: var(--white); font-family: var(--body); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; padding-bottom: 72px; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 1.5rem; }
+
+h1, h2, h3 { margin: 0; font-weight: 400; }
+h1, h2 { font-family: var(--display); text-transform: uppercase; letter-spacing: 0.005em; }
+h1 { font-size: clamp(2.9rem, 9vw, 6.2rem); line-height: 0.92; }
+h2 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 0.96; }
+h3 { font-family: var(--body); font-weight: 700; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.04em; }
+p { margin: 0 0 1rem; }
+
+.eyebrow { font-family: var(--body); font-weight: 600; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--hot); margin: 0 0 1.1rem; }
+
+/* ── Announcement + nav ─────────────────────────────────────────────────── */
+.strip { background: var(--hot); color: var(--black); text-align: center; font-size: 0.86rem; font-weight: 600; padding: 0.6rem 1rem; }
+.strip a { color: var(--black); }
+.nav { border-bottom: 1px solid var(--line); }
+.nav .wrap { display: flex; align-items: center; gap: 1.8rem; padding-top: 1.1rem; padding-bottom: 1.1rem; }
+.brand { font-family: var(--display); font-size: 1.5rem; text-transform: uppercase; text-decoration: none; letter-spacing: 0.02em; }
+.nav-links { margin-left: auto; display: flex; gap: 1.6rem; list-style: none; padding: 0; margin-block: 0; font-size: 0.83rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+.nav-links a { text-decoration: none; color: var(--grey-2); }
+.nav-links a:hover { color: var(--white); }
+.nav-cta { background: var(--hot); color: var(--black); padding: 0.6rem 1.15rem; text-decoration: none; font-size: 0.83rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; white-space: nowrap; }
+
+/* ── Hero ───────────────────────────────────────────────────────────────── */
+.hero { padding: 3.5rem 0 3rem; }
+.hero-lede { font-size: clamp(1.05rem, 1.8vw, 1.25rem); color: var(--grey-2); max-width: 36rem; margin: 1.6rem 0 2rem; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+.btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.95rem 1.7rem; text-decoration: none; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.btn-hot { background: var(--hot); color: var(--black); }
+.btn-hot:hover { background: #E63D12; }
+.btn-out { border: 2px solid var(--white); color: var(--white); }
+.btn-out:hover { background: var(--white); color: var(--black); }
+
+/* ── Numbered capability cards — the signature ──────────────────────────── */
+.shots { display: grid; gap: 1rem; padding-bottom: 3.5rem; }
+.shot { position: relative; overflow: hidden; background: var(--off); }
+.shot-bar { height: 6px; }
+.shot-img { aspect-ratio: 4/3; width: 100%; object-fit: cover; display: block; }
+/* Placeholder. Replace the whole .shot-slot div with an <img class="shot-img">. */
+.shot-slot {
+  aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center;
+  color: #4A4A4A; font-family: var(--display); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.1em;
+  background:
+    repeating-linear-gradient(135deg, #171717 0 14px, #1C1C1C 14px 28px);
+}
+.shot-label { position: absolute; top: 6px; left: 0; padding: 0.75rem 1rem; display: flex; align-items: center; gap: 0.6rem; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+.shot-dot { width: 9px; height: 9px; border-radius: 50%; }
+.shot-body { padding: 1.1rem 1.2rem 1.5rem; }
+.shot-body p { margin: 0.4rem 0 0; color: var(--grey); font-size: 0.93rem; }
+
+section { padding: 3.8rem 0; }
+.section-head { max-width: 44rem; margin-bottom: 2.4rem; }
+.section-head p { color: var(--grey-2); margin-top: 1rem; }
+
+.bands { border-top: 1px solid var(--line); }
+.band { border-bottom: 1px solid var(--line); padding: 1.6rem 0; display: grid; gap: 0.5rem; }
+.band-k { font-family: var(--display); font-size: 1.6rem; color: var(--hot); line-height: 1; }
+.band p { margin: 0; color: var(--grey); }
+
+.areas { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.area { border: 1px solid var(--line); padding: 0.5rem 0.9rem; font-size: 0.88rem; color: var(--grey-2); }
+
+.reviews { display: grid; gap: 1rem; }
+.review { border: 1px solid var(--line); padding: 1.4rem; }
+.review p { margin: 0 0 0.8rem; }
+.review cite { font-style: normal; color: var(--grey); font-size: 0.86rem; }
+
+.closer { background: var(--hot); color: var(--black); padding: 3.5rem 1.5rem; text-align: center; }
+.closer h2 { color: var(--black); }
+.closer p { max-width: 34rem; margin: 1rem auto 1.8rem; }
+.closer .btn-out { border-color: var(--black); color: var(--black); }
+.closer .btn-out:hover { background: var(--black); color: var(--hot); }
+
+footer { border-top: 1px solid var(--line); padding: 2.2rem 0 2.6rem; color: var(--grey); font-size: 0.89rem; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 0.7rem 2rem; }
+footer a { text-decoration: none; }
+.footer-end { margin-left: auto; }
+
+/* For a trade, a call beats a form. On a phone the number has to be under the
+   thumb at all times, not at the bottom of a page nobody scrolls to. */
+.callbar {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 20;
+  display: grid; grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--line); background: var(--off);
+}
+.callbar a { padding: 1.1rem 0.5rem; text-align: center; text-decoration: none; font-weight: 700; font-size: 0.86rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.callbar a:first-child { background: var(--hot); color: var(--black); }
+
+:focus-visible { outline: 3px solid var(--hot); outline-offset: 2px; }
+
+@media (min-width: 900px) {
+  .hero { padding: 5rem 0 3.5rem; }
+  .shots { grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+  .band { grid-template-columns: 180px 1fr; align-items: baseline; gap: 2rem; }
+  .reviews { grid-template-columns: repeat(3, 1fr); }
+  body { padding-bottom: 0; }
+  .callbar { display: none; }
+}
+@media (max-width: 899px) { .nav-links { display: none; } }
+</style>
+</head>
+
+<body>
+
+<div class="strip">{The offer that gets them to call} <a href="tel:{phone}">{CALL NOW &rarr;}</a></div>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#">{BUSINESS}</a>
+    <ul class="nav-links">
+      <li><a href="#work">{What we do}</a></li>
+      <li><a href="#why">{Why us}</a></li>
+      <li><a href="#areas">{Areas}</a></li>
+      <li><a href="#reviews">{Reviews}</a></li>
+    </ul>
+    <a class="nav-cta" href="#quote">{Get a quote}</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">{DOING THIS SINCE {YEAR}}</p>
+    <h1>{Six words that say<br>exactly what you do.}</h1>
+    <p class="hero-lede">{One sentence naming the work, the area you cover, and the number that proves you have done it a lot.}</p>
+    <div class="cta-row">
+      <a class="btn btn-hot" href="tel:{phone}">{Call {phone}}</a>
+      <a class="btn btn-out" href="#quote">{Get a free quote}</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="shots" id="work">
+    <div class="shot">
+      <div class="shot-bar" style="background:#2E6BE6"></div>
+      <div class="shot-label"><span class="shot-dot" style="background:#2E6BE6"></span>01 · {Service one}</div>
+      <!-- Replace with: <img class="shot-img" src="{photo}.jpg" alt="{what it shows}"> -->
+      <div class="shot-slot">{Photo of real work}</div>
+      <div class="shot-body"><h3>{Service one}</h3><p>{One line on what it is and who it is for.}</p></div>
+    </div>
+    <div class="shot">
+      <div class="shot-bar" style="background:var(--hot)"></div>
+      <div class="shot-label"><span class="shot-dot" style="background:var(--hot)"></span>02 · {Service two}</div>
+      <div class="shot-slot">{Photo of real work}</div>
+      <div class="shot-body"><h3>{Service two}</h3><p>{One line on what it is and who it is for.}</p></div>
+    </div>
+    <div class="shot">
+      <div class="shot-bar" style="background:#24B36B"></div>
+      <div class="shot-label"><span class="shot-dot" style="background:#24B36B"></span>03 · {Service three}</div>
+      <div class="shot-slot">{Photo of real work}</div>
+      <div class="shot-body"><h3>{Service three}</h3><p>{One line on what it is and who it is for.}</p></div>
+    </div>
+  </div>
+</div>
+
+<section id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">{Why us}</p>
+      <h2>{The reason to pick you, not the other three quotes.}</h2>
+      <p>{Two sentences. Concrete, checkable, and not "quality workmanship".}</p>
+    </div>
+    <div class="bands">
+      <div class="band"><div class="band-k">{00 YRS}</div><p>{What the number buys them.}</p></div>
+      <div class="band"><div class="band-k">{0,000+}</div><p>{What the number buys them.}</p></div>
+      <div class="band"><div class="band-k">{SAME DAY}</div><p>{What the number buys them.}</p></div>
+      <div class="band"><div class="band-k">{GUARANTEED}</div><p>{What the guarantee actually covers, in plain words.}</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="areas">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">{Where we work}</p>
+      <h2>{The area you actually cover.}</h2>
+      <p>{Be honest about the edges — a wasted callout costs you both.}</p>
+    </div>
+    <div class="areas">
+      <span class="area">{Town}</span><span class="area">{Town}</span><span class="area">{Town}</span>
+      <span class="area">{Town}</span><span class="area">{Town}</span><span class="area">{Town}</span>
+      <span class="area">{Town}</span><span class="area">{Within 00 miles}</span>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">{Reviews}</p>
+      <h2>{What people actually said.}</h2>
+      <p>{Pull these straight from Google. Do not write them yourself — a review you invented is worse than no reviews, and people can tell.}</p>
+    </div>
+    <div class="reviews">
+      <div class="review"><p>{A real review, in their words.}</p><cite>{First name, town}</cite></div>
+      <div class="review"><p>{A real review, in their words.}</p><cite>{First name, town}</cite></div>
+      <div class="review"><p>{A real review, in their words.}</p><cite>{First name, town}</cite></div>
+    </div>
+  </div>
+</section>
+
+<div class="closer" id="quote">
+  <p class="eyebrow" style="color:var(--black)">{Get started}</p>
+  <h2>{Tell us what needs doing.}</h2>
+  <p>{What happens when they call — who answers, how fast you get back, what a quote costs.}</p>
+  <div class="cta-row" style="justify-content:center">
+    <a class="btn btn-out" href="tel:{phone}">{Call {phone}}</a>
+    <a class="btn btn-out" href="mailto:{email}">{Email us}</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; {YEAR} {Business}</span>
+    <a href="tel:{phone}">{phone}</a>
+    <a href="mailto:{email}">{email}</a>
+    <span class="footer-end">{Reg. number / trade body}</span>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a href="tel:{phone}">{Call now}</a>
+  <a href="mailto:{email}">{Get a quote}</a>
+</div>
+
+</body>
+</html>

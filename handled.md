@@ -1,19 +1,16 @@
-Your site, handled
-
 #
-You didn't want a website builder.
+Handled.
 
-A clean single-page site, built to your specs and watched every week after. $300 to build, $200 a month to keep it handled. Change anything by email. Month to month, everything in your name. Founding cohort of ten at a locked rate.
-You wanted a website.
+A clean single-page site to start, built for you, scanned every week and reported on every month. Each month one prompt adds the next piece: an About page, a place to publish, a services page. $300 to build, $200 a month. Month to month, everything in your name.
+Your small business website, built and kept running by
+[Shane](https://shanegring.com/) and his bots.
 
-Clients to win, credibility to hold, inbound to catch — and no free
-weekend to spend becoming a web designer. So here's the deal:
-**I build your site, and I keep it running.** You never open a
-dashboard.
+The bots build fast and scan your site every week. I read what they find, fix what needs fixing, and answer your email.
+**You never have to open a dashboard.**
 
-[Claim a founding spot →](https://checkout.shanegring.com/b/5kQ6oG0z98g86bsdeHfbq03)
+[Get started →](https://checkout.shanegring.com/b/4gM14ma9J3ZSarIcaDfbq08)
 
-Starts at $300.
+$300 to build then $200 a month
 
 - Month to month
 
@@ -53,70 +50,98 @@ Costs you again the day it needs anything.
 
 Each one fails exactly where the other wins.
 **I do both.** A site built for you — and kept sharp,
-watched and handled every week after. For less than the freelancer,
+watched and handled every week after. For less up front than the freelancer,
 without the weekend.
 
-## One fee to build it. One to keep it running.
-
-Two numbers, and they do different jobs. The first you pay once, at the
-start. The second is every month, and it stops the month you say so.
-
-First, once
-$300
-
-### The build
-
-A clean single-page site, built to your specs. Your domain, bought
-for you up to $15 and registered in your name. Analytics and Search
-Console set up. Live in days.
-
-Then, every month
-$200/month
-
-### The handling
-
-Watched every week, reported on and improved, and any change you
-email gets made. Month to month — no minimum, no notice
-period, no exit fee.
-
-That is the whole of it. Nothing else is required, and the upgrades
-further down are optional and priced in the open.
-
-## What $200 a month actually buys
+## What “handled” actually means
 
 The build is quick by design. The handling is the part a person shows up
 for, every week, for as long as you want it.
 
-- **A clean, single-page site, built to your specs.** Your domain, your design direction, your words, your images. Live in days, not weeks.
+- **A clean, single-page site to start.** I write and build it from one conversation, in your design direction, using any words and images you already like. It says who you are, what you do, why to trust you and how to reach you. Live in days, not weeks.
 
-- **A real person watching it every week.** That's me. I check how it's performing, catch bugs before you run into them, and send you a short read on what I'd improve.
+- **Scanned every week, reported every month.** My bots scan it weekly for how it's performing and for anything broken. I read what they find and fix it before you run into it. Once a month you get a short report: how the site is doing and what I'd improve.
 
-- **An email that reaches me.** Headline changed, photo swapped, a line rewritten, a price updated. Send it, it gets done. No tickets, no portal, no five-to-seven business days.
+- **An email that reaches me.** Headline changed, photo swapped, a line rewritten, a price updated. Send it and it's done within one working day. No tickets, no portal, no five-to-seven business days.
 
 - **Analytics and search, set up right.** Google Analytics and Search Console, configured and quietly working, so the site is measured instead of guessed at.
 
 - **Everything in your name, from day one.** The code, the design files, the analytics accounts, and the domain — which I buy for you, up to $15. Ask and I hand the lot over.
 
-## Four steps, and three of them are mine
+## One prompt a month. You answer it, I build it in.
 
-### We spin you up
+The site starts as a single page. Each month I send your report and one prompt — a few questions, or a short set of steps. Most take about 30 minutes, typed or as a voice note. I turn what you send back into the
+next piece of your site. Skip a month and nothing breaks: the prompt stays open and the weekly scan carries on. If a month doesn't fit your business, I swap in the next most useful thing.
 
-A quick conversation about who you are and what the site has to do.
-I handle the design, the words, the images and the domain —
-registered in your name, not mine.
+### Your Google Business Profile
 
-### You go live in days
+I send the steps to claim it and the five fields that matter.
+You send back the link and five photos. Your hours, map and profile
+link go on the site.
 
-You review, we tighten, it ships.
+### An About page
 
-### I keep it running
+Six questions: why you started, who you serve, what you turn
+down. You answer and send one photo. I build the page.
 
-Every week I'm watching, reporting and improving. Any change you
-want, you email — and it's handled.
+### A way to publish
 
-### You get on with your work
+You tell me what you'll post — writing, projects or
+listings — and send the first one. I wire in a lean CMS, load
+it, and walk you through it.
 
-Which was the whole point.
+### Your first post
+
+By now there are three months of search data. I send five topics
+drawn from what people typed to find you. You write one, or talk it
+through. I edit and publish it.
+
+### Reviews
+
+I send a review link and a short script for asking. You ask five
+clients. The best replies go on the site.
+
+### A services page
+
+Questions on the thing you sell most: who it's for, what it
+costs, what happens first. I build the page and send your half-year
+report.
+
+### Buyer questions
+
+What five things does every buyer ask before they hire you? You
+answer. I add them to the site, marked up so search engines and AI
+tools can read them.
+
+### A newsletter
+
+You write a five-line first note and say who should get it. I
+wire in the signup and set up the first send. Your list is yours,
+same as your code.
+
+### A client story
+
+One job: the problem, what you did, how it ended, a photo. I
+build it into a proof section.
+
+### Listings beyond Google
+
+Steps for Bing Places, Apple Business Connect and one trade
+directory. You send the links. I tie them to the site.
+
+### The contact path
+
+What happens after someone writes to you? I rework the form or
+booking link around your answer and eleven months of numbers.
+
+### The year report
+
+What grew, what didn't, and three questions on what changed in
+your business. I refresh the page and set next year's prompts.
+
+All of it is inside the $200 a month. Still month to month: leave at
+month five and you keep five months of work. Need something that isn't
+on this list? Email me and we'll talk it through.
 
 ## Sites built and handled the same way yours will be
 
@@ -135,21 +160,53 @@ Real sites, live right now. Click any of them.
 [Albi ZhubiBrooklyn and NYC real estate · albizhubi.com](https://albizhubi.com)
 [GreenStar HomesGreen home certification · greenstarhomes.org](https://greenstarhomes.org)
 
-## $300 to build. $200 a month to keep it handled.
+## About Shane
+
+I'm Shane Gring, a fractional COO in Pittsburgh. For fifteen years
+I've run websites, analytics and digital operations for founders and
+for organizations like TeamBuildr, the International WELL Building
+Institute and the U.S. Green Building Council.
+
+Most of my work is bigger than this: I step into founder-led
+companies and run the operating side. Handled is the same machinery,
+pointed at one small site. The bots do the building and the weekly scans. I decide what gets fixed, and when you email, you're
+emailing me.
+
+[More about me →](https://shanegring.com/about)
+
+### And the bots
+
+The bots are a small crew of custom AI agents I built and tuned on client work. Each one has a single job:
+
+- **Design and build.** Lays out the page and writes the code.
+
+- **SEO.** Search terms, page titles, schema, and the post topics in month four.
+
+- **The weekly scan.** Speed, broken links, and anything that changed since last week.
+
+- **The monthly report.** Drafts it from your analytics and Search Console.
+
+None of them ships anything alone. I set the direction, read what
+they make, and approve every change before it goes live. When you
+email, a person answers.
+
+## Two numbers. No fine print.
 
 $300
-Once, to build it. Domain bought for you, up to $15.
+Charged today. Domain bought for you, up to $15.
 
 $200/month
-To watch it, report on it, improve it, and make any change you email.
+Starts 30 days after you sign up. Hosting, the weekly scan, the monthly report, and any change you email.
 
-That's the whole price. No tiers to decode, no upsells buried in a
+No tiers to decode, no upsells buried in a
 dashboard, no surprise renewal. **Month to month, cancel any
 time** — no minimum, no notice period, no exit fee. One
 email ends it. If I'm worth keeping, that should show up in the work and
 not in a contract you can't get out of.
 
-[Claim a founding spot →](https://checkout.shanegring.com/b/5kQ6oG0z98g86bsdeHfbq03)
+[Get started →](https://checkout.shanegring.com/b/4gM14ma9J3ZSarIcaDfbq08)
+
+**What happens next:** I send a short intake you can type or speak. Your first draft follows in a few business days, you get one round of changes, and it goes live.
 
 - Live in days
 
@@ -157,153 +214,78 @@ not in a contract you can't get out of.
 
 - Yours to take with you
 
-**Founding cohort — first 10 only.** The first ten
-clients hold $200 a month, guaranteed, even when the price goes up for
-everyone after. You get in early, I get to build something worth
-referring, and your rate never moves. When the ten are full, this
-is gone.
-
-## Optional upgrades, priced in the open
-
-The base covers most people. Add these when there's a reason — and
-whatever we add gets watched and handled the same as the rest of your
-site. The $200 a month already covers that. None of it is required.
-
-### Another page
-
-A second page, built to the same standard and folded into the
-same weekly watch. An about page, a services page, a page for the
-thing you launch next.
-
-**$99 per page**
-
-### A block of hours
-
-For work bigger than an email: a new section, a landing page
-for a launch, a rework of what's there. You buy the block, you
-say what it goes toward.
-
-**[$300 for 2 hours](https://checkout.shanegring.com/b/14AbJ02Hh53WbvM3E7fbq04) · [$500 for 5 hours](https://checkout.shanegring.com/b/dRm3cufu38g82Zg0rVfbq05)**
-
-### A newsletter, wired in
-
-A signup form on your site and a clean place to send from.
-Your list is yours, same as your code.
-
-**$49 one-time**
-
-### A lean CMS
-
-For when you want to publish yourself — posts, listings,
-updates — without touching code or waiting on me. It's Sanity, on its free
-plan — I add it to your site and configure it, $200 one-time.
-Here's exactly what that buys:
-
-- **An editor wired into your live site.** Write, hit
-save, it's live. No code, no deploy step, no plugin sprawl to
-maintain.
-
-- **The layout it feeds, built to match.** The index
-and the entry page, styled like the rest of your site, so what you
-publish looks like it belongs there.
-
-- **A walkthrough, so you actually use it.** I set it
-up and show you how it works, end to end. Forget a step six months
-later? Email me.
-
-- **Watched like the rest of the site.** Everything
-you publish falls under the same weekly check, the same fixes, and
-the same reporting as the page itself.
-
-**Without it, every change goes through
-me.** A headline or a photo is an email and it's handled —
-that's the base plan. But a run of posts or listings isn't email-sized
-work, so it comes out of an hour block, and it goes live when I get to
-it. The CMS is what lets you skip the ask.
-
-**[Add the lean CMS — $200 one-time](https://checkout.shanegring.com/b/00w8wO1DddAs7fw5Mffbq07)**
-
-**The hour blocks and the lean CMS are live in checkout**
-— the links are on the cards. Extra pages are $99 each and the
-newsletter is $49: mention either when you get in line and I'll fold it
-into your build.
-
 ## A few honest answers
 
 Is this really just for a one-page site?
 
-Yes — and on purpose. Most people don't need more; they need
-one page that's sharp, credible and actually maintained. Want more
-later? We scale the budget and do more. Start simple, grow when
-there's a reason to.
+It starts as one — on purpose. Most people need one page
+that's sharp, credible and actually maintained before they need
+anything else. From there it grows a piece a month: I send one
+prompt, you answer it, and I build the answer in. An About page in
+month two, a way to publish in month three, a services page in month
+six. All of it is inside the $200 a month. There are no priced
+add-ons; if you need something off the list, email me and we'll talk
+it through.
+The first year is laid out here.
 
 Who's actually behind this?
 
-Me. Shane Gring — a fractional operator who's spent 15 years
-running websites, analytics and digital operations for founders and
-companies. This is the same machinery I run for clients, pointed at
-your site. When you email, you're emailing me.
+Me, Shane Gring. Fifteen years running websites, analytics and
+digital operations for founders and companies. When you email,
+you're emailing me. More about me here.
 
 What do you need from me to get started?
 
-A conversation, and whatever you already have. I handle the domain,
-the design, the words and the images — that's the point of it.
-If you have a logo, photos or copy you like, send them and I'll use
-them. If you don't, that's not a task I hand back to you.
+A conversation, and whatever you already have. For the launch page
+I handle the domain, the design, the words and the images. If you
+have a logo, photos or copy you like, send them and I'll use them.
+If you don't, that's not a task I hand back to you. After launch the
+rhythm changes: once a month I send a prompt, you answer it, and I
+shape what you send into the next piece of the site.
 
 How long until it's live?
 
-Days, not weeks. We talk, I build, you review, we tighten, it
-ships. The build is quick by design — the handling is the part
+Days, not weeks. You pay, I send a short intake you can type or speak, and your first draft follows in a few business days. You get one round of changes, then it ships. The build is quick by design — the handling is the part
 that runs for as long as you want it to.
 
 What counts as a change I can just email you?
 
 A headline, a photo, a rewritten line, a new price, a link that
-needs fixing. Send it and it gets done — no ticket, no portal,
-no “please allow 5–7 business days.” Bigger jobs are
-the exception: a run of posts or listings isn't email-sized work, so
-it comes out of a block of hours, or you add the lean CMS and publish
-those yourself.
+needs fixing. Send it and it's done within one working day — no ticket, no portal,
+no “please allow 5–7 business days.” Bigger pieces
+— a new page, a CMS, a newsletter — come through the
+monthly prompts. Anything outside those starts with a
+conversation.
 
-What actually happens in the weekly check?
+Is hosting included?
 
-I check how the site is performing, catch bugs before you run into
-them, and send you a short read on how it's doing and what I'd
-improve. Google Analytics and Search Console are set up and quietly
+Yes. Hosting is inside the $200 a month, so there's no separate
+bill. The domain is yours and registered in your name; I buy it for
+you, up to $15.
+
+I already have a site or a domain. Can you take it over?
+
+Yes. Your domain stays in your name and I point it at the new
+site. An existing site gets rebuilt the Handled way, and I carry
+over the words and images worth keeping.
+
+Is email at my domain included?
+
+No. Setting up an address like you@yourdomain.com is a separate
+project. Email me and we'll talk it through.
+
+What happens in the weekly scan, and what do I see?
+
+My bots check how the site is performing and look for anything broken. I read what they find and fix it before you run into it. That scan is for me; you don't get a weekly email. Once a month you get a short report on how the site is doing and what I'd improve. Google Analytics and Search Console are set up and quietly
 working underneath that, so your site is measured instead of guessed
 at.
 
 What do you use to build it?
 
-Good tools, used fast — so my actual time goes into managing
-and improving your site every month, not grinding out code by hand.
-The build is quick by design. The handling is where a person shows up,
-and that's what you're paying for.
-
-What if I need more than one page later?
-
-You add one. Extra pages are $99 each, built to the same standard
-and folded into the same weekly watch. A newsletter wired in is $49, a
-lean CMS is $200 one-time, and blocks of hours are $300 for two or
-$500 for five. None of it is required, and none of it is bundled in
-ahead of time. The upgrades are all here.
-
-How is this different from the Autopilot?
-
-The [Autopilot](https://shanegring.com/autopilot) is $899 a month and runs on
-a site you already have, as part of a wider operating engagement.
-Handled is smaller and starts earlier: it includes building the site
-in the first place, then keeps one page sharp for $200 a month. If you
-already have a site worth tending, the Autopilot is the better fit.
-
-Why make it this easy to cancel?
-
-Because a site you can't leave is worth less than one you can.
-Lock-ins exist to hold on to clients whose work stopped being worth
-paying for — I'd rather find that out and fix it. Everything is
-in your name from the start, so leaving is a transfer, not a
-negotiation.
+A set of custom AI agents I built: one for design and code, one for SEO, one for the weekly scan, one for the monthly report. That is why the build takes days and costs $300. More on the bots here. I set the
+direction, write and edit the words, and check every page before it
+ships. Whether that shows is easy to test:
+click through the sites above.
 
 What if I want to leave?
 
@@ -312,34 +294,36 @@ Whenever you want. No minimum, no notice period, no exit fee
 everything, because it was always yours: the code, the design files,
 the Google Analytics and Search Console accounts, and the domain,
 which is registered in your name from day one. Anything I'm
-administering, I transfer wherever you want it, at no charge, and I
-don't make you ask twice.
+administering, I transfer wherever you want it, at no charge. It's
+this easy on purpose: a site you can't leave is worth less than one
+you can.
 
 Who is this not for?
 
 If you love tinkering with your own site, or you've got more time
 than money, Squarespace is genuinely the right call. This is for the
-opposite person: time-poor, allergic to homework, wants it handled by
-someone who knows what they're doing.
+opposite person: short on time, glad to answer a few questions a
+month, and happy to leave the building to someone who knows what
+they're doing.
 
-## Your site, handled — for good.
+## Your site, handled.
 
 Stop paying for tools you have to operate yourself. Stop hiring people
 who vanish. Get a site that's built well and stays that way.
 
 $300 to build
 ·
-$200 a month to keep it running
+then $200 a month to keep it running
 
-[Claim a founding spot →](https://checkout.shanegring.com/b/5kQ6oG0z98g86bsdeHfbq03)
+[Get started →](https://checkout.shanegring.com/b/4gM14ma9J3ZSarIcaDfbq08)
 
-**Checkout is open.** $300 today, $200 a month after — founding rate locked for the first ten.
+**Checkout is open.** $300 today, then $200 a month starting 30 days later.
 
-- Month to month
+- One email reaches me
 
-- Cancel any time
+- One prompt a month
 
-- Everything in your name
+- Leave any time
 
 ---
 

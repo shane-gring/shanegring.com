@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Standard — Handled template</title>
+<meta name="description" content="A Handled site template for businesses whose value is verified: certifications, standards, inspections, accreditation.">
+<meta name="robots" content="noindex, nofollow">
+
+<!-- Open Graph. These pages are noindex, which keeps them out of search and has
+     nothing to do with link previews — they get shared by hand, in a message to
+     a client choosing between them, and a bare URL tells that person nothing.
+     get-the-read.html is noindex and carries these for the same reason.
+     The image is the same screenshot the intake picker uses, so the preview and
+     the card cannot drift apart. Re-shoot one and both update. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Standard — a Handled site template">
+<meta property="og:description" content="A Handled site template for businesses whose value is verified: certifications, standards, inspections, accreditation.">
+<meta property="og:url" content="https://shanegring.com/handled-templates/standard">
+<meta property="og:site_name" content="Shane Gring">
+<meta property="og:image" content="https://shanegring.com/images/handled/templates/standard.jpg">
+<meta property="og:image:alt" content="A screenshot of the The Standard template.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Standard — a Handled site template">
+<meta name="twitter:description" content="A Handled site template for businesses whose value is verified: certifications, standards, inspections, accreditation.">
+<meta name="twitter:image" content="https://shanegring.com/images/handled/templates/standard.jpg">
+
+<!--
+  HANDLED TEMPLATE — "The Standard"
+  ───────────────────────────────────────────────────────────────────────────
+  For a business whose product is trust someone else can check: a
+  certification body, an inspectorate, an accreditation, a standards
+  authority. Abstracted from the GreenStar Homes build.
+
+  The idea it is built around: the seal is the hero. Not a photograph, not a
+  product shot — the mark that says an independent party checked. Everything
+  else on the page is arranged to support that one object, because for this
+  kind of business the mark IS the product.
+
+  Self-contained on purpose. Copy this one file, replace the content, ship it.
+  It has no dependency on shanegring.com — it becomes the client's site.
+
+  REPLACE: every {BRACKETED} string, the seal SVG's initials, and the palette
+  variables at the top of the stylesheet if the client has brand colours.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ── Palette ────────────────────────────────────────────────────────────────
+   Deep slate-teal rather than the obvious forest green, and brass rather than
+   a bright mint. Brass reads as a struck seal or an embossed certificate;
+   a saturated green reads as software. The distinction matters for a body
+   whose whole claim is that it is older and slower than software. */
+:root {
+  --ground:   #11262B;
+  --ground-2: #0C1D21;
+  --bone:     #F2EFE6;
+  --bone-dim: #B9C4C2;
+  --brass:    #C9A227;
+  --rule:     rgba(242, 239, 230, 0.16);
+
+  --display: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --body:    'IBM Plex Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --mono:    'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--bone);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* ── Type scale ─────────────────────────────────────────────────────────── */
+h1, h2, h3 { font-family: var(--display); font-weight: 600; letter-spacing: -0.015em; margin: 0; }
+h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); line-height: 1.04; }
+h2 { font-size: clamp(1.7rem, 3.2vw, 2.5rem); line-height: 1.15; }
+h3 { font-size: 1.2rem; line-height: 1.3; }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin: 0 0 1.4rem;
+}
+
+/* ── Nav ────────────────────────────────────────────────────────────────── */
+.nav { padding: 1.6rem 0; }
+.nav .wrap { display: flex; align-items: center; gap: 2rem; }
+.brand { display: flex; align-items: center; gap: 0.7rem; font-family: var(--display); font-size: 1.15rem; font-weight: 600; text-decoration: none; }
+.brand-seal { width: 30px; height: 30px; flex: none; }
+.nav-links { margin-left: auto; display: flex; gap: 1.8rem; list-style: none; padding: 0; font-size: 0.93rem; }
+.nav-links a { text-decoration: none; color: var(--bone-dim); }
+.nav-links a:hover { color: var(--bone); }
+.nav-cta {
+  border: 1px solid var(--brass); color: var(--brass);
+  padding: 0.55rem 1.1rem; border-radius: 2px; text-decoration: none;
+  font-size: 0.9rem; font-weight: 500; white-space: nowrap;
+}
+.nav-cta:hover { background: var(--brass); color: var(--ground); }
+
+/* ── Hero ───────────────────────────────────────────────────────────────── */
+.hero { position: relative; padding: 4rem 0 5rem; overflow: hidden; }
+/* Concentric hairlines: a survey diagram, a contour map, the rings of a
+   struck seal. Cheap in bytes, and it does the job a stock photograph would
+   do badly — it says "something here was measured". */
+.hero-rings { position: absolute; top: -28%; right: -14%; width: 900px; height: 900px; pointer-events: none; opacity: 0.5; }
+.hero .wrap { position: relative; display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
+.hero-lede { font-size: clamp(1.02rem, 1.5vw, 1.15rem); color: var(--bone-dim); max-width: 34rem; margin: 1.6rem 0 2.2rem; }
+.hero-lede strong { color: var(--bone); font-weight: 600; }
+
+.seal { width: min(320px, 78vw); height: auto; margin: 0 auto; filter: drop-shadow(0 18px 40px rgba(0,0,0,0.45)); }
+
+.cta-row { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+.btn {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  padding: 0.85rem 1.5rem; border-radius: 2px; text-decoration: none;
+  font-size: 0.97rem; font-weight: 500; border: 1px solid transparent;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.btn-primary { background: var(--brass); color: var(--ground-2); }
+.btn-primary:hover { background: #E0B93C; }
+.btn-ghost { border-color: var(--rule); color: var(--bone); }
+.btn-ghost:hover { border-color: var(--bone); }
+
+/* ── Proof strip ────────────────────────────────────────────────────────── */
+.proof { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.proof .wrap { display: grid; grid-template-columns: 1fr; }
+.proof-item { padding: 1.9rem 0; }
+.proof-item + .proof-item { border-top: 1px solid var(--rule); }
+.proof-item h3 { font-size: 1.1rem; margin-bottom: 0.4rem; }
+.proof-item p { margin: 0; font-size: 0.93rem; color: var(--bone-dim); }
+
+/* ── Sections ───────────────────────────────────────────────────────────── */
+section { padding: 4.5rem 0; }
+.section-head { max-width: 42rem; margin-bottom: 2.6rem; }
+.section-head p { color: var(--bone-dim); margin: 1rem 0 0; }
+
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.steps li { background: var(--ground); padding: 1.8rem 1.6rem; }
+/* Numbered because this genuinely is a sequence — you cannot be certified
+   before you are inspected. Numbering a list that is not ordered is
+   decoration pretending to be information. */
+.step-n { font-family: var(--mono); font-size: 0.78rem; color: var(--brass); letter-spacing: 0.12em; }
+.steps h3 { margin: 0.6rem 0 0.4rem; }
+.steps p { margin: 0; color: var(--bone-dim); font-size: 0.94rem; }
+
+.levels { display: grid; gap: 1rem; }
+.level { border: 1px solid var(--rule); padding: 1.5rem; border-radius: 2px; }
+.level.is-featured { border-color: var(--brass); }
+.level-name { font-family: var(--display); font-size: 1.3rem; font-weight: 600; }
+.level-price { font-family: var(--mono); color: var(--brass); font-size: 0.95rem; margin: 0.4rem 0 1rem; }
+.level ul { margin: 0; padding-left: 1.1rem; color: var(--bone-dim); font-size: 0.93rem; line-height: 1.9; }
+
+.faq { border-top: 1px solid var(--rule); }
+.faq details { border-bottom: 1px solid var(--rule); padding: 1.2rem 0; }
+.faq summary { cursor: pointer; font-family: var(--display); font-size: 1.1rem; font-weight: 600; list-style: none; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: '+'; float: right; color: var(--brass); font-family: var(--mono); }
+.faq details[open] summary::after { content: '−'; }
+.faq p { color: var(--bone-dim); margin: 0.8rem 0 0; max-width: 46rem; }
+
+.closer { background: var(--ground-2); text-align: center; }
+.closer p { color: var(--bone-dim); max-width: 34rem; margin: 1rem auto 2rem; }
+
+footer { border-top: 1px solid var(--rule); padding: 2.5rem 0; font-size: 0.88rem; color: var(--bone-dim); }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: center; }
+footer a { text-decoration: none; }
+footer a:hover { color: var(--bone); }
+.footer-end { margin-left: auto; }
+
+:focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; }
+
+@media (min-width: 860px) {
+  .hero { padding: 5.5rem 0 6.5rem; }
+  .hero .wrap { grid-template-columns: 1.15fr 0.85fr; gap: 4rem; }
+  .proof .wrap { grid-template-columns: repeat(3, 1fr); }
+  .proof-item { padding: 2.2rem 2rem; }
+  .proof-item + .proof-item { border-top: 0; border-left: 1px solid var(--rule); }
+  .proof-item:first-child { padding-left: 0; }
+  .steps { grid-template-columns: repeat(4, 1fr); }
+  .levels { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 859px) {
+  .nav-links { display: none; }
+  .seal { margin-top: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#">
+      <svg class="brand-seal" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="18.5" fill="none" stroke="#C9A227" stroke-width="1.2"/>
+        <circle cx="20" cy="20" r="14" fill="none" stroke="#C9A227" stroke-width="0.6" opacity="0.6"/>
+        <path d="M13 20.5l4.8 4.8L27.5 15" fill="none" stroke="#C9A227" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      {BUSINESS NAME}
+    </a>
+    <ul class="nav-links">
+      <li><a href="#what">What it covers</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#levels">Levels</a></li>
+      <li><a href="#faq">Questions</a></li>
+    </ul>
+    <a class="nav-cta" href="#start">{PRIMARY ACTION}</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <svg class="hero-rings" viewBox="0 0 900 900" aria-hidden="true">
+    <g fill="none" stroke="#C9A227" stroke-width="0.7" opacity="0.30">
+      <circle cx="450" cy="450" r="130"/><circle cx="450" cy="450" r="196"/>
+      <circle cx="450" cy="450" r="262"/><circle cx="450" cy="450" r="328"/>
+      <circle cx="450" cy="450" r="394"/><circle cx="450" cy="450" r="440"/>
+    </g>
+  </svg>
+
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">{INDEPENDENTLY VERIFIED}</p>
+      <h1>{The claim anyone can make.<br>Yours is checked.}</h1>
+      <p class="hero-lede">
+        {One paragraph explaining what you verify, who does the checking, and
+        what the client walks away holding.} <strong>{The sentence that
+        separates you from everyone making the claim without proof.}</strong>
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#start">{Start an application} &rarr;</a>
+        <a class="btn btn-ghost" href="#what">{Read the standard}</a>
+      </div>
+    </div>
+
+    <!-- THE SIGNATURE ELEMENT. For this kind of business the mark is the
+         product, so it gets the space a hero image would normally take.
+         Replace the initials; keep the structure. -->
+    <svg class="seal" viewBox="0 0 300 300" role="img" aria-label="{Business} certification mark">
+      <circle cx="150" cy="150" r="146" fill="#0C1D21" stroke="#C9A227" stroke-width="1.5"/>
+      <circle cx="150" cy="150" r="132" fill="none" stroke="#C9A227" stroke-width="0.8" opacity="0.55"/>
+      <circle cx="150" cy="150" r="104" fill="none" stroke="#C9A227" stroke-width="0.8" opacity="0.35"/>
+      <path id="sealtop" d="M26,150 A124,124 0 0,1 274,150" fill="none"/>
+      <text fill="#C9A227" font-family="IBM Plex Mono, monospace" font-size="14" letter-spacing="5">
+        <textPath href="#sealtop" startOffset="50%" text-anchor="middle">{BUSINESS NAME} · CERTIFIED</textPath>
+      </text>
+      <text x="150" y="243" text-anchor="middle" fill="#C9A227" opacity="0.75"
+            font-family="IBM Plex Mono, monospace" font-size="11.5" letter-spacing="4">EST. {YEAR}</text>
+      <g transform="translate(150,150)">
+        <text x="0" y="14" text-anchor="middle" fill="#F2EFE6" font-family="Source Serif 4, Georgia, serif" font-size="66" font-weight="600">{AB}</text>
+        <path d="M-52 40 L52 40" stroke="#C9A227" stroke-width="1" opacity="0.5"/>
+        <text x="0" y="66" text-anchor="middle" fill="#C9A227" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="3">{LEVEL}</text>
+      </g>
+    </svg>
+  </div>
+</header>
+
+<div class="proof">
+  <div class="wrap">
+    <div class="proof-item">
+      <h3>{Free to read}</h3>
+      <p>{The standard is published in full. Build to it at no cost; pay when you want it on the record.}</p>
+    </div>
+    <div class="proof-item">
+      <h3>{Independently run}</h3>
+      <p>{Who governs it, and why that means the result is worth something.}</p>
+    </div>
+    <div class="proof-item">
+      <h3>{Four levels, sixteen marks}</h3>
+      <p>{The shape of what you award, in one line.}</p>
+    </div>
+  </div>
+</div>
+
+<section id="what">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What it covers</p>
+      <h2>{What gets checked, in plain terms.}</h2>
+      <p>{Two sentences on scope. Say what is inside and what is deliberately outside — a standard that claims everything proves nothing.}</p>
+    </div>
+    <div class="levels">
+      <div class="level"><div class="level-name">{Area one}</div><p style="color:var(--bone-dim);font-size:0.94rem;margin:0">{What is measured here and how.}</p></div>
+      <div class="level"><div class="level-name">{Area two}</div><p style="color:var(--bone-dim);font-size:0.94rem;margin:0">{What is measured here and how.}</p></div>
+      <div class="level"><div class="level-name">{Area three}</div><p style="color:var(--bone-dim);font-size:0.94rem;margin:0">{What is measured here and how.}</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How it works</p>
+      <h2>{Four steps, and most of the work is ours.}</h2>
+    </div>
+    <ol class="steps">
+      <li><div class="step-n">01</div><h3>{Apply}</h3><p>{What the client does, and how long it takes them.}</p></li>
+      <li><div class="step-n">02</div><h3>{Inspection}</h3><p>{Who turns up, what they test, how long it takes.}</p></li>
+      <li><div class="step-n">03</div><h3>{Review}</h3><p>{Who decides, and against what.}</p></li>
+      <li><div class="step-n">04</div><h3>{On the record}</h3><p>{What they receive and where it is listed publicly.}</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="levels">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Levels</p>
+      <h2>{What it costs, in the open.}</h2>
+      <p>{One line on why the pricing is public. For a trust business, hiding the price undermines the product.}</p>
+    </div>
+    <div class="levels">
+      <div class="level">
+        <div class="level-name">{Level one}</div>
+        <div class="level-price">{$000}</div>
+        <ul><li>{What is included}</li><li>{What is included}</li><li>{What is included}</li></ul>
+      </div>
+      <div class="level is-featured">
+        <div class="level-name">{Level two}</div>
+        <div class="level-price">{$000}</div>
+        <ul><li>{Everything above, plus}</li><li>{What is included}</li><li>{What is included}</li></ul>
+      </div>
+      <div class="level">
+        <div class="level-name">{Level three}</div>
+        <div class="level-price">{$000}</div>
+        <ul><li>{Everything above, plus}</li><li>{What is included}</li><li>{What is included}</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Questions</p>
+      <h2>{The ones people actually ask.}</h2>
+    </div>
+    <details open><summary>{The objection you hear most}</summary><p>{Answer it straight. A defensive answer here costs more than the question did.}</p></details>
+    <details><summary>{How long does it take?}</summary><p>{A real number, with the thing that makes it longer.}</p></details>
+    <details><summary>{What if we fail?}</summary><p>{What happens next, and what it costs to try again.}</p></details>
+    <details><summary>{How is this different from {the alternative}?}</summary><p>{Name the alternative and be fair about it.}</p></details>
+  </div>
+</section>
+
+<section class="closer" id="start">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--brass)">{Get started}</p>
+    <h2>{The one thing you want them to do.}</h2>
+    <p>{Remove the last objection in a sentence — what it costs to begin, and what happens if they change their mind.}</p>
+    <div class="cta-row" style="justify-content:center">
+      <a class="btn btn-primary" href="mailto:{email}">{Start an application} &rarr;</a>
+      <a class="btn btn-ghost" href="tel:{phone}">{Or call us}</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; {YEAR} {Business name}</span>
+    <a href="mailto:{email}">{email}</a>
+    <a href="tel:{phone}">{phone}</a>
+    <span class="footer-end">{City, Country}</span>
+  </div>
+</footer>
+
+</body>
+</html>

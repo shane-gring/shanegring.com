@@ -1,4 +1,4 @@
-Notes · 65 of them
+Notes · 70 of them
 
 # What I'm working through, most weekdays.
 
@@ -10,6 +10,104 @@ businesses, what broke, what I'd do differently.
 on the way there.** Also on
 [LinkedIn](https://www.linkedin.com/in/shanegring/),
 which is where they start.
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 17, 2026
+
+Somewhere on your to-do list is "finish the website." It's been there a while.
+
+Here's what happened. The builder subscription made a quiet deal with you: they provide the tools, you provide the weekends. That deal works great for people who enjoy the tinkering. For everyone else it produces the same three things -- a half-built page, a monthly charge, and a low-grade guilt every time the to-do list scrolls past it.
+
+So here's my honest advice, and it cuts both ways. If you like tinkering with your own site, a builder is genuinely the right call. Keep it. But if you're the opposite person -- time-poor, allergic to homework, with a business to run -- stop trying to become a web designer on weekends. Buy the outcome instead. Somebody builds it, somebody keeps it running, and the to-do list item finally dies.
+
+I run a service built for exactly that second person. You never open a dashboard. Details in the comments.
+
+2 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506372656452005892)
+
+Website OfferEducation
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 16, 2026
+
+If you grew up in the Midwest and did high school sports, you probably remember Bigger Faster Stronger.
+
+Posters on the weight room wall, training programs, safety courses. For a lot of us, it was the first real explanation of how our bodies work and how to develop them. They've been at it since 1976, so this year makes fifty.
+
+Got the chance to work with @[Hewitt Tomlin](urn:li:person:-Ep61bfBjZ) and the team at @[TeamBuildr](urn:li:organization:2727702) on breathing some new life into the brand for the 50th. It's live now.
+
+It's built around what a coach actually has to do. Build the room, with equipment, design help, and on-site consultation. Run the program, with the Total Program and the 8-week offseason, in-season, and conditioning blocks. Develop the leaders, with weight room safety certification, Be An 11, clinics and mini courses.
+
+https://biggerfasterstronger.com/
+
+@[Clayton Young](urn:li:person:dPyP1WPqUD) led the way with some exceptional design work on this one. Fifty years in and the brand still knows exactly who it's talking to.
+
+The piece I'd start with is free. The Weight Room Report Card walks the same 11 pillars BFS consultants use when they evaluate a room, takes about a minute, and gives you a letter grade plus a prioritized list of what to fix first.
+
+https://biggerfasterstronger.com/build/report-card
+
+And if your high school gym or athletic program needs a strength partner, book a call with John. He's excited to help shepherd the next phase of your program.
+
+[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506049313169608704)
+
+Use Case
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 16, 2026
+
+A pattern I keep seeing: a business knows the site's gone stale, gets a quote for a rebuild, sees the number, and flinches. Then nothing happens for another year.
+
+Fair reaction, honestly. A full rebuild is a big swing, and often the site doesn't need one. The offers are still right. The story's mostly current. What fell away is the upkeep -- and rebuilding the whole thing to fix an ownership gap aims a lot of money at the wrong target.
+
+The smaller move: someone takes the site you've got and owns it. Stops the decay first, ships the fixes that have been waiting, then keeps it moving -- a page added here, copy trued up there, month after month. It starts on what you already have, this week, and the site gets better instead of waiting on a someday project.
+
+Some sites genuinely do need the rebuild. A lot need an owner. Worth knowing which one you're looking at before the next quote.
+
+That ownership piece is a thing I offer now. The details are in the comments.
+
+2 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505995174171516928)
+
+Website OfferEducation
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 15, 2026
+
+The first twenty minutes of every sales call, you answer the same questions. Brilliantly, by now -- you've refined those answers across dozens of conversations. Then the call ends, and the answers evaporate.
+
+That's the quiet waste in most expert businesses. You're already producing your best content, one prospect at a time, in private, where it can't compound.
+
+Meanwhile the same questions get typed into search bars and AI chats at 6am by people who've never heard of you. They don't know your category exists. They just have the problem. And whoever wrote the answer down is the one who gets found.
+
+The move is smaller than a content strategy. Write down the last five questions prospects asked you. Those are pages. One question each, phrased the way the buyer phrases it, answered completely with the judgment you'd give on the call.
+
+Answer fully, is my advice. Holding back for the sales call has it backwards -- the person who reads a complete answer and still calls is exactly the buyer you want.
+
+More on building this in the comments.
+
+3 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505679361736413184)
+
+Education
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 15, 2026
+
+Something I notice a fair bit is that a company's site says one thing, but its social says something else.
+
+Often, they've just drifted apart. Two authors wrote them, months apart, with no shared source.
+
+That gap is expensive. A prospect reads a post, likes it, clicks to the site, and lands somewhere that sounds like a different company.
+
+When the posts come from the same foundation the site is built on, that stops happening: same voice, same positioning, same way of describing the work, whether someone meets you in the feed or on the homepage.
+
+Worth checking sometime: read your last ten posts, then your homepage, back to back. If they sound like two different businesses, that's something to address.
+
+1 reaction[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505645357666680834)
+
+Education
 
 Shane Gring
 Fractional COO · operations for expert-led businesses
@@ -27,7 +125,7 @@ The solution starts with watching your site get read both ways at once, by someo
 
 I run this as a recorded walkthrough. What's in it is in the first comment.
 
-[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505325789190647809)
+2 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505325789190647809)
 
 Website OfferUse Case
 
@@ -45,7 +143,7 @@ Funny thing looking back: two kids felt like a handful then. We could still pair
 
 Mostly I'm glad we didn't wait for a smoother season. The smoother season is always a couple years out. Say yes, take the trip, and figure the rest out on the way.
 
-1 reaction[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505264110599622657)
+8 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505264110599622657)
 
 Personal Story
 
@@ -101,7 +199,7 @@ It's a lot of work, honestly. But it's all worth it. Taking a beat to actually c
 
 Sky's eye and creativity are just a few more things that make her special. And I'm grateful I get to watch, help, and enjoy these little time-lapse photos of all my girls.
 
-22 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503814567140007936)
+26 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503814567140007936)
 
 Personal Story
 
@@ -235,7 +333,7 @@ The Institute has since transitioned. The movement wave crested and fell, the ne
 
 But the premise held up. I still think a business is one of the best tools there is for taking care of people. Most of what I do today runs on some version of that idea.
 
-3 reactions · 2 comments[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:ugcPost:7500968336650866689)
+3 reactions · 5 comments[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:ugcPost:7500968336650866689)
 
 Personal Story
 

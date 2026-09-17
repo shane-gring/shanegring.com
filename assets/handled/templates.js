@@ -1,62 +1,79 @@
 // Handled intake — the template picker.
 //
-// CONTENT, NOT CODE. Add a seventh entry, drop the third, reorder them — the
+// CONTENT, NOT CODE. Add a fifth entry, drop the third, reorder them — the
 // picker re-renders from this array and nothing needs a code change. Nothing
 // anywhere assumes how many there are.
 //
-// These are real sites Shane has built, not mockups. A client picking from work
-// that exists is picking something they can go and look at, which is why the
-// description is the domain rather than a word like "bold" — they can open it in
-// another tab and judge for themselves.
-//
-// The same screenshots appear on /handled, so the look a client chooses here is
-// the look they were sold on the page they bought from.
-//
-// A preview image that doesn't exist falls back to a neutral placeholder rather
-// than breaking the render, so entries can be swapped one at a time.
+// Each entry maps to a real page in /handled-templates/. The preview images
+// are screenshots OF those pages, so a client choosing "The Field" is looking
+// at the thing they will actually get rather than an illustration of it. If
+// you change a template, re-shoot its preview — see HANDLED-TEMPLATES.md.
 //
 //   id            stable key stored on the record. Don't reuse or repoint an
 //                 id once a client has chosen it.
 //   name          shown under the preview.
-//   description   one line. "TBD" renders as nothing rather than the word.
-//   previewImage  path under /images/handled/.
+//   description   one line, written for the CLIENT, not for a designer. It
+//                 should help someone recognise their own business, not
+//                 describe a visual style.
+//   previewImage  screenshot of the live template.
+//   viewUrl       the live page, opened in a new tab from the card.
 
 export const TEMPLATES = [
   {
-    id: 'look-buckhead',
-    name: 'Buckhead Restaurant Week',
-    description: 'buckheadrestaurantweek.com',
-    previewImage: '/images/handled/1-buckhead-restaurant-week.png',
+    id: 'template-standard',
+    name: 'The Standard',
+    description: 'For work that someone else verifies — certification, inspection, accreditation.',
+    previewImage: '/images/handled/templates/standard.jpg',
+    viewUrl: '/handled-templates/standard',
   },
   {
-    id: 'look-drvn',
-    name: 'DRVN Golf',
-    description: 'drvngolf.com',
-    previewImage: '/images/handled/7-drvn.png',
+    id: 'template-practice',
+    name: 'The Practice',
+    description: 'For one person whose work is judgement. Quiet, personal, no sales noise.',
+    previewImage: '/images/handled/templates/practice.jpg',
+    viewUrl: '/handled-templates/practice',
   },
   {
-    id: 'look-forj',
-    name: 'The Forj Group',
-    description: 'theforjgroup.com',
-    previewImage: '/images/handled/4-forj.png',
+    id: 'template-signal',
+    name: 'The Signal',
+    description: 'For an idea the market hasn’t caught up with yet. Built to land one argument.',
+    previewImage: '/images/handled/templates/signal.jpg',
+    viewUrl: '/handled-templates/signal',
   },
   {
-    id: 'look-bfs',
-    name: 'Bigger Faster Stronger',
-    description: 'biggerfasterstronger.com',
-    previewImage: '/images/handled/5-bfs.png',
+    id: 'template-marquee',
+    name: 'The Marquee',
+    description: 'For a place or a product people come to see. Shops, studios, venues, makers.',
+    previewImage: '/images/handled/templates/marquee.jpg',
+    viewUrl: '/handled-templates/marquee',
   },
   {
-    id: 'look-excel',
-    name: 'Excel Training Designs',
-    description: 'exceltrainingdesigns.com',
-    previewImage: '/images/handled/6-excel-training-designs.png',
+    id: 'template-rooms',
+    name: 'The Rooms',
+    description: 'For a business people come to by appointment, with more than one person on the team. Studios, salons, clinics, workshops.',
+    previewImage: '/images/handled/templates/rooms.jpg',
+    viewUrl: '/handled-templates/rooms',
   },
   {
-    id: 'look-albizhubi',
-    name: 'Albi Zhubi',
-    description: 'albizhubi.com',
-    previewImage: '/images/handled/1-albizhubi.png',
+    id: 'template-column',
+    name: 'The Column',
+    description: 'For work that takes a paragraph to explain. One big photograph and room to set out how you do it.',
+    previewImage: '/images/handled/templates/column.jpg',
+    viewUrl: '/handled-templates/column',
+  },
+  {
+    id: 'template-drift',
+    name: 'The Drift',
+    description: 'For work with nothing to photograph. Remote services, advisers, tutors, agencies.',
+    previewImage: '/images/handled/templates/drift.jpg',
+    viewUrl: '/handled-templates/drift',
+  },
+  {
+    id: 'template-field',
+    name: 'The Field',
+    description: 'For physical work you can photograph — trades, contractors, installers. Phone first.',
+    previewImage: '/images/handled/templates/field.jpg',
+    viewUrl: '/handled-templates/field',
   },
 ];
 

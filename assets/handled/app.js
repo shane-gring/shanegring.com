@@ -16,8 +16,8 @@
  * indicator that is always telling the truth.
  */
 
-import { SECTIONS, WELCOME, CONFIRMATION, questionById, allQuestions, RECORDING_FIELD } from './questions.js?v=614da2d8';
-import { TEMPLATES, PLACEHOLDER_PREVIEW, templateBlurb, templateById } from './templates.js?v=cf35bf53';
+import { SECTIONS, WELCOME, CONFIRMATION, questionById, allQuestions, RECORDING_FIELD } from './questions.js?v=67502e6c';
+import { TEMPLATES, PLACEHOLDER_PREVIEW, templateBlurb, templateById } from './templates.js?v=f8bd3fa8';
 import { acceptAttr, formatBytes, validateUpload, GROUPS, canRecord, pickRecordType,
          extensionForType, RECORD_BITRATE, RECORD_MAX_SECONDS } from './uploads.js?v=5f553a01';
 
@@ -44,6 +44,8 @@ const state = {
   serverMissing: [],          // what the server said was missing, if it disagreed
   lastScreen: null,           // where they left off, so a return visit resumes there
   answerMode: null,           // record | upload | type, remembered across visits
+  firstName: '',              // off the Stripe receipt, for the welcome line
+  fresh: false,               // arrived straight from checkout, not from email
 };
 
 const SCREENS = () => ['welcome', ...SECTIONS.map((s) => s.id), 'review', 'done'];
@@ -53,7 +55,21 @@ const SCREENS = () => ['welcome', ...SECTIONS.map((s) => s.id), 'review', 'done'
 boot();
 
 async function boot() {
-  const token = readToken();
+  let token = readToken();
+
+  // Straight from Stripe: the success URL carries ?session=cs_…, and the
+  // token is whatever the webhook minted for it. Claiming it puts the buyer
+  // in the form instead of back on the sales page.
+  if (!token && sessionFromQuery()) {
+    token = await claimToken(sessionFromQuery());
+    if (!token) return renderFatal('not_ready');
+    state.fresh = true;
+    // The token belongs in the fragment, which never reaches the server, and
+    // the session id has done its job — so the address bar loses the query
+    // and gains the same link the email would have sent.
+    history.replaceState(null, '', `${location.pathname}#t=${token}`);
+  }
+
   if (!token) return renderFatal('no_token');
   state.token = token;
 
@@ -75,11 +91,15 @@ async function boot() {
       transcript: data.transcript || null,
       lastScreen: data.lastScreen || null,
       answerMode: data.answerMode || null,
+      firstName: data.firstName || '',
     });
     // Someone returning to a finished intake gets the read-only look back,
     // not the form again.
     state.screen = data.status === 'submitted' ? 'done' : firstUnfinishedScreen();
     render();
+    // Only for someone who just paid. A return visit from the email link is
+    // not a moment, and confetti every time would wear through fast.
+    if (state.fresh && data.status !== 'submitted') celebrate();
   } catch {
     renderFatal('offline');
   }
@@ -88,6 +108,34 @@ async function boot() {
 function readToken() {
   const m = /[#&]t=([A-Za-z0-9_-]+)/.exec(location.hash || '');
   return m ? m[1] : '';
+}
+
+function sessionFromQuery() {
+  const id = new URLSearchParams(location.search).get('session') || '';
+  return /^cs_(live|test)_[A-Za-z0-9]{10,200}$/.test(id) ? id : '';
+}
+
+// Stripe redirects the moment the payment clears, which regularly beats its
+// own webhook to us by a second or two. So this waits rather than failing:
+// ten tries over about twenty seconds, which is far longer than the gap has
+// ever been, and a plain message if it really never arrives.
+async function claimToken(sessionId) {
+  renderClaiming();
+  for (let attempt = 0; attempt < 10; attempt += 1) {
+    try {
+      const res = await fetch(`${API}/claim?session=${encodeURIComponent(sessionId)}`);
+      if (res.ok) {
+        const body = await res.json();
+        if (body.token) return body.token;
+      } else if (res.status !== 404) {
+        return '';
+      }
+    } catch {
+      // A dropped request is the same as "not yet": keep waiting.
+    }
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+  }
+  return '';
 }
 
 // Drop someone back where the work actually is, rather than making them click
@@ -369,7 +417,10 @@ const timeOf = (d) => d.toLocaleTimeString([], { hour: 'numeric', minute: '2-dig
 function screenWelcome() {
   const wrap = el('div', 'hi-screen');
   wrap.append(el('span', 'section-eyebrow', 'Handled'));
-  wrap.append(el('h1', 'cs-hook', WELCOME.title));
+  wrap.append(el('h1', 'cs-hook', state.firstName ? `Welcome, ${state.firstName}.` : WELCOME.title));
+  if (state.fresh) {
+    wrap.append(el('p', 'hi-welcome-from', 'You’re in, and I’m glad you’re here. — Shane'));
+  }
   wrap.append(el('p', 'om-lede', WELCOME.lede));
 
   const slot = el('div', 'hi-intro-slot');
@@ -692,6 +743,11 @@ function templatePicker(q) {
   grid.setAttribute('aria-label', q.label);
 
   for (const t of TEMPLATES) {
+    // The card is the choice; the link is a sibling, not a child. An anchor
+    // nested inside a button is invalid and swallows one of the two actions —
+    // and these genuinely are two actions: pick this one, or go and look at it.
+    const cell = el('div', 'hi-template-cell');
+
     const card = el('button', 'hi-template');
     card.type = 'button';
     card.setAttribute('role', 'radio');
@@ -704,7 +760,7 @@ function templatePicker(q) {
     img.alt = '';
     img.loading = 'lazy';
     img.width = 320; img.height = 240;
-    // A preview Chris hasn't produced yet must not render as a broken image.
+    // A preview that hasn't been shot yet must not render as a broken image.
     img.addEventListener('error', () => { img.src = PLACEHOLDER_PREVIEW; }, { once: true });
     card.append(img);
 
@@ -713,7 +769,23 @@ function templatePicker(q) {
     if (blurb) card.append(el('span', 'hi-template-desc', blurb));
 
     card.addEventListener('click', () => { setValue(q, t.id); render(); });
-    grid.append(card);
+    cell.append(card);
+
+    if (t.viewUrl) {
+      const view = el('a', 'hi-template-view');
+      view.href = t.viewUrl;
+      // New tab, always. Losing a half-finished intake to go and look at a
+      // demo would be the worst trade this page could make — and the answers
+      // are saved, but the interruption is not worth it.
+      view.target = '_blank';
+      view.rel = 'noopener';
+      view.append(document.createTextNode('See it full size'));
+      view.append(el('span', 'hi-template-arrow', '↗'));
+      view.setAttribute('aria-label', `See the ${t.name} template full size, opens in a new tab`);
+      cell.append(view);
+    }
+
+    grid.append(cell);
   }
   return grid;
 }
@@ -1326,6 +1398,10 @@ function renderFatal(kind) {
       title: 'This link has expired.',
       body: 'Links stay open for a few weeks. Email me and I’ll issue a new one — nothing you filled in is lost.',
     },
+    not_ready: {
+      title: 'Your payment went through.',
+      body: 'Setting up your intake is taking longer than it should. Nothing is lost and you are not charged twice — email me and I will send your link straight away.',
+    },
     offline: {
       title: 'Couldn’t reach the server.',
       body: 'Check your connection and reload. Anything you had already filled in is saved.',
@@ -1349,6 +1425,89 @@ function renderFatal(kind) {
   c.append(p);
   sec.append(c);
   root.append(sec);
+}
+
+// Shown for the second or two between Stripe's redirect and its webhook. It
+// says the money part is done, because that is the thing a buyer staring at a
+// blank page is worried about.
+function renderClaiming() {
+  root.dataset.state = 'fatal';
+  root.innerHTML = '';
+  const sec = el('section', 'om-hero');
+  const c = el('div', 'container');
+  c.append(el('span', 'section-eyebrow', 'Handled'));
+  c.append(el('h1', 'cs-hook', 'Payment received. Thank you.'));
+  c.append(el('p', 'om-lede', 'Opening your intake — this takes a moment.'));
+  sec.append(c);
+  root.append(sec);
+}
+
+// --- confetti ---------------------------------------------------------------
+// Hand-rolled rather than a library: it is forty lines, it runs once, and a
+// CDN script for it would be the heaviest thing on the page. Paper only, no
+// sound, and nothing that moves for anyone who asked for less motion.
+
+function celebrate() {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const canvas = document.createElement('canvas');
+  canvas.className = 'hi-confetti';
+  canvas.setAttribute('aria-hidden', 'true');
+  document.body.append(canvas);
+
+  const ctx = canvas.getContext('2d');
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const w = () => canvas.width / dpr;
+  const size = () => {
+    canvas.width = window.innerWidth * dpr;
+    canvas.height = window.innerHeight * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  };
+  size();
+
+  const colors = ['#55c98c', '#7fe0ab', '#111111', '#f4c95d', '#ffffff'];
+  const pieces = Array.from({ length: 90 }, () => ({
+    x: w() * Math.random(),
+    y: -20 - Math.random() * window.innerHeight * 0.5,
+    r: 4 + Math.random() * 5,
+    tilt: Math.random() * Math.PI,
+    spin: (Math.random() - 0.5) * 0.2,
+    vy: 1.6 + Math.random() * 2.4,
+    vx: (Math.random() - 0.5) * 1.2,
+    color: colors[Math.floor(Math.random() * colors.length)],
+  }));
+
+  const started = performance.now();
+  const DURATION = 4200;
+
+  function frame(now) {
+    const elapsed = now - started;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Fade the whole thing out rather than letting pieces vanish mid-air.
+    ctx.globalAlpha = elapsed > DURATION - 900 ? Math.max(0, (DURATION - elapsed) / 900) : 1;
+
+    for (const p of pieces) {
+      p.y += p.vy;
+      p.x += p.vx + Math.sin((p.y + p.tilt * 40) / 40) * 0.6;
+      p.tilt += p.spin;
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.tilt);
+      ctx.fillStyle = p.color;
+      ctx.fillRect(-p.r / 2, -p.r, p.r, p.r * 1.6);
+      ctx.restore();
+    }
+
+    if (elapsed < DURATION) {
+      requestAnimationFrame(frame);
+    } else {
+      window.removeEventListener('resize', size);
+      canvas.remove();
+    }
+  }
+
+  window.addEventListener('resize', size);
+  requestAnimationFrame(frame);
 }
 
 // --- tiny helpers ----------------------------------------------------------
