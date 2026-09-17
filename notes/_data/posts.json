@@ -1,5 +1,16 @@
 [
   {
+    "id": "b6da81c6-bda7-44ea-8a81-6257ce54cb6a",
+    "title": "Handled - The Homework Problem",
+    "date": "2026-09-17",
+    "labels": [
+      "Website Offer",
+      "Education"
+    ],
+    "images": [],
+    "copy": "Somewhere on your to-do list is \"finish the website.\" It's been there a while.\n\nHere's what happened. The builder subscription made a quiet deal with you: they provide the tools, you provide the weekends. That deal works great for people who enjoy the tinkering. For everyone else it produces the same three things -- a half-built page, a monthly charge, and a low-grade guilt every time the to-do list scrolls past it.\n\nSo here's my honest advice, and it cuts both ways. If you like tinkering with your own site, a builder is genuinely the right call. Keep it. But if you're the opposite person -- time-poor, allergic to homework, with a business to run -- stop trying to become a web designer on weekends. Buy the outcome instead. Somebody builds it, somebody keeps it running, and the to-do list item finally dies.\n\nI run a service built for exactly that second person. You never open a dashboard. Details in the comments."
+  },
+  {
     "id": "553d9666-e26d-4260-bdcd-c01349a20751",
     "title": "BFS launch",
     "date": "2026-09-16",

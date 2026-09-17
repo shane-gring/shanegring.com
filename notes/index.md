@@ -1,4 +1,4 @@
-Notes · 69 of them
+Notes · 70 of them
 
 # What I'm working through, most weekdays.
 
@@ -10,6 +10,22 @@ businesses, what broke, what I'd do differently.
 on the way there.** Also on
 [LinkedIn](https://www.linkedin.com/in/shanegring/),
 which is where they start.
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 17, 2026
+
+Somewhere on your to-do list is "finish the website." It's been there a while.
+
+Here's what happened. The builder subscription made a quiet deal with you: they provide the tools, you provide the weekends. That deal works great for people who enjoy the tinkering. For everyone else it produces the same three things -- a half-built page, a monthly charge, and a low-grade guilt every time the to-do list scrolls past it.
+
+So here's my honest advice, and it cuts both ways. If you like tinkering with your own site, a builder is genuinely the right call. Keep it. But if you're the opposite person -- time-poor, allergic to homework, with a business to run -- stop trying to become a web designer on weekends. Buy the outcome instead. Somebody builds it, somebody keeps it running, and the to-do list item finally dies.
+
+I run a service built for exactly that second person. You never open a dashboard. Details in the comments.
+
+2 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506372656452005892)
+
+Website OfferEducation
 
 Shane Gring
 Fractional COO · operations for expert-led businesses
@@ -127,7 +143,7 @@ Funny thing looking back: two kids felt like a handful then. We could still pair
 
 Mostly I'm glad we didn't wait for a smoother season. The smoother season is always a couple years out. Say yes, take the trip, and figure the rest out on the way.
 
-7 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505264110599622657)
+8 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505264110599622657)
 
 Personal Story
 
@@ -183,7 +199,7 @@ It's a lot of work, honestly. But it's all worth it. Taking a beat to actually c
 
 Sky's eye and creativity are just a few more things that make her special. And I'm grateful I get to watch, help, and enjoy these little time-lapse photos of all my girls.
 
-25 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503814567140007936)
+26 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503814567140007936)
 
 Personal Story
 
