@@ -3201,42 +3201,6 @@ body.offer-partner { --offer: #ae2c1c; --offer-deep: #8e2417; }
 }
 .om-card .path-item-cta { margin-top: 1rem; }
 
-/* Upgrades: one card carries a "what you get" list rather than a sentence.
-   Four bullets inside a 250px grid column would leave its siblings
-   half-empty, so that card drops out of the grid and runs full width. */
-.om-upgrade-detail {
-  margin-top: 1.1rem;
-}
-.om-upgrade-detail .cs-bullets {
-  margin: 0.9rem 0;
-}
-.om-upgrade-detail .cs-bullets li {
-  font-size: 0.95rem;
-  line-height: 1.65;
-  padding: 0.3rem 0 0.3rem 1.4rem;
-}
-.om-upgrade-detail .cs-bullets li::before {
-  top: 0.3rem;
-}
-/* The "without it" contrast line: the point of the card, so it sits apart
-   from the list above it rather than reading as a fifth bullet. */
-.om-upgrade-detail .om-contrast {
-  margin: 1.1rem 0 0 !important;
-  padding-top: 0.9rem;
-  border-top: 1px solid var(--border, rgba(0, 0, 0, 0.12));
-  font-size: 0.95rem;
-  line-height: 1.65;
-  color: var(--dim);
-}
-.om-upgrade-detail .om-contrast strong {
-  color: var(--fg);
-}
-
-/* Matches the breathing room `.om-cards + p` gives the note under a grid. */
-.om-section .om-upgrade-detail + p {
-  margin-top: 1.7rem;
-}
-
 .om-weeks {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -5028,6 +4992,51 @@ body.offer-handled { --offer: #1f7a4d; --offer-deep: #145736; }
   text-wrap: balance;
 }
 
+/* /handled runs a shorter hero than /handled-card: a one-word headline
+   needs less room than a sentence. */
+.hd-hero-tight {
+  padding: 5rem 0 3.25rem;
+  min-height: 540px;
+}
+
+/* /handled leads with the name itself, set large, and one line under it.
+   Both live in the h1 so the heading still says what the thing is. */
+.hd-hook-name {
+  max-width: none;
+  margin-bottom: 1.1rem;
+}
+
+.hd-hook-word {
+  display: block;
+  font-size: clamp(3.6rem, 11vw, 7rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+.hd-hook-line {
+  display: block;
+  max-width: 24ch;
+  margin: 0.9rem auto 0;
+  font-size: clamp(1.25rem, 2.6vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.hd-hook-who { color: var(--offer-deep); }
+
+.hd-hook-who a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.18em;
+  text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
+}
+
+.hd-hook-who a:hover { text-decoration-color: currentColor; }
+
 .hd-hook .hd-hook-turn {
   display: block;
   color: var(--offer-deep);
@@ -5063,6 +5072,13 @@ body.offer-handled { --offer: #1f7a4d; --offer-deep: #145736; }
 .hd-pricetag .hd-pricetag-sep {
   color: var(--border-strong);
   font-weight: 400;
+}
+
+.hd-pricetag .hd-pricetag-after {
+  font-size: 0.78em;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--mid);
 }
 
 .hd-pricetag .hd-pricetag-sub {
@@ -5226,85 +5242,6 @@ body.offer-handled { --offer: #1f7a4d; --offer-deep: #145736; }
 
 .hd-resolve strong { color: var(--fg); }
 
-/* ── How it costs ────────────────────────────────────────────────
-   A sequence, not a comparison. The two are numbered and labelled "first,
-   once" and "then, every month", because the thing a reader gets wrong
-   about this offer is thinking $300 is the whole of it or that $200 is
-   instead of it. Deliberately not shaped like .hd-figure in the dark band
-   further down: that one is the buy zone and states the numbers, this one
-   explains what each buys. */
-.hd-terms {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.1rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  counter-reset: hd-term;
-}
-
-.hd-terms li {
-  counter-increment: hd-term;
-  padding: 1.5rem 1.6rem 1.6rem;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-}
-
-/* The second card is the one that recurs, so it is the one that carries the
-   accent rule. The first is a single event and reads quieter on purpose. */
-.hd-terms li + li {
-  border-color: var(--border-strong);
-  box-shadow: inset 3px 0 0 var(--offer);
-}
-
-.hd-terms-when {
-  display: block;
-  font-size: 0.76rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--dim);
-}
-
-.hd-terms li + li .hd-terms-when { color: var(--offer-deep); }
-
-.hd-terms-amount {
-  display: block;
-  margin: 0.35rem 0 0.15rem;
-  font-size: clamp(1.9rem, 4vw, 2.5rem);
-  font-weight: 700;
-  letter-spacing: -0.035em;
-  line-height: 1;
-  color: var(--fg);
-}
-
-.hd-terms-per {
-  font-size: 0.92rem;
-  font-weight: 600;
-  letter-spacing: 0;
-  color: var(--dim);
-}
-
-.hd-terms h3 {
-  margin: 0.55rem 0 0.4rem;
-  font-size: 1.02rem;
-  letter-spacing: -0.01em;
-}
-
-.hd-terms p {
-  margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.65;
-  color: var(--mid);
-}
-
-.hd-terms-foot {
-  margin-top: 1.6rem;
-  margin-bottom: 0;
-  font-size: 0.97rem;
-}
-
 /* ── What you get ────────────────────────────────────────────────
    Ticked, not bulleted. On a sales page the list is the spec sheet,
    and a tick reads as "included" where a dot reads as "topic". */
@@ -5343,48 +5280,163 @@ body.offer-handled { --offer: #1f7a4d; --offer-deep: #145736; }
   display: block;
 }
 
-/* ── How it works ────────────────────────────────────────────────
-   A numbered rail rather than four equal cards: the steps are a
-   sequence, and cards say "menu". */
-.hd-steps {
-  counter-reset: hd-step;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.6rem 1.4rem;
+/* ── The section rail ────────────────────────────────────────────
+   Floats in the left gutter beside the 880px column. It carries its own
+   ground so it reads over the dark price band as well as the white
+   sections. Below 1280px there is no gutter to float in, so it is off. */
+.hd-rail { display: none; }
+
+@media (min-width: 1280px) {
+  .hd-rail {
+    display: block;
+    position: fixed;
+    z-index: 80;
+    top: 50%;
+    left: max(1.25rem, calc(50% - 440px - 12.5rem));
+    width: 10rem;
+    padding: 0.55rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-50%);
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+  }
+
+  .hd-rail.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.hd-rail ol {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.hd-steps li {
-  counter-increment: hd-step;
-  position: relative;
-  padding-top: 1.3rem;
-  border-top: 2px solid var(--border-strong);
+.hd-rail a {
+  display: block;
+  padding: 0.42rem 0.65rem;
+  border-left: 2px solid transparent;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.84rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #666666;
+  text-decoration: none;
 }
 
-.hd-steps li::before {
-  content: "0" counter(hd-step);
-  display: block;
-  margin-bottom: 0.45rem;
-  font-size: 1.05rem;
+.hd-rail a:hover { color: #111111; }
+
+.hd-rail a[aria-current] {
+  border-left-color: var(--offer);
+  background: #f5f5f5;
+  font-weight: 650;
+  color: #111111;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hd-rail { transition: none; }
+}
+
+/* ── The first year ──────────────────────────────────────────────
+   A rail rather than twelve equal cards: the months are a sequence,
+   and cards say "menu". */
+/* Month label in the left gutter, one dot per month, the prompt on the right. */
+.hd-year {
+  counter-reset: hd-month;
+  max-width: 46rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hd-year li {
+  counter-increment: hd-month;
+  position: relative;
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr);
+  column-gap: 2.4rem;
+  padding-bottom: 2rem;
+}
+
+.hd-year li:last-child { padding-bottom: 0; }
+
+.hd-year li::before {
+  content: "Month " counter(hd-month);
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  padding-top: 0.28rem;
+  text-align: right;
+  font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.06em;
   line-height: 1;
+  text-transform: uppercase;
   color: var(--offer);
 }
 
-.hd-steps h3 {
-  margin: 0 0 0.4rem;
-  font-size: 1.02rem;
+/* The rail runs from this month's dot to the next one's. */
+.hd-year li::after {
+  content: "";
+  position: absolute;
+  top: 0.4rem;
+  bottom: -0.4rem;
+  left: calc(6.5rem + 1.2rem - 1px);
+  width: 2px;
+  background: var(--border-strong);
+}
+
+.hd-year li:last-child::after { display: none; }
+
+.hd-year h3 {
+  grid-column: 2;
+  margin: 0 0 0.35rem;
+  font-size: 1.08rem;
   letter-spacing: -0.01em;
 }
 
-.hd-steps p {
+.hd-year h3::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0.4rem;
+  left: calc(6.5rem + 1.2rem - 6px);
+  width: 12px;
+  height: 12px;
+  box-sizing: border-box;
+  border: 2px solid var(--offer);
+  border-radius: 50%;
+  background: var(--bg, #fff);
+}
+
+/* Quarter starts get a filled dot, so the year reads in four blocks. */
+.hd-year li:nth-child(3n + 1) h3::before { background: var(--offer); }
+
+.hd-year p {
+  grid-column: 2;
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 0.97rem;
   line-height: 1.6;
   color: var(--mid);
+}
+
+@media (max-width: 640px) {
+  .hd-year li {
+    display: block;
+    padding-left: 1.9rem;
+  }
+  .hd-year li::before {
+    display: block;
+    margin-bottom: 0.4rem;
+    padding-top: 0;
+    text-align: left;
+  }
+  .hd-year li::after { left: 5px; top: 0.1rem; bottom: -0.1rem; }
+  .hd-year h3::before { left: 0; top: 0; }
 }
 
 /* ── Proof ───────────────────────────────────────────────────────
@@ -5417,7 +5469,10 @@ a.hd-shot:hover { border-color: var(--fg); transform: translateY(-2px); }
   border-bottom: 1px solid var(--border);
 }
 
+/* A span, so it has to be made a block or its top and bottom padding
+   paint over the image edge instead of making room. */
 .hd-shot-meta {
+  display: block;
   padding: 0.85rem 1rem 1rem;
 }
 
@@ -5439,6 +5494,21 @@ a.hd-shot:hover { border-color: var(--fg); transform: translateY(-2px); }
 
 @media (prefers-reduced-motion: reduce) {
   a.hd-shot:hover { transform: none; }
+}
+
+/* ── About Shane ─────────────────────────────────────────────────
+   The homepage's about strip, centred under the section title and held to
+   a reading width. */
+.hd-about {
+  max-width: 44rem;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.hd-about .about-text p:last-child { margin-bottom: 0; }
+
+@media (max-width: 600px) {
+  .hd-about { align-items: flex-start; }
 }
 
 /* ── The inverted band ───────────────────────────────────────────
@@ -5510,6 +5580,26 @@ a.hd-shot:hover { border-color: var(--fg); transform: translateY(-2px); }
   font-weight: 600;
   letter-spacing: 0;
   color: var(--dim);
+}
+
+/* The $300 leads. The monthly fee is stated plainly beside it, a size down. */
+.hd-figure-lead { flex: 1.6 1 17rem; }
+
+.hd-figure-lead .hd-figure-num { font-size: clamp(3rem, 7.5vw, 4.4rem); }
+
+.hd-figure-after {
+  flex: 1 1 13rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: transparent;
+}
+
+.hd-figure-after .hd-figure-num {
+  font-size: clamp(1.5rem, 3.2vw, 1.9rem);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  color: var(--mid);
 }
 
 .hd-figure-what {
@@ -5598,7 +5688,6 @@ a.hd-shot:hover { border-color: var(--fg); transform: translateY(-2px); }
 /* ── Narrow ──────────────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .hd-shots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .hd-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 768px) {
@@ -5628,10 +5717,8 @@ a.hd-shot:hover { border-color: var(--fg); transform: translateY(-2px); }
   .hd-hook { max-width: none; }
   .hd-cta .btn-primary { width: 100%; justify-content: center; }
   .hd-versus { grid-template-columns: 1fr; }
-  .hd-terms { grid-template-columns: 1fr; }
   .hd-shots { grid-template-columns: 1fr; }
   .hd-gets { grid-template-columns: 1fr; }
-  .hd-steps { grid-template-columns: 1fr; }
   .hd-section { padding: 3.25rem 0; }
   .hd-band { padding: 3.5rem 0; }
 
