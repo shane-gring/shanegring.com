@@ -11,7 +11,11 @@ Or find me at:
 
 [LinkedIn /in/shanegring](https://linkedin.com/in/shanegring)
 [Certainly certainly.coop](https://certainly.coop)
+[Google Business Profile](https://share.google/3QZGA2ZCmibHZQKqt)
 [Email shane@shanegring.com](mailto:shane@shanegring.com)
+
+Office
+650 Washington Rd, Suite 205 · Pittsburgh (Mt. Lebanon), PA 15228
 
 ---
 

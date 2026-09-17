@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager: production host only, so local and preview work stays out of GA4 -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];
+var h=w.location.hostname;if(h!=='shanegring.com'&&h!=='www.shanegring.com'&&w.location.search.indexOf('gtm_debug')<0)return;
+w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WHSTF58T');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your own site, build fee waived | Shane Gring</title>
+<meta name="description" content="A one-page site built to your specs, changed by email, everything in your name. $200 a month. The $300 build is waived because we met.">
+<meta name="author" content="Shane Gring">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://shanegring.com/handled-card">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Your own site, build fee waived | Shane Gring">
+<meta property="og:description" content="A one-page site built to your specs, changed by email, everything in your name. $200 a month. The $300 build is waived because we met.">
+<meta property="og:url" content="https://shanegring.com/handled-card">
+<meta property="og:site_name" content="Shane Gring">
+<meta property="og:image" content="https://shanegring.com/images/handled-hero.png">
+<meta property="og:image:alt" content="A small-town water tower with a maintenance crew at work on its catwalk, the town's rooftops along the horizon, and open sky between">
+
+<link rel="stylesheet" href="/styles.css?v=352dbac2">
+
+<!-- This page is card-only: a couple of small rules the shared handled.html
+     hero relies on (.hd-page .vsl-header) that aren't worth pulling in whole,
+     since this page has no sticky buy bar and no footer nav to account for. -->
+<style>
+  body.hc-page .vsl-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    background: none;
+    border-bottom: 0;
+  }
+  .hc-bullets {
+    list-style: none;
+    margin: 1.6rem auto 0;
+    padding: 0;
+    max-width: 34rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+  .hc-bullets li {
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 0.98rem;
+    line-height: 1.5;
+    color: var(--mid);
+  }
+  .hc-bullets li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 0.6rem;
+    height: 0.6rem;
+    background: var(--offer);
+  }
+  #hc-form {
+    margin: 1.9rem auto 0;
+    max-width: 22rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+  #hc-form .sr-field { text-align: left; }
+  #hc-form .btn-primary { justify-content: center; }
+  .hc-note {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--mid);
+  }
+  .hc-more {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  .hc-more a { color: var(--fg); }
+  #hc-status {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hc-done {
+    margin: 1.9rem auto 0;
+    max-width: 22rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--fg);
+  }
+  /* .footer-content is styled for the dark, full .footer-city band the rest
+     of the site uses -- white text that would vanish on this page's plain
+     background. This page's footer is minimal on purpose, so it gets its
+     own small, quiet line instead. */
+  .hc-footer {
+    padding: 2.5rem 0 3rem;
+    border-top: 1px solid var(--border);
+    /* The global footer rule paints the teal water band; this page has no
+       city strip above it, so keep the ground white. */
+    background: var(--bg);
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .hc-footer p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.1rem;
+    font-size: 0.85rem;
+    color: var(--dim);
+  }
+  .hc-footer a {
+    color: var(--dim);
+  }
+  .hc-footer a:hover { color: var(--fg); }
+</style>
+</head>
+
+<body class="offer-handled hc-page">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHSTF58T"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Stripped header, the same one /handled uses: the cloud, and nothing
+     else. This page only exists behind a QR scan on a business card, so
+     every other link is a leak. tools/sync-nav.mjs reports a page with no
+     <nav class="site-nav"> and leaves it alone, which is the behaviour we
+     want here -- do not let it put the menu back. -->
+<header class="vsl-header">
+  <div class="container">
+    <a class="logo" href="/" aria-label="Shane Gring, home"><img class="logo-cloud" src="/images/cloud-1.svg" alt="Shane Gring" width="224" height="80"><img class="logo-bolt" src="/images/cloud-bolt.svg" alt="" width="32" height="48" aria-hidden="true"></a>
+  </div>
+</header>
+
+<main>
+  <section class="hd-hero">
+    <img class="hd-hero-bg" src="/images/handled-hero.png"
+         alt="A small-town water tower with a maintenance crew at work on its catwalk, the town's rooftops along the horizon, and open sky between"
+         width="1680" height="720" fetchpriority="high">
+    <div class="container">
+      <span class="section-eyebrow">From the card</span>
+
+      <h1 class="hd-hook">Your own site. Build fee waived.</h1>
+
+      <p class="hd-lede">
+        We met, so the $300 build is on me. You pay $200 a month, month to
+        month, and the site stays handled: built to your specs in days,
+        changed by email, everything in your name.
+      </p>
+
+      <ul class="hc-bullets">
+        <li>Live in days. One clean page, built to your specs.</li>
+        <li>Change anything by email. I make the edits. You never log in.</li>
+        <li>Everything in your name. Domain, code, analytics. Ask and I hand it over.</li>
+      </ul>
+
+      <form id="hc-form" aria-label="Claim the build fee waiver">
+        <label class="sr-field">
+          <span class="contact-flabel">Email</span>
+          <input type="email" id="hc-email" name="email" autocomplete="email"
+                 placeholder="you@yourcompany.com" required>
+        </label>
+        <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true"
+               style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+        <input type="hidden" name="ref" id="hc-ref" value="card">
+        <button type="submit" class="btn-primary" id="hc-submit">
+          Claim the waiver <span class="btn-arrow">&rarr;</span>
+        </button>
+        <p class="hc-note">I'll email you a link to start. No card needed yet.</p>
+        <p class="hc-more"><a href="/handled">See the full Handled page</a></p>
+      </form>
+
+      <p id="hc-status" class="sr-status" role="status" aria-live="polite" hidden></p>
+    </div>
+  </section>
+</main>
+
+<footer class="hc-footer">
+  <div class="container">
+    <p>
+      <span>&copy; 2026 Shane Gring</span>
+      <span><a href="/handled">Handled</a></span>
+      <span><a href="/contact">Contact</a></span>
+    </p>
+  </div>
+</footer>
+
+<script src="/track.js?v=8cf6c72c" defer></script>
+<script>
+(function () {
+  'use strict';
+
+  var refInput = document.getElementById('hc-ref');
+  var refParam = new URLSearchParams(location.search).get('ref');
+  if (refInput && refParam) refInput.value = refParam;
+
+  var form = document.getElementById('hc-form');
+  var statusEl = document.getElementById('hc-status');
+  var submitBtn = document.getElementById('hc-submit');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var email = document.getElementById('hc-email').value.trim();
+    var ref = refInput ? refInput.value : 'card';
+    var company = form.elements['company'].value;
+    if (!email) return;
+
+    submitBtn.disabled = true;
+    statusEl.hidden = true;
+
+    fetch('/api/handled-card', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, ref: ref, company: company })
+    }).then(function (res) {
+      return res.json().then(function (body) { return { ok: res.ok, body: body }; });
+    }).then(function (r) {
+      if (!r.ok || !r.body || !r.body.ok) {
+        submitBtn.disabled = false;
+        statusEl.hidden = false;
+        statusEl.className = 'sr-status sr-status-error';
+        statusEl.textContent = (r.body && r.body.error) || "Something went wrong. Email shane@shanegring.com and I'll sort it.";
+        return;
+      }
+      var done = document.createElement('p');
+      done.className = 'hc-done';
+      done.textContent = 'Got it. Watch your inbox for the link from Shane.';
+      form.replaceWith(done);
+      if (window.sgTrackLeadOnce) window.sgTrackLeadOnce('handled_card', { form_name: 'handled_card', lead_source: 'business_card' });
+    }).catch(function () {
+      submitBtn.disabled = false;
+      statusEl.hidden = false;
+      statusEl.className = 'sr-status sr-status-error';
+      statusEl.textContent = "Something went wrong. Email shane@shanegring.com and I'll sort it.";
+    });
+  });
+})();
+</script>
+</body>
+</html>

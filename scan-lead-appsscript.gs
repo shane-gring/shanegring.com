@@ -13,6 +13,12 @@
  * opportunities | stage | stopped. stage/stopped drive the Scan -> Read
  * nurture sequence (see sendSequence below; spec: SCAN-NURTURE-SEQUENCE.md).
  *
+ * /handled-card sends a second, smaller payload — { kind: 'handled-card',
+ * email, ref, at } — routed at the top of doPost to handledCard_(), which
+ * logs to its own "Handled card" tab (created on first use) rather than
+ * mixing into the scan's row shape, and sends Shane and the visitor each a
+ * short plain-text email.
+ *
  * DEPLOY: paste over the whole script, Save, then
  *   Deploy -> Manage deployments -> edit the existing deployment ->
  *   Version: New version -> Deploy. Approve the Gmail authorization prompt
@@ -193,10 +199,47 @@ function notifyHtml_(d, rowUrl) {
 '</div>';
 }
 
+// ---------- /handled-card lead ----------
+
+function handledCard_(d) {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var s = ss.getSheetByName('Handled card');
+  if (!s) {
+    s = ss.insertSheet('Handled card');
+    s.appendRow(['at', 'email', 'ref', 'status']);
+  }
+  s.appendRow([d.at, d.email, d.ref || 'card', 'new']);
+  var rowUrl = ss.getUrl() + '#gid=' + s.getSheetId() + '&range=A' + s.getLastRow();
+
+  MailApp.sendEmail({
+    to: NOTIFY_TO,
+    subject: 'Handled card lead: ' + d.email,
+    body: d.email + ' scanned the card (ref: ' + (d.ref || 'card') + ') and asked for the build-fee waiver.\n' +
+      'Next: issue an intake link with tools/handled-token.mjs and send it.\n' +
+      'Row: ' + rowUrl
+  });
+
+  MailApp.sendEmail({
+    to: d.email,
+    name: FROM_NAME,
+    replyTo: NOTIFY_TO,
+    subject: 'Your site, build fee waived',
+    body: 'Thanks for scanning the card.\n\n' +
+      'Here is the deal, in writing: a one-page site built to your specs, live in days, changed by email, everything in your name. $200 a month, month to month. The $300 build fee is waived because we met.\n\n' +
+      'Next step: within a day I\'ll send you a link to a short intake. It takes about ten minutes and it is the only homework you get.\n\n' +
+      'If you have questions before then, reply to this email.\n\n' +
+      'Shane\n' +
+      'shanegring.com/handled'
+  });
+
+  return ContentService.createTextOutput('ok');
+}
+
 // ---------- entry point ----------
 
 function doPost(e) {
   var d = JSON.parse(e.postData.contents);
+  if (d.kind === 'handled-card') return handledCard_(d);
 
   // 1) Log the lead (matches existing sheet columns).
   var ss = SpreadsheetApp.getActiveSpreadsheet();
