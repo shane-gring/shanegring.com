@@ -5016,7 +5016,7 @@ body.offer-handled { --offer: #1f7a4d; --offer-deep: #145736; }
 
 .hd-hook-line {
   display: block;
-  max-width: 24ch;
+  max-width: 36ch;
   margin: 0.9rem auto 0;
   font-size: clamp(1.25rem, 2.6vw, 1.75rem);
   font-weight: 600;
@@ -5510,6 +5510,32 @@ a.hd-shot:hover { border-color: var(--fg); transform: translateY(-2px); }
 @media (max-width: 600px) {
   .hd-about { align-items: flex-start; }
 }
+
+/* The bots, under About Shane. Same reading width, set off by a rule. */
+.hd-bots {
+  max-width: 44rem;
+  margin: 2.6rem auto 0;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--border);
+  scroll-margin-top: 1.5rem;
+}
+
+.hd-bots h3 {
+  margin: 0 0 0.7rem;
+  font-size: 1.2rem;
+  letter-spacing: -0.015em;
+}
+
+.hd-bots p {
+  margin: 0 0 1.3rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--mid);
+}
+
+.hd-bots p:last-child { margin-bottom: 0; }
+
+.hd-bots .hd-gets { margin-bottom: 1.5rem; }
 
 /* ── The inverted band ───────────────────────────────────────────
    The buy zone. Rather than restyling every child, the band swaps

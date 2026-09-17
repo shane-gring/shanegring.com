@@ -2,7 +2,7 @@
 Handled.
 
 A clean single-page site to start, built for you, scanned every week and reported on every month. Each month one prompt adds the next piece: an About page, a place to publish, a services page. $300 to build, $200 a month. Month to month, everything in your name.
-Your website, built and kept running by
+Your small business website, built and kept running by
 [Shane](https://shanegring.com/) and his bots.
 
 The bots build fast and scan your site every week. I read what they find, fix what needs fixing, and answer your email.
@@ -174,6 +174,22 @@ emailing me.
 
 [More about me →](https://shanegring.com/about)
 
+### And the bots
+
+The bots are a small crew of custom AI agents I built and tuned on client work. Each one has a single job:
+
+- **Design and build.** Lays out the page and writes the code.
+
+- **SEO.** Search terms, page titles, schema, and the post topics in month four.
+
+- **The weekly scan.** Speed, broken links, and anything that changed since last week.
+
+- **The monthly report.** Drafts it from your analytics and Search Console.
+
+None of them ships anything alone. I set the direction, read what
+they make, and approve every change before it goes live. When you
+email, a person answers.
+
 ## Two numbers. No fine print.
 
 $300
@@ -270,8 +286,7 @@ at.
 
 What do you use to build it?
 
-AI tools, run by me. They write the code and run the weekly scans,
-which is why the build takes days and costs $300. I set the
+A set of custom AI agents I built: one for design and code, one for SEO, one for the weekly scan, one for the monthly report. That is why the build takes days and costs $300. More on the bots here. I set the
 direction, write and edit the words, and check every page before it
 ships. Whether that shows is easy to test:
 click through the sites above.
