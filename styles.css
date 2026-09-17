@@ -5636,20 +5636,6 @@ a.hd-shot:hover { border-color: var(--fg); transform: translateY(-2px); }
   color: var(--mid);
 }
 
-/* Scarcity, stated plainly and only once. */
-.hd-founding {
-  margin: 2.2rem auto 0;
-  max-width: 46ch;
-  padding-top: 1.6rem;
-  border-top: 1px solid var(--border);
-  text-align: center;
-  font-size: 0.97rem;
-  line-height: 1.65;
-  color: var(--mid);
-}
-
-.hd-founding strong { color: #ffffff; }
-
 /* ── Objections ──────────────────────────────────────────────────
    <details> rather than a wall of Q&A: twelve answers open by
    default is a page nobody finishes, and the question line is the

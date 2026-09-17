@@ -41,7 +41,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="twitter:description" content="A clean single-page site to start, built for you, scanned every week and reported on every month. Each month one prompt adds the next piece: an About page, a place to publish, a services page. $300 to build, $200 a month. Month to month, everything in your name.">
 <meta name="twitter:image" content="https://shanegring.com/images/handled-hero.png">
 
-<link rel="stylesheet" href="/styles.css?v=c1645183">
+<link rel="stylesheet" href="/styles.css?v=d614e88d">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"Service","@id":"https://shanegring.com/handled#service","name":"Handled","serviceType":"Website build and ongoing management","provider":{"@id":"https://shanegring.com/#person"},"areaServed":{"@type":"Country","name":"United States"},"audience":{"@type":"BusinessAudience","name":"Founders and independent professionals"},"description":"A clean, single-page website built to the client's specs, then scanned every week, reported on every month, and improved as it goes. Changes are made by email, with no dashboard, tickets, or portal. Includes Google Analytics and Search Console set up, and the client owns the code, the design files, the analytics and Search Console accounts, and the domain, which is registered in their name. The domain is bought for them up to $15. $300 to build and $200 per month to keep it handled, hosting included, month to month with no minimum, no notice period and no exit fee. Each month the client gets one prompt, about 30 minutes of questions or steps, and the answer is built into the site: a Google Business Profile, an About page, a lean CMS, a first post, reviews, a services page, buyer questions, a newsletter, a client story, listings beyond Google, a reworked contact path and a year report. All of it is inside the monthly fee. Work outside that list starts with a conversation.","offers":[{"@type":"Offer","name":"Site build","price":"300","priceCurrency":"USD","url":"https://shanegring.com/handled"},{"@type":"Offer","name":"Monthly handling","price":"200","priceCurrency":"USD","url":"https://shanegring.com/handled","priceSpecification":{"@type":"UnitPriceSpecification","price":"200","priceCurrency":"USD","billingDuration":1,"billingIncrement":1,"unitText":"MONTH"}}]},
@@ -85,8 +85,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      2026-09-01 in the SOEN Stripe account and served from the account's
      custom domain, checkout.shanegring.com. The links live OUTSIDE this
      repo in Stripe; only their URLs are committed here. The build link
-     ($300 one-time) chains into the founding monthly link ($200/mo) on
-     completion, and the monthly link returns to /handled?checkout=success
+     is ONE subscription-mode link (plink_1UGh30AE4jOSazQMFvHgGGIG) carrying
+     both the $300 one-time build and the $200/mo price with a 30-day trial:
+     $300 is charged at checkout, the first $200 thirty days later. It returns
+     to /handled?checkout=success
      (the script at the bottom of this page turns that param into a
      confirmation line). The priced upgrades (extra page, hour blocks,
      newsletter, lean CMS) were CUT from the page 2026-09-17 in favour of the
@@ -162,8 +164,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </p>
 
       <div class="hd-cta">
-        <a class="btn-primary" data-hd-cta="hero" href="https://checkout.shanegring.com/b/5kQ6oG0z98g86bsdeHfbq03">
-          Claim the founding rate <span class="btn-arrow">&rarr;</span>
+        <a class="btn-primary" data-hd-cta="hero" href="https://checkout.shanegring.com/b/4gM14ma9J3ZSarIcaDfbq08">
+          Get started <span class="btn-arrow">&rarr;</span>
         </a>
         <p class="hd-pricetag"><span>$300 to build</span> <span class="hd-pricetag-after">then $200 a month</span></p>
         <!-- Empty by design. This is where a buyer coming back from Stripe
@@ -464,11 +466,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="hd-figure">
         <div class="hd-figure-half hd-figure-lead">
           <span class="hd-figure-num">$300</span>
-          <span class="hd-figure-what">Once, to build it. Domain bought for you, up to $15.</span>
+          <span class="hd-figure-what">Charged today. Domain bought for you, up to $15.</span>
         </div>
         <div class="hd-figure-half hd-figure-after">
           <span class="hd-figure-num">$200<span class="hd-figure-per">/month</span></span>
-          <span class="hd-figure-what">To host it, scan it weekly, report on it monthly, improve it, and make any change you email.</span>
+          <span class="hd-figure-what">Starts 30 days after you sign up. Hosting, the weekly scan, the monthly report, and any change you email.</span>
         </div>
       </div>
 
@@ -481,8 +483,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </p>
 
       <div class="hd-cta">
-        <a class="btn-primary" data-hd-cta="band" href="https://checkout.shanegring.com/b/5kQ6oG0z98g86bsdeHfbq03">
-          Claim the founding rate <span class="btn-arrow">&rarr;</span>
+        <a class="btn-primary" data-hd-cta="band" href="https://checkout.shanegring.com/b/4gM14ma9J3ZSarIcaDfbq08">
+          Get started <span class="btn-arrow">&rarr;</span>
         </a>
         <p class="hd-cta-note"><strong>What happens next:</strong> I send a short intake you can type or speak. Your first draft arrives within five working days, you get one round of changes, and it goes live.</p>
         <ul class="hd-assure">
@@ -492,11 +494,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
       </div>
 
-      <p class="hd-founding">
-        <strong>Founding rate &mdash; through September 30.</strong> Sign up
-        by September 30 and you hold $200 a month, guaranteed, even when the
-        price goes up for everyone after. Your rate never moves.
-      </p>
     </div>
   </section>
 
@@ -619,10 +616,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </p>
 
       <div class="hd-cta">
-        <a class="btn-primary" data-hd-cta="final" href="https://checkout.shanegring.com/b/5kQ6oG0z98g86bsdeHfbq03">
-          Claim the founding rate <span class="btn-arrow">&rarr;</span>
+        <a class="btn-primary" data-hd-cta="final" href="https://checkout.shanegring.com/b/4gM14ma9J3ZSarIcaDfbq08">
+          Get started <span class="btn-arrow">&rarr;</span>
         </a>
-        <p class="hd-cta-note"><strong>Checkout is open.</strong> $300 today, $200 a month after &mdash; founding rate locked if you sign up by September 30.</p>
+        <p class="hd-cta-note"><strong>Checkout is open.</strong> $300 today, then $200 a month starting 30 days later.</p>
         <ul class="hd-assure">
           <li>One email reaches me</li>
           <li>One prompt a month</li>
@@ -654,8 +651,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="vsl-sticky" id="hd-sticky" aria-hidden="true">
   <div class="vsl-sticky-inner">
     <span class="vsl-sticky-price">Handled &middot; $300 + $200/mo</span>
-    <a class="btn-primary" data-hd-cta="sticky" href="https://checkout.shanegring.com/b/5kQ6oG0z98g86bsdeHfbq03" tabindex="-1">
-      Claim the rate <span class="btn-arrow">&rarr;</span>
+    <a class="btn-primary" data-hd-cta="sticky" href="https://checkout.shanegring.com/b/4gM14ma9J3ZSarIcaDfbq08" tabindex="-1">
+      Get started <span class="btn-arrow">&rarr;</span>
     </a>
   </div>
 </div>
