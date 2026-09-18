@@ -1,4 +1,4 @@
-Notes · 71 of them
+Notes · 72 of them
 
 # What I'm working through, most weekdays.
 
@@ -10,6 +10,24 @@ businesses, what broke, what I'd do differently.
 on the way there.** Also on
 [LinkedIn](https://www.linkedin.com/in/shanegring/),
 which is where they start.
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 18, 2026
+
+Social keeps you visible. But it doesn't compound. A post does its job in a couple of days and then slides down the feed for good.
+
+The stuff that compounds is content that lives on your own site.
+
+It's a real explainer of a problem you solve. A piece of thinking only you could write, because it came out of years of doing the work.
+
+That kind of thing keeps earning -- it ranks, it gets found, and now it gets read by the AI tools answering questions about your field.
+
+If you've already gotten your expertise out of your head and onto your site, you're sitting on the raw material for all of it. The same foundation that makes your site clear is what you draw from to write the deeper pieces, the newsletters, the things you send a specific slice of your audience.
+
+Posting and publishing are different jobs. If you're doing plenty of the first and none of the second, that's usually where the value is hiding.
+
+[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506741330346442752)
 
 Shane Gring
 Fractional COO · operations for expert-led businesses
@@ -41,7 +59,7 @@ So here's my honest advice, and it cuts both ways. If you like tinkering with yo
 
 I run a service built for exactly that second person. You never open a dashboard. Details in the comments.
 
-3 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506372656452005892)
+5 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506372656452005892)
 
 Website OfferEducation
 
@@ -67,7 +85,7 @@ https://biggerfasterstronger.com/build/report-card
 
 And if your high school gym or athletic program needs a strength partner, book a call with John. He's excited to help shepherd the next phase of your program.
 
-[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506049313169608704)
+2 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506049313169608704)
 
 Use Case
 
@@ -479,7 +497,7 @@ We now have four girls. I'm building them a replica playhouse of our mid-century
 
 So if you're in the patient stretch, the part before the things you're working toward have shown up, just keep going. As it turns out, there aren't many finish lines in life -- just more adventures ahead.
 
-14 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7498392590682075137)
+15 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7498392590682075137)
 
 Personal Story
 
