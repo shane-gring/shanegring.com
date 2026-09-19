@@ -103,7 +103,7 @@ Some sites genuinely do need the rebuild. A lot need an owner. Worth knowing whi
 
 That ownership piece is a thing I offer now. The details are in the comments.
 
-2 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505995174171516928)
+3 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505995174171516928)
 
 Website OfferEducation
 
@@ -179,7 +179,7 @@ Funny thing looking back: two kids felt like a handful then. We could still pair
 
 Mostly I'm glad we didn't wait for a smoother season. The smoother season is always a couple years out. Say yes, take the trip, and figure the rest out on the way.
 
-8 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505264110599622657)
+10 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505264110599622657)
 
 Personal Story
 
@@ -311,7 +311,7 @@ Mostly, though, it was the feeling of being led for a change. Letting somebody e
 
 Still think about that room.
 
-17 reactions · 4 comments[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503093566563303425)
+18 reactions · 4 comments[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503093566563303425)
 
 Personal Story
 
