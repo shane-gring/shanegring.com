@@ -1,4 +1,4 @@
-Notes · 72 of them
+Notes · 74 of them
 
 # What I'm working through, most weekdays.
 
@@ -10,6 +10,44 @@ businesses, what broke, what I'd do differently.
 on the way there.** Also on
 [LinkedIn](https://www.linkedin.com/in/shanegring/),
 which is where they start.
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 21, 2026
+
+The freelancer did good work. Then the site launched, and they were gone.
+
+There's no villain in it. Builders get paid to build, so they leave when the building ends. Nobody in the arrangement is paid to stay. So the site sits there, and a year later the price is wrong, the contact form broke without anyone noticing, and getting it fixed means starting the whole hunt over.
+
+So whoever builds your next site, ask one question before you sign anything: who's watching this in month six?
+
+If the answer is nobody, you're buying a launch, and the rot comes included. That's fine if you've got someone in-house to hand it to. Most small operations don't.
+
+I've set my version up the other way around. The build is the start. The watching is the job -- weekly, with a real person reading the numbers, catching things before you do, and making the changes you email over.
+
+Details in the comments.
+
+2 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7507861216900571136)
+
+Website OfferUse Case
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 21, 2026
+
+For most people I talk to, the hard part of posting on social is getting started. Every post begins with a blinking cursor and figuring out what to even say.
+
+And that's the part that grinds people down. It's the part a good website can help take off your plate too.
+
+Once your site embodies what you actually do, laid out clearly -- your services, the way you explain them, the problems you solve -- you've already written the raw material. Each service line is a week of posts. Each thing you're known for is a small series.
+
+The work stops requiring total reinvention and starts being adaptation. Pull a piece, say it, post it. Nobody's staring at a blank page wondering where to begin.
+
+If posting feels like it eats more time than it should, the fix might be more direct than you realize. Get your source material sorted first, and the calendar can fill itself.
+
+[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7507829752418955264)
+
+Tips
 
 Shane Gring
 Fractional COO · operations for expert-led businesses
@@ -197,7 +235,7 @@ That's a service I run now. You keep the site you have, wherever it lives, and I
 
 If the typo test stung a little, details are in the comments.
 
-2 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7504199585108533249)
+3 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7504199585108533249)
 
 Website OfferUse Case
 
@@ -311,7 +349,7 @@ Mostly, though, it was the feeling of being led for a change. Letting somebody e
 
 Still think about that room.
 
-18 reactions · 4 comments[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503093566563303425)
+19 reactions · 4 comments[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503093566563303425)
 
 Personal Story
 
