@@ -1,4 +1,4 @@
-Notes · 74 of them
+Notes · 75 of them
 
 # What I'm working through, most weekdays.
 
@@ -10,6 +10,24 @@ businesses, what broke, what I'd do differently.
 on the way there.** Also on
 [LinkedIn](https://www.linkedin.com/in/shanegring/),
 which is where they start.
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 22, 2026
+
+Ask a founder where their website's source code lives. A lot of honest answers land somewhere between "my developer has it" and "no idea."
+
+The cost shows up everywhere. Every change is a favor. Nothing's tracked, nothing's reversible, and no AI tool can help with code it can't see. "Just put it in GitHub" gets nodded at for a year, because it sounds like an engineer's errand.
+
+It's about an hour of work. Your site pulled into a repository you own. Every change from then on is tracked, reviewable, and reversible -- and it's the foundation every AI workflow sits on, because the tools can finally read the whole thing instead of a pasted fragment.
+
+When I run setup days, this is the hour I insist on. The highest-leverage block of the day, and honestly the one nobody gets around to on their own.
+
+If your site's code is somewhere between "my developer has it" and "no idea," details are in the comments.
+
+2 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7508216076296404992)
+
+Website OfferTips
 
 Shane Gring
 Fractional COO · operations for expert-led businesses
@@ -217,7 +235,7 @@ Funny thing looking back: two kids felt like a handful then. We could still pair
 
 Mostly I'm glad we didn't wait for a smoother season. The smoother season is always a couple years out. Say yes, take the trip, and figure the rest out on the way.
 
-10 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505264110599622657)
+11 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505264110599622657)
 
 Personal Story
 

@@ -1,5 +1,16 @@
 [
   {
+    "id": "e4b699de-9c5c-4be1-a43a-3bd8fda8c029",
+    "title": "Install - The Hour Nobody Does",
+    "date": "2026-09-22",
+    "labels": [
+      "Website Offer",
+      "Tips"
+    ],
+    "images": [],
+    "copy": "Ask a founder where their website's source code lives. A lot of honest answers land somewhere between \"my developer has it\" and \"no idea.\"\n\nThe cost shows up everywhere. Every change is a favor. Nothing's tracked, nothing's reversible, and no AI tool can help with code it can't see. \"Just put it in GitHub\" gets nodded at for a year, because it sounds like an engineer's errand.\n\nIt's about an hour of work. Your site pulled into a repository you own. Every change from then on is tracked, reviewable, and reversible -- and it's the foundation every AI workflow sits on, because the tools can finally read the whole thing instead of a pasted fragment.\n\nWhen I run setup days, this is the hour I insist on. The highest-leverage block of the day, and honestly the one nobody gets around to on their own.\n\nIf your site's code is somewhere between \"my developer has it\" and \"no idea,\" details are in the comments."
+  },
+  {
     "id": "1b52bcb5-f320-4e48-8907-9bb3f65f09c8",
     "title": "Handled - The Month-Six Question",
     "date": "2026-09-21",
