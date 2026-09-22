@@ -25,7 +25,7 @@ When I run setup days, this is the hour I insist on. The highest-leverage block 
 
 If your site's code is somewhere between "my developer has it" and "no idea," details are in the comments.
 
-2 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7508216076296404992)
+2 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7508216076296404992)
 
 Website OfferTips
 
