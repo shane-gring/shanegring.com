@@ -1,5 +1,15 @@
 [
   {
+    "id": "747894c4-9b97-4f57-ad8a-e4aace6db400",
+    "title": "Guide - The Default Wins",
+    "date": "2026-09-23",
+    "labels": [
+      "Use Case"
+    ],
+    "images": [],
+    "copy": "Watched an AI agent drive a browser lately? A lot of them crawl. Screenshot, click, miss, screenshot again.\n\nIt looks like the model being dumb. Usually it's a buried default -- the clicking tool literally tells the model to take a screenshot first and guess pixel coordinates, and the model does what the tool says. Meanwhile the page already carries a map of itself, and the agent could click by reference instead. Exact, fast, no camera.\n\nAll it takes is a standing rule, written once, that overrules the default. After that, every session follows it without being reminded.\n\nHere's the part I find myself repeating to clients: the default wins until you overrule it in writing. A spoken correction lasts one session. The written version survives the next session, the next machine, the next tool update.\n\nAnd that's true well past browsers. Everything AI does well for a business starts the same way -- the rules get written down once, and the machine follows them from then on. One paragraph fixed my browser sessions. The same discipline, pointed at how your work actually runs, is what lets AI carry real weight.\n\nThe exact rule to paste, and why it holds, is in the comments."
+  },
+  {
     "id": "e4b699de-9c5c-4be1-a43a-3bd8fda8c029",
     "title": "Install - The Hour Nobody Does",
     "date": "2026-09-22",

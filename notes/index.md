@@ -1,4 +1,4 @@
-Notes · 75 of them
+Notes · 76 of them
 
 # What I'm working through, most weekdays.
 
@@ -10,6 +10,26 @@ businesses, what broke, what I'd do differently.
 on the way there.** Also on
 [LinkedIn](https://www.linkedin.com/in/shanegring/),
 which is where they start.
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 23, 2026
+
+Watched an AI agent drive a browser lately? A lot of them crawl. Screenshot, click, miss, screenshot again.
+
+It looks like the model being dumb. Usually it's a buried default -- the clicking tool literally tells the model to take a screenshot first and guess pixel coordinates, and the model does what the tool says. Meanwhile the page already carries a map of itself, and the agent could click by reference instead. Exact, fast, no camera.
+
+All it takes is a standing rule, written once, that overrules the default. After that, every session follows it without being reminded.
+
+Here's the part I find myself repeating to clients: the default wins until you overrule it in writing. A spoken correction lasts one session. The written version survives the next session, the next machine, the next tool update.
+
+And that's true well past browsers. Everything AI does well for a business starts the same way -- the rules get written down once, and the machine follows them from then on. One paragraph fixed my browser sessions. The same discipline, pointed at how your work actually runs, is what lets AI carry real weight.
+
+The exact rule to paste, and why it holds, is in the comments.
+
+3 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7508533143243472896)
+
+Use Case
 
 Shane Gring
 Fractional COO · operations for expert-led businesses
@@ -63,7 +83,7 @@ The work stops requiring total reinvention and starts being adaptation. Pull a p
 
 If posting feels like it eats more time than it should, the fix might be more direct than you realize. Get your source material sorted first, and the calendar can fill itself.
 
-[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7507829752418955264)
+1 reaction[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7507829752418955264)
 
 Tips
 
@@ -141,7 +161,7 @@ https://biggerfasterstronger.com/build/report-card
 
 And if your high school gym or athletic program needs a strength partner, book a call with John. He's excited to help shepherd the next phase of your program.
 
-2 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506049313169608704)
+3 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506049313169608704)
 
 Use Case
 
@@ -291,7 +311,7 @@ It's a lot of work, honestly. But it's all worth it. Taking a beat to actually c
 
 Sky's eye and creativity are just a few more things that make her special. And I'm grateful I get to watch, help, and enjoy these little time-lapse photos of all my girls.
 
-26 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503814567140007936)
+27 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503814567140007936)
 
 Personal Story
 
@@ -425,7 +445,7 @@ The Institute has since transitioned. The movement wave crested and fell, the ne
 
 But the premise held up. I still think a business is one of the best tools there is for taking care of people. Most of what I do today runs on some version of that idea.
 
-3 reactions · 5 comments[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:ugcPost:7500968336650866689)
+4 reactions · 5 comments[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:ugcPost:7500968336650866689)
 
 Personal Story
 
