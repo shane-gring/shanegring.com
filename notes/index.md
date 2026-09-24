@@ -1,4 +1,4 @@
-Notes · 76 of them
+Notes · 77 of them
 
 # What I'm working through, most weekdays.
 
@@ -10,6 +10,24 @@ businesses, what broke, what I'd do differently.
 on the way there.** Also on
 [LinkedIn](https://www.linkedin.com/in/shanegring/),
 which is where they start.
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 24, 2026
+
+Read your website front to back sometime, oldest page to newest. You might find five different companies in there.
+
+The homepage got refreshed last year. The services page still sells the 2022 offer. The about page is from the founding era, the case studies stop two pivots ago, and one page deep in the nav describes a service you stopped doing.
+
+Each page was true the day it was written. Stacked together, they read like five eras of the company layered on top of each other. Buyers notice the seams, even when they can't name them. Machines are worse: they quote whichever era they land on.
+
+Worth one honest pass: does the site tell the story of one business, or several? Read it like a stranger, oldest to newest, and mark every place the story jumps. The seams are easy to find once you're looking for them.
+
+If you'd rather have an outside reader do the pass, that's a thing I do now. Details in the comments.
+
+2 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7508898049444929536)
+
+Website OfferEducation
 
 Shane Gring
 Fractional COO · operations for expert-led businesses
