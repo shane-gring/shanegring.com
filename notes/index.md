@@ -25,7 +25,7 @@ Worth one honest pass: does the site tell the story of one business, or several?
 
 If you'd rather have an outside reader do the pass, that's a thing I do now. Details in the comments.
 
-2 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7508898049444929536)
+3 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7508898049444929536)
 
 Website OfferEducation
 
