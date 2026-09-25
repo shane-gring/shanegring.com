@@ -1,4 +1,4 @@
-Notes · 77 of them
+Notes · 78 of them
 
 # What I'm working through, most weekdays.
 
@@ -10,6 +10,28 @@ businesses, what broke, what I'd do differently.
 on the way there.** Also on
 [LinkedIn](https://www.linkedin.com/in/shanegring/),
 which is where they start.
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 25, 2026
+
+One of the first things worth doing inside a business is a comparison nobody enjoys: where the time went last month versus where the money came from.
+
+Almost every team can tell me what they're busy with. Fewer can say which of those busy things pay for the place.
+
+When you lay the two side by side, there's usually a gap. Hours pouring into work that's loosely tied to any dollar, while the offer funding everything gets whatever attention is left over.
+
+Nobody plans it that way. Work accumulates and commitments stack up.
+
+Here's the version you can run this week. Two columns on one page. On the left, the five things that ate the most hours last month. On the right, the five sources that brought in the most revenue. Then draw lines between the ones that connect.
+
+The unconnected items on the left are your answer. Some of them you'll protect anyway, and that's a decision instead of an accident.
+
+Takes about an hour of honest accounting. From what I've seen, it moves the next quarter more than most planning sessions do.
+
+[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7509250369059741696)
+
+Tips
 
 Shane Gring
 Fractional COO · operations for expert-led businesses
@@ -179,7 +201,7 @@ https://biggerfasterstronger.com/build/report-card
 
 And if your high school gym or athletic program needs a strength partner, book a call with John. He's excited to help shepherd the next phase of your program.
 
-3 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506049313169608704)
+6 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506049313169608704)
 
 Use Case
 
@@ -235,7 +257,7 @@ When the posts come from the same foundation the site is built on, that stops ha
 
 Worth checking sometime: read your last ten posts, then your homepage, back to back. If they sound like two different businesses, that's something to address.
 
-1 reaction[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505645357666680834)
+2 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505645357666680834)
 
 Education
 
@@ -571,7 +593,7 @@ Most founders assume everything is pile three but it's really a fraction of it.
 
 Walked through the whole extraction here, including a 90-day version you can run yourself: [shanegring.com/guides/everything-runs-through-you](https://shanegring.com/guides/everything-runs-through-you)
 
-5 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7498761266329579520)
+6 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7498761266329579520)
 
 EducationWebsite Offer
 
