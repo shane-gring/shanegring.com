@@ -85,7 +85,7 @@ When I run setup days, this is the hour I insist on. The highest-leverage block 
 
 If your site's code is somewhere between "my developer has it" and "no idea," details are in the comments.
 
-2 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7508216076296404992)
+3 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7508216076296404992)
 
 Website OfferTips
 
@@ -161,7 +161,7 @@ This is the part of the "get your site in shape" argument that pays back fastest
 
 Happy to talk through what that setup looks like if it's useful: [shanegring.com/work-with-me](https://shanegring.com/work-with-me)
 
-[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506410418962128896)
+1 reaction · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506410418962128896)
 
 Shane Gring
 Fractional COO · operations for expert-led businesses
@@ -295,7 +295,7 @@ Funny thing looking back: two kids felt like a handful then. We could still pair
 
 Mostly I'm glad we didn't wait for a smoother season. The smoother season is always a couple years out. Say yes, take the trip, and figure the rest out on the way.
 
-11 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505264110599622657)
+12 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505264110599622657)
 
 Personal Story
 
