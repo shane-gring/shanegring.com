@@ -21,9 +21,12 @@
  *   STRIPE_WEBHOOK_SECRET   secret  required; whsec_… from the Stripe endpoint
  *   HANDLED_PAYMENT_LINK    var     required; plink_… id(s), comma-separated
  *   HANDLED_SHEET_URL       var     Apps Script web app; absent = no email
+ *   GA4_MEASUREMENT_ID      var     with GA4_API_SECRET: report every paid checkout
+ *   GA4_API_SECRET          secret  to GA4 as `purchase` (see lib/ga4-purchase.js)
  */
 
 import { mintToken, newRecord, writeRecord, json, DEFAULT_TTL_DAYS } from '../lib/handled-store.js';
+import { reportPurchase } from '../lib/ga4-purchase.js';
 
 // Stripe replays a webhook for up to three days when it does not get a 2xx, and
 // sends the same event twice often enough that "probably fine" is not good
@@ -67,6 +70,13 @@ export async function onRequestPost(context) {
   }
 
   const session = event.data?.object || {};
+
+  // Every paid checkout counts as a sale, not just Handled — so this runs ahead
+  // of the allowlist. Off the response path: Analytics being slow or down must
+  // never make Stripe retry a webhook that already did its real work.
+  context.waitUntil(
+    reportPurchase(env, event).catch((err) => console.log(`ga4-purchase: ${err?.message || err}`)),
+  );
 
   const allowed = String(env.HANDLED_PAYMENT_LINK || '')
     .split(',')
