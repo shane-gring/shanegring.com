@@ -1,4 +1,4 @@
-Notes · 78 of them
+Notes · 79 of them
 
 # What I'm working through, most weekdays.
 
@@ -10,6 +10,26 @@ businesses, what broke, what I'd do differently.
 on the way there.** Also on
 [LinkedIn](https://www.linkedin.com/in/shanegring/),
 which is where they start.
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 28, 2026
+
+Ran the site scan on a business the other day and it came back a 52.
+
+The technical side was sharp. Clean structure, schema done right, a couple of things most small sites haven't gotten to yet. Great bones.
+
+Then the content score came back low, and that was the whole story. A handful of thin pages standing in for a real content layer. The site was selling expertise it wasn't showing anywhere.
+
+That gap shows up more than you'd think, and it's the one most tools walk right past. They hand you a grade for the plumbing and stop there. Whether there's anything worth reading on top of it is a different question, and it's usually the one costing you.
+
+If you want to check your own without a tool: open your services page and count the sentences a stranger couldn't have guessed before landing there. That's your content layer. Everything else is furniture.
+
+More on how the scan reads a site in the comments, if a second opinion sounds useful.
+
+2 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7510397939429605376)
+
+Website OfferTips
 
 Shane Gring
 Fractional COO · operations for expert-led businesses
@@ -295,7 +315,7 @@ Funny thing looking back: two kids felt like a handful then. We could still pair
 
 Mostly I'm glad we didn't wait for a smoother season. The smoother season is always a couple years out. Say yes, take the trip, and figure the rest out on the way.
 
-12 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505264110599622657)
+15 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505264110599622657)
 
 Personal Story
 

@@ -1,5 +1,16 @@
 [
   {
+    "id": "accb3e25-a1fa-413e-8956-3fa46a004237",
+    "title": "Scan - The 52",
+    "date": "2026-09-28",
+    "labels": [
+      "Website Offer",
+      "Tips"
+    ],
+    "images": [],
+    "copy": "Ran the site scan on a business the other day and it came back a 52.\n\nThe technical side was sharp. Clean structure, schema done right, a couple of things most small sites haven't gotten to yet. Great bones.\n\nThen the content score came back low, and that was the whole story. A handful of thin pages standing in for a real content layer. The site was selling expertise it wasn't showing anywhere.\n\nThat gap shows up more than you'd think, and it's the one most tools walk right past. They hand you a grade for the plumbing and stop there. Whether there's anything worth reading on top of it is a different question, and it's usually the one costing you.\n\nIf you want to check your own without a tool: open your services page and count the sentences a stranger couldn't have guessed before landing there. That's your content layer. Everything else is furniture.\n\nMore on how the scan reads a site in the comments, if a second opinion sounds useful."
+  },
+  {
     "id": "09ae43df-1128-4428-80fd-ef9624c65b21",
     "title": "Ops - The Hour of Honest Accounting",
     "date": "2026-09-25",
