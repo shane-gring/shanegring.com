@@ -1,4 +1,4 @@
-Notes · 79 of them
+Notes · 80 of them
 
 # What I'm working through, most weekdays.
 
@@ -10,6 +10,24 @@ businesses, what broke, what I'd do differently.
 on the way there.** Also on
 [LinkedIn](https://www.linkedin.com/in/shanegring/),
 which is where they start.
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 29, 2026
+
+My favorite test for whether a website is being cared for: what happens when the owner wants one word changed?
+
+The usual answers. A ticket into a portal, "please allow 5 to 7 business days." A favor owed to whoever built it. Or nothing at all, because it's too much hassle to bother -- so the wrong thing just stays up.
+
+That hassle is most of why sites go stale. Small changes have to be frictionless or they stop happening, and a site nobody changes drifts away from the business it describes, one unfixed word at a time.
+
+The bar I hold my own service to: a change request is an email. Headline swapped, photo replaced, line rewritten. You send it, it gets done, no portal in between. Because the moment changing your own website feels like filing paperwork, you'll stop changing it, and the drift starts.
+
+Run the one-word test on your own setup this week. If the answer made you tired, details are in the comments.
+
+2 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7510727609647898625)
+
+Website OfferTips
 
 Shane Gring
 Fractional COO · operations for expert-led businesses
@@ -181,7 +199,7 @@ This is the part of the "get your site in shape" argument that pays back fastest
 
 Happy to talk through what that setup looks like if it's useful: [shanegring.com/work-with-me](https://shanegring.com/work-with-me)
 
-1 reaction · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506410418962128896)
+1 reaction · 3 comments[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506410418962128896)
 
 Shane Gring
 Fractional COO · operations for expert-led businesses
@@ -315,7 +333,7 @@ Funny thing looking back: two kids felt like a handful then. We could still pair
 
 Mostly I'm glad we didn't wait for a smoother season. The smoother season is always a couple years out. Say yes, take the trip, and figure the rest out on the way.
 
-15 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505264110599622657)
+16 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505264110599622657)
 
 Personal Story
 
