@@ -87,7 +87,7 @@ automated a brochure**: faster, prettier, still describing a
 company that already moved on.
 
 That's the whole argument behind
-[AI operations](https://shanegring.com/install): write down how the
+[AI operations](https://shanegring.com/ai-operations): write down how the
 business decides, and the automation has something to be held to.
 
 So I wouldn't start from a template or a platform. I'd start from

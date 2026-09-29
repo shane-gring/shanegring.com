@@ -21,6 +21,9 @@ own plate, and for how long.
 [maintaining your site The Autopilot The site stops going stale. Someone tends it every month whether or not it is on your mind.](https://shanegring.com/autopilot)
 [enhancing your operations The Seat The way the business runs gets better every month, instead of just staying upright.](https://shanegring.com/seat)
 
+Here because you want help with AI? It runs through the offers
+on this page. [What I would automate first, and which one to start with](https://shanegring.com/ai-operations).
+
 Programs
 
 ## What do you want to walk away with?
