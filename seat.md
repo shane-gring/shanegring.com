@@ -228,7 +228,7 @@ happening, reliably, when it scales past the people who
 currently hold it together.
 
 There's a fuller version of this on
-[the Install](https://shanegring.com/install) — what to
+[AI operations](https://shanegring.com/ai-operations) — what to
 automate, what to leave alone, and a real example of the
 difference.
 

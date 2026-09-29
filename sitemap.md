@@ -55,6 +55,9 @@ An operator in the seat a few days a month
 [Handled](https://shanegring.com/handled)
 Your site built and kept running, $300 then $200 a month
 
+[AI operations](https://shanegring.com/ai-operations)
+What to automate in a small business, and where to start
+
 [Fractional COO rates](https://shanegring.com/fractional-coo-rates)
 What the role costs, and how the pricing compares
 

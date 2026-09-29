@@ -21,9 +21,10 @@
 # resolves for anyone who saw it.
 /holding-pattern      /autopilot              301
 
-# AI Operations is absorbed: the front door is now the Install, and the
-# ongoing custom work is the Seat.
-/ai-operations        /install                301
+# /ai-operations used to 301 to /install (AI Operations was absorbed into
+# the Install and the Seat in July 2026). Since 2026-09-28 it is a real page
+# again: the service page for the AI-consultant search terms, routing into
+# the existing offers. No redirect, so the page can serve.
 
 # The three "ways in" pages were the intent-bucket IA (find out / done for
 # you / do it yourself). That structure was replaced on 2026-08-02 by two
