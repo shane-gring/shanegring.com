@@ -60,7 +60,7 @@ Access my free 10-point guide to start asking the right questions for your busin
 
 605.64 KB • PDF File
 
-[Download](https://beehiiv-publication-files.s3.amazonaws.com/uploads/downloadables/032815a3-09de-4fe3-8ddd-29887c80a61d/852a2a1f-2a75-431b-84c4-06a5377fdd0a/10%20questions%20to%20get%20the%20business%20out%20of%20your%20head.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQCMHTQSE2JGAGXHJ%2F20260930%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260930T001351Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=8eb053d5ef3a9b3ae805e43551aac3419b5c1f6a266eafef758bec73707914f9)
+[Download](https://beehiiv-publication-files.s3.amazonaws.com/uploads/downloadables/032815a3-09de-4fe3-8ddd-29887c80a61d/852a2a1f-2a75-431b-84c4-06a5377fdd0a/10%20questions%20to%20get%20the%20business%20out%20of%20your%20head.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQCMHTQSE2JGAGXHJ%2F20260930%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260930T093022Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=c029b89b1f4692911cddf3a2322e69db3cd26caeccd9932c80b60c3c4f39fa62)
 
 Working through one of these and want another set of eyes on it? That's most of what I do, and I'm always happy to talk it through.
 
