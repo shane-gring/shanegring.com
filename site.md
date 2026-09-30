@@ -78,10 +78,8 @@ started within 60 days.**
 
 ## Sites we built and still run
 
-Live right now. Click any of them. These are [Handled](https://shanegring.com/handled) sites, the small version of this
-work: $300 to build, $200 a month to keep running.
+Live right now. Click any of them.
 
-[Ted GonderPrivate strategic advisory · tedgonder.co](https://tedgonder.co)
 [Skyler GringTravel agent, Dreamers Do Travels · skylergring.com](https://skylergring.com)
 [EarthlightCircadian lighting ROI · earthlight.app](https://earthlight.app)
 [Buckhead Restaurant WeekAtlanta dining week · buckheadrestaurantweek.com](https://buckheadrestaurantweek.com)
@@ -91,7 +89,6 @@ work: $300 to build, $200 a month to keep running.
 [BFSWeight rooms and leadership · biggerfasterstronger.com](https://biggerfasterstronger.com)
 [Excel Training DesignsTemplates for strength coaches · exceltrainingdesigns.com](https://exceltrainingdesigns.com)
 [DRVNThe golf performance system · drvngolf.com](https://drvngolf.com)
-[Albi ZhubiBrooklyn and NYC real estate · albizhubi.com](https://albizhubi.com)
 [GreenStar HomesGreen home certification · greenstarhomes.org](https://greenstarhomes.org)
 
 ## "Built to run without us" is a design requirement, not a slogan
