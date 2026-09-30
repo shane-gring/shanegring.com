@@ -14,8 +14,6 @@ He works as a **fractional COO**, an
 founder-led and expert-led companies, and runs an independent
 operating practice from [shanegring.com](https://shanegring.com/).
 The practice is **SOEN, LLC**, doing business as Shane Gring.
-He founded [Certainly](https://certainly.coop),
-a cooperative of fractional operators, and Method Lab.
 
 He lives and works in **Pittsburgh, Pennsylvania**,
 and takes clients across the United States.
