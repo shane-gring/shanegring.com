@@ -1,4 +1,4 @@
-Notes · 80 of them
+Notes · 81 of them
 
 # What I'm working through, most weekdays.
 
@@ -10,6 +10,30 @@ businesses, what broke, what I'd do differently.
 on the way there.** Also on
 [LinkedIn](https://www.linkedin.com/in/shanegring/),
 which is where they start.
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+September 30, 2026
+
+A company I work with added a COO and a CMO in the same quarter without making a full-time hire for either one.
+
+Both roles are acting. I hold one, a colleague I've worked with for years holds the other. It's a lean organization at the stage where the founder had been carrying operations, sales, and marketing personally, and the math on two executive salaries wasn't there yet.
+
+People ask how that actually works, so here's the shape of it.
+
+We step into the real seat, with the title and the accountability that comes with it. We run the function, build the systems, and document everything as we go. The whole arrangement is built toward a decision point, where the company either grows into full-time versions of these roles or keeps this setup because it fits.
+
+What the founder gets back is room. Relationships, advocacy, funding, the parts only a founder can do.
+
+It has limits worth naming. This fits a transition or a build phase better than steady-state operations. And it works when the operator has enough time in the seat to carry real accountability, not a few hours a month.
+
+If you're carrying three jobs and the hiring math isn't there yet, there's a middle path between doing it all yourself and a six-figure executive search.
+
+Happy to talk through whether it fits your stage.
+
+[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7511064817118498816)
+
+Use Case
 
 Shane Gring
 Fractional COO · operations for expert-led businesses
@@ -25,7 +49,7 @@ The bar I hold my own service to: a change request is an email. Headline swapped
 
 Run the one-word test on your own setup this week. If the answer made you tired, details are in the comments.
 
-2 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7510727609647898625)
+3 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7510727609647898625)
 
 Website OfferTips
 
@@ -333,7 +357,7 @@ Funny thing looking back: two kids felt like a handful then. We could still pair
 
 Mostly I'm glad we didn't wait for a smoother season. The smoother season is always a couple years out. Say yes, take the trip, and figure the rest out on the way.
 
-16 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505264110599622657)
+17 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505264110599622657)
 
 Personal Story
 
