@@ -76,6 +76,24 @@ range. Not "starting at."
 **Your Map fee credits in full against either build,
 started within 60 days.**
 
+## Sites we built and still run
+
+Live right now. Click any of them. These are [Handled](https://shanegring.com/handled) sites, the small version of this
+work: $300 to build, $200 a month to keep running.
+
+[Ted GonderPrivate strategic advisory · tedgonder.co](https://tedgonder.co)
+[Skyler GringTravel agent, Dreamers Do Travels · skylergring.com](https://skylergring.com)
+[EarthlightCircadian lighting ROI · earthlight.app](https://earthlight.app)
+[Buckhead Restaurant WeekAtlanta dining week · buckheadrestaurantweek.com](https://buckheadrestaurantweek.com)
+[West Midtown Restaurant WeekAtlanta dining week · westmidtownrestaurantweek.com](https://westmidtownrestaurantweek.com)
+[SEAMSocial equity certification · seamcertification.com](https://seamcertification.com)
+[FORJ SportsBuilding sports companies · theforjgroup.com](https://theforjgroup.com)
+[BFSWeight rooms and leadership · biggerfasterstronger.com](https://biggerfasterstronger.com)
+[Excel Training DesignsTemplates for strength coaches · exceltrainingdesigns.com](https://exceltrainingdesigns.com)
+[DRVNThe golf performance system · drvngolf.com](https://drvngolf.com)
+[Albi ZhubiBrooklyn and NYC real estate · albizhubi.com](https://albizhubi.com)
+[GreenStar HomesGreen home certification · greenstarhomes.org](https://greenstarhomes.org)
+
 ## "Built to run without us" is a design requirement, not a slogan
 
 Most agencies build dependence: proprietary setups, undocumented
