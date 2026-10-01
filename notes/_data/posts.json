@@ -1,5 +1,16 @@
 [
   {
+    "id": "006e5845-9379-4088-8c3a-f9ad8b4f0f90",
+    "title": "Case Study - The Spreadsheet at the Top of the Funnel",
+    "date": "2026-10-01",
+    "labels": [
+      "Case Study",
+      "Use Case"
+    ],
+    "images": [],
+    "copy": "A client of mine runs a software company doing about $10M a year. One of their best lead generators turned out to be a spreadsheet.\n\nTheir product helps coaches manage training programs. Thousands of customers, genuinely good tool. But plenty of coaches out there still live in Excel, and no amount of marketing was going to talk them out of it.\n\nSo instead of fighting the habit, they bought a small brand that makes Excel templates for exactly that crowd.\n\nThen it sat for about a year. Good team, smart play. The blockers were small: design / copy / a couple of tech decisions / nobody owning it.\n\nWe came in and got it moving. Took what they had, rebuilt the site, wired up Shopify, and pulled in brand assets that'd been parked in a folder for months. Most of the work was deciding fast and clearing the little stuff that stalls these things out.\n\nTen days, start to finish. It went live on a Friday, and watching the weekend roll in was a blast: 30 organic leads by Monday. They posted about it once to their audience, and two days later they were sitting at 500+ signups.\n\nTwenty days earlier, that offer didn't exist.\n\nTwo things worth stealing from it. Take a look at what your customers refuse to quit using, because that's often a door rather than a problem. And whatever's been sitting on your shelf for a year is probably a lot closer to done than it feels."
+  },
+  {
     "id": "dc0580f3-692d-44e2-9a01-69f26fac1b6e",
     "title": "Offer - How the Acting Executive Model Works",
     "date": "2026-09-30",

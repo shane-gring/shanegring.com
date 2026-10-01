@@ -1,4 +1,4 @@
-Notes · 81 of them
+Notes · 82 of them
 
 # What I'm working through, most weekdays.
 
@@ -10,6 +10,30 @@ businesses, what broke, what I'd do differently.
 on the way there.** Also on
 [LinkedIn](https://www.linkedin.com/in/shanegring/),
 which is where they start.
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+October 1, 2026
+
+A client of mine runs a software company doing about $10M a year. One of their best lead generators turned out to be a spreadsheet.
+
+Their product helps coaches manage training programs. Thousands of customers, genuinely good tool. But plenty of coaches out there still live in Excel, and no amount of marketing was going to talk them out of it.
+
+So instead of fighting the habit, they bought a small brand that makes Excel templates for exactly that crowd.
+
+Then it sat for about a year. Good team, smart play. The blockers were small: design / copy / a couple of tech decisions / nobody owning it.
+
+We came in and got it moving. Took what they had, rebuilt the site, wired up Shopify, and pulled in brand assets that'd been parked in a folder for months. Most of the work was deciding fast and clearing the little stuff that stalls these things out.
+
+Ten days, start to finish. It went live on a Friday, and watching the weekend roll in was a blast: 30 organic leads by Monday. They posted about it once to their audience, and two days later they were sitting at 500+ signups.
+
+Twenty days earlier, that offer didn't exist.
+
+Two things worth stealing from it. Take a look at what your customers refuse to quit using, because that's often a door rather than a problem. And whatever's been sitting on your shelf for a year is probably a lot closer to done than it feels.
+
+[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7511449856964489216)
+
+Case StudyUse Case
 
 Shane Gring
 Fractional COO · operations for expert-led businesses
