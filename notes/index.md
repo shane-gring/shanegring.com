@@ -31,7 +31,7 @@ If you're carrying three jobs and the hiring math isn't there yet, there's a mid
 
 Happy to talk through whether it fits your stage.
 
-[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7511064817118498816)
+2 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7511064817118498816)
 
 Use Case
 
