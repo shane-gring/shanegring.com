@@ -1,4 +1,4 @@
-Notes · 82 of them
+Notes · 83 of them
 
 # What I'm working through, most weekdays.
 
@@ -10,6 +10,24 @@ businesses, what broke, what I'd do differently.
 on the way there.** Also on
 [LinkedIn](https://www.linkedin.com/in/shanegring/),
 which is where they start.
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+October 2, 2026
+
+Watched a lot of people learn new tools over the years. The ones who keep the skill are the ones whose hands were on the keyboard.
+
+Demos are the trap. Watching an expert fly through something feels like progress, and a week later nothing's changed, because watching doesn't build the muscle. Courses pile up the same way -- bought, bookmarked, gathering dust.
+
+So when I run setup days now, I build them so I barely touch the keyboard. Four of the five working blocks are driven by the client. Their machine, their site, their team in the room. I sit next to them and talk them through it, and by the afternoon they're describing a change in plain English, reviewing what the AI wrote, and shipping it themselves.
+
+If I drive, they've watched a demo. Demos don't stick.
+
+One day, your hands, a working system by dinner. Details in the first comment.
+
+2 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7511773243289276417)
+
+Website OfferEducation
 
 Shane Gring
 Fractional COO · operations for expert-led businesses
@@ -55,7 +73,7 @@ If you're carrying three jobs and the hiring math isn't there yet, there's a mid
 
 Happy to talk through whether it fits your stage.
 
-2 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7511064817118498816)
+3 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7511064817118498816)
 
 Use Case
 
