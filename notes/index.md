@@ -25,7 +25,7 @@ If I drive, they've watched a demo. Demos don't stick.
 
 One day, your hands, a working system by dinner. Details in the first comment.
 
-2 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7511773243289276417)
+3 reactions · 1 comment[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7511773243289276417)
 
 Website OfferEducation
 
@@ -49,7 +49,7 @@ Twenty days earlier, that offer didn't exist.
 
 Two things worth stealing from it. Take a look at what your customers refuse to quit using, because that's often a door rather than a problem. And whatever's been sitting on your shelf for a year is probably a lot closer to done than it feels.
 
-[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7511449856964489216)
+1 reaction[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7511449856964489216)
 
 Case StudyUse Case
 
