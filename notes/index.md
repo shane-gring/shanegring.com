@@ -1,4 +1,4 @@
-Notes · 83 of them
+Notes · 84 of them
 
 # What I'm working through, most weekdays.
 
@@ -10,6 +10,28 @@ businesses, what broke, what I'd do differently.
 on the way there.** Also on
 [LinkedIn](https://www.linkedin.com/in/shanegring/),
 which is where they start.
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+October 5, 2026
+
+Something that still gets me every time: the more successful the company, the more workarounds you tend to find inside it.
+
+Been under the hood of operations with thousands of customers and real revenue, and the inside is usually held together with more tape than you'd ever guess from the outside.
+
+The part I keep noticing is how it got there. Every piece of tape made sense the day it went on. A workaround while somebody was out. A process that lived in one person's inbox because that was faster than writing it down. Nobody was being sloppy, they were shipping.
+
+It accumulates faster than anyone tracks.
+
+So when I meet a smaller team that still fits in one person's head, what I see is the cheapest moment there'll ever be to get some of it written down. Nothing has calcified yet. Nobody's built a workaround on top of a workaround.
+
+If you're running something small and it feels held together, you're in good company. Most things look like that underneath.
+
+The ones who edge ahead pick the single piece of tape that's starting to drag on them, and deal with that one.
+
+[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7512912069051179008)
+
+Tips
 
 Shane Gring
 Fractional COO · operations for expert-led businesses
@@ -73,7 +95,7 @@ If you're carrying three jobs and the hiring math isn't there yet, there's a mid
 
 Happy to talk through whether it fits your stage.
 
-3 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7511064817118498816)
+4 reactions[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7511064817118498816)
 
 Use Case
 

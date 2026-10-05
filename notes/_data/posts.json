@@ -1,5 +1,15 @@
 [
   {
+    "id": "647da119-4439-4eb2-962a-fe61dcc804c3",
+    "title": "Observation - More Duct Tape",
+    "date": "2026-10-05",
+    "labels": [
+      "Tips"
+    ],
+    "images": [],
+    "copy": "Something that still gets me every time: the more successful the company, the more workarounds you tend to find inside it.\n\nBeen under the hood of operations with thousands of customers and real revenue, and the inside is usually held together with more tape than you'd ever guess from the outside.\n\nThe part I keep noticing is how it got there. Every piece of tape made sense the day it went on. A workaround while somebody was out. A process that lived in one person's inbox because that was faster than writing it down. Nobody was being sloppy, they were shipping.\n\nIt accumulates faster than anyone tracks.\n\nSo when I meet a smaller team that still fits in one person's head, what I see is the cheapest moment there'll ever be to get some of it written down. Nothing has calcified yet. Nobody's built a workaround on top of a workaround.\n\nIf you're running something small and it feels held together, you're in good company. Most things look like that underneath.\n\nThe ones who edge ahead pick the single piece of tape that's starting to drag on them, and deal with that one."
+  },
+  {
     "id": "f548cdb4-b506-4cde-b074-ee4733749c2d",
     "title": "Install - Demos Don't Stick",
     "date": "2026-10-02",
