@@ -1,5 +1,21 @@
 [
   {
+    "id": "d14e609c-d394-481c-8719-454d46f5dc07",
+    "title": "IWBI reflections",
+    "date": "2026-10-06",
+    "labels": [
+      "Use Case"
+    ],
+    "images": [
+      {
+        "asset": "8e526b7a-c8bc-49d3-b514-1a7315c85546",
+        "w": 1848,
+        "h": 1254
+      }
+    ],
+    "copy": "Spent a day with the team at IWBI back in July. Eight hours, one room, everybody bringing whatever they were actually stuck on.\n\nThe morning was spent fixing access. We got them into an AI-friendly version of their own site on GitHub, which sounds like a boring morning but helped them in a meaningful way. Once a machine can read your site, everything after it gets easier.\n\nFrom there it opened up. Their designers got onto some new design tools and started organizing the process and generation. A strategist got linked into Claude Code, and by the afternoon we were running experiments to generate new pages on the site.\n\nThat day is what became the Install.\n\nThe shape of it now is one day, at your place, on your machine. You get Claude Code installed and authenticated, your site sitting in a GitHub repo you own, one change you wrote in plain English and shipped yourself, and one agent running on a task you actually have.\n\nYour hands are on the keyboard for it, and that's the point. \n\nMost of what I sell keeps me in the loop. This one is built to take me out of it -- some people finish the day and run with it, some finish and decide they'd rather not live in a terminal.\n\nIf your team's been talking about AI without getting past the talking part, happy to walk through what a day like that looks like.\n\nhttps://shanegring.com/install"
+  },
+  {
     "id": "647da119-4439-4eb2-962a-fe61dcc804c3",
     "title": "Observation - More Duct Tape",
     "date": "2026-10-05",

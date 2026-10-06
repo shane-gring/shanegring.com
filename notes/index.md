@@ -1,4 +1,4 @@
-Notes · 84 of them
+Notes · 85 of them
 
 # What I'm working through, most weekdays.
 
@@ -10,6 +10,32 @@ businesses, what broke, what I'd do differently.
 on the way there.** Also on
 [LinkedIn](https://www.linkedin.com/in/shanegring/),
 which is where they start.
+
+Shane Gring
+Fractional COO · operations for expert-led businesses
+October 6, 2026
+
+Spent a day with the team at IWBI back in July. Eight hours, one room, everybody bringing whatever they were actually stuck on.
+
+The morning was spent fixing access. We got them into an AI-friendly version of their own site on GitHub, which sounds like a boring morning but helped them in a meaningful way. Once a machine can read your site, everything after it gets easier.
+
+From there it opened up. Their designers got onto some new design tools and started organizing the process and generation. A strategist got linked into Claude Code, and by the afternoon we were running experiments to generate new pages on the site.
+
+That day is what became the Install.
+
+The shape of it now is one day, at your place, on your machine. You get Claude Code installed and authenticated, your site sitting in a GitHub repo you own, one change you wrote in plain English and shipped yourself, and one agent running on a task you actually have.
+
+Your hands are on the keyboard for it, and that's the point.
+
+Most of what I sell keeps me in the loop. This one is built to take me out of it -- some people finish the day and run with it, some finish and decide they'd rather not live in a terminal.
+
+If your team's been talking about AI without getting past the talking part, happy to walk through what a day like that looks like.
+
+[https://shanegring.com/install](https://shanegring.com/install)
+
+[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7513259300556025856)
+
+Use Case
 
 Shane Gring
 Fractional COO · operations for expert-led businesses
@@ -29,7 +55,7 @@ If you're running something small and it feels held together, you're in good com
 
 The ones who edge ahead pick the single piece of tape that's starting to drag on them, and deal with that one.
 
-[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7512912069051179008)
+1 reaction[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7512912069051179008)
 
 Tips
 
