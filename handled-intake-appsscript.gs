@@ -125,13 +125,17 @@ function appendPaidRow_(d) {
   var sheet = ss.getSheetByName(PAID_SHEET_NAME) || ss.insertSheet(PAID_SHEET_NAME);
 
   if (sheet.getLastRow() === 0) {
-    sheet.appendRow(['Paid', 'Name', 'Email', 'Amount', 'Intake link', 'Sent', 'Stripe session']);
+    sheet.appendRow(['Paid', 'Name', 'Email', 'Amount', 'Intake link', 'Sent', 'Stripe session', 'Off-Stripe']);
     sheet.setFrozenRows(1);
   }
 
   // The link goes in the sheet as well as the email because the email is the
   // thing most likely to be lost, and the token cannot be read back out of
   // storage — it is stored hashed. Losing both means re-issuing.
+  //
+  // "Off-Stripe" is a new last column rather than inserted among the rest, so
+  // existing columns keep their position. Blank for a real Stripe purchase;
+  // 'off-Stripe' for a link issued by hand for someone paying another way.
   sheet.appendRow([
     d.paidAt || new Date().toISOString(),
     d.name || '',
@@ -140,15 +144,19 @@ function appendPaidRow_(d) {
     d.url || '',
     '',
     d.session || '',
+    d.source === 'manual' ? 'off-Stripe' : '',
   ]);
 }
 
 function notifyShanePaid_(d) {
+  var manual = d.source === 'manual';
   var who = d.name || d.email || 'Someone';
-  var subject = 'Handled: ' + who + ' paid — send them their intake link';
+  var subject = manual
+    ? 'Handled: ' + who + ' (off-Stripe) — send them their intake link'
+    : 'Handled: ' + who + ' paid — send them their intake link';
 
   var body =
-    who + ' just bought Handled' + (d.amount ? ' (' + d.amount + ')' : '') + '.\n\n' +
+    who + (manual ? ' is in (off-Stripe)' : ' just bought Handled' + (d.amount ? ' (' + d.amount + ')' : '')) + '.\n\n' +
     'Send them this link. It is the only copy — the token is stored hashed, so\n' +
     'it cannot be recovered if it is lost. Re-issue instead.\n\n' +
     d.url + '\n\n' +

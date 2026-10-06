@@ -5,11 +5,17 @@
  *   node tools/handled-token.mjs --label "Acme Plumbing"
  *   node tools/handled-token.mjs --label "Friend build (waived)" --days 90
  *   node tools/handled-token.mjs --label "Acme" --base https://shanegring.com
+ *   node tools/handled-token.mjs --label "Acme" --email dana@acme.com --name "Dana Reyes"
  *
  * Talks to POST /api/handled/issue, so it works identically against the local
  * dev server and production — there is no second code path that only runs on
  * someone's laptop. Defaults to the local server precisely so that issuing a
  * live link is something you have to type on purpose.
+ *
+ * Give it --email and this is how a client who pays outside Stripe gets
+ * started the same way a Stripe buyer does: the welcome email with their link
+ * goes out, and a row lands on the "Handled paid" sheet marked off-Stripe.
+ * Without --email it behaves exactly as before — no mail, no sheet row.
  *
  * The admin secret comes from HANDLED_ADMIN_SECRET in the environment, or from
  * .dev.vars for local runs (which is gitignored). It is never passed on the
@@ -66,7 +72,12 @@ if (!args.label) fail('A --label is required. It is our own note about who this 
 const res = await fetch(base + '/api/handled/issue', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json', 'X-Handled-Admin': secret },
-  body: JSON.stringify({ label: args.label, ttlDays: args.days ? Number(args.days) : undefined }),
+  body: JSON.stringify({
+    label: args.label,
+    ttlDays: args.days ? Number(args.days) : undefined,
+    email: args.email,
+    name: args.name,
+  }),
 }).catch((e) => fail(`Could not reach ${base} — is the dev server running?\n  ${e.message}`));
 
 const body = await res.json().catch(() => null);
@@ -78,6 +89,7 @@ console.log('  Handled intake link issued');
 console.log('  ─────────────────────────────────────────────');
 console.log('  For      ' + body.label);
 console.log('  Expires  ' + expires.toISOString().slice(0, 10) + `  (${Math.round((expires - Date.now()) / 86400000)} days)`);
+console.log('  Emailed  ' + (body.notified ? 'yes — welcome email sent to ' + args.email : 'no'));
 console.log('');
 console.log('  ' + body.url);
 console.log('');
