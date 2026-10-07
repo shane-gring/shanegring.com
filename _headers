@@ -5,9 +5,10 @@
 # this it is a full duplicate competing with the canonical domain. Rules are
 # scoped by full URL so the canonical host is untouched.
 #
-# This complements the hostname guard on the GTM snippet in every page's <head>
-# (which keeps preview traffic out of GA4). That guard handles analytics; this
-# handles indexing. They are separate problems and need separate fixes.
+# This complements the hostname guard on the GTM and LinkedIn Insight snippets
+# in every page's <head> (which keeps preview traffic out of GA4 and out of the
+# LinkedIn audience data). That guard handles analytics; this handles indexing.
+# They are separate problems and need separate fixes.
 
 https://shanegring-com.pages.dev/*
   X-Robots-Tag: noindex

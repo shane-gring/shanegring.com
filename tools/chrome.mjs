@@ -1,6 +1,6 @@
 /**
- * The page chrome every generated section shares: the GTM snippets, the
- * announcement bar, the nav, the footer, and the signup form.
+ * The page chrome every generated section shares: the GTM and LinkedIn
+ * snippets, the announcement bar, the nav, the footer, and the signup form.
  *
  * This lives in one file because /blog and /notes are both generated. Two
  * copies of a nav is how a site ends up with a link that exists in one
@@ -30,6 +30,21 @@ const GTM_BODY = `<!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHSTF58T"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->`;
+
+const LINKEDIN_HEAD = `<!-- LinkedIn Insight Tag: same production-host gate as GTM above, so local
+and preview loads stay out of the LinkedIn audience data, where there is no
+filtered view to put them in later. Append ?li_debug to a URL to fire it anyway. -->
+<script>(function(){
+var h=window.location.hostname;if(h!=='shanegring.com'&&h!=='www.shanegring.com'&&window.location.search.indexOf('li_debug')<0)return;
+window._linkedin_partner_id='9807674';
+window._linkedin_data_partner_ids=window._linkedin_data_partner_ids||[];
+window._linkedin_data_partner_ids.push(window._linkedin_partner_id);
+if(!window.lintrk){window.lintrk=function(a,b){window.lintrk.q.push([a,b])};window.lintrk.q=[]}
+var s=document.getElementsByTagName('script')[0],b=document.createElement('script');
+b.type='text/javascript';b.async=true;b.src='https://snap.licdn.com/li.lms-analytics/insight.min.js';
+s.parentNode.insertBefore(b,s);
+})();</script>
+<!-- End LinkedIn Insight Tag -->`;
 
 const ANNOUNCE = `<a class="announce-bar" href="/handled">
   <span class="announce-tag">New</span>
@@ -196,4 +211,4 @@ function subscribeForm(source, id) {
 }
 
 
-export { GTM_HEAD, GTM_BODY, ANNOUNCE, NAV, footerHtml, SUBSCRIBE_URL, subscribeForm, esc };
+export { GTM_HEAD, GTM_BODY, LINKEDIN_HEAD, ANNOUNCE, NAV, footerHtml, SUBSCRIBE_URL, subscribeForm, esc };
