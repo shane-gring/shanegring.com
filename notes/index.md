@@ -33,7 +33,7 @@ If your team's been talking about AI without getting past the talking part, happ
 
 [https://shanegring.com/install](https://shanegring.com/install)
 
-[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7513259300556025856)
+1 reaction[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7513259300556025856)
 
 Use Case
 
