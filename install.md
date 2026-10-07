@@ -182,6 +182,9 @@ day of me building while you watch. **Your hands are on the
 keyboard most of the day.** That's the part that makes it
 stick.
 
+Not sure yet which of your jobs are worth handing to AI? I wrote
+up [what I automate first and what I leave alone](https://shanegring.com/ai-operations).
+
 ## Questions
 
 **Do I need to know how to code?** No. You need to
