@@ -18,7 +18,7 @@ import { readFileSync, writeFileSync, mkdirSync, readdirSync, unlinkSync, exists
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
-  GTM_HEAD, GTM_BODY, ANNOUNCE, NAV, footerHtml, SUBSCRIBE_URL, subscribeForm, esc,
+  GTM_HEAD, GTM_BODY, LINKEDIN_HEAD, ANNOUNCE, NAV, footerHtml, SUBSCRIBE_URL, subscribeForm, esc,
 } from './chrome.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -314,6 +314,7 @@ function postPage(post, prev, next) {
 <html lang="en">
 <head>
 ${GTM_HEAD}
+${LINKEDIN_HEAD}
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -451,6 +452,7 @@ function indexPage(posts) {
 <html lang="en">
 <head>
 ${GTM_HEAD}
+${LINKEDIN_HEAD}
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">

@@ -10,6 +10,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-WHSTF58T');</script>
 <!-- End Google Tag Manager -->
+<!-- LinkedIn Insight Tag: same production-host gate as GTM above, so local
+and preview loads stay out of the LinkedIn audience data, where there is no
+filtered view to put them in later. Append ?li_debug to a URL to fire it anyway. -->
+<script>(function(){
+var h=window.location.hostname;if(h!=='shanegring.com'&&h!=='www.shanegring.com'&&window.location.search.indexOf('li_debug')<0)return;
+window._linkedin_partner_id='9807674';
+window._linkedin_data_partner_ids=window._linkedin_data_partner_ids||[];
+window._linkedin_data_partner_ids.push(window._linkedin_partner_id);
+if(!window.lintrk){window.lintrk=function(a,b){window.lintrk.q.push([a,b])};window.lintrk.q=[]}
+var s=document.getElementsByTagName('script')[0],b=document.createElement('script');
+b.type='text/javascript';b.async=true;b.src='https://snap.licdn.com/li.lms-analytics/insight.min.js';
+s.parentNode.insertBefore(b,s);
+})();</script>
+<!-- End LinkedIn Insight Tag -->
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
