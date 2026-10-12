@@ -10,11 +10,11 @@ New prices, new hours, somebody new on the team, a service you stopped
 offering. Every change you've made is one more thing your site gets
 wrong. **So let's get it right.**
 
-[Get it handled →](https://checkout.shanegring.com/b/5kQ6oG0z98g86bsdeHfbq03)
+[Get it handled →](https://checkout.shanegring.com/b/4gM14ma9J3ZSarIcaDfbq08)
 
 $200 a month. $300 to build, once.
 
-I'll make sure you love the build before anything goes live.
+You see a draft and get a round of changes before anything goes live.
 
 - Month to month
 
@@ -87,7 +87,7 @@ A price, a person, a service, the hours, a photo. However you'd say it out loud.
 
 ### It gets made
 
-By me, on your site. You don't learn a tool or open a login.
+Within one working day, on your site. You don't learn a tool or open a login.
 
 - 03
 
@@ -98,15 +98,15 @@ Which was the whole point.
 ## What $200 a month actually buys
 
 The $300 build gets you a clean site to work from. The $200 a month is
-the part a person shows up for, every week, for as long as you want it.
+the part a person shows up for, for as long as you want it.
 
-- **An email that reaches a person.** New price, new hire, a service dropped, hours changed, a line rewritten. Send it, it gets done.
+- **An email that reaches a person.** New price, new hire, a service dropped, hours changed, a line rewritten. Send it and it's done within one working day.
 
-- **Someone watching it every week.** That's me. I check how it's performing and catch problems before your customers do.
+- **Scanned every week, reported every month.** My bots check it weekly for anything slow or broken. I read what they find and fix it before your customers see it. Once a month you get a short report.
 
-- **A clean site to start from.** A single page built to your specs, with what's still true about your business carried over. Live in days, not weeks.
+- **A clean site to start from.** A single page built to your specs, with the words and images worth keeping carried over. Live in days, not weeks.
 
-- **Analytics and search, set up right.** Google Analytics and Search Console, configured and quietly working, so the site is measured instead of guessed at.
+- **A site that grows a piece a month.** One short prompt a month, like an About page, reviews or a services page. You answer it, I build it in. All inside the $200.
 
 - **Everything in your name, from day one.** The code, the design files, the analytics accounts and the domain. Ask and I hand the lot over.
 
@@ -124,17 +124,17 @@ Real sites, live right now. Click any of them.
 ## $200 a month for the person whose job it is.
 
 $200/month
-To keep it right: watched every week, and every change you email, made.
+Hosting, the weekly scan, the monthly report, and any change you email. Starts 30 days after you sign up.
 
 $300
-Once, to build the site. Live in days.
+Charged today, to build the site. Live in days.
 
 That's the whole price. **Month to month, cancel any time.**
 No minimum, no notice period, no exit fee. One email ends it. If I'm worth
 keeping, that should show up in the work and not in a contract you can't
 get out of.
 
-[Get it handled →](https://checkout.shanegring.com/b/5kQ6oG0z98g86bsdeHfbq03)
+[Get it handled →](https://checkout.shanegring.com/b/4gM14ma9J3ZSarIcaDfbq08)
 
 - Live in days
 
@@ -142,30 +142,26 @@ get out of.
 
 - Yours to take with you
 
-I'll make sure you love the build before anything goes live.
+You see a draft and get a round of changes before anything goes live.
 
 [Not ready to pull the trigger? Get a free scan of your website and a few tips to improve it →](https://shanegring.com/scan)
-
-**Founding rate.** The first ten clients keep $200 a month
-for as long as they stay, even when the price goes up for everyone after.
 
 ## A few honest answers
 
 I already have a website. Why pay for a build?
 
 Because most of the reason your site fell behind is how it was set
-up. The $300 build gives you a clean single page, with what's still
-true about your business carried over, on a setup where any change can
-be made from one email. If your current site runs to many pages and
-you want all of it kept as it is, the
-[Autopilot](https://shanegring.com/autopilot) is the better fit.
+up. Your domain stays in your name and I point it at the new site. The
+$300 build rebuilds it the Handled way, carrying over the words and
+images worth keeping, on a setup where any change can be made from
+one email.
 
 What counts as a change I can just email you?
 
 A price, a person, a service, your hours, a headline, a photo, a
-rewritten line, a link that needs fixing. Send it and it gets done.
-Bigger jobs, like a run of posts or listings, aren't email-sized, and
-I'll tell you so before anything happens.
+rewritten line, a link that needs fixing. Send it and it's done within
+one working day. Bigger pieces, like a new page or a place to publish,
+come through the monthly prompts.
 
 Who actually makes the changes?
 
@@ -175,8 +171,9 @@ When you email, you're emailing me.
 
 How long until it's live?
 
-Days, not weeks. We talk, I build, you review, we tighten, it
-ships. Then the list stops growing.
+Days, not weeks. You pay, I send a short intake you can type or
+speak, and your first draft follows in a few business days. You get a
+round of changes, then it ships. Then the list stops growing.
 
 What if I want to leave?
 
@@ -186,7 +183,7 @@ because it was always yours: the code, the design files, the analytics
 accounts and the domain. Anything I'm administering, I transfer
 wherever you want it, at no charge.
 
-Want every detail, including the optional upgrades?
+Want every detail, including what gets added to your site each month?
 [It's all on the Handled page.](https://shanegring.com/handled)
 
 Website fixes
@@ -206,7 +203,7 @@ $200 a month
 ·
 $300 to build, once
 
-[Get it handled →](https://checkout.shanegring.com/b/5kQ6oG0z98g86bsdeHfbq03)
+[Get it handled →](https://checkout.shanegring.com/b/4gM14ma9J3ZSarIcaDfbq08)
 
 - Month to month
 
