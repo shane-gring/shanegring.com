@@ -14,6 +14,8 @@ wrong. **So let's get it right.**
 
 $200 a month. $300 to build, once.
 
+I'll make sure you love the build before anything goes live.
+
 - Month to month
 
 - Cancel any time
@@ -55,7 +57,8 @@ Last year's price. Someone who left in March. A service you don't
 sell. Every visitor gets the old story, and decides on it.
 
 **$200 a month buys you the person whose job it is.**
-That's me. You email the change, it gets made, and you go back to work.
+That's me, Shane Gring. You email the change, it gets made, and you go
+back to work.
 
 ## Here's what a change looks like
 
@@ -134,6 +137,10 @@ get out of.
 
 - Yours to take with you
 
+I'll make sure you love the build before anything goes live.
+
+[Not ready to pull the trigger? Get a free scan of your website and a few tips to improve it →](https://shanegring.com/scan)
+
 **Founding rate.** The first ten clients keep $200 a month
 for as long as they stay, even when the price goes up for everyone after.
 
@@ -201,6 +208,8 @@ $300 to build, once
 - Cancel any time
 
 - Everything in your name
+
+[Not ready to pull the trigger? Get a free scan of your website and a few tips to improve it →](https://shanegring.com/scan)
 
 ---
 

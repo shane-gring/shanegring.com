@@ -6153,6 +6153,47 @@ body.hc-page {
 
 .hc-more { margin-top: 2rem; }
 
+/* The resolve line with Shane beside it. Reuses .hd-resolve's border and
+   measure; only the layout is new. */
+.hc-person {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  max-width: 40rem;
+  text-align: left;
+}
+
+.hc-person img {
+  flex: none;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hc-person p { margin: 0; min-width: 0; }
+
+/* The soft exit: a text link, not a button, so it never competes with
+   checkout. */
+.hc-soft {
+  margin: 0.4rem 0 0;
+  font-size: 0.92rem;
+  text-align: center;
+}
+
+.hc-soft a {
+  color: var(--mid);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.hc-soft a:hover { color: var(--fg); }
+
+.hd-band .hd-cta-note { color: rgba(255, 255, 255, 0.78); }
+.hd-band .hc-soft a { color: rgba(255, 255, 255, 0.72); }
+.hd-band .hc-soft a:hover { color: #ffffff; }
+
 /* The founding rate, said once, quietly, under the button in the dark band.
    .hd-founding carries no styles of its own, so it is set here for this
    page only. */
@@ -6195,6 +6236,7 @@ body.hc-page {
   .hc-note-sheet { padding: 1.6rem 1.25rem 1.2rem; }
   .hc-todo li { font-size: 0.97rem; }
   .hc-page footer { padding-bottom: 5rem; }
+  .hc-person { flex-direction: column; text-align: center; }
 }
 
 /* ══════════════════════════════════════════════════════════════
