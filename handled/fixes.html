@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager: production host only, so local and preview work stays out of GA4 -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];
+var h=w.location.hostname;if(h!=='shanegring.com'&&h!=='www.shanegring.com'&&w.location.search.indexOf('gtm_debug')<0)return;
+w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WHSTF58T');</script>
+<!-- End Google Tag Manager -->
+<!-- LinkedIn Insight Tag: same production-host gate as GTM above, so local
+and preview loads stay out of the LinkedIn audience data, where there is no
+filtered view to put them in later. Append ?li_debug to a URL to fire it anyway. -->
+<script>(function(){
+var h=window.location.hostname;if(h!=='shanegring.com'&&h!=='www.shanegring.com'&&window.location.search.indexOf('li_debug')<0)return;
+window._linkedin_partner_id='9807674';
+window._linkedin_data_partner_ids=window._linkedin_data_partner_ids||[];
+window._linkedin_data_partner_ids.push(window._linkedin_partner_id);
+if(!window.lintrk){window.lintrk=function(a,b){window.lintrk.q.push([a,b])};window.lintrk.q=[]}
+var s=document.getElementsByTagName('script')[0],b=document.createElement('script');
+b.type='text/javascript';b.async=true;b.src='https://snap.licdn.com/li.lms-analytics/insight.min.js';
+s.parentNode.insertBefore(b,s);
+})();</script>
+<!-- End LinkedIn Insight Tag -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your business changed. Your website didn't. | Handled</title>
+<meta name="description" content="New prices, new hours, somebody new on the team, a service you stopped offering. $200 a month buys you the person whose job it is to fix your site. You email the change, it gets made. The build is $300, once.">
+<meta name="author" content="Shane Gring">
+
+<!-- Paid-traffic landing page for the LinkedIn "Your business changed" ad.
+     noindex so it never competes with /handled in search: same offer, same
+     money, and /handled is the page that earns the organic traffic. follow,
+     so link equity still passes through. Deliberately kept out of
+     sitemap.xml and llms.txt. Do NOT add a Disallow to robots.txt -- that
+     would stop crawlers reading this tag, and it would block LinkedIn's
+     landing-page check. Same arrangement as /get-the-read. -->
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://shanegring.com/handled/fixes">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+
+<!-- The handwriting on the to-do card is the ad's handwriting, so the click
+     lands somewhere that looks like what was clicked. Self-hosted (Caveat
+     Brush, SIL Open Font License, latin subset only) rather than pulled from
+     Google Fonts, so this page makes no third-party request /cookies does not
+     already name. Preloaded because the card is above the fold. -->
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/caveat-brush-latin.woff2" crossorigin>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Your business changed. Your website didn't.">
+<meta property="og:description" content="$200 a month buys you the person whose job it is. You email the change, it gets made. The build is $300, once.">
+<meta property="og:url" content="https://shanegring.com/handled/fixes">
+<meta property="og:site_name" content="Shane Gring">
+<meta property="og:image" content="https://shanegring.com/images/handled-hero.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Your business changed. Your website didn't.">
+<meta name="twitter:description" content="$200 a month buys you the person whose job it is. The build is $300, once.">
+<meta name="twitter:image" content="https://shanegring.com/images/handled-hero.png">
+
+<link rel="stylesheet" href="/styles.css?v=cc6ed64c">
+<!-- No JSON-LD on purpose. The page is noindex, so structured data has no
+     search result to earn, and the Service schema already lives on /handled. -->
+</head>
+
+<body class="offer-handled hc-page">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHSTF58T"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!--
+  ════════════════════════════════════════════════════════════════════════════
+  /handled/fixes: the landing page for one LinkedIn ad.
+
+  THE AD (running from 2026-10). Creative: "Your business changed. Your
+  website didn't." over a taped-down to-do list of four website fixes, each
+  with a red handwritten reason, ending "None of it is hard. None of it is
+  anybody's job. So it sits." Post copy: "$200 a month for the person whose
+  job it is ... The site build is $300, once." This page picks up exactly
+  there: the same headline, the same list, the same prices, in that order,
+  so the click feels like one continuous thing.
+
+  WHY NOT JUST /handled. /handled sells against website builders and
+  freelancers. This ad sells against drift: someone who already has a site
+  that has fallen behind the business. Different reader, different first
+  objection ("I already have a site"), so it gets its own hero, its own
+  problem section and its own FAQ. Everything else -- price, checkout,
+  proof -- is /handled's, on purpose.
+
+  KEEP IN STEP WITH /handled. The checkout link, the $300 / $200 prices and
+  the proof grid are copies. A price or link change on /handled needs the
+  same change here: hero .hd-pricetag, the .hd-figure pair, the close, and
+  the .vsl-sticky-price label. Attribution to Stripe (client_reference_id)
+  is the same script as /handled section 4, so LinkedIn sales carry
+  utm_source=linkedin through checkout as long as the ad URL has UTMs.
+
+  WHAT IS DELIBERATELY ABSENT. No nav and a stripped footer (every link is a
+  leak on paid traffic). No upgrades section (that is /handled's job; one
+  link to it sits under the FAQ; there have been no priced upgrades since
+  2026-09-17, the monthly prompts replaced them). No founding-rate line: the
+  live /handled dropped it. The one way off the page that is meant is the
+  /scan link under the band and closing buttons: a free, no-card next step
+  for someone not ready to buy.
+  ════════════════════════════════════════════════════════════════════════════
+-->
+
+<header class="vsl-header">
+  <div class="container">
+    <a class="logo" href="/" aria-label="Shane Gring, home"><img class="logo-cloud" src="/images/cloud-1.svg" alt="Shane Gring" width="224" height="80"><img class="logo-bolt" src="/images/cloud-bolt.svg" alt="" width="32" height="48" aria-hidden="true"></a>
+    <span class="vsl-header-note">Handled &middot; $200/mo + $300 once</span>
+  </div>
+</header>
+
+<main>
+  <!-- ── The hero ──────────────────────────────────────────────────────────
+       The ad, picked back up. Headline on the left, the list on the right;
+       on a phone the list drops under the button so the button is still in
+       the first screen. -->
+  <section class="hc-hero">
+    <div class="container">
+      <div class="hc-hero-copy">
+        <span class="section-eyebrow">Your site, handled</span>
+        <h1 class="hc-hook">
+          Your business changed.
+          <span class="hc-hook-turn">Your website <span class="hc-strike">didn&rsquo;t</span>.</span>
+        </h1>
+
+        <p class="hd-lede hc-lede">
+          New prices, new hours, somebody new on the team, a service you stopped
+          offering. Every change you've made is one more thing your site gets
+          wrong. <strong>So let's get it right.</strong>
+        </p>
+
+        <div class="hd-cta hc-cta">
+          <a class="btn-primary" data-hd-cta="hero" href="https://checkout.shanegring.com/b/4gM14ma9J3ZSarIcaDfbq08">
+            Get it handled <span class="btn-arrow">&rarr;</span>
+          </a>
+          <p class="hd-pricetag">$200 a month. $300 to build, once.</p>
+          <p class="hd-cta-note">You see a draft and get a round of changes before anything goes live.</p>
+          <ul class="hd-assure">
+            <li>Month to month</li>
+            <li>Cancel any time</li>
+            <li>Everything in your name</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- The list from the ad. Real markup rather than a screenshot, so it
+           stays sharp at any size and reads out to a screen reader. -->
+      <figure class="hc-note" aria-label="A to-do list of website fixes nobody has got to">
+        <div class="hc-note-sheet">
+          <div class="hc-note-head">
+            <span class="hc-note-title">Website fixes</span>
+            <span class="hc-note-tag">To do</span>
+          </div>
+          <ul class="hc-todo">
+            <li><span class="hc-box" aria-hidden="true"></span><span>Update the price on the homepage<em>price raised in April</em></span></li>
+            <li><span class="hc-box" aria-hidden="true"></span><span>Take Marcus off the team page<em>team member left in March</em></span></li>
+            <li><span class="hc-box" aria-hidden="true"></span><span>Remove quarterly retainer audits<em>we stopped offering this service</em></span></li>
+            <li><span class="hc-box" aria-hidden="true"></span><span>Fix the hours on the contact page<em>we expanded our hours last summer</em></span></li>
+          </ul>
+          <figcaption class="hc-note-foot">None of it is hard. None of it is anybody's job. So it sits.</figcaption>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ── Why it sits ───────────────────────────────────────────────────────
+       The ad's last line, taken seriously. The reader already agrees the
+       list exists; this names why it never gets done, then names the fix. -->
+  <section class="hd-section">
+    <div class="container">
+      <h2 class="hd-title">Every fix is five minutes. That's why none of them happen.</h2>
+      <p class="hd-sub">
+        A five-minute job never feels worth the afternoon it actually takes:
+        finding the login, remembering how the builder works, and hoping you
+        don't break something else on the way.
+      </p>
+
+      <div class="hc-costs">
+        <div class="hd-versus-card">
+          <h3>The person who built it moved on</h3>
+          <p>A freelancer, a nephew, an old employee. The site went live, and the
+          one person who knew how it worked went with it.</p>
+        </div>
+        <div class="hd-versus-card">
+          <h3>Nobody's job means nobody's week</h3>
+          <p>It sits on someone's list under everything that pays. It's never
+          urgent, so it never moves.</p>
+        </div>
+        <div class="hd-versus-card">
+          <h3>Meanwhile, buyers read it</h3>
+          <p>Last year's price. Someone who left in March. A service you don't
+          sell. Every visitor gets the old story, and decides on it.</p>
+        </div>
+      </div>
+
+      <!-- The offer is a person, so the person is shown, right where the
+           page names him. A family photo rather than a headshot, set as a
+           print taped to the page with the same tape as the to-do card, so
+           it reads as pinned up rather than as a stock "about us" block. -->
+      <div class="hc-person">
+        <figure class="hc-print">
+          <img src="/images/handled/shane-family.webp" alt="Shane Gring at home on the couch with his family" width="1000" height="800" loading="lazy">
+          <figcaption>me and my girls</figcaption>
+        </figure>
+        <div class="hc-person-text">
+          <p class="hc-person-lead">$200 a month buys you the person whose job it is.</p>
+          <p>That's me, Shane Gring. Fifteen years running websites, analytics
+          and digital operations for founders and companies. When you email a
+          change, it comes to me, not a ticket queue. It gets made, and you go
+          back to work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── How a change gets made ────────────────────────────────────────────
+       The whole mechanism in one exchange. Showing the email does more than
+       describing "changes by email" ever could. -->
+  <section class="hd-section">
+    <div class="container">
+      <h2 class="hd-title">Here's what a change looks like</h2>
+      <p class="hd-sub">No dashboard, no ticket, no portal. An email to a person.</p>
+
+      <div class="hc-thread" aria-label="An example email exchange">
+        <div class="hc-mail">
+          <div class="hc-mail-meta"><span>From: you</span><span>Subject: Thursday hours</span></div>
+          <p>We're open until 7 on Thursdays now. Can you update the contact page?</p>
+        </div>
+        <!-- The slot holds the reply's space from the start, so the typing
+             bubble can sit in it and the page never shifts when the reply
+             lands. -->
+        <div class="hc-reply-slot">
+          <div class="hc-typing" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="hc-mail hc-mail-reply">
+            <div class="hc-mail-meta"><span>From: Shane</span><span>Re: Thursday hours</span></div>
+            <p>Done. The contact page shows 7pm on Thursdays.</p>
+          </div>
+        </div>
+      </div>
+
+      <ol class="hc-steps">
+        <li><span class="hc-step-num">01</span><h3>You email the change</h3><p>A price, a person, a service, the hours, a photo. However you'd say it out loud.</p></li>
+        <li><span class="hc-step-num">02</span><h3>It gets made</h3><p>Within one working day, on your site. You don't learn a tool or open a login.</p></li>
+        <li><span class="hc-step-num">03</span><h3>You go back to work</h3><p>Which was the whole point.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ── What you get ──────────────────────────────────────────────────── -->
+  <section class="hd-section">
+    <div class="container">
+      <h2 class="hd-title">What $200 a month actually buys</h2>
+      <p class="hd-sub">
+        The $300 build gets you a clean site to work from. The $200 a month is
+        the part a person shows up for, for as long as you want it.
+      </p>
+
+      <ul class="hd-gets">
+        <li><strong>An email that reaches a person.</strong> New price, new hire, a service dropped, hours changed, a line rewritten. Send it and it's done within one working day.</li>
+        <li><strong>Scanned every week, reported every month.</strong> My bots check it weekly for anything slow or broken. I read what they find and fix it before your customers see it. Once a month you get a short report.</li>
+        <li><strong>A clean site to start from.</strong> A single page built to your specs, with the words and images worth keeping carried over. Live in days, not weeks.</li>
+        <li><strong>A site that grows a piece a month.</strong> One short prompt a month, like an About page, reviews or a services page. You answer it, I build it in. All inside the $200.</li>
+        <li><strong>Everything in your name, from day one.</strong> The code, the design files, the analytics accounts and the domain. Ask and I hand the lot over.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── Proof ─────────────────────────────────────────────────────────────
+       Six of /handled's twelve. Enough to answer "is the work any good"
+       without turning a short page into a long one. -->
+  <section class="hd-section" id="examples">
+    <div class="container">
+      <h2 class="hd-title">Sites built and handled the same way yours will be</h2>
+      <p class="hd-sub">Real sites, live right now. Click any of them.</p>
+
+      <div class="hd-shots">
+        <a class="hd-shot" href="https://tedgonder.co" target="_blank" rel="noopener">
+          <img src="/images/handled/tedgonder.webp" alt="Homepage of tedgonder.co" width="1200" height="750" loading="lazy">
+          <span class="hd-shot-meta"><span class="hd-shot-name">Ted Gonder</span><span class="hd-shot-what">Private strategic advisory &middot; tedgonder.co</span></span>
+        </a>
+        <a class="hd-shot" href="https://drvngolf.com" target="_blank" rel="noopener">
+          <img src="/images/handled/7-drvn.png" alt="Homepage of drvngolf.com" width="1280" height="713" loading="lazy">
+          <span class="hd-shot-meta"><span class="hd-shot-name">DRVN</span><span class="hd-shot-what">The golf performance system &middot; drvngolf.com</span></span>
+        </a>
+        <a class="hd-shot" href="https://albizhubi.com" target="_blank" rel="noopener">
+          <img src="/images/handled/1-albizhubi.png" alt="Homepage of albizhubi.com" width="1280" height="713" loading="lazy">
+          <span class="hd-shot-meta"><span class="hd-shot-name">Albi Zhubi</span><span class="hd-shot-what">Brooklyn and NYC real estate &middot; albizhubi.com</span></span>
+        </a>
+        <a class="hd-shot" href="https://buckheadrestaurantweek.com" target="_blank" rel="noopener">
+          <img src="/images/handled/1-buckhead-restaurant-week.png" alt="Homepage of buckheadrestaurantweek.com" width="1280" height="713" loading="lazy">
+          <span class="hd-shot-meta"><span class="hd-shot-name">Buckhead Restaurant Week</span><span class="hd-shot-what">Atlanta dining week &middot; buckheadrestaurantweek.com</span></span>
+        </a>
+        <a class="hd-shot" href="https://seamcertification.com" target="_blank" rel="noopener">
+          <img src="/images/handled/3-seam.png" alt="Homepage of seamcertification.com" width="1280" height="713" loading="lazy">
+          <span class="hd-shot-meta"><span class="hd-shot-name">SEAM</span><span class="hd-shot-what">Social equity certification &middot; seamcertification.com</span></span>
+        </a>
+        <a class="hd-shot" href="https://greenstarhomes.org" target="_blank" rel="noopener">
+          <img src="/images/handled/greenstar.webp" alt="Homepage of greenstarhomes.org" width="1200" height="750" loading="lazy">
+          <span class="hd-shot-meta"><span class="hd-shot-name">GreenStar Homes</span><span class="hd-shot-what">Green home certification &middot; greenstarhomes.org</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── The offer ─────────────────────────────────────────────────────────
+       The ad's price, in the ad's order: the monthly first, because that is
+       what the ad sells; the build second, because the ad calls it "once". -->
+  <section class="hd-section hd-band" id="price">
+    <div class="container">
+      <h2 class="hd-title">$200 a month for the person whose job it is.</h2>
+
+      <div class="hd-figure">
+        <div class="hd-figure-half">
+          <span class="hd-figure-num">$200<span class="hd-figure-per">/month</span></span>
+          <span class="hd-figure-what">Hosting, the weekly scan, the monthly report, and any change you email. Starts 30 days after you sign up.</span>
+        </div>
+        <div class="hd-figure-half">
+          <span class="hd-figure-num">$300</span>
+          <span class="hd-figure-what">Charged today, to build the site. Live in days.</span>
+        </div>
+      </div>
+
+      <p class="hd-sub">
+        That's the whole price. <strong>Month to month, cancel any time.</strong>
+        No minimum, no notice period, no exit fee. One email ends it. If I'm worth
+        keeping, that should show up in the work and not in a contract you can't
+        get out of.
+      </p>
+
+      <div class="hd-cta">
+        <a class="btn-primary" data-hd-cta="band" href="https://checkout.shanegring.com/b/4gM14ma9J3ZSarIcaDfbq08">
+          Get it handled <span class="btn-arrow">&rarr;</span>
+        </a>
+        <ul class="hd-assure">
+          <li>Live in days</li>
+          <li>Changes by email</li>
+          <li>Yours to take with you</li>
+        </ul>
+        <p class="hd-cta-note">You see a draft and get a round of changes before anything goes live.</p>
+        <p class="hc-soft"><a data-hd-cta="scan-band" href="/scan">Not ready to pull the trigger? Get a free scan of your website and a few tips to improve it <span aria-hidden="true">&rarr;</span></a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Objections ────────────────────────────────────────────────────────
+       The first one is new to this page and the most important: everyone
+       this ad reaches already has a site. -->
+  <section class="hd-section">
+    <div class="container">
+      <h2 class="hd-title">A few honest answers</h2>
+
+      <div class="hd-qa">
+        <details>
+          <summary>I already have a website. Why pay for a build?</summary>
+          <p>Because most of the reason your site fell behind is how it was set
+          up. Your domain stays in your name and I point it at the new site. The
+          $300 build rebuilds it the Handled way, carrying over the words and
+          images worth keeping, on a setup where any change can be made from
+          one email.</p>
+        </details>
+        <details>
+          <summary>What counts as a change I can just email you?</summary>
+          <p>A price, a person, a service, your hours, a headline, a photo, a
+          rewritten line, a link that needs fixing. Send it and it's done within
+          one working day. Bigger pieces, like a new page or a place to publish,
+          come through the monthly prompts.</p>
+        </details>
+        <details>
+          <summary>Who actually makes the changes?</summary>
+          <p>Me. Shane Gring, a fractional operator who's spent 15 years running
+          websites, analytics and digital operations for founders and companies.
+          When you email, you're emailing me.</p>
+        </details>
+        <details>
+          <summary>How long until it's live?</summary>
+          <p>Days, not weeks. You pay, I send a short intake you can type or
+          speak, and your first draft follows in a few business days. You get a
+          round of changes, then it ships. Then the list stops growing.</p>
+        </details>
+        <details>
+          <summary>What if I want to leave?</summary>
+          <p>Whenever you want. No minimum, no notice period, no exit fee. Send
+          one email and it stops at the end of that month. You keep everything,
+          because it was always yours: the code, the design files, the analytics
+          accounts and the domain. Anything I'm administering, I transfer
+          wherever you want it, at no charge.</p>
+        </details>
+      </div>
+
+      <p class="hd-sub hc-more">
+        Want every detail, including what gets added to your site each month?
+        <a href="/handled">It's all on the Handled page.</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Close ─────────────────────────────────────────────────────────────
+       The ad's list again, ticked. The before is above the fold; this is
+       the after. -->
+  <section class="hd-final hc-final" id="hd-final">
+    <div class="container">
+      <figure class="hc-note hc-note-done" aria-label="The same list, every item ticked off">
+        <div class="hc-note-sheet">
+          <div class="hc-note-head">
+            <span class="hc-note-title">Website fixes</span>
+            <span class="hc-note-tag">Done</span>
+          </div>
+          <ul class="hc-todo">
+            <li><span class="hc-box is-ticked" aria-hidden="true"></span><span>Update the price on the homepage<em>emailed Shane</em></span></li>
+            <li><span class="hc-box is-ticked" aria-hidden="true"></span><span>Take Marcus off the team page<em>emailed Shane</em></span></li>
+            <li><span class="hc-box is-ticked" aria-hidden="true"></span><span>Remove quarterly retainer audits<em>emailed Shane</em></span></li>
+            <li><span class="hc-box is-ticked" aria-hidden="true"></span><span>Fix the hours on the contact page<em>emailed Shane</em></span></li>
+          </ul>
+        </div>
+      </figure>
+
+      <h2 class="hd-title">So let's get it right.</h2>
+      <p class="hd-pricetag">
+        <span>$200 a month</span>
+        <span class="hd-pricetag-sep" aria-hidden="true">&middot;</span>
+        <span>$300 to build, once</span>
+      </p>
+
+      <div class="hd-cta">
+        <a class="btn-primary" data-hd-cta="final" href="https://checkout.shanegring.com/b/4gM14ma9J3ZSarIcaDfbq08">
+          Get it handled <span class="btn-arrow">&rarr;</span>
+        </a>
+        <ul class="hd-assure">
+          <li>Month to month</li>
+          <li>Cancel any time</li>
+          <li>Everything in your name</li>
+        </ul>
+        <p class="hc-soft"><a data-hd-cta="scan-final" href="/scan">Not ready to pull the trigger? Get a free scan of your website and a few tips to improve it <span aria-hidden="true">&rarr;</span></a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Mobile buy bar, borrowed from /get-the-read via /handled. -->
+<div class="vsl-sticky" id="hd-sticky" aria-hidden="true">
+  <div class="vsl-sticky-inner">
+    <span class="vsl-sticky-price">Handled &middot; $200/mo + $300 once</span>
+    <a class="btn-primary" data-hd-cta="sticky" href="https://checkout.shanegring.com/b/4gM14ma9J3ZSarIcaDfbq08" tabindex="-1">
+      Get it handled <span class="btn-arrow">&rarr;</span>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <img class="footer-city" src="/images/footer-city.png" alt="" width="2176" height="544" loading="lazy" aria-hidden="true">
+  <div class="container">
+    <p class="footer-tag">Operations that run beyond you.</p>
+    <div class="footer-content">
+      <span>&copy; 2026 SOEN, LLC, dba Shane Gring</span>
+      <span><a href="/about" class="footer-link">About Shane Gring</a></span>
+      <span><a href="/contact" class="footer-link">Contact</a></span>
+      <span><a href="/privacy" class="footer-link">Privacy</a></span>
+      <span><a href="/terms" class="footer-link">Terms</a></span>
+      <span><a href="/cookies" class="footer-link">Cookies</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="/track.js?v=8cf6c72c" defer></script>
+<script>
+/* ══════════════════════════════════════════════════════════════════════════
+   /handled/fixes page behaviour. Four jobs. The first is this page's own:
+   playing the email exchange. The other three are copies of the matching
+   sections on /handled: the mobile buy bar, scroll depth, and carrying ad
+   attribution across to Stripe. No checkout confirmation here -- Stripe
+   returns buyers to /handled?checkout=success, which already handles it.
+   Everything degrades to a working page with JS off.
+   ══════════════════════════════════════════════════════════════════════════ */
+(function () {
+  'use strict';
+
+  /* ── 0. THE EMAIL EXCHANGE ───────────────────────────────────────────────
+     Sent, typing, received -- once, the first time the thread is half in
+     view. The messages are only hidden once this script has armed the
+     thread, so with JS off, reduced motion, or no IntersectionObserver the
+     exchange simply sits there complete. */
+  var thread = document.querySelector('.hc-thread');
+  var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (thread && !calm && 'IntersectionObserver' in window) {
+    var sent = thread.querySelector('.hc-mail');
+    var reply = thread.querySelector('.hc-mail-reply');
+    var typing = thread.querySelector('.hc-typing');
+    thread.classList.add('is-armed');
+
+    var io = new IntersectionObserver(function (entries) {
+      if (!entries[0].isIntersecting) return;
+      io.disconnect();
+      sent.classList.add('is-in');
+      setTimeout(function () { typing.classList.add('is-on'); }, 750);
+      setTimeout(function () {
+        typing.classList.remove('is-on');
+        reply.classList.add('is-in');
+      }, 2150);
+    }, { threshold: 0.5 });
+    io.observe(thread);
+  }
+
+  /* ── LINKEDIN: CHECKOUT CLICK ────────────────────────────────────────────
+     Conversion "Handled - checkout click" (ID 31047730), the early signal
+     LinkedIn can optimise on before purchases add up. Matched on the Handled
+     build link, so any other Stripe link added later does not count by
+     accident. lintrk exists only on the production
+     host, so local and preview clicks never count.
+
+     The click leaves the site, which can cut the request off, so a plain
+     left-click waits 250ms for it to go out before following the link.
+     Modified and middle clicks open a new tab and are left alone. href is
+     read at click time, after the attribution script has rewritten it. */
+  document.addEventListener('click', function (e) {
+    if (!window.lintrk) return;
+    var a = e.target && e.target.closest && e.target.closest('a[href*="4gM14ma9J3ZSarIcaDfbq08"]');
+    if (!a) return;
+    window.lintrk('track', { conversion_id: 31047730 });
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    var go = a.getAttribute('href');
+    setTimeout(function () { window.location.href = go; }, 250);
+  });
+
+  /* ── 1. THE STICKY BAR ───────────────────────────────────────────────────
+     Visible between the end of the hero and the start of the final CTA. */
+  var sticky = document.getElementById('hd-sticky');
+  var hero = document.querySelector('.hc-hero');
+  var final = document.getElementById('hd-final');
+
+  if (sticky && hero && final && 'IntersectionObserver' in window) {
+    var heroGone = false;
+    var finalHere = false;
+
+    function paint() {
+      var show = heroGone && !finalHere;
+      sticky.classList.toggle('is-visible', show);
+      sticky.setAttribute('aria-hidden', show ? 'false' : 'true');
+      var link = sticky.querySelector('a');
+      if (link) link.setAttribute('tabindex', show ? '0' : '-1');
+    }
+
+    new IntersectionObserver(function (entries) {
+      heroGone = !entries[0].isIntersecting;
+      paint();
+    }, { rootMargin: '0px' }).observe(hero);
+
+    new IntersectionObserver(function (entries) {
+      finalHere = entries[0].isIntersecting;
+      paint();
+    }, { rootMargin: '0px 0px -20% 0px' }).observe(final);
+  }
+
+  /* ── 2. SCROLL DEPTH ─────────────────────────────────────────────────────
+     Same event name as /handled and /get-the-read, so one GTM trigger
+     covers all three. */
+  var marks = [25, 50, 75, 90];
+  var hit = {};
+  var ticking = false;
+
+  function depth() {
+    ticking = false;
+    var doc = document.documentElement;
+    var scrollable = doc.scrollHeight - window.innerHeight;
+    if (scrollable <= 0) return;
+    var pct = ((window.pageYOffset || doc.scrollTop) / scrollable) * 100;
+    for (var i = 0; i < marks.length; i++) {
+      var m = marks[i];
+      if (pct >= m && !hit[m]) {
+        hit[m] = true;
+        if (window.sgTrack) window.sgTrack('scroll_depth', { percent_scrolled: m });
+      }
+    }
+  }
+
+  window.addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(depth);
+  }, { passive: true });
+
+  /* ── 3. ATTRIBUTION THROUGH TO STRIPE ────────────────────────────────────
+     Same as /handled: utm_source / utm_campaign / utm_content become the
+     Payment Link's client_reference_id, so a sale from this ad is still
+     identifiable in Stripe after the buyer leaves the site. LinkedIn's own
+     click id (li_fat_id) is the fallback when the ad URL carries no
+     utm_content. */
+  function param(name) {
+    var m = new RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+    return m ? decodeURIComponent(m[1].replace(/\+/g, ' ')) : '';
+  }
+
+  function clean(s) {
+    return String(s).replace(/[^A-Za-z0-9_-]/g, '').slice(0, 40);
+  }
+
+  var ref = [
+    clean(param('utm_source') || 'direct'),
+    clean(param('utm_campaign') || 'none'),
+    clean(param('utm_content') || param('li_fat_id') || 'x')
+  ].join('__').slice(0, 200);
+
+  var links = document.querySelectorAll('a[href*="buy.stripe.com"], a[href*="checkout.shanegring.com"]');
+  for (var j = 0; j < links.length; j++) {
+    var href = links[j].getAttribute('href');
+    links[j].setAttribute(
+      'href',
+      href + (href.indexOf('?') > -1 ? '&' : '?') + 'client_reference_id=' + encodeURIComponent(ref)
+    );
+  }
+})();
+</script>
+</body>
+</html>

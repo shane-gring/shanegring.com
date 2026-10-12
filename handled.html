@@ -55,7 +55,7 @@ s.parentNode.insertBefore(b,s);
 <meta name="twitter:description" content="A clean single-page site to start, built for you, scanned every week and reported on every month. Each month one prompt adds the next piece: an About page, a place to publish, a services page. $300 to build, $200 a month. Month to month, everything in your name.">
 <meta name="twitter:image" content="https://shanegring.com/images/handled-hero.png">
 
-<link rel="stylesheet" href="/styles.css?v=77202128">
+<link rel="stylesheet" href="/styles.css?v=cc6ed64c">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"Service","@id":"https://shanegring.com/handled#service","name":"Handled","serviceType":"Website build and ongoing management","provider":{"@id":"https://shanegring.com/#person"},"areaServed":{"@type":"Country","name":"United States"},"audience":{"@type":"BusinessAudience","name":"Founders and independent professionals"},"description":"A clean, single-page website built to the client's specs, then scanned every week, reported on every month, and improved as it goes. Changes are made by email, with no dashboard, tickets, or portal. Includes Google Analytics and Search Console set up, and the client owns the code, the design files, the analytics and Search Console accounts, and the domain, which is registered in their name. The domain is bought for them up to $15. $300 to build and $200 per month to keep it handled, hosting included, month to month with no minimum, no notice period and no exit fee. Each month the client gets one prompt, about 30 minutes of questions or steps, and the answer is built into the site: a Google Business Profile, an About page, a lean CMS, a first post, reviews, a services page, buyer questions, a newsletter, a client story, listings beyond Google, a reworked contact path and a year report. All of it is inside the monthly fee. Work outside that list starts with a conversation.","offers":[{"@type":"Offer","name":"Site build","price":"300","priceCurrency":"USD","url":"https://shanegring.com/handled"},{"@type":"Offer","name":"Monthly handling","price":"200","priceCurrency":"USD","url":"https://shanegring.com/handled","priceSpecification":{"@type":"UnitPriceSpecification","price":"200","priceCurrency":"USD","billingDuration":1,"billingIncrement":1,"unitText":"MONTH"}}]},
@@ -803,6 +803,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      the param into a confirmation line in the hero, then clean the URL so a
      refresh or a shared link doesn't claim a purchase that didn't happen. */
   if (new URLSearchParams(location.search).get('checkout') === 'success') {
+    /* LinkedIn "Handled - purchase" conversion (Campaign Manager, 2026-10-12,
+       $300, 30-day click / 7-day view). Event-specific, not a URL rule: the
+       replaceState below strips ?checkout=success before the async Insight
+       Tag would ever read the address, so a URL rule would miss every sale.
+       lintrk only exists on the production host (the gate in <head>), so
+       local and preview loads never count; until insight.min.js arrives the
+       call sits in the stub's queue. Buyers from /handled/fixes land here
+       too, so this one call covers both pages. */
+    if (window.lintrk) window.lintrk('track', { conversion_id: 31047722 });
+
     var note = document.getElementById('hd-confirm');
     if (note) {
       note.innerHTML = "<strong>You're in.</strong> Payment went through &mdash; watch your inbox for the receipt and next steps.";
@@ -810,6 +820,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
     history.replaceState(null, '', location.pathname);
   }
+
+  /* ── LINKEDIN: CHECKOUT CLICK ────────────────────────────────────────────
+     Conversion "Handled - checkout click" (ID 31047730), the early signal
+     LinkedIn can optimise on before purchases add up. Matched on the Handled
+     build link, so any other Stripe link added later does not count by
+     accident. lintrk exists only on the production
+     host, so local and preview clicks never count.
+
+     The click leaves the site, which can cut the request off, so a plain
+     left-click waits 250ms for it to go out before following the link.
+     Modified and middle clicks open a new tab and are left alone. href is
+     read at click time, after the attribution script has rewritten it. */
+  document.addEventListener('click', function (e) {
+    if (!window.lintrk) return;
+    var a = e.target && e.target.closest && e.target.closest('a[href*="4gM14ma9J3ZSarIcaDfbq08"]');
+    if (!a) return;
+    window.lintrk('track', { conversion_id: 31047730 });
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    var go = a.getAttribute('href');
+    setTimeout(function () { window.location.href = go; }, 250);
+  });
 
   /* ── 2. THE STICKY BAR ───────────────────────────────────────────────────
      Visible between the end of the hero and the start of the final CTA.
