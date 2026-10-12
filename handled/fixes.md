@@ -56,7 +56,7 @@ urgent, so it never moves.
 Last year's price. Someone who left in March. A service you don't
 sell. Every visitor gets the old story, and decides on it.
 
-me and the crew
+me and my girls
 
 $200 a month buys you the person whose job it is.
 
