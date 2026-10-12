@@ -56,8 +56,13 @@ urgent, so it never moves.
 Last year's price. Someone who left in March. A service you don't
 sell. Every visitor gets the old story, and decides on it.
 
-**$200 a month buys you the person whose job it is.**
-That's me, Shane Gring. You email the change, it gets made, and you go
+me and the crew
+
+$200 a month buys you the person whose job it is.
+
+That's me, Shane Gring. Fifteen years running websites, analytics
+and digital operations for founders and companies. When you email a
+change, it comes to me, not a ticket queue. It gets made, and you go
 back to work.
 
 ## Here's what a change looks like
