@@ -107,7 +107,7 @@ the part a person shows up for, every week, for as long as you want it.
 Real sites, live right now. Click any of them.
 
 [Ted GonderPrivate strategic advisory · tedgonder.co](https://tedgonder.co)
-[Skyler GringTravel agent, Dreamers Do Travels · skylergring.com](https://skylergring.com)
+[DRVNThe golf performance system · drvngolf.com](https://drvngolf.com)
 [Albi ZhubiBrooklyn and NYC real estate · albizhubi.com](https://albizhubi.com)
 [Buckhead Restaurant WeekAtlanta dining week · buckheadrestaurantweek.com](https://buckheadrestaurantweek.com)
 [SEAMSocial equity certification · seamcertification.com](https://seamcertification.com)
