@@ -65,7 +65,7 @@ s.parentNode.insertBefore(b,s);
 <meta name="twitter:description" content="$200 a month buys you the person whose job it is. The build is $300, once.">
 <meta name="twitter:image" content="https://shanegring.com/images/handled-hero.png">
 
-<link rel="stylesheet" href="/styles.css?v=c6cef533">
+<link rel="stylesheet" href="/styles.css?v=72f37588">
 <!-- No JSON-LD on purpose. The page is noindex, so structured data has no
      search result to earn, and the Service schema already lives on /handled. -->
 </head>
@@ -228,9 +228,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="hc-mail-meta"><span>From: you</span><span>Subject: Thursday hours</span></div>
           <p>We're open until 7 on Thursdays now. Can you update the contact page?</p>
         </div>
-        <div class="hc-mail hc-mail-reply">
-          <div class="hc-mail-meta"><span>From: Shane</span><span>Re: Thursday hours</span></div>
-          <p>Done. The contact page shows 7pm on Thursdays.</p>
+        <!-- The slot holds the reply's space from the start, so the typing
+             bubble can sit in it and the page never shifts when the reply
+             lands. -->
+        <div class="hc-reply-slot">
+          <div class="hc-typing" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="hc-mail hc-mail-reply">
+            <div class="hc-mail-meta"><span>From: Shane</span><span>Re: Thursday hours</span></div>
+            <p>Done. The contact page shows 7pm on Thursdays.</p>
+          </div>
         </div>
       </div>
 
@@ -469,14 +475,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="/track.js?v=8cf6c72c" defer></script>
 <script>
 /* ══════════════════════════════════════════════════════════════════════════
-   /handled/fixes page behaviour. Three jobs, each a copy of the matching
-   section on /handled: the mobile buy bar, scroll depth, and carrying ad
+   /handled/fixes page behaviour. Four jobs. The first is this page's own:
+   playing the email exchange. The other three are copies of the matching
+   sections on /handled: the mobile buy bar, scroll depth, and carrying ad
    attribution across to Stripe. No checkout confirmation here -- Stripe
    returns buyers to /handled?checkout=success, which already handles it.
    Everything degrades to a working page with JS off.
    ══════════════════════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
+
+  /* ── 0. THE EMAIL EXCHANGE ───────────────────────────────────────────────
+     Sent, typing, received -- once, the first time the thread is half in
+     view. The messages are only hidden once this script has armed the
+     thread, so with JS off, reduced motion, or no IntersectionObserver the
+     exchange simply sits there complete. */
+  var thread = document.querySelector('.hc-thread');
+  var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (thread && !calm && 'IntersectionObserver' in window) {
+    var sent = thread.querySelector('.hc-mail');
+    var reply = thread.querySelector('.hc-mail-reply');
+    var typing = thread.querySelector('.hc-typing');
+    thread.classList.add('is-armed');
+
+    var io = new IntersectionObserver(function (entries) {
+      if (!entries[0].isIntersecting) return;
+      io.disconnect();
+      sent.classList.add('is-in');
+      setTimeout(function () { typing.classList.add('is-on'); }, 750);
+      setTimeout(function () {
+        typing.classList.remove('is-on');
+        reply.classList.add('is-in');
+      }, 2150);
+    }, { threshold: 0.5 });
+    io.observe(thread);
+  }
 
   /* ── 1. THE STICKY BAR ───────────────────────────────────────────────────
      Visible between the end of the hero and the start of the final CTA. */
