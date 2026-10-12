@@ -803,6 +803,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      the param into a confirmation line in the hero, then clean the URL so a
      refresh or a shared link doesn't claim a purchase that didn't happen. */
   if (new URLSearchParams(location.search).get('checkout') === 'success') {
+    /* LinkedIn "Handled - purchase" conversion (Campaign Manager, 2026-10-12,
+       $300, 30-day click / 7-day view). Event-specific, not a URL rule: the
+       replaceState below strips ?checkout=success before the async Insight
+       Tag would ever read the address, so a URL rule would miss every sale.
+       lintrk only exists on the production host (the gate in <head>), so
+       local and preview loads never count; until insight.min.js arrives the
+       call sits in the stub's queue. Buyers from /handled/fixes land here
+       too, so this one call covers both pages. */
+    if (window.lintrk) window.lintrk('track', { conversion_id: 31047722 });
+
     var note = document.getElementById('hd-confirm');
     if (note) {
       note.innerHTML = "<strong>You're in.</strong> Payment went through &mdash; watch your inbox for the receipt and next steps.";
