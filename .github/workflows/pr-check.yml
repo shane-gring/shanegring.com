@@ -1,0 +1,38 @@
+name: PR check
+
+# Runs the same build + test steps deploy.yml runs before it ever deploys --
+# on every PR into main, read-only, no secrets. Lets automerge.mjs (the jobs
+# runner's gated auto-merge for the shanegring client) trust a green "build"
+# check on a PR's head sha instead of re-deriving it from deploy.yml's own
+# push-triggered run, which never runs on a PR at all.
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pr-check-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Build Markdown variants
+        run: node tools/build-markdown.mjs
+
+      - name: Build route manifest
+        run: node tools/build-routes.mjs
+
+      - name: Test
+        run: node --test tests/*.test.mjs
