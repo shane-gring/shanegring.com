@@ -37,9 +37,9 @@ the notes. The writing-down step is the one people want to skip,
 and it is the one that decides whether the rest holds up.
 There is more on why in [the approach](https://shanegring.com/approach).
 
-If the work you need is broader than automation — mapping
-the process and systems themselves, not just the parts worth
-handing to software — that's
+If the work you need is broader than automation —
+mapping the process and systems themselves, not just the
+parts worth handing to software — that's
 [operations consulting](https://shanegring.com/operations-consulting).
 
 ## What to automate, and what to leave alone

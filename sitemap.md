@@ -146,6 +146,9 @@ Seeking Certainty. What I'm working on, what broke, and how I fixed it.
 [All issues](https://shanegring.com/blog/)
 The full archive
 
+[You've read about AI](https://shanegring.com/blog/you-ve-read-about-ai)
+But the setup is still waiting.
+
 [Nobody complains about a quiet website](https://shanegring.com/blog/nobody-complains-about-a-quiet-website)
 Three checks you can run on your own site this week
 

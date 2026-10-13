@@ -96,10 +96,10 @@ the owner directly rather than a layer of managers in
 between.
 
 The clean fit is a **founder-led or expert-led business
-between roughly $500K and $10M in revenue** — big enough
-that the founder can no longer hold every process in their
-head, small enough that a full operations department is
-premature. If every decision still routes through you and
+between roughly $500K and $10M in revenue** —
+big enough that the founder can no longer hold every process
+in their head, small enough that a full operations department
+is premature. If every decision still routes through you and
 the knowledge that runs the business lives in a few people's
 heads, that is the gap this work fills.
 
@@ -149,7 +149,8 @@ fixes, in two business days.
 ### The Session — $250
 
 One call on one operational problem, including where to
-start on process or systems. [About the Session →](https://shanegring.com/session)
+start on process or systems.
+[About the Session →](https://shanegring.com/session)
 
 ### The Map — $1,999
 

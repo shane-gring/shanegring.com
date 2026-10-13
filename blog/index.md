@@ -1,4 +1,4 @@
-Newsletter · 16 issues
+Newsletter · 17 issues
 
 # Seeking Certainty
 
@@ -9,6 +9,8 @@ What I pick up running a few companies and helping run a few more —
 Certification work is still most of what I do, so it keeps showing
 up here; there's just more around it now. Sent when there's
 something worth sending. Every issue is archived below, in full.
+
+[October 13, 2026 You've read about AI But the setup is still waiting.](https://shanegring.com/blog/you-ve-read-about-ai)
 
 [September 15, 2026 Nobody complains about a quiet website Three checks you can run on your own site this week](https://shanegring.com/blog/nobody-complains-about-a-quiet-website)
 

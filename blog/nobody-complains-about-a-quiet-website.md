@@ -58,7 +58,7 @@ The three checks above, on a single page you can print and fill in with a pen. R
 
 223.36 KB • PDF File
 
-[Download](https://beehiiv-publication-files.s3.amazonaws.com/uploads/downloadables/032815a3-09de-4fe3-8ddd-29887c80a61d/f3a5b480-e4a0-4f09-aa74-592e29d83903/Quiet%20Website%20Check.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQCMHTQSE2JGAGXHJ%2F20261013%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261013T062122Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=491c433f1e02822d1807867d1e446e7f574ea203bf5f7944e91e1ddee0f8e13c)
+[Download](https://beehiiv-publication-files.s3.amazonaws.com/uploads/downloadables/032815a3-09de-4fe3-8ddd-29887c80a61d/f3a5b480-e4a0-4f09-aa74-592e29d83903/Quiet%20Website%20Check.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQCMHTQSE2JGAGXHJ%2F20261013%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261013T164935Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=2949eed822b783100f872d69ea3ecaade756880be4d8a54db244880b510e4deb)
 
 Forward it to whoever actually manages your site if that isn't you. It reads fine without this email around it.
 
@@ -71,7 +71,7 @@ fixed it.
 Want the same eye on your own site? Start with the
 [free Scan](https://shanegring.com/scan).
 
-[The Slingshot: No roof and no plan →](https://shanegring.com/blog/the-slingshot-no-roof-and-no-plan)
+[← You've read about AI](https://shanegring.com/blog/you-ve-read-about-ai) · [The Slingshot: No roof and no plan →](https://shanegring.com/blog/the-slingshot-no-roof-and-no-plan)
 
 ---
 
