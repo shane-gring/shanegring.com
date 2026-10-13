@@ -237,6 +237,9 @@ difference.
 Two ways. Take the seat directly, or take the defined steps that
 lead to it — each priced on its page, each crediting into the
 next: [the Modern Operations Path™](https://shanegring.com/work-with-me).
+If what you need is the process and systems mapped and built,
+without the ongoing seat, that's
+[operations consulting](https://shanegring.com/operations-consulting).
 
 ### The Seat
 
