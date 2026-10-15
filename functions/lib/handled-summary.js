@@ -23,10 +23,10 @@ export function buildSummary(record, { publicBase = 'https://shanegring.com', li
 
   out.push(`HANDLED INTAKE — ${name}`);
   out.push(`Submitted ${formatWhen(record.submittedAt)}`);
-  // A request from /handled/start has not paid: the draft goes out first,
+  // A free first pass request has not paid: the draft goes out first,
   // with the checkout link. Said up top so it is the first thing Shane reads.
   if (record.source === 'request') {
-    out.push('Requested at /handled/start: NOT PAID YET. Send the checkout link with the draft.');
+    out.push('Free first pass request: NOT PAID YET. Send the checkout link with the draft.');
   }
   out.push('');
 

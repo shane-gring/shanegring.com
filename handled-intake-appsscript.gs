@@ -8,8 +8,8 @@
  *                           says someone bought. Files the purchase and emails
  *                           Shane the intake link to send on.
  *   kind: "handled-request" from functions/api/handled/request.js when
- *                           someone asks for a build at /handled/start,
- *                           before paying anything. Files the request, tells
+ *                           someone asks for a free first pass on a
+ *                           /handled/first-pass page, before paying anything. Files the request, tells
  *                           Shane, and emails them their intake link.
  *   kind: "handled-intake"  from functions/api/handled/submit.js when they
  *                           finish the form. Appends a row, emails Shane the
@@ -205,8 +205,8 @@ function emailBuyerLink_(d) {
     'the way back to your answers if you close the tab.\n\n' +
     d.url + '\n\n' +
     'It takes about fifteen minutes and it saves as you go, so you can stop and\n' +
-    'come back on your phone. Once it is in, your first draft follows in a few\n' +
-    'business days.\n\n' +
+    'come back on your phone. Once it is in, your first draft follows within\n' +
+    '24 to 48 hours.\n\n' +
     'Anything at all, just reply to this.\n\n' +
     'Shane\n' +
     'shanegring.com/handled\n';
@@ -226,7 +226,7 @@ function emailBuyerLink_(d) {
 
 // ---------- someone asked for a build (not paid) ----------
 //
-// From /handled/start: the build-first campaign. They have not paid, and the
+// From the /handled/first-pass pages: the free first pass campaign. They have not paid, and the
 // checkout link goes out with the draft. They are already in the form by the
 // time this runs (the page sends them straight there), so their email is the
 // way back in, the same job emailBuyerLink_ does for a buyer.
@@ -236,7 +236,7 @@ function appendRequestRow_(d) {
   var sheet = ss.getSheetByName(REQUEST_SHEET_NAME) || ss.insertSheet(REQUEST_SHEET_NAME);
 
   if (sheet.getLastRow() === 0) {
-    sheet.appendRow(['Requested', 'Name', 'Email', 'Business', 'Current site', 'Campaign', 'Intake link', 'Draft sent', 'Paid']);
+    sheet.appendRow(['Requested', 'Name', 'Email', 'Business', 'Current site', 'Page', 'Campaign', 'Intake link', 'Draft sent', 'Paid']);
     sheet.setFrozenRows(1);
   }
 
@@ -249,6 +249,7 @@ function appendRequestRow_(d) {
     d.email || '',
     d.business || '',
     d.website || '',
+    d.page || '',
     d.campaign || '',
     d.url || '',
     '',
@@ -259,7 +260,7 @@ function appendRequestRow_(d) {
 function notifyShaneRequest_(d) {
   var who = d.business || d.name || d.email || 'Someone';
   var body =
-    (d.name || 'Someone') + (d.business ? ' at ' + d.business : '') + ' asked for a Handled build.\n' +
+    (d.name || 'Someone') + (d.business ? ' at ' + d.business : '') + ' asked for a free first pass.\n' +
     'Not paid yet: you will get their brief when they finish the intake. Send\n' +
     'the checkout link with the draft.\n\n' +
     'Their intake link (already emailed to them, and it is the only copy):\n' +
@@ -269,11 +270,12 @@ function notifyShaneRequest_(d) {
     'Email     ' + (d.email || '—') + '\n' +
     'Business  ' + (d.business || '—') + '\n' +
     'Site      ' + (d.website || '—') + '\n' +
+    'Page      ' + (d.page || '—') + '\n' +
     'Campaign  ' + (d.campaign || '—') + '\n';
 
   MailApp.sendEmail({
     to: SHANE,
-    subject: 'Handled request: ' + who + ' (not paid)',
+    subject: 'Handled first pass: ' + who + ' (not paid)',
     body: body,
     replyTo: d.email || SHANE,
   });
@@ -291,8 +293,8 @@ function emailRequesterLink_(d) {
     'only copy, and it is the way back to your answers if you close the tab.\n\n' +
     d.url + '\n\n' +
     'It takes about fifteen minutes and it saves as you go, so you can stop and\n' +
-    'come back on your phone. Once it is in, I build your page and send you a\n' +
-    'draft in a few business days.\n\n' +
+    'come back on your phone. Once it is in, I build your new homepage and\n' +
+    'send you a link to it within 24 to 48 hours.\n\n' +
     'You pay nothing until you have seen it. If you like it, the build is $300\n' +
     'once and $200 a month after that. If you do not, you owe me nothing.\n\n' +
     'Anything at all, just reply to this.\n\n' +
@@ -345,8 +347,8 @@ function confirmClient_(d) {
   var body =
     'Thanks' + (first ? ', ' + first : '') + ' — that\'s everything I need.\n\n' +
     'I build from your answers directly, so there\'s nothing else for you to ' +
-    'do right now. You\'ll hear from me in a few business days with a first ' +
-    'look at your page.\n\n' +
+    'do right now. You\'ll hear from me within 24 to 48 hours with a link ' +
+    'to your new homepage.\n\n' +
     (d.source === 'request'
       ? 'Nothing to pay until you have seen it and want it live.\n\n'
       : '') +

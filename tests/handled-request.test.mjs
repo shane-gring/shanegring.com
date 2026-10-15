@@ -58,6 +58,7 @@ const GOOD = {
   email: 'Dana@AcmePlumbing.com ',
   business: 'Acme Plumbing',
   website: 'acmeplumbing.com',
+  page: '/handled/first-pass/see-it-first',
   utm: { source: 'linkedin', campaign: 'handled-start', content: '<script>' },
 };
 
@@ -75,6 +76,7 @@ test('a good request mints a working intake link marked as a request', async () 
   assert.equal(record.status, 'draft');
   assert.equal(record.firstName, 'Dana');
   assert.equal(record.request.email, 'dana@acmeplumbing.com');
+  assert.equal(record.request.page, '/handled/first-pass/see-it-first');
   assert.equal(record.request.campaign, 'linkedin / handled-start / script');
   // Nothing pre-filled, so they still meet the Welcome screen.
   assert.deepEqual(record.answers, {});

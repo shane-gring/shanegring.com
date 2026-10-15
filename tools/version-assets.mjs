@@ -30,7 +30,7 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const CHECK = process.argv.includes('--check');
 
 // Only assets that are referenced from a plain, unversioned path in the HTML.
-const ASSETS = ['styles.css', 'nav.js', 'track.js', 'subscribe.js'];
+const ASSETS = ['styles.css', 'nav.js', 'track.js', 'subscribe.js', 'assets/handled/first-pass.js'];
 
 function shortHash(file) {
   return createHash('sha256').update(readFileSync(file)).digest('hex').slice(0, 8);

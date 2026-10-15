@@ -1,7 +1,7 @@
 /**
  * Handled — ask for a build, get an intake link.  POST /api/handled/request
  *
- * The public front door behind /handled/start. Somebody gives a name, an email
+ * The public front door behind the /handled/first-pass pages. Somebody gives a name, an email
  * and a business, and gets an intake link of their own, straight away, with no
  * payment. This is the "build it first, buy it once you're happy" campaign:
  * Shane builds from the intake, sends the draft, and the checkout link comes
@@ -100,6 +100,7 @@ export async function onRequestPost(context) {
     email,
     business,
     website,
+    page: clean(body.page).replace(/[^\w/.-]/g, '').slice(0, 120),
     campaign: utm(body.utm),
     requestedAt: record.issuedAt,
   };
@@ -124,6 +125,7 @@ export async function onRequestPost(context) {
           email,
           business,
           website,
+          page: record.request.page,
           url,
           campaign: record.request.campaign,
           requestedAt: record.issuedAt,
@@ -140,9 +142,9 @@ export async function onRequestPost(context) {
       stage: 'New',
       source: 'Website',
       nextActionDays: 1,
-      noteTitle: `Handled build requested — ${business}`,
+      noteTitle: `Handled first pass requested — ${business}`,
       noteContent:
-        `Asked for a Handled build at /handled/start (${record.issuedAt}). Not paid: ` +
+        `Asked for a free first pass at ${record.request.page || '/handled/first-pass'} (${record.issuedAt}). Not paid: ` +
         `the intake comes first, the checkout link goes out with the draft.\n\n` +
         `Business: **${business}**\n` +
         (website ? `Current site: ${website}\n` : '') +

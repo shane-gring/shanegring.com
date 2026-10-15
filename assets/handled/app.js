@@ -16,7 +16,7 @@
  * indicator that is always telling the truth.
  */
 
-import { SECTIONS, WELCOME, CONFIRMATION, questionById, allQuestions, RECORDING_FIELD } from './questions.js?v=67502e6c';
+import { SECTIONS, WELCOME, CONFIRMATION, questionById, allQuestions, RECORDING_FIELD } from './questions.js?v=01846f0a';
 import { TEMPLATES, PLACEHOLDER_PREVIEW, templateBlurb, templateById } from './templates.js?v=f8bd3fa8';
 import { acceptAttr, formatBytes, validateUpload, GROUPS, canRecord, pickRecordType,
          extensionForType, RECORD_BITRATE, RECORD_MAX_SECONDS } from './uploads.js?v=5f553a01';
@@ -1372,6 +1372,7 @@ async function submit(button) {
     state.status = 'submitted';
     state.screen = 'done';
     render();
+    reportSubmitted();
   } catch {
     button.disabled = false;
     button.textContent = 'Send it to Shane →';
@@ -1379,6 +1380,28 @@ async function submit(button) {
     err.setAttribute('role', 'alert');
     button.after(err);
   }
+}
+
+// --- LinkedIn conversion ---------------------------------------------------
+// "Handled – intake submitted", the free first pass campaign's deeper
+// conversion. Event-specific, set up by hand in Campaign Manager; null until
+// it exists, and then nothing fires.
+//
+// Deliberately NOT the Insight Tag. This page's address carries the client's
+// token in its fragment, and the tag reads the page URL. A single pixel
+// request carries no URL at all: the page's referrer policy is same-origin,
+// so LinkedIn gets the conversion id and its own cookie, and never the link.
+// Production host only, like the tag everywhere else.
+const LI_PARTNER = '9807674';
+const LI_SUBMITTED_CONVERSION = null;
+
+function reportSubmitted() {
+  if (!LI_SUBMITTED_CONVERSION) return;
+  const h = location.hostname;
+  if (h !== 'shanegring.com' && h !== 'www.shanegring.com') return;
+  const px = new Image(1, 1);
+  px.referrerPolicy = 'no-referrer';
+  px.src = `https://px.ads.linkedin.com/collect/?pid=${LI_PARTNER}&conversionId=${LI_SUBMITTED_CONVERSION}&fmt=gif`;
 }
 
 // --- fatal states ----------------------------------------------------------

@@ -170,8 +170,8 @@ export const CONFIRMATION = {
   body: [
     'Your answers are with Shane. He builds from these directly, so nothing ' +
     'else is needed from you right now.',
-    'You’ll hear back in a few business days with a first look at the ' +
-    'page. Changes after that are as easy as replying to that email.',
+    'You’ll hear back within 24 to 48 hours with a link to your new ' +
+    'homepage. Changes after that are as easy as replying to that email.',
   ],
   contact: 'shane@shanegring.com',
 };
