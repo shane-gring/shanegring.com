@@ -223,7 +223,7 @@ this way and this mirrors it exactly.
 
 **Gotcha:** "Who has access: Anyone" is required — Cloudflare posts to it
 unauthenticated. The script itself rejects anything whose `kind` is not
-`handled-intake`.
+one of its own (`handled-paid`, `handled-request`, `handled-intake`).
 
 ---
 
@@ -279,6 +279,41 @@ reset.
 client who paid and a friend whose fee was waived get the same link the same
 way. Do not wire this to a payment webhook without deciding that is what you
 want.
+
+---
+
+## Build-first requests (/handled/start)
+
+A second way in, for campaigns where the intake comes **before** payment.
+Someone fills in name, email, business and (optionally) their current site at
+`/handled/start`. `POST /api/handled/request` mints a link with the same
+machinery as `issue.js`, the page sends them straight into the intake, and the
+Apps Script emails them the link as their way back.
+
+- **No secret guards this route**, so it is rate-limited instead: 5 per IP per
+  hour and 40 site-wide per day, counted in `SCAN_KV` under `hreq:`. Override
+  with the vars `HANDLED_REQUEST_HOURLY` / `HANDLED_REQUEST_DAILY`. A honeypot
+  field drops bots silently.
+- **The record says it is unpaid**: `source: 'request'`. When they submit, the
+  brief opens with "NOT PAID YET" and the email subject ends "(not paid)".
+  Send the checkout link with the draft.
+- **Shane's sheet** gets a **Handled requests** tab (created on first use) with
+  the link, their details, the campaign (from the UTMs on the arriving URL),
+  and blank "Draft sent" / "Paid" columns to fill in by hand.
+
+**After any change to `handled-intake-appsscript.gs`, update the live script**
+(this is what turns on the `handled-request` emails):
+
+1. Open the Sheet → **Extensions → Apps Script**, select all, paste the new
+   file over it, **Save**.
+2. **Deploy → Manage deployments** → the pencil on the existing web app →
+   **Version: New version** → **Deploy**.
+
+Use *Manage deployments*, not *New deployment*: a new deployment gets a new
+`/exec` URL and `HANDLED_SHEET_URL` would still point at the old one. Until
+the script is updated, requests still work and people still land in the
+intake, but no email goes to them or to Shane (the old script rejects the new
+`kind`); the link is in the Cloudflare function log line `handled-request:`.
 
 ---
 

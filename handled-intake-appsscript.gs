@@ -7,6 +7,10 @@
  *   kind: "handled-paid"    from functions/api/stripe-handled.js when Stripe
  *                           says someone bought. Files the purchase and emails
  *                           Shane the intake link to send on.
+ *   kind: "handled-request" from functions/api/handled/request.js when
+ *                           someone asks for a build at /handled/start,
+ *                           before paying anything. Files the request, tells
+ *                           Shane, and emails them their intake link.
  *   kind: "handled-intake"  from functions/api/handled/submit.js when they
  *                           finish the form. Appends a row, emails Shane the
  *                           brief, and emails the client a short confirmation.
@@ -37,6 +41,7 @@
 var SHANE = 'shane@shanegring.com';
 var SHEET_NAME = 'Handled intake';
 var PAID_SHEET_NAME = 'Handled paid';
+var REQUEST_SHEET_NAME = 'Handled requests';
 
 // ---------- entry point ----------
 
@@ -54,6 +59,13 @@ function doPost(e) {
       appendPaidRow_(d);
       notifyShanePaid_(d);
       emailBuyerLink_(d);
+      return json_({ ok: true });
+    }
+
+    if (d.kind === 'handled-request') {
+      appendRequestRow_(d);
+      notifyShaneRequest_(d);
+      emailRequesterLink_(d);
       return json_({ ok: true });
     }
 
@@ -212,10 +224,99 @@ function emailBuyerLink_(d) {
   }
 }
 
+// ---------- someone asked for a build (not paid) ----------
+//
+// From /handled/start: the build-first campaign. They have not paid, and the
+// checkout link goes out with the draft. They are already in the form by the
+// time this runs (the page sends them straight there), so their email is the
+// way back in, the same job emailBuyerLink_ does for a buyer.
+
+function appendRequestRow_(d) {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName(REQUEST_SHEET_NAME) || ss.insertSheet(REQUEST_SHEET_NAME);
+
+  if (sheet.getLastRow() === 0) {
+    sheet.appendRow(['Requested', 'Name', 'Email', 'Business', 'Current site', 'Campaign', 'Intake link', 'Draft sent', 'Paid']);
+    sheet.setFrozenRows(1);
+  }
+
+  // The link goes in the sheet for the same reason as on 'Handled paid': it is
+  // stored hashed and cannot be read back out. "Draft sent" and "Paid" are
+  // Shane's to fill in by hand.
+  sheet.appendRow([
+    d.requestedAt || new Date().toISOString(),
+    d.name || '',
+    d.email || '',
+    d.business || '',
+    d.website || '',
+    d.campaign || '',
+    d.url || '',
+    '',
+    '',
+  ]);
+}
+
+function notifyShaneRequest_(d) {
+  var who = d.business || d.name || d.email || 'Someone';
+  var body =
+    (d.name || 'Someone') + (d.business ? ' at ' + d.business : '') + ' asked for a Handled build.\n' +
+    'Not paid yet: you will get their brief when they finish the intake. Send\n' +
+    'the checkout link with the draft.\n\n' +
+    'Their intake link (already emailed to them, and it is the only copy):\n' +
+    d.url + '\n\n' +
+    '────────────────────────────────\n' +
+    'Name      ' + (d.name || '—') + '\n' +
+    'Email     ' + (d.email || '—') + '\n' +
+    'Business  ' + (d.business || '—') + '\n' +
+    'Site      ' + (d.website || '—') + '\n' +
+    'Campaign  ' + (d.campaign || '—') + '\n';
+
+  MailApp.sendEmail({
+    to: SHANE,
+    subject: 'Handled request: ' + who + ' (not paid)',
+    body: body,
+    replyTo: d.email || SHANE,
+  });
+}
+
+function emailRequesterLink_(d) {
+  if (!d.email) return;
+
+  var first = String(d.name || '').trim().split(/\s+/)[0];
+  var hello = first ? 'Hi ' + first + ',' : 'Hi,';
+
+  var body =
+    hello + '\n\n' +
+    'Thanks for asking. Here is your intake link. Save this email: it is the\n' +
+    'only copy, and it is the way back to your answers if you close the tab.\n\n' +
+    d.url + '\n\n' +
+    'It takes about fifteen minutes and it saves as you go, so you can stop and\n' +
+    'come back on your phone. Once it is in, I build your page and send you a\n' +
+    'draft in a few business days.\n\n' +
+    'You pay nothing until you have seen it. If you like it, the build is $300\n' +
+    'once and $200 a month after that. If you do not, you owe me nothing.\n\n' +
+    'Anything at all, just reply to this.\n\n' +
+    'Shane\n' +
+    'shanegring.com/handled\n';
+
+  try {
+    MailApp.sendEmail({
+      to: d.email,
+      subject: 'Your Handled intake link — save this email',
+      body: body,
+      name: 'Shane Gring',
+      replyTo: SHANE,
+    });
+  } catch (err) {
+    console.error('requester email failed for ' + d.email + ': ' + err);
+  }
+}
+
 // ---------- Shane's brief ----------
 
 function notifyShane_(d) {
-  var subject = 'Handled intake: ' + (d.business || d.email || 'new client');
+  var subject = 'Handled intake: ' + (d.business || d.email || 'new client') +
+    (d.source === 'request' ? ' (not paid)' : '');
 
   // The summary already contains everything, formatted. All this adds is a
   // line at the top saying what to do next, because an email that opens with
@@ -246,6 +347,9 @@ function confirmClient_(d) {
     'I build from your answers directly, so there\'s nothing else for you to ' +
     'do right now. You\'ll hear from me in a few business days with a first ' +
     'look at your page.\n\n' +
+    (d.source === 'request'
+      ? 'Nothing to pay until you have seen it and want it live.\n\n'
+      : '') +
     'After that, changing anything is as easy as replying to that email.\n\n' +
     'Shane\n' +
     SHANE + '\n' +

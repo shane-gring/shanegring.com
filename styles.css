@@ -6336,6 +6336,45 @@ body.hc-page {
 }
 
 /* ══════════════════════════════════════════════════════════════
+   /handled/start — ASK FOR A BUILD, NO PAYMENT
+   The form borrows the scan's .sr-form fields; everything here is
+   scoped to body.hs-page.
+   ══════════════════════════════════════════════════════════════ */
+.hs-page .hs-hero { padding-block: 3.5rem 2.5rem; }
+
+.hs-page .hs-hook {
+  max-width: 18ch;
+  margin: 0.5rem 0 1rem;
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.hs-page .hs-lede { max-width: 38rem; margin-inline: 0; }
+
+.hs-page .hs-form { margin-top: 1.75rem; }
+
+.hs-page .sr-submit { background: var(--offer); border-color: var(--offer); color: #ffffff; }
+.hs-page .sr-submit:hover { background: var(--offer-deep); border-color: var(--offer-deep); }
+
+.hs-page .hs-status {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--fg);
+}
+
+.hs-page .hs-noscript { padding-block: 1rem; }
+
+@media (max-width: 768px) {
+  .hs-page .hs-hero { padding-block: 2.25rem 1.5rem; }
+  .hs-page .hs-form { grid-template-columns: minmax(0, 1fr); }
+  .hs-page .sr-submit { justify-self: stretch; justify-content: center; }
+}
+
+/* ══════════════════════════════════════════════════════════════
    THE THREE WAY-IN PAGES (/find-out, /done-for-you, /do-it-yourself)
    ══════════════════════════════════════════════════════════════ */
 

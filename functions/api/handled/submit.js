@@ -92,6 +92,7 @@ async function notify(env, record) {
           email,
           submittedAt: record.submittedAt,
           template: record.template,
+          source: record.source || '',   // 'request' = from /handled/start, not paid yet
           summary,                 // the pre-rendered text Shane reads
           transcript: record.transcript?.text || '',
           // Everything except `label`, which is our own note about who the
