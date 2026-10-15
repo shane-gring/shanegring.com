@@ -4,9 +4,9 @@ Free first pass
 
 Your website is the one salesperson who never clocks out. I’ll build you a new homepage from a short intake about your business, free.
 
-For a small business, the site is the one salesperson who never clocks out. When it’s out of date, it tells customers the wrong story.
+I’ll rebuild your homepage for free, set up to take inquiries while you’re off the clock.
 
-I’ll build you a new homepage from a short intake about your business, free. If it looks like someone you’d hire, I put it to work.
+For a small business, the site is the one salesperson who never clocks out. When it’s out of date, it tells customers the wrong story. If the new one looks like someone you’d hire, I put it to work.
 
 Get my free first pass &darr;
 

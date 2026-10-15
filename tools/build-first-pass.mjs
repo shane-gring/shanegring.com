@@ -33,7 +33,9 @@ const SITE = 'https://shanegring.com';
 
 // ── The pages ───────────────────────────────────────────────────────────────
 // hook: the ad's on-image line, in Shane's voice; [[word]] gets the ad's red
-// underline. lede: the ad's intro text, same order. angle: one short section
+// underline. answer: the bold line under it that answers the hook with the
+// offer, so the first screen says something the ad didn't. lede: builds on
+// the ad's intro text rather than repeating it. angle: one short section
 // that carries the ad's idea a step further than the ad had room for.
 
 const PAGES = [
@@ -44,9 +46,9 @@ const PAGES = [
     image: 'see-it-first',
     imageAlt: 'A preview of a new homepage for a heating and cooling company',
     hook: 'See your new website [[before]] you pay.',
+    answer: 'I’ll build your new homepage first. You only pay if you love it.',
     lede: [
-      'Tell me about your business and I’ll build you a new homepage, free. About 15 minutes from you; within 24 to 48 hours, a link to your new site.',
-      'If you love it, it goes live. If you don’t, you owe nothing.',
+      'About 15 minutes from you: a few questions, your logo and a few photos. Within 24 to 48 hours, a link to your new site.',
     ],
   },
   {
@@ -56,9 +58,9 @@ const PAGES = [
     image: 'business-changed',
     imageAlt: 'An old roofing company homepage beside a fresh rebuild of it',
     hook: 'Your business changed. Did your [[website]]?',
+    answer: 'Tell me what’s different. I’ll rebuild your homepage for free, and you decide if it goes live.',
     lede: [
-      'New prices, new hours, someone new on the team, a service you added last spring. Tell me what’s different and I’ll build a fresh version of your homepage for you to look at, free.',
-      'If you like it, I launch it and keep it current. If you don’t, you owe nothing.',
+      'New prices, new hours, someone new on the team, a service you added last spring. About 15 minutes tells me what’s changed, and within 24 to 48 hours you see the rebuild.',
     ],
     angle: {
       title: 'None of it is hard. It just isn’t anybody’s job.',
@@ -75,9 +77,9 @@ const PAGES = [
     image: 'see-it-first',
     imageAlt: 'A preview of a new homepage for a heating and cooling company, marked Preview',
     hook: 'See it [[before]] you pay.',
+    answer: 'I build your new homepage first, for free. You look it over, then decide.',
     lede: [
-      'See a new version of your website before you pay anything. Answer a few questions about your business, then send your logo and a few photos. That’s about 15 minutes from you.',
-      'Within 24 to 48 hours, you get a link to your new homepage. If you like it, I get to work. If not, there’s no commitment and no fee.',
+      'Answer a few questions about your business and send your logo and a few photos. That’s about 15 minutes from you. Within 24 to 48 hours you get a link to your new homepage. No commitment and no fee.',
     ],
     angle: {
       title: 'Why I build it first',
@@ -94,9 +96,9 @@ const PAGES = [
     image: 'handled',
     imageAlt: 'A dental practice homepage with an email asking for Saturday hours and a reply saying it is live',
     hook: 'Your website, [[handled]].',
+    answer: 'I’ll rebuild your site for free, then keep it current. Changes take one email.',
     lede: [
-      'One person builds it, checks on it every week, and makes any change you email, usually the same day.',
-      'Start with a free first pass. Tell me about your business and I’ll show you what your site could look like. You decide after you’ve seen it.',
+      'One person builds it, checks on it every week, and makes the changes you send, usually the same day. Start with the free first pass and decide once you’ve seen it.',
     ],
     angle: {
       title: 'Here’s what a change looks like',
@@ -116,9 +118,9 @@ const PAGES = [
     image: 'salesperson',
     imageAlt: 'A plumbing company homepage on a phone at 2:14 in the morning, with a new quote request arriving',
     hook: 'Make your website a [[24-hour]] salesperson.',
+    answer: 'I’ll rebuild your homepage for free, set up to take inquiries while you’re off the clock.',
     lede: [
-      'For a small business, the site is the one salesperson who never clocks out. When it’s out of date, it tells customers the wrong story.',
-      'I’ll build you a new homepage from a short intake about your business, free. If it looks like someone you’d hire, I put it to work.',
+      'For a small business, the site is the one salesperson who never clocks out. When it’s out of date, it tells customers the wrong story. If the new one looks like someone you’d hire, I put it to work.',
     ],
     angle: {
       title: 'You were asleep. Make sure your website isn’t.',
@@ -139,9 +141,9 @@ const PAGES = [
     image: 'fifteen-minutes',
     imageAlt: 'A short business intake form beside the landscaping homepage built from it',
     hook: 'Give me [[15 minutes]]. Get a new website.',
+    answer: 'Answer a few questions about your business. Your new homepage is back in 24 to 48 hours, free.',
     lede: [
-      'Answer a few questions about what you do and who you serve, then send your logo and a few photos. Within 24 to 48 hours, you get a link to your new homepage.',
-      'Pay only if you love it. No commitment, and no fee to take a look.',
+      'What you do, who you serve, your logo and a few photos: that’s the whole intake. No commitment, and you only pay if you love what comes back.',
     ],
     angle: {
       title: 'What the 15 minutes covers',
@@ -160,9 +162,9 @@ const PAGES = [
     image: 'ai-answer',
     imageAlt: 'An AI assistant answering “Who’s the best bookkeeper near me?” with your business listed first',
     hook: 'When AI recommends someone, is it [[you]]?',
+    answer: 'I’ll rebuild your site for free so AI assistants can tell what you do and who you serve.',
     lede: [
-      'More buyers now start with an AI assistant instead of a page of links. If your website isn’t built for that, you’re not in the answer.',
-      'I’ll review your site and rebuild it for free, built so AI assistants and search engines can understand what you do and who you serve. You see it before you switch, and you only keep it if you love it.',
+      'More buyers now start with an AI assistant instead of a page of links. If your site isn’t built for that, you’re not in the answer. You see the rebuild before you switch, and you only keep it if you love it.',
     ],
     angle: {
       title: 'What “built for AI” means here',
@@ -332,6 +334,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="hc-hero-copy">
         <span class="section-eyebrow">Free first pass</span>
         <h1 class="hc-hook">${hook(p.hook)}</h1>
+        <p class="fp-answer">${esc(p.answer)}</p>
 ${p.lede.map((l) => `        <p class="hd-lede hc-lede">${esc(l)}</p>`).join('\n')}
         <div class="hd-cta hc-cta">
           ${cta('hero')}

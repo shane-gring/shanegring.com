@@ -6342,6 +6342,19 @@ body.hc-page {
    scoped to body.fp-page.
    ══════════════════════════════════════════════════════════════ */
 .fp-page .fp-hero .hc-lede + .hc-lede { margin-top: 0.9rem; }
+/* The offer, answering the ad's line above it. */
+.fp-page .fp-hero .hc-hook { margin-bottom: 0.9rem; }
+/* Keep the underlined words whole, so "24-hour" never splits at the hyphen. */
+.fp-page .hc-strike { white-space: nowrap; }
+.fp-page .fp-answer {
+  margin: 0 0 1.1rem;
+  max-width: 34ch;
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--fg);
+  text-wrap: balance;
+}
 .fp-page .fp-hero .hd-cta { margin-top: 1.6rem; }
 
 /* The ad itself, so the click lands next to what was clicked. */

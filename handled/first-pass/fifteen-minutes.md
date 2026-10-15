@@ -4,9 +4,9 @@ Free first pass
 
 Take 15 minutes to tell me about your business and I’ll build you a new homepage within 24 to 48 hours. Pay only if you love it.
 
-Answer a few questions about what you do and who you serve, then send your logo and a few photos. Within 24 to 48 hours, you get a link to your new homepage.
+Answer a few questions about your business. Your new homepage is back in 24 to 48 hours, free.
 
-Pay only if you love it. No commitment, and no fee to take a look.
+What you do, who you serve, your logo and a few photos: that’s the whole intake. No commitment, and you only pay if you love what comes back.
 
 Get my free first pass &darr;
 

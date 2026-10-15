@@ -4,9 +4,9 @@ Free first pass
 
 Tell me about your business and I’ll build you a new homepage, free, within 24 to 48 hours. If you love it, it goes live: $300 to build, $200 a month. If not, you owe nothing.
 
-Tell me about your business and I’ll build you a new homepage, free. About 15 minutes from you; within 24 to 48 hours, a link to your new site.
+I’ll build your new homepage first. You only pay if you love it.
 
-If you love it, it goes live. If you don’t, you owe nothing.
+About 15 minutes from you: a few questions, your logo and a few photos. Within 24 to 48 hours, a link to your new site.
 
 Get my free first pass &darr;
 

@@ -4,9 +4,9 @@ Free first pass
 
 See a new version of your website before you pay anything. About 15 minutes from you; within 24 to 48 hours, a link to your new homepage.
 
-See a new version of your website before you pay anything. Answer a few questions about your business, then send your logo and a few photos. That’s about 15 minutes from you.
+I build your new homepage first, for free. You look it over, then decide.
 
-Within 24 to 48 hours, you get a link to your new homepage. If you like it, I get to work. If not, there’s no commitment and no fee.
+Answer a few questions about your business and send your logo and a few photos. That’s about 15 minutes from you. Within 24 to 48 hours you get a link to your new homepage. No commitment and no fee.
 
 Get my free first pass &darr;
 

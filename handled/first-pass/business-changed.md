@@ -4,9 +4,9 @@ Free first pass
 
 New prices, new hours, someone new on the team. Tell me what’s different and I’ll build a fresh version of your homepage for you to look at, free.
 
-New prices, new hours, someone new on the team, a service you added last spring. Tell me what’s different and I’ll build a fresh version of your homepage for you to look at, free.
+Tell me what’s different. I’ll rebuild your homepage for free, and you decide if it goes live.
 
-If you like it, I launch it and keep it current. If you don’t, you owe nothing.
+New prices, new hours, someone new on the team, a service you added last spring. About 15 minutes tells me what’s changed, and within 24 to 48 hours you see the rebuild.
 
 Get my free first pass &darr;
 

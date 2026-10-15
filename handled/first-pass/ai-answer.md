@@ -4,9 +4,9 @@ Free first pass
 
 More buyers now start with an AI assistant. I’ll review your site and rebuild it for free, built so AI and search can understand what you do. You only keep it if you love it.
 
-More buyers now start with an AI assistant instead of a page of links. If your website isn’t built for that, you’re not in the answer.
+I’ll rebuild your site for free so AI assistants can tell what you do and who you serve.
 
-I’ll review your site and rebuild it for free, built so AI assistants and search engines can understand what you do and who you serve. You see it before you switch, and you only keep it if you love it.
+More buyers now start with an AI assistant instead of a page of links. If your site isn’t built for that, you’re not in the answer. You see the rebuild before you switch, and you only keep it if you love it.
 
 Get my free first pass &darr;
 

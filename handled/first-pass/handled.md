@@ -4,9 +4,9 @@ Free first pass
 
 One person builds it, checks on it every week, and makes any change you email. Start with a free first pass and decide after you’ve seen it.
 
-One person builds it, checks on it every week, and makes any change you email, usually the same day.
+I’ll rebuild your site for free, then keep it current. Changes take one email.
 
-Start with a free first pass. Tell me about your business and I’ll show you what your site could look like. You decide after you’ve seen it.
+One person builds it, checks on it every week, and makes the changes you send, usually the same day. Start with the free first pass and decide once you’ve seen it.
 
 Get my free first pass &darr;
 
