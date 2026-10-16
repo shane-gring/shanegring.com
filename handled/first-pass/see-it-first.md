@@ -44,7 +44,7 @@ Love it, and it goes live: $300 to build, once, then $200 a month. Don’t, and 
 
 ## Tell me about your business
 
-Four quick details, then straight into the intake. I’ll email you a link back to it too.
+Four quick details, then straight into the intake. It saves as you go, so bookmark it if you want to finish later.
 
 No card. Nothing to pay unless you love it and want it live.
 

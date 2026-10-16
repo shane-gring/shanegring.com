@@ -367,7 +367,7 @@ ${STEPS.map(([n, h, t]) => `        <li><span class="hc-step-num">${n}</span><h3
   <section class="hd-section fp-start" id="start">
     <div class="container">
       <h2 class="hd-title">Tell me about your business</h2>
-      <p class="hd-sub">Four quick details, then straight into the intake. I’ll email you a link back to it too.</p>
+      <p class="hd-sub">Four quick details, then straight into the intake. It saves as you go, so bookmark it if you want to finish later.</p>
 
       <form class="sr-form fp-form" data-first-pass novalidate aria-label="Tell me about your business">
         <label class="sr-field">
