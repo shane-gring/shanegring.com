@@ -1,12 +1,14 @@
 Make your website a 24-hour salesperson.
 
-# I’ll rebuild your site to bring in business, not just look nice.
+# I’ll rebuild your site to help bring in business, not just look nice.
 
-Your website is part of your sales team, and the one member who never sleeps. I’ll rebuild it to bring in business, not just look nice. See it within 24 hours; pay only if you like it.
+Your website is part of your sales team, and the one member who never sleeps. I’ll rebuild it to help bring in business, not just look nice. See it within 24 hours; pay only if you like it.
 
-Your website is part of your sales team, and it’s the one member who never sleeps. At 10pm it should be answering a customer’s questions and asking for the call. See what I’d build within 24 hours, and only pay if you like it.
+Your website is the one member of your sales team who never sleeps. At 10pm, someone finds you with a leak, a deadline or a question about your prices. Your site is the only thing there to answer them.
 
-Get my free first pass &darr;
+See what I’d build within 24 hours, and only pay if you like it.
+
+See my new site first &darr;
 
 - No card
 
@@ -22,9 +24,9 @@ Get my free first pass &darr;
 
 - **One clear next step.** Call, book or ask for a quote, without hunting for it on a phone.
 
-Someone finds you at 10pm with a leak, a deadline or a question about your prices. Your site is the only thing there to answer them.
+So it needs to do what a good salesperson would, at any hour:
 
-## How the free first pass works
+## How it works
 
 - 01
 
@@ -44,7 +46,7 @@ Within 24 hours you get a link to it. Click around, show it to someone, and send
 
 Love it, and it goes live: $300 to build, once, then $200 a month. Don’t, and you owe nothing.
 
-## Start your free first pass
+## Tell me about your business
 
 Four quick details, then straight into the intake. I’ll email you a link back to it too.
 
@@ -80,9 +82,9 @@ It goes live for **$300 to build, once**, then **$200 a month** for the person w
 
 ## A few honest answers
 
-Is the first pass really free?
+Is there really no upfront cost?
 
-Yes. No card, no deposit, no upfront cost. You fill in the intake, I build your homepage, you look at it. If you don’t want it, that’s the end of it and you owe nothing.
+None. No card, no deposit, nothing to cancel. You fill in the intake, I build your homepage, you look at it. If you don’t want it, that’s the end of it and you owe nothing.
 
 What do I need to have ready?
 
@@ -104,7 +106,7 @@ I do. Shane Gring, fifteen years running websites and digital operations. No age
 
 About 15 minutes from you. A link to your new homepage within 24 hours.
 
-Get my free first pass &darr;
+See my new site first &darr;
 
 ---
 

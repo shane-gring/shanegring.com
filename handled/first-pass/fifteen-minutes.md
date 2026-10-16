@@ -4,9 +4,11 @@ Give me 15 minutes. Get a new website.
 
 Give me 15 minutes on your business and within 24 hours you’ll see a new look at your website. You only pay if you like it.
 
-A few questions about what you do and who you serve, plus your logo and a few photos. That’s all I need. No upfront cost, and you only pay if you like what comes back.
+Take 15 minutes to tell me about your business: a few questions about what you do and who you serve, plus your logo and a few photos. Talk it through or type it.
 
-Get my free first pass &darr;
+No upfront cost, and you only pay if you like what comes back.
+
+See my new site first &darr;
 
 - No card
 
@@ -24,7 +26,7 @@ Get my free first pass &darr;
 
 It saves as you go, so you can start at your desk and finish on your phone.
 
-## How the free first pass works
+## How it works
 
 - 01
 
@@ -44,7 +46,7 @@ Within 24 hours you get a link to it. Click around, show it to someone, and send
 
 Love it, and it goes live: $300 to build, once, then $200 a month. Don’t, and you owe nothing.
 
-## Start your free first pass
+## Tell me about your business
 
 Four quick details, then straight into the intake. I’ll email you a link back to it too.
 
@@ -80,9 +82,9 @@ It goes live for **$300 to build, once**, then **$200 a month** for the person w
 
 ## A few honest answers
 
-Is the first pass really free?
+Is there really no upfront cost?
 
-Yes. No card, no deposit, no upfront cost. You fill in the intake, I build your homepage, you look at it. If you don’t want it, that’s the end of it and you owe nothing.
+None. No card, no deposit, nothing to cancel. You fill in the intake, I build your homepage, you look at it. If you don’t want it, that’s the end of it and you owe nothing.
 
 What do I need to have ready?
 
@@ -104,7 +106,7 @@ I do. Shane Gring, fifteen years running websites and digital operations. No age
 
 About 15 minutes from you. A link to your new homepage within 24 hours.
 
-Get my free first pass &darr;
+See my new site first &darr;
 
 ---
 

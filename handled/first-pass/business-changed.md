@@ -4,9 +4,9 @@ Your business changed. Did your website?
 
 Updating your website shouldn’t be a hassle. I’ll rebuild it around your business as it is today and make staying up to date as simple as sending an email.
 
-New prices, new hours, someone new on the team. Keeping your website current shouldn’t be a project. Tell me what’s different and within 24 hours you’ll see your rebuilt homepage. If you keep it, every update after that is one email.
+New prices, new hours, someone new on the team. Keeping your website current shouldn’t be a project. I’ll rebuild your homepage and send you a link within 24 hours, no strings attached. If you keep it, every update after that is one email.
 
-Get my free first pass &darr;
+See my new site first &darr;
 
 - No card
 
@@ -20,7 +20,7 @@ So the old prices stay up, the hours stay wrong, and the person who left in Marc
 
 The first pass starts from your business as it is today, not as it was when the site went up. And if you keep it, keeping it current is my job from then on: you email the change, it gets made.
 
-## How the free first pass works
+## How it works
 
 - 01
 
@@ -40,7 +40,7 @@ Within 24 hours you get a link to it. Click around, show it to someone, and send
 
 Love it, and it goes live: $300 to build, once, then $200 a month. Don’t, and you owe nothing.
 
-## Start your free first pass
+## Tell me about your business
 
 Four quick details, then straight into the intake. I’ll email you a link back to it too.
 
@@ -76,9 +76,9 @@ It goes live for **$300 to build, once**, then **$200 a month** for the person w
 
 ## A few honest answers
 
-Is the first pass really free?
+Is there really no upfront cost?
 
-Yes. No card, no deposit, no upfront cost. You fill in the intake, I build your homepage, you look at it. If you don’t want it, that’s the end of it and you owe nothing.
+None. No card, no deposit, nothing to cancel. You fill in the intake, I build your homepage, you look at it. If you don’t want it, that’s the end of it and you owe nothing.
 
 What do I need to have ready?
 
@@ -100,7 +100,7 @@ I do. Shane Gring, fifteen years running websites and digital operations. No age
 
 About 15 minutes from you. A link to your new homepage within 24 hours.
 
-Get my free first pass &darr;
+See my new site first &darr;
 
 ---
 

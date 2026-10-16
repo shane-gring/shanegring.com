@@ -62,7 +62,7 @@ const PAGES = [
     hook: 'Your business changed. Did your [[website]]?',
     headline: 'I’ll rebuild your site and make staying up to date simple.',
     lede: [
-      'New prices, new hours, someone new on the team. Keeping your website current shouldn’t be a project. Tell me what’s different and within 24 hours you’ll see your rebuilt homepage. If you keep it, every update after that is one email.',
+      'New prices, new hours, someone new on the team. Keeping your website current shouldn’t be a project. I’ll rebuild your homepage and send you a link within 24 hours, no strings attached. If you keep it, every update after that is one email.',
     ],
     angle: {
       title: 'None of it is hard. It just isn’t anybody’s job.',
@@ -81,7 +81,8 @@ const PAGES = [
     hook: 'See it [[before]] you pay.',
     headline: 'I build you a homepage, no strings attached.',
     lede: [
-      'If you like it, I get it online and in front of the customers you’re trying to reach. If you don’t, you owe nothing. It takes about 15 minutes from you, and you get a link to your new homepage within 24 hours.',
+      'Answer a few questions about your business, then send your logo and a few photos. That’s about 15 minutes from you. Within 24 hours, you get a link to your new homepage.',
+      'If you like it, I get it online and in front of the customers you’re trying to reach. If you don’t, you owe nothing.',
     ],
     angle: {
       title: 'Why I build it first',
@@ -116,18 +117,19 @@ const PAGES = [
   {
     slug: 'salesperson',
     title: 'Make your website a 24-hour salesperson',
-    description: 'Your website is part of your sales team, and the one member who never sleeps. I’ll rebuild it to bring in business, not just look nice. See it within 24 hours; pay only if you like it.',
+    description: 'Your website is part of your sales team, and the one member who never sleeps. I’ll rebuild it to help bring in business, not just look nice. See it within 24 hours; pay only if you like it.',
     image: 'salesperson',
-    imageAlt: 'A plumbing company homepage on a phone at 2:14 in the morning, with a new quote request arriving',
+    imageAlt: 'A plumbing company homepage on a phone at 10 at night, with a new quote request arriving',
     hook: 'Make your website a [[24-hour]] salesperson.',
-    headline: 'I’ll rebuild your site to bring in business, not just look nice.',
+    headline: 'I’ll rebuild your site to help bring in business, not just look nice.',
     lede: [
-      'Your website is part of your sales team, and it’s the one member who never sleeps. At 10pm it should be answering a customer’s questions and asking for the call. See what I’d build within 24 hours, and only pay if you like it.',
+      'Your website is the one member of your sales team who never sleeps. At 10pm, someone finds you with a leak, a deadline or a question about your prices. Your site is the only thing there to answer them.',
+      'See what I’d build within 24 hours, and only pay if you like it.',
     ],
     angle: {
       title: 'You were asleep. Make sure your website isn’t.',
       body: [
-        'Someone finds you at 10pm with a leak, a deadline or a question about your prices. Your site is the only thing there to answer them.',
+        'So it needs to do what a good salesperson would, at any hour:',
       ],
       list: [
         ['What you do, said plainly.', 'In the first screen, in the words your customers use.'],
@@ -145,7 +147,8 @@ const PAGES = [
     hook: 'Give me [[15 minutes]]. Get a new website.',
     headline: 'Within 24 hours, you’ll see a new look at your site.',
     lede: [
-      'A few questions about what you do and who you serve, plus your logo and a few photos. That’s all I need. No upfront cost, and you only pay if you like what comes back.',
+      'Take 15 minutes to tell me about your business: a few questions about what you do and who you serve, plus your logo and a few photos. Talk it through or type it.',
+      'No upfront cost, and you only pay if you like what comes back.',
     ],
     angle: {
       title: 'What the 15 minutes covers',
@@ -196,7 +199,7 @@ const GETS = [
 ];
 
 const FAQ = [
-  ['Is the first pass really free?', 'Yes. No card, no deposit, no upfront cost. You fill in the intake, I build your homepage, you look at it. If you don’t want it, that’s the end of it and you owe nothing.'],
+  ['Is there really no upfront cost?', 'None. No card, no deposit, nothing to cancel. You fill in the intake, I build your homepage, you look at it. If you don’t want it, that’s the end of it and you owe nothing.'],
   ['What do I need to have ready?', 'Your logo and a few photos if you have them. Everything else is questions about your business you already know the answers to. It saves as you go, so you don’t need to finish in one sitting.'],
   ['I already have a website. Does that matter?', 'Not at all. Put it in the form and I’ll carry over the words and images worth keeping. Your domain stays yours; if you go ahead, I point it at the new site.'],
   ['What happens if I like it?', 'You get one round of changes, then it goes live for $300, once, and $200 a month from then on. That monthly part is me: changes by email within one working day, weekly checks, a monthly report, and the site growing a piece at a time.'],
@@ -255,7 +258,7 @@ function page(p) {
   const path = p.slug ? `/handled/first-pass/${p.slug}` : '/handled/first-pass';
   const url = SITE + path;
   const img = `/images/handled/first-pass/${p.image}.webp`;
-  const cta = (where, label = 'Get my free first pass') =>
+  const cta = (where, label = 'See my new site first') =>
     `<a class="btn-primary" data-hd-cta="${where}" href="#start">${label} <span class="btn-arrow">&darr;</span></a>`;
 
   return `<!DOCTYPE html>
@@ -326,7 +329,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header class="vsl-header">
   <div class="container">
     <a class="logo" href="/" aria-label="Shane Gring, home"><img class="logo-cloud" src="/images/cloud-1.svg" alt="Shane Gring" width="224" height="80"><img class="logo-bolt" src="/images/cloud-bolt.svg" alt="" width="32" height="48" aria-hidden="true"></a>
-    <span class="vsl-header-note">Handled &middot; free first pass</span>
+    <span class="vsl-header-note">Handled &middot; no strings attached</span>
   </div>
 </header>
 
@@ -354,7 +357,7 @@ ${p.lede.map((l) => `        <p class="hd-lede hc-lede">${esc(l)}</p>`).join('\n
 ${angle(p.angle)}
   <section class="hd-section">
     <div class="container">
-      <h2 class="hd-title">How the free first pass works</h2>
+      <h2 class="hd-title">How it works</h2>
       <ol class="hc-steps">
 ${STEPS.map(([n, h, t]) => `        <li><span class="hc-step-num">${n}</span><h3>${esc(h)}</h3><p>${esc(t)}</p></li>`).join('\n')}
       </ol>
@@ -363,10 +366,10 @@ ${STEPS.map(([n, h, t]) => `        <li><span class="hc-step-num">${n}</span><h3
 
   <section class="hd-section fp-start" id="start">
     <div class="container">
-      <h2 class="hd-title">Start your free first pass</h2>
+      <h2 class="hd-title">Tell me about your business</h2>
       <p class="hd-sub">Four quick details, then straight into the intake. I’ll email you a link back to it too.</p>
 
-      <form class="sr-form fp-form" data-first-pass novalidate aria-label="Start your free first pass">
+      <form class="sr-form fp-form" data-first-pass novalidate aria-label="Tell me about your business">
         <label class="sr-field">
           <span class="contact-flabel">Your name</span>
           <input type="text" name="name" autocomplete="name" required maxlength="200">

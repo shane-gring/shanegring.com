@@ -6,7 +6,7 @@ See your rebuilt site with no commitment. If you keep it, you also get one perso
 
 Most small-business websites go stale because looking after them is nobody’s job. Start by seeing your rebuilt homepage, with no commitment. If you keep it, I check it every week, make the changes you email, and keep improving it for as long as you want me to.
 
-Get my free first pass &darr;
+See my new site first &darr;
 
 - No card
 
@@ -26,7 +26,7 @@ Done. It’s live on the homepage and the contact page.
 
 No dashboard, no ticket, no login. An email to a person, done within one working day and usually the same day. That’s the $200 a month, once you’re in.
 
-## How the free first pass works
+## How it works
 
 - 01
 
@@ -46,7 +46,7 @@ Within 24 hours you get a link to it. Click around, show it to someone, and send
 
 Love it, and it goes live: $300 to build, once, then $200 a month. Don’t, and you owe nothing.
 
-## Start your free first pass
+## Tell me about your business
 
 Four quick details, then straight into the intake. I’ll email you a link back to it too.
 
@@ -82,9 +82,9 @@ It goes live for **$300 to build, once**, then **$200 a month** for the person w
 
 ## A few honest answers
 
-Is the first pass really free?
+Is there really no upfront cost?
 
-Yes. No card, no deposit, no upfront cost. You fill in the intake, I build your homepage, you look at it. If you don’t want it, that’s the end of it and you owe nothing.
+None. No card, no deposit, nothing to cancel. You fill in the intake, I build your homepage, you look at it. If you don’t want it, that’s the end of it and you owe nothing.
 
 What do I need to have ready?
 
@@ -106,7 +106,7 @@ I do. Shane Gring, fifteen years running websites and digital operations. No age
 
 About 15 minutes from you. A link to your new homepage within 24 hours.
 
-Get my free first pass &darr;
+See my new site first &darr;
 
 ---
 
