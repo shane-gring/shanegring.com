@@ -1,12 +1,10 @@
-Free first pass
+When AI recommends someone, is it you?
 
-# When AI recommends someone, is it you?
+# I’ll rebuild your site so AI assistants can tell what you do and who you serve.
 
-More buyers now start with an AI assistant. I’ll review your site and rebuild it for free, built so AI and search can understand what you do. You only keep it if you love it.
+More buyers now start with an AI assistant. I’ll rebuild your site so AI and search can tell what you do and who you serve. No strings attached, no upfront cost; you pay only if you like it.
 
-I’ll rebuild your site for free so AI assistants can tell what you do and who you serve.
-
-More buyers now start with an AI assistant instead of a page of links. If your site isn’t built for that, you’re not in the answer. You see the rebuild before you switch, and you only keep it if you love it.
+More buyers now start with an AI assistant instead of a page of links. If your site isn’t built for that, you’re not in the answer. No strings attached and no upfront cost: you see the rebuild first, and only pay if you like it.
 
 Get my free first pass &darr;
 
@@ -14,7 +12,7 @@ Get my free first pass &darr;
 
 - About 15 minutes
 
-- Yours in 24 to 48 hours
+- Yours in 24 hours
 
 ## What “built for AI” means here
 
@@ -38,7 +36,7 @@ About 15 minutes: a few questions, your logo and a few photos. Type it, or just 
 
 ### See your new homepage
 
-Within 24 to 48 hours you get a link to it. Click around, show it to someone, and send me what you’d change.
+Within 24 hours you get a link to it. Click around, show it to someone, and send me what you’d change.
 
 - 03
 
@@ -84,7 +82,7 @@ It goes live for **$300 to build, once**, then **$200 a month** for the person w
 
 Is the first pass really free?
 
-Yes. No card, no deposit, nothing to cancel. You fill in the intake, I build your homepage, you look at it. If you don’t want it, that’s the end of it and you owe nothing.
+Yes. No card, no deposit, no upfront cost. You fill in the intake, I build your homepage, you look at it. If you don’t want it, that’s the end of it and you owe nothing.
 
 What do I need to have ready?
 
@@ -104,7 +102,7 @@ I do. Shane Gring, fifteen years running websites and digital operations. No age
 
 ## See it before you pay.
 
-About 15 minutes from you. A link to your new homepage within 24 to 48 hours.
+About 15 minutes from you. A link to your new homepage within 24 hours.
 
 Get my free first pass &darr;
 

@@ -1,12 +1,10 @@
-Free first pass
+Your website, handled.
 
-# Your website, handled.
+# A new site, and someone whose job it is to look after it.
 
-One person builds it, checks on it every week, and makes any change you email. Start with a free first pass and decide after you’ve seen it.
+See your rebuilt site with no commitment. If you keep it, you also get one person whose job is to watch it, change it and improve it for as long as you want.
 
-I’ll rebuild your site for free, then keep it current. Changes take one email.
-
-One person builds it, checks on it every week, and makes the changes you send, usually the same day. Start with the free first pass and decide once you’ve seen it.
+Most small-business websites go stale because looking after them is nobody’s job. Start by seeing your rebuilt homepage, with no commitment. If you keep it, I check it every week, make the changes you email, and keep improving it for as long as you want me to.
 
 Get my free first pass &darr;
 
@@ -14,7 +12,7 @@ Get my free first pass &darr;
 
 - About 15 minutes
 
-- Yours in 24 to 48 hours
+- Yours in 24 hours
 
 ## Here’s what a change looks like
 
@@ -40,7 +38,7 @@ About 15 minutes: a few questions, your logo and a few photos. Type it, or just 
 
 ### See your new homepage
 
-Within 24 to 48 hours you get a link to it. Click around, show it to someone, and send me what you’d change.
+Within 24 hours you get a link to it. Click around, show it to someone, and send me what you’d change.
 
 - 03
 
@@ -86,7 +84,7 @@ It goes live for **$300 to build, once**, then **$200 a month** for the person w
 
 Is the first pass really free?
 
-Yes. No card, no deposit, nothing to cancel. You fill in the intake, I build your homepage, you look at it. If you don’t want it, that’s the end of it and you owe nothing.
+Yes. No card, no deposit, no upfront cost. You fill in the intake, I build your homepage, you look at it. If you don’t want it, that’s the end of it and you owe nothing.
 
 What do I need to have ready?
 
@@ -106,7 +104,7 @@ I do. Shane Gring, fifteen years running websites and digital operations. No age
 
 ## See it before you pay.
 
-About 15 minutes from you. A link to your new homepage within 24 to 48 hours.
+About 15 minutes from you. A link to your new homepage within 24 hours.
 
 Get my free first pass &darr;
 

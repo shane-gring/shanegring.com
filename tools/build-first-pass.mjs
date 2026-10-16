@@ -19,7 +19,7 @@
  * "I", like every other Handled page, because one person is the offer.
  *
  * KEEP IN STEP WITH /handled: $300 build, $200 a month, changes within one
- * working day, month to month. The 24 to 48 hour first pass is this
+ * working day, month to month. The 24 hour first pass is this
  * campaign's promise, also in the intake confirmation and the Apps Script
  * emails.
  */
@@ -33,34 +33,36 @@ const SITE = 'https://shanegring.com';
 
 // ── The pages ───────────────────────────────────────────────────────────────
 // hook: the ad's on-image line, in Shane's voice; [[word]] gets the ad's red
-// underline. answer: the bold line under it that answers the hook with the
-// offer, so the first screen says something the ad didn't. lede: builds on
-// the ad's intro text rather than repeating it. angle: one short section
+// underline. It opens the hero as a small kicker, so the click lands on the
+// words it came from without a second big headline beside the ad image.
+// headline: the h1, the offer that answers the hook. lede: builds on the
+// ad's intro text rather than repeating it. Say "no upfront cost" or "no
+// strings attached", never that the site is built free. angle: one short section
 // that carries the ad's idea a step further than the ad had room for.
 
 const PAGES = [
   {
     slug: '',
     title: 'See your new website before you pay',
-    description: 'Tell me about your business and I’ll build you a new homepage, free, within 24 to 48 hours. If you love it, it goes live: $300 to build, $200 a month. If not, you owe nothing.',
+    description: 'Tell me about your business and I’ll build your new homepage first, with no upfront cost. You see it within 24 hours. If you like it, it goes live: $300 to build, $200 a month. If not, you owe nothing.',
     image: 'see-it-first',
     imageAlt: 'A preview of a new homepage for a heating and cooling company',
     hook: 'See your new website [[before]] you pay.',
-    answer: 'I’ll build your new homepage first. You only pay if you love it.',
+    headline: 'I’ll build your new homepage first. You only pay if you like it.',
     lede: [
-      'About 15 minutes from you: a few questions, your logo and a few photos. Within 24 to 48 hours, a link to your new site.',
+      'About 15 minutes from you: a few questions, your logo and a few photos. Within 24 hours, a link to your new site. No strings attached.',
     ],
   },
   {
     slug: 'business-changed',
     title: 'Your business changed. Did your website?',
-    description: 'New prices, new hours, someone new on the team. Tell me what’s different and I’ll build a fresh version of your homepage for you to look at, free.',
+    description: 'Updating your website shouldn’t be a hassle. I’ll rebuild it around your business as it is today and make staying up to date as simple as sending an email.',
     image: 'business-changed',
     imageAlt: 'An old roofing company homepage beside a fresh rebuild of it',
     hook: 'Your business changed. Did your [[website]]?',
-    answer: 'Tell me what’s different. I’ll rebuild your homepage for free, and you decide if it goes live.',
+    headline: 'I’ll rebuild your site and make staying up to date simple.',
     lede: [
-      'New prices, new hours, someone new on the team, a service you added last spring. About 15 minutes tells me what’s changed, and within 24 to 48 hours you see the rebuild.',
+      'New prices, new hours, someone new on the team. Keeping your website current shouldn’t be a project. Tell me what’s different and within 24 hours you’ll see your rebuilt homepage. If you keep it, every update after that is one email.',
     ],
     angle: {
       title: 'None of it is hard. It just isn’t anybody’s job.',
@@ -73,13 +75,13 @@ const PAGES = [
   {
     slug: 'see-it-first',
     title: 'See it before you pay',
-    description: 'See a new version of your website before you pay anything. About 15 minutes from you; within 24 to 48 hours, a link to your new homepage.',
+    description: 'I build you a homepage, no strings attached. If you like it, I get it online and in front of your customers. About 15 minutes from you; a link within 24 hours.',
     image: 'see-it-first',
     imageAlt: 'A preview of a new homepage for a heating and cooling company, marked Preview',
     hook: 'See it [[before]] you pay.',
-    answer: 'I build your new homepage first, for free. You look it over, then decide.',
+    headline: 'I build you a homepage, no strings attached.',
     lede: [
-      'Answer a few questions about your business and send your logo and a few photos. That’s about 15 minutes from you. Within 24 to 48 hours you get a link to your new homepage. No commitment and no fee.',
+      'If you like it, I get it online and in front of the customers you’re trying to reach. If you don’t, you owe nothing. It takes about 15 minutes from you, and you get a link to your new homepage within 24 hours.',
     ],
     angle: {
       title: 'Why I build it first',
@@ -92,13 +94,13 @@ const PAGES = [
   {
     slug: 'handled',
     title: 'Your website, handled',
-    description: 'One person builds it, checks on it every week, and makes any change you email. Start with a free first pass and decide after you’ve seen it.',
+    description: 'See your rebuilt site with no commitment. If you keep it, you also get one person whose job is to watch it, change it and improve it for as long as you want.',
     image: 'handled',
     imageAlt: 'A dental practice homepage with an email asking for Saturday hours and a reply saying it is live',
     hook: 'Your website, [[handled]].',
-    answer: 'I’ll rebuild your site for free, then keep it current. Changes take one email.',
+    headline: 'A new site, and someone whose job it is to look after it.',
     lede: [
-      'One person builds it, checks on it every week, and makes the changes you send, usually the same day. Start with the free first pass and decide once you’ve seen it.',
+      'Most small-business websites go stale because looking after them is nobody’s job. Start by seeing your rebuilt homepage, with no commitment. If you keep it, I check it every week, make the changes you email, and keep improving it for as long as you want me to.',
     ],
     angle: {
       title: 'Here’s what a change looks like',
@@ -114,13 +116,13 @@ const PAGES = [
   {
     slug: 'salesperson',
     title: 'Make your website a 24-hour salesperson',
-    description: 'Your website is the one salesperson who never clocks out. I’ll build you a new homepage from a short intake about your business, free.',
+    description: 'Your website is part of your sales team, and the one member who never sleeps. I’ll rebuild it to bring in business, not just look nice. See it within 24 hours; pay only if you like it.',
     image: 'salesperson',
     imageAlt: 'A plumbing company homepage on a phone at 2:14 in the morning, with a new quote request arriving',
     hook: 'Make your website a [[24-hour]] salesperson.',
-    answer: 'I’ll rebuild your homepage for free, set up to take inquiries while you’re off the clock.',
+    headline: 'I’ll rebuild your site to bring in business, not just look nice.',
     lede: [
-      'For a small business, the site is the one salesperson who never clocks out. When it’s out of date, it tells customers the wrong story. If the new one looks like someone you’d hire, I put it to work.',
+      'Your website is part of your sales team, and it’s the one member who never sleeps. At 10pm it should be answering a customer’s questions and asking for the call. See what I’d build within 24 hours, and only pay if you like it.',
     ],
     angle: {
       title: 'You were asleep. Make sure your website isn’t.',
@@ -137,13 +139,13 @@ const PAGES = [
   {
     slug: 'fifteen-minutes',
     title: 'Give me 15 minutes. Get a new website.',
-    description: 'Take 15 minutes to tell me about your business and I’ll build you a new homepage within 24 to 48 hours. Pay only if you love it.',
+    description: 'Give me 15 minutes on your business and within 24 hours you’ll see a new look at your website. You only pay if you like it.',
     image: 'fifteen-minutes',
     imageAlt: 'A short business intake form beside the landscaping homepage built from it',
     hook: 'Give me [[15 minutes]]. Get a new website.',
-    answer: 'Answer a few questions about your business. Your new homepage is back in 24 to 48 hours, free.',
+    headline: 'Within 24 hours, you’ll see a new look at your site.',
     lede: [
-      'What you do, who you serve, your logo and a few photos: that’s the whole intake. No commitment, and you only pay if you love what comes back.',
+      'A few questions about what you do and who you serve, plus your logo and a few photos. That’s all I need. No upfront cost, and you only pay if you like what comes back.',
     ],
     angle: {
       title: 'What the 15 minutes covers',
@@ -158,13 +160,13 @@ const PAGES = [
   {
     slug: 'ai-answer',
     title: 'When AI recommends someone, is it you?',
-    description: 'More buyers now start with an AI assistant. I’ll review your site and rebuild it for free, built so AI and search can understand what you do. You only keep it if you love it.',
+    description: 'More buyers now start with an AI assistant. I’ll rebuild your site so AI and search can tell what you do and who you serve. No strings attached, no upfront cost; you pay only if you like it.',
     image: 'ai-answer',
     imageAlt: 'An AI assistant answering “Who’s the best bookkeeper near me?” with your business listed first',
     hook: 'When AI recommends someone, is it [[you]]?',
-    answer: 'I’ll rebuild your site for free so AI assistants can tell what you do and who you serve.',
+    headline: 'I’ll rebuild your site so AI assistants can tell what you do and who you serve.',
     lede: [
-      'More buyers now start with an AI assistant instead of a page of links. If your site isn’t built for that, you’re not in the answer. You see the rebuild before you switch, and you only keep it if you love it.',
+      'More buyers now start with an AI assistant instead of a page of links. If your site isn’t built for that, you’re not in the answer. No strings attached and no upfront cost: you see the rebuild first, and only pay if you like it.',
     ],
     angle: {
       title: 'What “built for AI” means here',
@@ -182,7 +184,7 @@ const PAGES = [
 
 const STEPS = [
   ['01', 'Tell me about your business', 'About 15 minutes: a few questions, your logo and a few photos. Type it, or just talk.'],
-  ['02', 'See your new homepage', 'Within 24 to 48 hours you get a link to it. Click around, show it to someone, and send me what you’d change.'],
+  ['02', 'See your new homepage', 'Within 24 hours you get a link to it. Click around, show it to someone, and send me what you’d change.'],
   ['03', 'Decide', 'Love it, and it goes live: $300 to build, once, then $200 a month. Don’t, and you owe nothing.'],
 ];
 
@@ -194,7 +196,7 @@ const GETS = [
 ];
 
 const FAQ = [
-  ['Is the first pass really free?', 'Yes. No card, no deposit, nothing to cancel. You fill in the intake, I build your homepage, you look at it. If you don’t want it, that’s the end of it and you owe nothing.'],
+  ['Is the first pass really free?', 'Yes. No card, no deposit, no upfront cost. You fill in the intake, I build your homepage, you look at it. If you don’t want it, that’s the end of it and you owe nothing.'],
   ['What do I need to have ready?', 'Your logo and a few photos if you have them. Everything else is questions about your business you already know the answers to. It saves as you go, so you don’t need to finish in one sitting.'],
   ['I already have a website. Does that matter?', 'Not at all. Put it in the form and I’ll carry over the words and images worth keeping. Your domain stays yours; if you go ahead, I point it at the new site.'],
   ['What happens if I like it?', 'You get one round of changes, then it goes live for $300, once, and $200 a month from then on. That monthly part is me: changes by email within one working day, weekly checks, a monthly report, and the site growing a piece at a time.'],
@@ -332,16 +334,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="hc-hero fp-hero">
     <div class="container">
       <div class="hc-hero-copy">
-        <span class="section-eyebrow">Free first pass</span>
-        <h1 class="hc-hook">${hook(p.hook)}</h1>
-        <p class="fp-answer">${esc(p.answer)}</p>
+        <p class="fp-kicker">${hook(p.hook)}</p>
+        <h1 class="hc-hook fp-headline">${esc(p.headline)}</h1>
 ${p.lede.map((l) => `        <p class="hd-lede hc-lede">${esc(l)}</p>`).join('\n')}
         <div class="hd-cta hc-cta">
           ${cta('hero')}
           <ul class="hd-assure">
             <li>No card</li>
             <li>About 15 minutes</li>
-            <li>Yours in 24 to 48 hours</li>
+            <li>Yours in 24 hours</li>
           </ul>
         </div>
       </div>
@@ -447,7 +448,7 @@ ${FAQ.map(([q, a]) => `        <details>
   <section class="hd-final fp-final">
     <div class="container">
       <h2 class="hd-title">See it before you pay.</h2>
-      <p class="hd-sub">About 15 minutes from you. A link to your new homepage within 24 to 48 hours.</p>
+      <p class="hd-sub">About 15 minutes from you. A link to your new homepage within 24 hours.</p>
       <div class="hd-cta">
         ${cta('final')}
       </div>

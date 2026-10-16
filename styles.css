@@ -6342,18 +6342,24 @@ body.hc-page {
    scoped to body.fp-page.
    ══════════════════════════════════════════════════════════════ */
 .fp-page .fp-hero .hc-lede + .hc-lede { margin-top: 0.9rem; }
-/* The offer, answering the ad's line above it. */
-.fp-page .fp-hero .hc-hook { margin-bottom: 0.9rem; }
+/* The ad's own line opens the hero as a small kicker, so the click lands on
+   the words it came from; the h1 under it is the offer that answers it. */
+.fp-page .fp-kicker {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--mid);
+  text-wrap: balance;
+}
 /* Keep the underlined words whole, so "24-hour" never splits at the hyphen. */
 .fp-page .hc-strike { white-space: nowrap; }
-.fp-page .fp-answer {
-  margin: 0 0 1.1rem;
-  max-width: 34ch;
-  font-size: clamp(1.15rem, 2vw, 1.35rem);
-  font-weight: 700;
-  line-height: 1.35;
-  color: var(--fg);
-  text-wrap: balance;
+.fp-page .fp-hero .fp-headline {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.08;
+  margin: 0.6rem 0 1.1rem;
 }
 .fp-page .fp-hero .hd-cta { margin-top: 1.6rem; }
 

@@ -1,12 +1,10 @@
-Free first pass
+Make your website a 24-hour salesperson.
 
-# Make your website a 24-hour salesperson.
+# I’ll rebuild your site to bring in business, not just look nice.
 
-Your website is the one salesperson who never clocks out. I’ll build you a new homepage from a short intake about your business, free.
+Your website is part of your sales team, and the one member who never sleeps. I’ll rebuild it to bring in business, not just look nice. See it within 24 hours; pay only if you like it.
 
-I’ll rebuild your homepage for free, set up to take inquiries while you’re off the clock.
-
-For a small business, the site is the one salesperson who never clocks out. When it’s out of date, it tells customers the wrong story. If the new one looks like someone you’d hire, I put it to work.
+Your website is part of your sales team, and it’s the one member who never sleeps. At 10pm it should be answering a customer’s questions and asking for the call. See what I’d build within 24 hours, and only pay if you like it.
 
 Get my free first pass &darr;
 
@@ -14,7 +12,7 @@ Get my free first pass &darr;
 
 - About 15 minutes
 
-- Yours in 24 to 48 hours
+- Yours in 24 hours
 
 ## You were asleep. Make sure your website isn’t.
 
@@ -38,7 +36,7 @@ About 15 minutes: a few questions, your logo and a few photos. Type it, or just 
 
 ### See your new homepage
 
-Within 24 to 48 hours you get a link to it. Click around, show it to someone, and send me what you’d change.
+Within 24 hours you get a link to it. Click around, show it to someone, and send me what you’d change.
 
 - 03
 
@@ -84,7 +82,7 @@ It goes live for **$300 to build, once**, then **$200 a month** for the person w
 
 Is the first pass really free?
 
-Yes. No card, no deposit, nothing to cancel. You fill in the intake, I build your homepage, you look at it. If you don’t want it, that’s the end of it and you owe nothing.
+Yes. No card, no deposit, no upfront cost. You fill in the intake, I build your homepage, you look at it. If you don’t want it, that’s the end of it and you owe nothing.
 
 What do I need to have ready?
 
@@ -104,7 +102,7 @@ I do. Shane Gring, fifteen years running websites and digital operations. No age
 
 ## See it before you pay.
 
-About 15 minutes from you. A link to your new homepage within 24 to 48 hours.
+About 15 minutes from you. A link to your new homepage within 24 hours.
 
 Get my free first pass &darr;
 

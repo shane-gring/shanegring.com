@@ -1,12 +1,10 @@
-Free first pass
+Give me 15 minutes. Get a new website.
 
-# Give me 15 minutes. Get a new website.
+# Within 24 hours, you’ll see a new look at your site.
 
-Take 15 minutes to tell me about your business and I’ll build you a new homepage within 24 to 48 hours. Pay only if you love it.
+Give me 15 minutes on your business and within 24 hours you’ll see a new look at your website. You only pay if you like it.
 
-Answer a few questions about your business. Your new homepage is back in 24 to 48 hours, free.
-
-What you do, who you serve, your logo and a few photos: that’s the whole intake. No commitment, and you only pay if you love what comes back.
+A few questions about what you do and who you serve, plus your logo and a few photos. That’s all I need. No upfront cost, and you only pay if you like what comes back.
 
 Get my free first pass &darr;
 
@@ -14,7 +12,7 @@ Get my free first pass &darr;
 
 - About 15 minutes
 
-- Yours in 24 to 48 hours
+- Yours in 24 hours
 
 ## What the 15 minutes covers
 
@@ -38,7 +36,7 @@ About 15 minutes: a few questions, your logo and a few photos. Type it, or just 
 
 ### See your new homepage
 
-Within 24 to 48 hours you get a link to it. Click around, show it to someone, and send me what you’d change.
+Within 24 hours you get a link to it. Click around, show it to someone, and send me what you’d change.
 
 - 03
 
@@ -84,7 +82,7 @@ It goes live for **$300 to build, once**, then **$200 a month** for the person w
 
 Is the first pass really free?
 
-Yes. No card, no deposit, nothing to cancel. You fill in the intake, I build your homepage, you look at it. If you don’t want it, that’s the end of it and you owe nothing.
+Yes. No card, no deposit, no upfront cost. You fill in the intake, I build your homepage, you look at it. If you don’t want it, that’s the end of it and you owe nothing.
 
 What do I need to have ready?
 
@@ -104,7 +102,7 @@ I do. Shane Gring, fifteen years running websites and digital operations. No age
 
 ## See it before you pay.
 
-About 15 minutes from you. A link to your new homepage within 24 to 48 hours.
+About 15 minutes from you. A link to your new homepage within 24 hours.
 
 Get my free first pass &darr;
 

@@ -206,7 +206,7 @@ function emailBuyerLink_(d) {
     d.url + '\n\n' +
     'It takes about fifteen minutes and it saves as you go, so you can stop and\n' +
     'come back on your phone. Once it is in, your first draft follows within\n' +
-    '24 to 48 hours.\n\n' +
+    '24 hours.\n\n' +
     'Anything at all, just reply to this.\n\n' +
     'Shane\n' +
     'shanegring.com/handled\n';
@@ -294,7 +294,7 @@ function emailRequesterLink_(d) {
     d.url + '\n\n' +
     'It takes about fifteen minutes and it saves as you go, so you can stop and\n' +
     'come back on your phone. Once it is in, I build your new homepage and\n' +
-    'send you a link to it within 24 to 48 hours.\n\n' +
+    'send you a link to it within 24 hours.\n\n' +
     'You pay nothing until you have seen it. If you like it, the build is $300\n' +
     'once and $200 a month after that. If you do not, you owe me nothing.\n\n' +
     'Anything at all, just reply to this.\n\n' +
@@ -347,7 +347,7 @@ function confirmClient_(d) {
   var body =
     'Thanks' + (first ? ', ' + first : '') + ' — that\'s everything I need.\n\n' +
     'I build from your answers directly, so there\'s nothing else for you to ' +
-    'do right now. You\'ll hear from me within 24 to 48 hours with a link ' +
+    'do right now. You\'ll hear from me within 24 hours with a link ' +
     'to your new homepage.\n\n' +
     (d.source === 'request'
       ? 'Nothing to pay until you have seen it and want it live.\n\n'

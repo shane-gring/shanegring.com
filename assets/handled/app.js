@@ -16,7 +16,7 @@
  * indicator that is always telling the truth.
  */
 
-import { SECTIONS, WELCOME, CONFIRMATION, questionById, allQuestions, RECORDING_FIELD } from './questions.js?v=01846f0a';
+import { SECTIONS, WELCOME, CONFIRMATION, questionById, allQuestions, RECORDING_FIELD } from './questions.js?v=1ddeedef';
 import { TEMPLATES, PLACEHOLDER_PREVIEW, templateBlurb, templateById } from './templates.js?v=f8bd3fa8';
 import { acceptAttr, formatBytes, validateUpload, GROUPS, canRecord, pickRecordType,
          extensionForType, RECORD_BITRATE, RECORD_MAX_SECONDS } from './uploads.js?v=5f553a01';

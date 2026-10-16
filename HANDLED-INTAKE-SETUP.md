@@ -300,7 +300,7 @@ Script emails them the link as their way back.
 - **The record says it is unpaid**: `source: 'request'`. When they submit, the
   brief opens with "NOT PAID YET" and the email subject ends "(not paid)".
   Send the checkout link with the draft. The promise is a homepage link
-  within **24 to 48 hours** of the intake.
+  within **24 hours** of the intake.
 - **Shane's sheet** gets a **Handled requests** tab (created on first use) with
   the link, their details, the page and campaign they came from, and blank
   "Draft sent" / "Paid" columns to fill in by hand.
