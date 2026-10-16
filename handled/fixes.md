@@ -172,7 +172,7 @@ When you email, you're emailing me.
 How long until it's live?
 
 Days, not weeks. You pay, I send a short intake you can type or
-speak, and your first draft follows in a few business days. You get a
+speak, and your first draft follows within 24 hours of your intake. You get a
 round of changes, then it ships. Then the list stops growing.
 
 What if I want to leave?
