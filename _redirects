@@ -62,3 +62,8 @@
 /2-handled.html       /handled                301
 /2-handled.md         /handled                301
 /3-handled.md         /handled                301
+
+# One LinkedIn first pass ad went out pointing at /business-change (missing
+# the "d"). Catches its clicks while the ad is corrected, and any copy of
+# the link that was shared. Safe to keep.
+/handled/first-pass/business-change   /handled/first-pass/business-changed   301
