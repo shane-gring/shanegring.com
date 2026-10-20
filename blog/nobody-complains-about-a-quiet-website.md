@@ -58,7 +58,7 @@ The three checks above, on a single page you can print and fill in with a pen. R
 
 223.36 KB • PDF File
 
-[Download](https://beehiiv-publication-files.s3.amazonaws.com/uploads/downloadables/032815a3-09de-4fe3-8ddd-29887c80a61d/f3a5b480-e4a0-4f09-aa74-592e29d83903/Quiet%20Website%20Check.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQCMHTQSE2JGAGXHJ%2F20261019%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261019T202846Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=85d9731c4d505400ca03ee5840359824e7c6c7b3c693b85ced0e8cd63ae33a10)
+[Download](https://beehiiv-publication-files.s3.amazonaws.com/uploads/downloadables/032815a3-09de-4fe3-8ddd-29887c80a61d/f3a5b480-e4a0-4f09-aa74-592e29d83903/Quiet%20Website%20Check.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQCMHTQSE2JGAGXHJ%2F20261020%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261020T001055Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=466ee5078ff2b49ff9cffde8cdae5ac5157534048ed395a6498676f58073cde6)
 
 Forward it to whoever actually manages your site if that isn't you. It reads fine without this email around it.
 
