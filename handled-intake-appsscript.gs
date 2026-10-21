@@ -295,8 +295,8 @@ function emailRequesterLink_(d) {
     'It takes about fifteen minutes and it saves as you go, so you can stop and\n' +
     'come back on your phone. Once it is in, I build your new homepage and\n' +
     'send you a link to it within 24 hours.\n\n' +
-    'You pay nothing until you have seen it. If you like it, the build is $300\n' +
-    'once and $200 a month after that. If you do not, you owe me nothing.\n\n' +
+    'You pay nothing until you have seen it. If you like it, it is $300, once,\n' +
+    'and the site is yours. If you do not, you owe me nothing.\n\n' +
     'Anything at all, just reply to this.\n\n' +
     'Shane\n' +
     'shanegring.com/handled\n';

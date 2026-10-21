@@ -1,9 +1,11 @@
 /**
  * Handled — ask for a build, get an intake link.  POST /api/handled/request
  *
- * The public front door behind the /handled/first-pass pages. Somebody gives a name, an email
- * and a business, and gets an intake link of their own, straight away, with no
- * payment. This is the "build it first, buy it once you're happy" campaign:
+ * The public front door behind the /handled/first-pass pages. Somebody gives an
+ * email (and their current site, if they have one) and gets an intake link of
+ * their own, straight away, with no payment. Name and business are optional:
+ * the pages stopped asking for them to keep the form short, and the intake asks
+ * for the business itself. This is the "build it first, buy it once you're happy" campaign:
  * Shane builds from the intake, sends the draft, and the checkout link comes
  * with it.
  *
@@ -62,7 +64,7 @@ export async function onRequestPost(context) {
   try {
     body = (await request.json()) || {};
   } catch {
-    return json({ error: 'Send your name and email.' }, 400);
+    return json({ error: 'Send your email.' }, 400);
   }
 
   // Honeypot. The same shape a person gets, minus the link.
@@ -75,9 +77,7 @@ export async function onRequestPost(context) {
   const business = clean(body.business);
   const website = clean(body.website);
 
-  if (!name) return json({ error: 'Add your name.' }, 400);
   if (!EMAIL_RE.test(email)) return json({ error: 'That email doesn’t look right.' }, 400);
-  if (!business) return json({ error: 'Add the name of your business.' }, 400);
 
   const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
   const gate = await rateLimit(env, ip);
@@ -91,7 +91,10 @@ export async function onRequestPost(context) {
   // Just the first word, the same as the Stripe path: a company name in the
   // name field would otherwise greet them as their own business.
   const firstName = name.split(/\s+/)[0] || '';
-  const label = `${business} — ${name} (requested)`.slice(0, 200);
+  // Whatever best names who asked: the business, else their site, else the
+  // email, which is always there.
+  const who = business || website || email;
+  const label = `${who}${name ? ` — ${name}` : ''} (requested)`.slice(0, 200);
 
   const record = newRecord({ label, firstName, ttlDays: DEFAULT_TTL_DAYS });
   record.source = 'request';
@@ -142,11 +145,11 @@ export async function onRequestPost(context) {
       stage: 'New',
       source: 'Website',
       nextActionDays: 1,
-      noteTitle: `Handled first pass requested — ${business}`,
+      noteTitle: `Handled first pass requested — ${who}`,
       noteContent:
         `Asked for a free first pass at ${record.request.page || '/handled/first-pass'} (${record.issuedAt}). Not paid: ` +
         `the intake comes first, the checkout link goes out with the draft.\n\n` +
-        `Business: **${business}**\n` +
+        (business ? `Business: **${business}**\n` : '') +
         (website ? `Current site: ${website}\n` : '') +
         (record.request.campaign ? `Campaign: ${record.request.campaign}\n` : ''),
     }).catch((e) => console.log('handled-request: attio failed: ' + e)),

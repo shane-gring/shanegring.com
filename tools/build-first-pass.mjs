@@ -6,7 +6,7 @@
  *   node tools/build-first-pass.mjs
  *
  * One ad, one page, so the click lands on the ad's own headline. Everything
- * below the hero (the steps, the form, who builds it, the work, the price,
+ * else (the form in the hero, the steps, who builds it, the work, the price,
  * the FAQ) is the same on every page, so it lives here once rather than in
  * seven hand-kept copies. Edit the PAGES data or the SHARED markup below,
  * run this, then `node tools/version-assets.mjs` (this emits asset URLs
@@ -19,7 +19,10 @@
  * "I", like every other Handled page, because one person is the offer.
  *
  * KEEP IN STEP WITH /handled: $300 build, $200 a month, changes within one
- * working day, month to month. The 24 hour first pass is this
+ * working day, month to month. These pages lead with the $300 only; the
+ * monthly service is optional and lives in the FAQ, so nobody reads the offer
+ * as one more subscription (Shane and Chris, 2026-10-21). The 24 hour first
+ * pass is this
  * campaign's promise, also in the intake confirmation and the Apps Script
  * emails.
  */
@@ -33,9 +36,10 @@ const SITE = 'https://shanegring.com';
 
 // ── The pages ───────────────────────────────────────────────────────────────
 // hook: the ad's on-image line, in Shane's voice; [[word]] gets the ad's red
-// underline. It opens the hero as a small kicker, so the click lands on the
-// words it came from without a second big headline beside the ad image.
-// headline: the h1, the offer that answers the hook. lede: builds on the
+// underline. It is the h1, so the click lands on the words it came from. The
+// form sits beside it where the ad image used to; the image is now only the
+// share preview (og:image).
+// headline: the bold line under the h1, the offer that answers the hook. lede: builds on the
 // ad's intro text rather than repeating it. Say "no upfront cost" or "no
 // strings attached", never that the site is built free. angle: one short section
 // that carries the ad's idea a step further than the ad had room for.
@@ -44,7 +48,7 @@ const PAGES = [
   {
     slug: '',
     title: 'See your new website before you pay',
-    description: 'Tell me about your business and I’ll build your new homepage first, with no upfront cost. You see it within 24 hours. If you like it, it goes live: $300 to build, $200 a month. If not, you owe nothing.',
+    description: 'Tell me about your business and I’ll build your new homepage first, with no upfront cost. You see it within 24 hours. If you like it, it goes live for $300. If not, you owe nothing.',
     image: 'see-it-first',
     imageAlt: 'A preview of a new homepage for a heating and cooling company',
     hook: 'See your new website [[before]] you pay.',
@@ -110,7 +114,7 @@ const PAGES = [
         reply: ['From: Shane', 'Re: Saturday hours', 'Done. It’s live on the homepage and the contact page.'],
       },
       body: [
-        'No dashboard, no ticket, no login. An email to a person, done within one working day and usually the same day. That’s the $200 a month, once you’re in.',
+        'No dashboard, no ticket, no login. An email to a person, done within one working day and usually the same day. That’s the monthly service, if you want it once you’re live.',
       ],
     },
   },
@@ -188,21 +192,16 @@ const PAGES = [
 const STEPS = [
   ['01', 'Tell me about your business', 'About 15 minutes: a few questions, your logo and a few photos. Type it, or just talk.'],
   ['02', 'See your new homepage', 'Within 24 hours you get a link to it. Click around, show it to someone, and send me what you’d change.'],
-  ['03', 'Decide', 'Love it, and it goes live: $300 to build, once, then $200 a month. Don’t, and you owe nothing.'],
-];
-
-const GETS = [
-  ['An email that reaches a person.', 'New price, new hire, hours changed, a line rewritten. Send it and it’s done within one working day.'],
-  ['Checked every week, reported every month.', 'Anything slow or broken gets fixed before your customers find it.'],
-  ['A little more every month.', 'The site grows a piece at a time inside the $200, not just stays put.'],
-  ['Everything in your name.', 'Your domain and your accounts. Month to month, cancel any time.'],
+  ['03', 'Decide', 'Love it, and it goes live for $300, once. Don’t, and you owe nothing.'],
 ];
 
 const FAQ = [
   ['Is there really no upfront cost?', 'None. No card, no deposit, nothing to cancel. You fill in the intake, I build your homepage, you look at it. If you don’t want it, that’s the end of it and you owe nothing.'],
   ['What do I need to have ready?', 'Your logo and a few photos if you have them. Everything else is questions about your business you already know the answers to. It saves as you go, so you don’t need to finish in one sitting.'],
   ['I already have a website. Does that matter?', 'Not at all. Put it in the form and I’ll carry over the words and images worth keeping. Your domain stays yours; if you go ahead, I point it at the new site.'],
-  ['What happens if I like it?', 'You get one round of changes, then it goes live for $300, once, and $200 a month from then on. That monthly part is me: changes by email within one working day, weekly checks, a monthly report, and the site growing a piece at a time.'],
+  ['What happens if I like it?', 'You get one round of changes, then it goes live for $300, once. That’s the whole price: no subscription, nothing to cancel.'],
+  ['How is it built, and what do I get?', 'It’s a static site built with Astro: fast, secure, and easy for search engines and AI assistants to read. When it goes live, you get the site, its code in your own GitHub, and help pointing your domain at it, or buying one if you don’t have one yet. The domain is in your name and on your own billing.'],
+  ['Do I have to pay every month?', 'No. The $300 gets you everything you need to have a new website, and it’s yours to keep. If you’d like to keep working together, it’s $200 a month, month to month: I make the changes you email within one working day, and bring you recommendations and improvements to help the site bring in more business.'],
   ['Who actually builds it?', 'I do. Shane Gring, fifteen years running websites and digital operations. No agency, no hand-off to someone you’ve never met.'],
 ];
 
@@ -311,6 +310,7 @@ s.parentNode.insertBefore(b,s);
 <meta property="og:url" content="${url}">
 <meta property="og:site_name" content="Shane Gring">
 <meta property="og:image" content="${SITE}${img}">
+<meta property="og:image:alt" content="${esc(p.imageAlt)}">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${esc(plain(p.hook))}">
@@ -337,21 +337,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="hc-hero fp-hero">
     <div class="container">
       <div class="hc-hero-copy">
-        <p class="fp-kicker">${hook(p.hook)}</p>
-        <h1 class="hc-hook fp-headline">${esc(p.headline)}</h1>
+        <h1 class="hc-hook">${hook(p.hook)}</h1>
+        <p class="fp-headline">${esc(p.headline)}</p>
 ${p.lede.map((l) => `        <p class="hd-lede hc-lede">${esc(l)}</p>`).join('\n')}
-        <div class="hd-cta hc-cta">
-          ${cta('hero')}
+      </div>
+      <div class="fp-start" id="start">
+        <form class="sr-form fp-form" data-first-pass novalidate aria-label="Start your free first pass">
+          <p class="fp-form-title">Start your free first pass</p>
+          <label class="sr-field">
+            <span class="contact-flabel">Email</span>
+            <input type="email" name="email" autocomplete="email" placeholder="you@yourcompany.com" required maxlength="200">
+          </label>
+          <label class="sr-field">
+            <span class="contact-flabel">Current website <em>(optional)</em></span>
+            <input type="text" name="website" inputmode="url" autocomplete="url" spellcheck="false" placeholder="yourcompany.com" maxlength="200">
+          </label>
+          <input class="sub-form-trap" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true"
+                 style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+          <button type="submit" class="sr-submit">See my new site first <span class="btn-arrow">&rarr;</span></button>
           <ul class="hd-assure">
             <li>No card</li>
             <li>About 15 minutes</li>
             <li>Yours in 24 hours</li>
           </ul>
-        </div>
+          <p class="fp-status" data-first-pass-status role="status" aria-live="polite" hidden></p>
+        </form>
+        <noscript><p class="fp-noscript">This form needs JavaScript. Email <a href="mailto:shane@shanegring.com">shane@shanegring.com</a> and I’ll send your intake link.</p></noscript>
       </div>
-      <figure class="fp-ad">
-        <img src="${img}" alt="${esc(p.imageAlt)}" width="720" height="720" fetchpriority="high">
-      </figure>
     </div>
   </section>
 ${angle(p.angle)}
@@ -361,38 +373,6 @@ ${angle(p.angle)}
       <ol class="hc-steps">
 ${STEPS.map(([n, h, t]) => `        <li><span class="hc-step-num">${n}</span><h3>${esc(h)}</h3><p>${esc(t)}</p></li>`).join('\n')}
       </ol>
-    </div>
-  </section>
-
-  <section class="hd-section fp-start" id="start">
-    <div class="container">
-      <h2 class="hd-title">Tell me about your business</h2>
-      <p class="hd-sub">Four quick details, then straight into the intake. It saves as you go, so bookmark it if you want to finish later.</p>
-
-      <form class="sr-form fp-form" data-first-pass novalidate aria-label="Tell me about your business">
-        <label class="sr-field">
-          <span class="contact-flabel">Your name</span>
-          <input type="text" name="name" autocomplete="name" required maxlength="200">
-        </label>
-        <label class="sr-field">
-          <span class="contact-flabel">Email</span>
-          <input type="email" name="email" autocomplete="email" placeholder="you@yourcompany.com" required maxlength="200">
-        </label>
-        <label class="sr-field">
-          <span class="contact-flabel">Business name</span>
-          <input type="text" name="business" autocomplete="organization" required maxlength="200">
-        </label>
-        <label class="sr-field">
-          <span class="contact-flabel">Current website <em>(if you have one)</em></span>
-          <input type="text" name="website" inputmode="url" autocomplete="url" spellcheck="false" placeholder="yourcompany.com" maxlength="200">
-        </label>
-        <input class="sub-form-trap" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true"
-               style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
-        <button type="submit" class="sr-submit">Start my intake <span class="btn-arrow">&rarr;</span></button>
-        <p class="sr-note">No card. Nothing to pay unless you love it and want it live.</p>
-        <p class="fp-status" data-first-pass-status role="status" aria-live="polite" hidden></p>
-      </form>
-      <noscript><p class="fp-noscript">This form needs JavaScript. Email <a href="mailto:shane@shanegring.com">shane@shanegring.com</a> and I’ll send your intake link.</p></noscript>
     </div>
   </section>
 
@@ -429,10 +409,7 @@ ${SHOTS.map(([href, src, w, h, name, what]) => `        <a class="hd-shot" href=
   <section class="hd-section">
     <div class="container">
       <h2 class="hd-title">If you love it</h2>
-      <p class="hd-sub">It goes live for <strong>$300 to build, once</strong>, then <strong>$200 a month</strong> for the person whose job it is to keep it right.</p>
-      <ul class="hd-gets">
-${GETS.map(([b, t]) => `        <li><strong>${esc(b)}</strong> ${esc(t)}</li>`).join('\n')}
-      </ul>
+      <p class="hd-sub">It goes live for <strong>$300 to build, once</strong>. No subscription. The site, the code and the domain are yours.</p>
     </div>
   </section>
 

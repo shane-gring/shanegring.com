@@ -2,7 +2,8 @@
    The free first pass sign-up form. One script for every /handled/first-pass
    page, so a field, a message or the tracking changes in one place.
 
-   Finds the one form marked [data-first-pass], posts it to
+   Finds the one form marked [data-first-pass] (in the hero, in place of the
+   ad image), posts an email and an optional current site to
    /api/handled/request, and sends the visitor straight into their intake.
    The link also arrives by email, so the redirect is the way in and the email
    is the way back. With JS off the form does nothing; each page has a
@@ -36,7 +37,7 @@
   // cursor in the first field, so the next thing they do is type.
   function focusFirst() {
     if (window.location.hash === '#start') {
-      var first = form.elements.name;
+      var first = form.elements.email;
       if (first) first.focus({ preventScroll: true });
     }
   }
@@ -46,13 +47,9 @@
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var f = form.elements;
-    var name = f.name.value.trim();
     var email = f.email.value.trim();
-    var business = f.business.value.trim();
 
-    if (!name) { say('Add your name.'); f.name.focus(); return; }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { say('That email doesn’t look right.'); f.email.focus(); return; }
-    if (!business) { say('Add the name of your business.'); f.business.focus(); return; }
 
     say('');
     button.disabled = true;
@@ -62,9 +59,7 @@
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        name: name,
         email: email,
-        business: business,
         website: f.website.value.trim(),
         company: f.company.value,
         page: window.location.pathname,

@@ -95,9 +95,27 @@ test('a filled honeypot gets a success shape and no link', async () => {
   assert.equal(env.HANDLED_BUCKET.store.size, 0);
 });
 
-test('missing name, bad email, missing business, junk body are refused', async () => {
+test('email alone is enough: no name, business or site', async () => {
+  const env = { HANDLED_BUCKET: fakeBucket(), HANDLED_SHEET_URL: 'https://script.example/exec' };
+  const { res, data, posted } = await call({ email: 'dana@acmeplumbing.com', page: '/handled/first-pass' }, env);
+  assert.equal(res.status, 200);
+  const { record } = await readRecord(env, /#t=(.+)$/.exec(data.url)[1]);
+  assert.equal(record.firstName, '');
+  assert.equal(record.label, 'dana@acmeplumbing.com (requested)');
+  assert.equal(posted[0].body.name, '');
+  assert.equal(posted[0].body.business, '');
+});
+
+test('without a business, the site names the request', async () => {
   const env = { HANDLED_BUCKET: fakeBucket() };
-  for (const body of [{ ...GOOD, name: ' ' }, { ...GOOD, email: 'dana@' }, { ...GOOD, business: '' }, 'not json']) {
+  const { data } = await call({ email: 'dana@acmeplumbing.com', website: 'acmeplumbing.com' }, env);
+  const { record } = await readRecord(env, /#t=(.+)$/.exec(data.url)[1]);
+  assert.equal(record.label, 'acmeplumbing.com (requested)');
+});
+
+test('bad email, missing email, junk body are refused', async () => {
+  const env = { HANDLED_BUCKET: fakeBucket() };
+  for (const body of [{ ...GOOD, email: 'dana@' }, { ...GOOD, email: '' }, 'not json']) {
     const { res } = await call(body, env);
     assert.equal(res.status, 400);
   }

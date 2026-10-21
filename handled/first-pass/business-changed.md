@@ -1,12 +1,12 @@
-Your business changed. Did your website?
-
-# I’ll rebuild your site and make staying up to date simple.
+# Your business changed. Did your website?
 
 Updating your website shouldn’t be a hassle. I’ll rebuild it around your business as it is today and make staying up to date as simple as sending an email.
 
+I’ll rebuild your site and make staying up to date simple.
+
 New prices, new hours, someone new on the team. Keeping your website current shouldn’t be a project. I’ll rebuild your homepage and send you a link within 24 hours, no strings attached. If you keep it, every update after that is one email.
 
-See my new site first &darr;
+Start your free first pass
 
 - No card
 
@@ -38,13 +38,7 @@ Within 24 hours you get a link to it. Click around, show it to someone, and send
 
 ### Decide
 
-Love it, and it goes live: $300 to build, once, then $200 a month. Don’t, and you owe nothing.
-
-## Tell me about your business
-
-Four quick details, then straight into the intake. It saves as you go, so bookmark it if you want to finish later.
-
-No card. Nothing to pay unless you love it and want it live.
+Love it, and it goes live for $300, once. Don’t, and you owe nothing.
 
 me and my girls
 
@@ -64,15 +58,7 @@ Real sites, live right now.
 
 ## If you love it
 
-It goes live for **$300 to build, once**, then **$200 a month** for the person whose job it is to keep it right.
-
-- **An email that reaches a person.** New price, new hire, hours changed, a line rewritten. Send it and it’s done within one working day.
-
-- **Checked every week, reported every month.** Anything slow or broken gets fixed before your customers find it.
-
-- **A little more every month.** The site grows a piece at a time inside the $200, not just stays put.
-
-- **Everything in your name.** Your domain and your accounts. Month to month, cancel any time.
+It goes live for **$300 to build, once**. No subscription. The site, the code and the domain are yours.
 
 ## A few honest answers
 
@@ -90,7 +76,15 @@ Not at all. Put it in the form and I’ll carry over the words and images worth 
 
 What happens if I like it?
 
-You get one round of changes, then it goes live for $300, once, and $200 a month from then on. That monthly part is me: changes by email within one working day, weekly checks, a monthly report, and the site growing a piece at a time.
+You get one round of changes, then it goes live for $300, once. That’s the whole price: no subscription, nothing to cancel.
+
+How is it built, and what do I get?
+
+It’s a static site built with Astro: fast, secure, and easy for search engines and AI assistants to read. When it goes live, you get the site, its code in your own GitHub, and help pointing your domain at it, or buying one if you don’t have one yet. The domain is in your name and on your own billing.
+
+Do I have to pay every month?
+
+No. The $300 gets you everything you need to have a new website, and it’s yours to keep. If you’d like to keep working together, it’s $200 a month, month to month: I make the changes you email within one working day, and bring you recommendations and improvements to help the site bring in more business.
 
 Who actually builds it?
 

@@ -48,13 +48,14 @@ s.parentNode.insertBefore(b,s);
 <meta property="og:url" content="https://shanegring.com/handled/first-pass/fifteen-minutes">
 <meta property="og:site_name" content="Shane Gring">
 <meta property="og:image" content="https://shanegring.com/images/handled/first-pass/fifteen-minutes.webp">
+<meta property="og:image:alt" content="A short business intake form beside the landscaping homepage built from it">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Give me 15 minutes. Get a new website.">
 <meta name="twitter:description" content="Give me 15 minutes on your business and within 24 hours you’ll see a new look at your website. You only pay if you like it.">
 <meta name="twitter:image" content="https://shanegring.com/images/handled/first-pass/fifteen-minutes.webp">
 
-<link rel="stylesheet" href="/styles.css?v=0f053c9b">
+<link rel="stylesheet" href="/styles.css?v=00378fb9">
 </head>
 
 <body class="offer-handled hc-page fp-page">
@@ -74,22 +75,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="hc-hero fp-hero">
     <div class="container">
       <div class="hc-hero-copy">
-        <p class="fp-kicker">Give me <span class="hc-strike">15 minutes</span>. Get a new website.</p>
-        <h1 class="hc-hook fp-headline">Within 24 hours, you’ll see a new look at your site.</h1>
+        <h1 class="hc-hook">Give me <span class="hc-strike">15 minutes</span>. Get a new website.</h1>
+        <p class="fp-headline">Within 24 hours, you’ll see a new look at your site.</p>
         <p class="hd-lede hc-lede">Take 15 minutes to tell me about your business: a few questions about what you do and who you serve, plus your logo and a few photos. Talk it through or type it.</p>
         <p class="hd-lede hc-lede">No upfront cost, and you only pay if you like what comes back.</p>
-        <div class="hd-cta hc-cta">
-          <a class="btn-primary" data-hd-cta="hero" href="#start">See my new site first <span class="btn-arrow">&darr;</span></a>
+      </div>
+      <div class="fp-start" id="start">
+        <form class="sr-form fp-form" data-first-pass novalidate aria-label="Start your free first pass">
+          <p class="fp-form-title">Start your free first pass</p>
+          <label class="sr-field">
+            <span class="contact-flabel">Email</span>
+            <input type="email" name="email" autocomplete="email" placeholder="you@yourcompany.com" required maxlength="200">
+          </label>
+          <label class="sr-field">
+            <span class="contact-flabel">Current website <em>(optional)</em></span>
+            <input type="text" name="website" inputmode="url" autocomplete="url" spellcheck="false" placeholder="yourcompany.com" maxlength="200">
+          </label>
+          <input class="sub-form-trap" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true"
+                 style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+          <button type="submit" class="sr-submit">See my new site first <span class="btn-arrow">&rarr;</span></button>
           <ul class="hd-assure">
             <li>No card</li>
             <li>About 15 minutes</li>
             <li>Yours in 24 hours</li>
           </ul>
-        </div>
+          <p class="fp-status" data-first-pass-status role="status" aria-live="polite" hidden></p>
+        </form>
+        <noscript><p class="fp-noscript">This form needs JavaScript. Email <a href="mailto:shane@shanegring.com">shane@shanegring.com</a> and I’ll send your intake link.</p></noscript>
       </div>
-      <figure class="fp-ad">
-        <img src="/images/handled/first-pass/fifteen-minutes.webp" alt="A short business intake form beside the landscaping homepage built from it" width="720" height="720" fetchpriority="high">
-      </figure>
     </div>
   </section>
 
@@ -111,40 +124,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <ol class="hc-steps">
         <li><span class="hc-step-num">01</span><h3>Tell me about your business</h3><p>About 15 minutes: a few questions, your logo and a few photos. Type it, or just talk.</p></li>
         <li><span class="hc-step-num">02</span><h3>See your new homepage</h3><p>Within 24 hours you get a link to it. Click around, show it to someone, and send me what you’d change.</p></li>
-        <li><span class="hc-step-num">03</span><h3>Decide</h3><p>Love it, and it goes live: $300 to build, once, then $200 a month. Don’t, and you owe nothing.</p></li>
+        <li><span class="hc-step-num">03</span><h3>Decide</h3><p>Love it, and it goes live for $300, once. Don’t, and you owe nothing.</p></li>
       </ol>
-    </div>
-  </section>
-
-  <section class="hd-section fp-start" id="start">
-    <div class="container">
-      <h2 class="hd-title">Tell me about your business</h2>
-      <p class="hd-sub">Four quick details, then straight into the intake. It saves as you go, so bookmark it if you want to finish later.</p>
-
-      <form class="sr-form fp-form" data-first-pass novalidate aria-label="Tell me about your business">
-        <label class="sr-field">
-          <span class="contact-flabel">Your name</span>
-          <input type="text" name="name" autocomplete="name" required maxlength="200">
-        </label>
-        <label class="sr-field">
-          <span class="contact-flabel">Email</span>
-          <input type="email" name="email" autocomplete="email" placeholder="you@yourcompany.com" required maxlength="200">
-        </label>
-        <label class="sr-field">
-          <span class="contact-flabel">Business name</span>
-          <input type="text" name="business" autocomplete="organization" required maxlength="200">
-        </label>
-        <label class="sr-field">
-          <span class="contact-flabel">Current website <em>(if you have one)</em></span>
-          <input type="text" name="website" inputmode="url" autocomplete="url" spellcheck="false" placeholder="yourcompany.com" maxlength="200">
-        </label>
-        <input class="sub-form-trap" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true"
-               style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
-        <button type="submit" class="sr-submit">Start my intake <span class="btn-arrow">&rarr;</span></button>
-        <p class="sr-note">No card. Nothing to pay unless you love it and want it live.</p>
-        <p class="fp-status" data-first-pass-status role="status" aria-live="polite" hidden></p>
-      </form>
-      <noscript><p class="fp-noscript">This form needs JavaScript. Email <a href="mailto:shane@shanegring.com">shane@shanegring.com</a> and I’ll send your intake link.</p></noscript>
     </div>
   </section>
 
@@ -189,13 +170,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="hd-section">
     <div class="container">
       <h2 class="hd-title">If you love it</h2>
-      <p class="hd-sub">It goes live for <strong>$300 to build, once</strong>, then <strong>$200 a month</strong> for the person whose job it is to keep it right.</p>
-      <ul class="hd-gets">
-        <li><strong>An email that reaches a person.</strong> New price, new hire, hours changed, a line rewritten. Send it and it’s done within one working day.</li>
-        <li><strong>Checked every week, reported every month.</strong> Anything slow or broken gets fixed before your customers find it.</li>
-        <li><strong>A little more every month.</strong> The site grows a piece at a time inside the $200, not just stays put.</li>
-        <li><strong>Everything in your name.</strong> Your domain and your accounts. Month to month, cancel any time.</li>
-      </ul>
+      <p class="hd-sub">It goes live for <strong>$300 to build, once</strong>. No subscription. The site, the code and the domain are yours.</p>
     </div>
   </section>
 
@@ -217,7 +192,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </details>
         <details>
           <summary>What happens if I like it?</summary>
-          <p>You get one round of changes, then it goes live for $300, once, and $200 a month from then on. That monthly part is me: changes by email within one working day, weekly checks, a monthly report, and the site growing a piece at a time.</p>
+          <p>You get one round of changes, then it goes live for $300, once. That’s the whole price: no subscription, nothing to cancel.</p>
+        </details>
+        <details>
+          <summary>How is it built, and what do I get?</summary>
+          <p>It’s a static site built with Astro: fast, secure, and easy for search engines and AI assistants to read. When it goes live, you get the site, its code in your own GitHub, and help pointing your domain at it, or buying one if you don’t have one yet. The domain is in your name and on your own billing.</p>
+        </details>
+        <details>
+          <summary>Do I have to pay every month?</summary>
+          <p>No. The $300 gets you everything you need to have a new website, and it’s yours to keep. If you’d like to keep working together, it’s $200 a month, month to month: I make the changes you email within one working day, and bring you recommendations and improvements to help the site bring in more business.</p>
         </details>
         <details>
           <summary>Who actually builds it?</summary>
@@ -254,6 +237,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <script src="/track.js?v=8cf6c72c" defer></script>
-<script src="/assets/handled/first-pass.js?v=af7def99" defer></script>
+<script src="/assets/handled/first-pass.js?v=a7d79b3a" defer></script>
 </body>
 </html>
