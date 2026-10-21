@@ -46,8 +46,8 @@ pass myself, and if you keep it, every change you email comes to me.
 
 Real sites, live right now.
 
-[Ted GonderPrivate strategic advisory · tedgonder.co](https://tedgonder.co)
-[DRVNThe golf performance system · drvngolf.com](https://drvngolf.com)
+[Erik Larsen ArchitectsDallas architecture studio · eriklarsenarchitects.com](https://www.eriklarsenarchitects.com)
+[Inner AssemblyLeadership practice · inner‑assembly.com](https://inner-assembly.com)
 [GreenStar HomesGreen home certification · greenstarhomes.org](https://greenstarhomes.org)
 
 ## If you love it
@@ -88,7 +88,7 @@ I do. Shane Gring, fifteen years running websites and digital operations. No age
 
 About 15 minutes from you. A link to your new homepage within 24 hours.
 
-See my new site first &darr;
+Get Started &darr;
 
 ---
 

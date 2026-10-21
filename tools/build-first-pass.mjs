@@ -206,8 +206,8 @@ const FAQ = [
 ];
 
 const SHOTS = [
-  ['https://tedgonder.co', '/images/handled/tedgonder.webp', 1200, 750, 'Ted Gonder', 'Private strategic advisory · tedgonder.co'],
-  ['https://drvngolf.com', '/images/handled/7-drvn.png', 1280, 713, 'DRVN', 'The golf performance system · drvngolf.com'],
+  ['https://www.eriklarsenarchitects.com', '/images/handled/eriklarsen.webp', 1200, 750, 'Erik Larsen Architects', 'Dallas architecture studio · eriklarsenarchitects.com'],
+  ['https://inner-assembly.com', '/images/handled/inner-assembly.webp', 1200, 750, 'Inner Assembly', 'Leadership practice · inner‑assembly.com'],
   ['https://greenstarhomes.org', '/images/handled/greenstar.webp', 1200, 750, 'GreenStar Homes', 'Green home certification · greenstarhomes.org'],
 ];
 
@@ -257,7 +257,7 @@ function page(p) {
   const path = p.slug ? `/handled/first-pass/${p.slug}` : '/handled/first-pass';
   const url = SITE + path;
   const img = `/images/handled/first-pass/${p.image}.webp`;
-  const cta = (where, label = 'See my new site first') =>
+  const cta = (where, label = 'Get Started') =>
     `<a class="btn-primary" data-hd-cta="${where}" href="#start">${label} <span class="btn-arrow">&darr;</span></a>`;
 
   return `<!DOCTYPE html>
@@ -354,7 +354,7 @@ ${p.lede.map((l) => `        <p class="hd-lede hc-lede">${esc(l)}</p>`).join('\n
           </label>
           <input class="sub-form-trap" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true"
                  style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
-          <button type="submit" class="sr-submit">See my new site first <span class="btn-arrow">&rarr;</span></button>
+          <button type="submit" class="sr-submit">Get Started <span class="btn-arrow">&rarr;</span></button>
           <ul class="hd-assure">
             <li>No card</li>
             <li>About 15 minutes</li>
