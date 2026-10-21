@@ -66,7 +66,7 @@ The five steps on a single page, with how to know you're done with each one and 
 
 216.67 KB • PDF File
 
-[Download](https://beehiiv-publication-files.s3.amazonaws.com/uploads/downloadables/032815a3-09de-4fe3-8ddd-29887c80a61d/d30314e4-30e3-41f0-819e-5323ac049237/AI%20Setup%20Checklist.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQCMHTQSE2JGAGXHJ%2F20261021%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261021T040925Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=5cfcbe0c5cc9e43381cd05d7bf6122ad31082f2a5d529a1d1348d60f5cee9e7b)
+[Download](https://beehiiv-publication-files.s3.amazonaws.com/uploads/downloadables/032815a3-09de-4fe3-8ddd-29887c80a61d/d30314e4-30e3-41f0-819e-5323ac049237/AI%20Setup%20Checklist.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQCMHTQSE2JGAGXHJ%2F20261021%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261021T113045Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=9bf1401f437b0636daede554f4ad3694b6a2ecf18c40f61159cc92503415f027)
 
 Worth forwarding to whoever on your team has been meaning to get to this.
 
