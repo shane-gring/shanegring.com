@@ -52,6 +52,12 @@
 # page that fits the name, so the trailing traffic goes there.
 /managed              /handled                301
 
+# A LinkedIn ad went out pointing at /handled/first-pass/business-change
+# (missing the "d"). The ad URL was corrected on 2026-10-19, but the old
+# link still drew 7 landing sessions on the 404 the week of Oct 23 (shares,
+# saved posts, cached previews), so it 301s to the real page.
+/handled/first-pass/business-change   /handled/first-pass/business-changed   301
+
 # 2-handled and 3-handled were never real pages: they were accidental
 # duplicate copies of /handled committed in d6d9c75, most likely a shell
 # mishap. They were served for a week and are older, thinner snapshots of
