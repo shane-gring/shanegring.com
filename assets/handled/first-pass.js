@@ -16,9 +16,10 @@
   'use strict';
 
   // LinkedIn "Handled – first pass sign-up" conversion. Event-specific, set
-  // up by hand in Campaign Manager; null until it exists, and then nothing
-  // fires. The intake-submitted conversion lives in assets/handled/app.js.
-  var LI_SIGNUP_CONVERSION = null;
+  // up by hand in Campaign Manager; fires only after the server accepts the
+  // sign-up. Set to null to switch it off. The intake-submitted conversion
+  // lives in assets/handled/app.js.
+  var LI_SIGNUP_CONVERSION = 31764706;
 
   var form = document.querySelector('form[data-first-pass]');
   if (!form) return;
